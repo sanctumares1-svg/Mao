@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mao</title>
+<link rel="stylesheet" href="fonts.css">
+<script src="./react.js"></script><script src="./native.js"></script><script src="./dict.js"></script><script src="./writecheck.js"></script><script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+
+<style>
+html,body,#dc-root{height:100%;overflow:hidden}body{margin:0;background:#F5F5F8;font-family:'Noto Sans',Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}button{-webkit-user-select:none;user-select:none}
+button,input{font-family:inherit}
+a{color:inherit}a:hover{opacity:.7}
+*::-webkit-scrollbar{display:none}*{scrollbar-width:none}
+[data-th="l"]{--bg:#F3EFE7;--sf:#FFFDF8;--sf2:#E9E3D7;--ink:#1C1E1B;--mu:#67645A;--ln:#DFD8CA;--pr:oklch(0.42 0.07 165);--prm:oklch(0.42 0.07 165 / .35);--onpr:#F5F8F3;--prs:oklch(0.42 0.07 165 / .1);--ac:oklch(0.55 0.15 35);--acs:oklch(0.55 0.15 35 / .1);--seal:oklch(0.52 0.17 28);--onseal:#FCF4EA;--grid:oklch(0.55 0.15 35 / .22)}
+[data-th="d"]{--bg:#121412;--sf:#1A1D1B;--sf2:#252925;--ink:#ECEAE3;--mu:#9EA097;--ln:#2E322E;--pr:oklch(0.78 0.09 165);--prm:oklch(0.78 0.09 165 / .35);--onpr:#0F1411;--prs:oklch(0.78 0.09 165 / .12);--ac:oklch(0.76 0.12 45);--acs:oklch(0.76 0.12 45 / .14);--seal:oklch(0.58 0.16 28);--onseal:#F7EEE3;--grid:oklch(0.76 0.12 45 / .2)}
+[data-th]{--hero:var(--pr);--onhero:var(--onpr);--herobtn:var(--onpr);--onherobtn:var(--pr);--ok:var(--pr);--warn:var(--ac);--err:var(--seal)}
+[data-th="l"][data-pal="indigo"]{--bg:#F5F5F8;--sf:#FFFFFF;--sf2:#EBEBF1;--ink:#16161D;--mu:#62626F;--ln:#E1E1E9;--pr:#5B5BD6;--prm:rgba(91,91,214,.35);--onpr:#FFFFFF;--prs:rgba(91,91,214,.09);--ac:#C2412D;--acs:rgba(194,65,45,.09);--seal:#C8372D;--onseal:#FFF5F3;--grid:rgba(91,91,214,.32);--ok:#1F8A5B;--warn:#B26A00;--err:#C8372D}
+[data-th="d"][data-pal="indigo"]{--bg:#0F0F14;--sf:#18181F;--sf2:#23232C;--ink:#EDEDF3;--mu:#A0A0B0;--ln:#2C2C38;--pr:#9090F0;--prm:rgba(144,144,240,.35);--onpr:#0F0F14;--prs:rgba(144,144,240,.13);--ac:#F08A76;--acs:rgba(240,138,118,.13);--seal:#E5675A;--onseal:#1A0F0E;--grid:rgba(144,144,240,.34);--ok:#4CC38A;--warn:#F0B44C;--err:#F07A6E;--hero:#23233A;--onhero:#EDEDF3;--herobtn:#9090F0;--onherobtn:#0F0F14}
+[data-th="l"][data-pal="mint"]{--bg:#F3F7F6;--sf:#FFFFFF;--sf2:#E6EEEC;--ink:#13201D;--mu:#5E6E6A;--ln:#DCE6E3;--pr:oklch(0.55 0.12 180);--prm:oklch(0.55 0.12 180 / .35);--onpr:#FFFFFF;--prs:oklch(0.55 0.12 180 / .1);--ac:oklch(0.62 0.16 50);--acs:oklch(0.62 0.16 50 / .12);--seal:oklch(0.6 0.18 30);--onseal:#FFF6F0;--grid:oklch(0.55 0.12 180 / .22)}
+[data-th="d"][data-pal="mint"]{--bg:#0D1413;--sf:#151E1C;--sf2:#1F2A28;--ink:#E8F0EE;--mu:#93A4A0;--ln:#26322F;--pr:oklch(0.78 0.11 180);--prm:oklch(0.78 0.11 180 / .35);--onpr:#0D1413;--prs:oklch(0.78 0.11 180 / .13);--ac:oklch(0.8 0.12 60);--acs:oklch(0.8 0.12 60 / .14);--seal:oklch(0.68 0.16 30);--onseal:#FFF6F0;--grid:oklch(0.78 0.11 180 / .22)}
+[data-th="l"][data-pal="sakura"]{--bg:#FBF6F6;--sf:#FFFFFF;--sf2:#F3EAEB;--ink:#241A1D;--mu:#776A6E;--ln:#EDE1E3;--pr:oklch(0.48 0.13 350);--prm:oklch(0.48 0.13 350 / .35);--onpr:#FFFFFF;--prs:oklch(0.48 0.13 350 / .09);--ac:oklch(0.55 0.14 250);--acs:oklch(0.55 0.14 250 / .1);--seal:oklch(0.58 0.19 20);--onseal:#FFF5F3;--grid:oklch(0.48 0.13 350 / .2)}
+[data-th="d"][data-pal="sakura"]{--bg:#151012;--sf:#1E181A;--sf2:#2A2124;--ink:#F3EBED;--mu:#A8999D;--ln:#33292C;--pr:oklch(0.76 0.11 350);--prm:oklch(0.76 0.11 350 / .35);--onpr:#151012;--prs:oklch(0.76 0.11 350 / .13);--ac:oklch(0.78 0.1 250);--acs:oklch(0.78 0.1 250 / .14);--seal:oklch(0.68 0.16 20);--onseal:#FFF5F3;--grid:oklch(0.76 0.11 350 / .22)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes toastIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes dot{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes blink{50%{opacity:0}}
+@keyframes catWalk{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-4px) rotate(3deg)}}
+@keyframes catIdle{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes pawUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes tail{0%,100%{transform:rotate(0)}50%{transform:rotate(10deg)}}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.03,.97) translateY(1px)}}
+@keyframes hop{0%,60%,100%{transform:translateY(0)}70%{transform:translateY(-7px) rotate(-4deg)}80%{transform:translateY(0)}88%{transform:translateY(-3px) rotate(3deg)}}
+@keyframes blinkEye{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes ear{0%,88%,100%{transform:rotate(0)}91%{transform:rotate(-12deg)}94%{transform:rotate(4deg)}}
+@keyframes zz{0%{opacity:0;transform:translate(0,4px)}40%{opacity:1}100%{opacity:0;transform:translate(6px,-8px)}}
+@keyframes nodIn{0%{opacity:0;transform:translateY(16px)}20%{opacity:1;transform:translateY(0)}40%{transform:rotate(0)}52%{transform:translateY(3px) rotate(6deg)}64%{transform:translateY(0) rotate(0)}80%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="height:100%">
+  <div ref="{{ phoneRef }}" data-th="{{ th }}" data-pal="{{ pal }}" style="width:100%;height:100%;background:var(--bg);color:var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:background .3s,color .3s">
+    <div style="height:8px;flex:none"></div>
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column;position:relative">
+
+      <sc-if value="{{ isTab }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:none;padding:4px 20px 12px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12.5px;color:var(--mu)">{{ dateLabel }}</span><span style="font:600 26px/1.1 'Noto Serif','Noto Serif SC',serif">{{ tabTitle }}</span></div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onClick="{{ goProgress }}" style="height:40px;display:flex;align-items:center;gap:8px;padding:0 12px 0 6px;border-radius:20px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);cursor:pointer"><span style="width:26px;height:26px;border-radius:4px;background:var(--seal);color:var(--onseal);display:flex;align-items:center;justify-content:center;font:700 15px 'Noto Serif','Noto Serif SC',serif;transform:rotate(-4deg)">学</span><span style="font-size:14px;font-weight:600">{{ streak }}</span></button>
+              <button onClick="{{ goSettings }}" aria-label="Настройки" style="width:40px;height:40px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="7.6" stroke-width="3.2" stroke-dasharray="3 2.97"></circle><circle cx="12" cy="12" r="5.6" stroke-width="1.8"></circle><circle cx="12" cy="12" r="2.2" stroke-width="1.8"></circle></svg></button>
+            </div>
+          </div>
+          <sc-if value="{{ showSearch }}" hint-placeholder-val="{{ true }}"><div style="height:48px;border-radius:14px;background:var(--sf);border:1px solid var(--ln);display:flex;align-items:center;gap:10px;padding:0 6px 0 14px;color:var(--mu)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+            <input value="{{ q }}" onChange="{{ onQ }}" placeholder="Найти: 妈妈, mama" style="flex:1;min-width:0;border:0;outline:none;background:transparent;color:var(--ink);font-size:15.5px;height:100%">
+            <sc-if value="{{ noQ }}" hint-placeholder-val="{{ true }}"><button onClick="{{ openBulk }}" aria-label="Добавить списком" style="height:36px;padding:0 10px;border-radius:10px;border:0;background:var(--sf2);color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer;flex:none;display:flex;align-items:center;gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h10M4 12h10M4 18h7M18 14v6M15 17h6"></path></svg>Списком</button></sc-if><sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearQ }}" aria-label="Очистить" style="width:38px;height:38px;border:0;background:none;color:var(--mu);font-size:20px;cursor:pointer">×</button></sc-if>
+          </div></sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+        <div onScroll="{{ catScroll }}" style="flex:1;min-height:0;overflow-y:auto;padding:2px 20px 20px;display:flex;flex-direction:column;gap:14px;animation:fadeIn .2s">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:baseline;gap:8px"><span style="font:600 40px/1 'Noto Serif','Noto Serif SC',serif">{{ todayNew }}</span><span style="font-size:14px;color:var(--mu)">{{ quotaLine }}</span><sc-if value="{{ hasOver }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;font-weight:600;color:var(--pr);white-space:nowrap">+{{ overN }} сверх плана</span></sc-if><span style="margin-left:auto;font-size:13px;color:var(--mu)">{{ todayMin }} мин</span></div>
+            <div style="height:5px;border-radius:3px;background:var(--sf2)"><div style="width:{{ todayPct }}%;height:100%;border-radius:3px;background:var(--pr);transition:width .4s"></div></div>
+          </div>
+          <div data-perch="1" style="background:var(--hero);color:var(--onhero);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px;animation:rise .3s">
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.75">{{ hero.k }}</span>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:600 25px/1.2 'Noto Serif','Noto Serif SC',serif">{{ hero.t }}</span><span style="font-size:14px;opacity:.82">{{ hero.sub }}</span></div>
+            <sc-if value="{{ hero.topics }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:6px;overflow-x:auto;margin:0 -18px;padding:0 18px">
+                <sc-for list="{{ topicChips }}" as="tc" hint-placeholder-count="5"><button onClick="{{ tc.pick }}" style="flex:none;display:flex;flex-direction:column;align-items:center;gap:1px;padding:8px 12px;border-radius:14px;border:1.5px solid var(--onhero);background:{{ tc.bg }};color:{{ tc.fg }};cursor:pointer"><span style="font:500 17px/1.1 'Noto Serif','Noto Serif SC',serif">{{ tc.zh }}</span><span style="font-size:10px;opacity:.8">{{ tc.py }}</span><span style="font-size:12px;font-weight:500">{{ tc.t }}</span></button></sc-for>
+              </div>
+              <input value="{{ topicOwn }}" onChange="{{ onTopicOwn }}" placeholder="или своя тема…" style="height:44px;border-radius:14px;border:1.5px dashed var(--onpr);background:transparent;color:var(--onpr);font-size:14.5px;padding:0 12px;outline:none;min-width:0">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="font-size:13.5px;opacity:.85">Сколько слов подберёт Мао</span><div style="display:flex;align-items:center;gap:4px"><button onClick="{{ mNDec }}" style="width:38px;height:38px;border-radius:14px;border:1.5px solid var(--onpr);background:transparent;color:var(--onpr);font-size:18px;cursor:pointer">−</button><b style="font:600 18px 'Noto Serif','Noto Serif SC',serif;min-width:34px;text-align:center">{{ mN }}</b><button onClick="{{ mNInc }}" style="width:38px;height:38px;border-radius:14px;border:1.5px solid var(--onpr);background:transparent;color:var(--onpr);font-size:18px;cursor:pointer">+</button></div></div>
+            </sc-if>
+            <button onClick="{{ hero.go }}" style="height:52px;border-radius:18px;border:0;background:var(--herobtn);color:var(--onherobtn);font-size:15px;font-weight:600;cursor:pointer">{{ hero.btn }}</button>
+            <sc-if value="{{ hero.hasAlt }}" hint-placeholder-val="{{ false }}"><button onClick="{{ hero.alt }}" style="height:46px;border-radius:14px;border:1.5px solid var(--onhero);background:transparent;color:var(--onhero);font-size:14.5px;font-weight:600;cursor:pointer;margin-top:-4px">{{ hero.altL }}</button></sc-if>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+            <sc-for list="{{ quick }}" as="qk" hint-placeholder-count="3"><button onClick="{{ qk.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);cursor:pointer;text-align:left"><span style="font:600 24px/1.1 'Noto Serif','Noto Serif SC',serif">{{ qk.big }}</span><span style="font-size:13.5px;font-weight:600;padding-top:4px">{{ qk.l }}</span><span style="font-size:11.5px;color:var(--mu)">{{ qk.sub }}</span></button></sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px">
+            <div style="display:flex;align-items:baseline;gap:8px"><span style="font:600 17px 'Noto Serif','Noto Serif SC',serif">{{ dayHead }}</span><span style="font-size:13px;color:var(--mu)">{{ curProg }}</span><button onClick="{{ goWordsAll }}" style="margin-left:auto;border:0;background:none;color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;padding:0">Все слова ›</button></div>
+            <div data-perch="1" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px">
+              <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="20">
+                <button onClick="{{ t.go }}" style="position:relative;aspect-ratio:1;border-radius:10px;border:1px solid var(--ln);background:{{ t.bg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:0;overflow:hidden">
+                  <div style="position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--grid)"></div><div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed var(--grid)"></div>
+                  <span style="position:relative;font:500 {{ t.fs }}px/1.1 'Noto Serif','Noto Serif SC',serif;color:{{ t.c }}">{{ t.h }}</span>
+                  <span style="position:relative;font-size:9px;color:var(--ac);white-space:nowrap">{{ t.p }}</span>
+                  <sc-if value="{{ t.dot }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:{{ t.dc }}"></div></sc-if>
+                </button>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:14px;font-size:11.5px;color:var(--mu)"><span style="display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--pr)"></span>выучено</span><span style="display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ac)"></span>трудное</span><span>бледное — новое</span></div>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ showResults }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 20px;animation:fadeIn .15s">
+          <sc-if value="{{ qList }}" hint-placeholder-val="{{ false }}"><button onClick="{{ qToBulk }}" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 10px;padding:13px 14px;border-radius:14px;border:1.5px dashed var(--pr);background:var(--prs);color:var(--pr);font-size:14px;font-weight:600;cursor:pointer;text-align:left"><span>Добавить списком: {{ qListN }}</span><span>›</span></button></sc-if>
+          <sc-for list="{{ res }}" as="r" hint-placeholder-count="0">
+            <div onClick="{{ r.go }}" style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--ln);cursor:pointer">
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+                <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><span style="font:500 24px 'Noto Serif','Noto Serif SC',serif">{{ r.h }}</span><span style="font:400 13px 'Noto Serif','Noto Serif SC',serif;color:var(--mu)">{{ r.tr }}</span><span style="color:var(--ac);font-size:14px;font-weight:500">{{ r.p }}</span></div>
+                <span style="font-size:14px">{{ r.m }}</span>
+              </div>
+              <sc-if value="{{ r.inB }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mu);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:{{ r.dc }}"></span>{{ r.tag }}</span></sc-if>
+              <sc-if value="{{ r.inB }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="font-size:22px;line-height:1;color:var(--mu);flex:none">›</span></sc-if><sc-if value="{{ r.add }}" hint-placeholder-val="{{ false }}"><button onClick="{{ r.plus }}" aria-label="Добавить" style="width:40px;height:40px;border-radius:50%;border:0;background:var(--pr);color:var(--onpr);font-size:22px;font-weight:300;cursor:pointer;flex:none">+</button></sc-if>
+            </div>
+          </sc-for>
+          <sc-if value="{{ showManLink }}" hint-placeholder-val="{{ false }}"><button onClick="{{ openMan }}" style="width:100%;height:48px;margin-top:8px;border:0;background:none;color:var(--pr);font-size:14px;font-weight:600;cursor:pointer">Нет нужного? Добавить своё</button></sc-if>
+          <sc-if value="{{ showManLink }}" hint-placeholder-val="{{ false }}"><button onClick="{{ openBulk }}" style="width:100%;height:44px;border:0;background:none;color:var(--mu);font-size:13.5px;font-weight:500;cursor:pointer">Добавить несколько слов списком</button></sc-if>
+          <sc-if value="{{ showMan }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:8px;padding-top:14px">
+              <sc-if value="{{ noRes }}" hint-placeholder-val="{{ false }}"><span style="font:600 17px 'Noto Serif','Noto Serif SC',serif;padding-bottom:4px">В словаре нет «{{ q }}»</span></sc-if>
+              <input value="{{ man.h }}" onChange="{{ onMh }}" placeholder="Иероглифы" style="height:54px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font:500 24px 'Noto Serif','Noto Serif SC',serif;padding:0 14px;outline:none" style-focus="border:1.5px solid var(--pr)">
+              <input value="{{ man.p }}" onChange="{{ onMp }}" placeholder="Пиньинь (можно ni3hao3)" style="height:48px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ac);font-size:15px;font-weight:500;padding:0 14px;outline:none" style-focus="border:1.5px solid var(--pr)">
+              <sc-if value="{{ mpConv }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);padding-left:4px">→ <b style="color:var(--ac);font-weight:600">{{ mpm }}</b></span></sc-if>
+              <input value="{{ man.m }}" onChange="{{ onMm }}" placeholder="Перевод" style="height:48px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;padding:0 14px;outline:none" style-focus="border:1.5px solid var(--pr)">
+              <div style="display:flex;gap:8px;padding-top:4px">
+                <button onClick="{{ claudeFill }}" style="flex:1;height:50px;border-radius:14px;border:0;background:var(--acs);color:var(--ac);font-size:14px;font-weight:600;cursor:pointer">{{ clLabel }}</button>
+                <button onClick="{{ saveMan }}" style="flex:1;height:50px;border-radius:14px;border:0;background:{{ manBg }};color:{{ manFg }};font-size:14px;font-weight:600;cursor:pointer">Добавить в день {{ cur }}</button>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isWords }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .2s">
+          <div style="padding:0 20px 10px;flex:none"><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wSegOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:38px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:14px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+          <sc-if value="{{ wLessons }}" hint-placeholder-val="{{ true }}">
+            <div style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 20px;display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ lessonsList }}" as="l" hint-placeholder-count="5">
+                <div style="padding:14px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <div style="width:52px;display:flex;flex-direction:column;align-items:center;flex:none"><span style="font:500 20px/1.15 'Noto Serif','Noto Serif SC',serif">{{ l.zh }}</span><span style="font-size:10px;color:var(--ac)">{{ l.py }}</span></div>
+                    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">{{ l.n }} · {{ l.t }}</span><span style="font-size:12.5px;color:var(--mu)">{{ l.prog }} <span style="color:var(--ac)">{{ l.hard }}</span></span></div>
+                    <sc-if value="{{ l.isCur }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:600;color:var(--pr);background:var(--prs);padding:4px 8px;border-radius:10px">текущий</span></sc-if>
+                  </div>
+                  <div style="height:3px;border-radius:2px;background:var(--sf2)"><div style="width:{{ l.pct }}%;height:100%;border-radius:2px;background:{{ l.bc }}"></div></div>
+                  <div style="display:flex;gap:6px">
+                    <button onClick="{{ l.view }}" style="flex:1;height:38px;border-radius:10px;border:1px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;font-weight:500;cursor:pointer">Листать</button>
+                    <button onClick="{{ l.test }}" style="flex:1;height:38px;border-radius:10px;border:1px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;font-weight:500;cursor:pointer">Тест</button>
+                    <sc-if value="{{ l.canLearn }}" hint-placeholder-val="{{ false }}"><button onClick="{{ l.learn }}" style="flex:1;height:38px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13px;font-weight:600;cursor:pointer">Учить</button></sc-if>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ wAll }}" hint-placeholder-val="{{ false }}">
+            <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+              <div style="display:flex;gap:6px;overflow-x:auto;padding:0 20px 8px;flex:none"><sc-for list="{{ filters }}" as="f" hint-placeholder-count="4"><button onClick="{{ f.pick }}" style="flex:none;height:34px;padding:0 12px;border-radius:17px;border:1px solid {{ f.bd }};background:{{ f.bg }};color:{{ f.fg }};font-size:13px;font-weight:500;cursor:pointer">{{ f.l }}</button></sc-for></div>
+              <div style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 20px">
+                <sc-if value="{{ hasHardAll }}" hint-placeholder-val="{{ false }}"><button onClick="{{ testHard }}" style="width:100%;height:44px;margin-bottom:4px;border-radius:14px;border:0;background:var(--acs);color:var(--ac);font-size:13.5px;font-weight:600;cursor:pointer">Тест по трудным</button></sc-if>
+                <sc-for list="{{ allList }}" as="w" hint-placeholder-count="10">
+                  <button onClick="{{ w.go }}" style="width:100%;display:flex;align-items:center;gap:12px;padding:10px 0;border:0;border-bottom:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;text-align:left">
+                    <span style="font:500 22px 'Noto Serif','Noto Serif SC',serif;min-width:62px">{{ w.h }}</span>
+                    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span style="font-size:13.5px;color:var(--ac);font-weight:500">{{ w.p }}</span><span style="font-size:14px">{{ w.m }}</span></div>
+                    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mu);white-space:nowrap"><span style="width:7px;height:7px;border-radius:50%;background:{{ w.dc }}"></span>{{ w.tag }}</span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isProgress }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;overflow-y:auto;padding:2px 20px 20px;display:flex;flex-direction:column;gap:12px;animation:fadeIn .2s">
+          <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+            <div style="padding:12px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:2px"><span style="font:600 24px 'Noto Serif','Noto Serif SC',serif">{{ stKnown }}</span><span style="font-size:12px;color:var(--mu)">слов знаю</span></div>
+            <div style="padding:12px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:2px"><span style="font:600 24px 'Noto Serif','Noto Serif SC',serif">{{ stHours }}</span><span style="font-size:12px;color:var(--mu)">часов всего</span></div>
+            <div style="padding:12px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:2px"><span style="font:600 24px 'Noto Serif','Noto Serif SC',serif">{{ stStreak }}</span><span style="font-size:12px;color:var(--mu)">дней подряд</span></div>
+          </div>
+          <div style="padding:16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">Неделя</span><span style="font-size:12.5px;color:var(--mu)">{{ weekSum }}</span></div>
+            <div style="height:104px;display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:end">
+              <sc-for list="{{ week }}" as="b" hint-placeholder-count="7"><div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="font-size:10px;color:var(--mu)">{{ b.v }}</span><div style="width:100%;height:{{ b.h }}px;border-radius:6px;background:{{ b.bg }};transition:height .4s"></div><span style="font-size:11px;color:var(--mu);font-weight:{{ b.fw }}">{{ b.l }}</span></div></sc-for>
+            </div>
+          </div>
+          <div style="padding:16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">5 недель</span><span style="font-size:11.5px;color:var(--mu)">休 xiū — выходной</span></div>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px">
+              <sc-for list="{{ heat }}" as="c" hint-placeholder-count="35"><div style="aspect-ratio:1;border-radius:6px;background:{{ c.bg }};opacity:{{ c.op }};border:{{ c.bd }};box-sizing:border-box;display:flex;align-items:center;justify-content:center"><sc-if value="{{ c.fz }}" hint-placeholder-val="{{ false }}"><span style="font:500 12px 'Noto Serif','Noto Serif SC',serif;color:var(--mu)">休</span></sc-if></div></sc-for>
+            </div>
+          </div>
+          <div style="padding:14px 16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:10px">
+            <button onClick="{{ togglePause }}" style="display:flex;align-items:center;gap:12px;border:0;background:none;padding:0;color:var(--ink);cursor:pointer;text-align:left">
+              <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Пауза завтра</span><span style="font-size:12.5px;color:var(--mu)">серия не прервётся · осталось {{ freezes }}. Плановые выходные из цели серию тоже не прерывают</span></div>
+              <div style="width:50px;height:30px;border-radius:15px;background:{{ pauseBg }};padding:3px;box-sizing:border-box;display:flex;justify-content:{{ pauseJust }};flex:none;transition:background .2s"><div style="width:24px;height:24px;border-radius:50%;background:var(--sf);box-shadow:0 1px 3px rgba(0,0,0,.2)"></div></div>
+            </button>
+          </div>
+          <div style="padding:16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">Цель</span><span style="font-size:13px;color:var(--mu)"><b style="font:600 16px 'Noto Serif','Noto Serif SC',serif;color:var(--ink)">{{ gKnown }}</b> из {{ gTarget }} · {{ gDateL }}</span></div>
+            <div style="height:6px;border-radius:3px;background:var(--sf2)"><div style="width:{{ gPct }}%;min-width:6px;height:100%;border-radius:3px;background:var(--ac)"></div></div>
+            <span style="font-size:13px;line-height:1.5;color:var(--mu)">{{ gPlanL }}</span>
+            <span style="font-size:12.5px;color:var(--mu)">{{ hskLine }}</span>
+            <button onClick="{{ openGoal }}" style="height:44px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:14px;font-weight:600;cursor:pointer">Изменить цель</button>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding:6px 0 4px">История</span>
+            <sc-for list="{{ hist }}" as="h" hint-placeholder-count="7"><div style="display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--ln);font-size:14px"><span style="font-weight:500">{{ h.d }}</span><span style="color:{{ h.c }};font-size:13px">{{ h.v }}</span></div></sc-for>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isCard }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+          <div style="display:flex;flex-direction:column;gap:8px;padding:2px 20px 8px;flex:none">
+            <div style="display:flex;align-items:center;justify-content:space-between"><button onClick="{{ exit }}" aria-label="Закрыть" style="width:40px;height:40px;border:0;background:none;color:var(--mu);font-size:22px;cursor:pointer">×</button><div style="display:flex;flex-direction:column;align-items:center"><span style="font-size:14px;font-weight:600">{{ cardHead.t }}</span><sc-if value="{{ hasUntil }}" hint-placeholder-val="{{ false }}"><span style="font-size:11.5px;color:var(--mu)">{{ cardHead.until }}</span></sc-if></div><span style="width:40px;text-align:right;font-size:13px;color:var(--mu)">{{ cardHead.n }}</span></div>
+            <div style="height:3px;border-radius:2px;background:var(--sf2);margin:0 8px"><div style="width:{{ cardHead.pct }}%;height:100%;border-radius:2px;background:var(--pr);transition:width .3s"></div></div>
+          </div>
+          <div style="flex:1;min-height:0;overflow-y:auto;padding:6px 20px 8px;display:flex;flex-direction:column;gap:16px;animation:rise .25s">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+              <span style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:10px;background:var(--sf2);font-size:12px;color:var(--mu)"><span style="width:7px;height:7px;border-radius:50%;background:{{ card.stc }}"></span>{{ card.stl }}</span>
+              <div style="position:relative;width:200px;height:200px;border:1.5px solid var(--grid);border-radius:10px;display:flex;align-items:center;justify-content:center">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;color:var(--grid)"><line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></line><line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></line></svg>
+                <span style="position:relative;font:500 {{ card.fs }}px/1 'Noto Serif','Noto Serif SC',serif;white-space:nowrap;opacity:{{ cardOp }};transition:opacity .2s">{{ card.h }}</span>
+                <canvas ref="{{ cardCv }}" width="400" height="400" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+              </div>
+              <button onClick="{{ cardAnim }}" style="height:36px;padding:0 14px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"></path></svg>Порядок черт</button>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:500 24px 'Noto Sans',sans-serif;color:var(--ac)">{{ card.p }}</span><button onClick="{{ speakCard }}" aria-label="Озвучить" style="width:38px;height:38px;border:0;border-radius:50%;background:var(--acs);color:var(--ac);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg></button></div>
+              <sc-if value="{{ notEditing }}" hint-placeholder-val="{{ true }}"><span style="font-size:18px;text-align:center">{{ card.m }}</span></sc-if>
+              <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;width:100%"><input value="{{ em }}" onChange="{{ onEm }}" style="flex:1;min-width:0;height:46px;border-radius:14px;border:1.5px solid var(--pr);background:var(--sf);color:var(--ink);font-size:16px;padding:0 12px;outline:none"><button onClick="{{ saveEdit }}" style="height:46px;padding:0 14px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer">OK</button></div></sc-if>
+            </div>
+            <sc-if value="{{ card.hasMn }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:6px;padding-top:14px;border-top:1px solid var(--ln)">
+                <div style="display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;font-size:13px"><sc-for list="{{ card.parts }}" as="pt" hint-placeholder-count="2"><sc-if value="{{ pt.plus }}" hint-placeholder-val="{{ false }}"><span style="color:var(--mu)">+</span></sc-if><span style="display:flex;align-items:baseline;gap:5px"><span style="font:500 22px 'Noto Serif','Noto Serif SC',serif">{{ pt.c }}</span><span style="color:var(--mu)">{{ pt.l }}</span></span></sc-for></div>
+                <span style="font-size:13px;color:var(--mu);line-height:1.45">{{ card.note }}</span>
+              </div>
+            </sc-if>
+            <sc-if value="{{ card.hasEx }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:2px;padding-top:14px;border-top:1px solid var(--ln)"><span style="font:500 17px 'Noto Serif','Noto Serif SC',serif">{{ card.exZh }}</span><span style="font-size:13px;color:var(--ac)">{{ card.exPy }}</span><span style="font-size:13px;color:var(--mu)">{{ card.exRu }}</span></div>
+            </sc-if>
+            <sc-if value="{{ exClosed }}" hint-placeholder-val="{{ true }}"><button onClick="{{ explain }}" style="height:44px;border-radius:14px;border:0;background:var(--sf2);color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">✦ Объяснить употребление</button></sc-if>
+            <sc-if value="{{ exOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:14px;border-radius:18px;background:var(--sf2);display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:600;color:var(--ac)">✦ Claude</span><button onClick="{{ closeEx }}" style="border:0;background:none;color:var(--mu);font-size:18px;cursor:pointer;padding:0">×</button></div>
+                <sc-if value="{{ exLoading }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:8px"><div style="display:flex;gap:4px"><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s .2s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s .4s infinite"></div></div><span style="font-size:13px;color:var(--ac)">думает…</span></div></sc-if>
+                <sc-if value="{{ exReady }}" hint-placeholder-val="{{ false }}"><div style="white-space:pre-wrap;font-size:14px;line-height:1.6;color:var(--ink)">{{ exText }}<sc-if value="{{ exStreaming }}" hint-placeholder-val="{{ false }}"><span style="display:inline-block;width:7px;height:15px;background:var(--ac);vertical-align:-3px;margin-left:3px;animation:blink .8s infinite"></span></sc-if></div></sc-if>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isView }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;justify-content:center;gap:4px;flex-wrap:wrap;font-size:13px">
+                <button onClick="{{ startEdit }}" style="height:36px;padding:0 10px;border:0;background:none;color:var(--mu);cursor:pointer">Изменить</button>
+                <button onClick="{{ moveW }}" style="height:36px;padding:0 10px;border:0;background:none;color:var(--mu);cursor:pointer">В день {{ card.next }}</button>
+                <button onClick="{{ delW }}" style="height:36px;padding:0 10px;border:0;background:none;color:var(--seal);cursor:pointer">Удалить</button>
+              </div>
+            </sc-if>
+          </div>
+          <sc-if value="{{ isLearn }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:10px 20px 18px;flex:none;display:flex;flex-direction:column;gap:4px">
+              <button onClick="{{ learnNext }}" style="width:100%;height:58px;border-radius:18px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">Дальше</button>
+              <button onClick="{{ learnKnown }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:14px;cursor:pointer">Уже знаю</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isView }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:10px 20px 18px;flex:none;display:flex;gap:10px">
+              <button onClick="{{ prevW }}" style="flex:1;height:58px;border-radius:18px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;opacity:{{ prevOp }}">‹ Назад</button>
+              <button onClick="{{ nextW }}" style="flex:1;height:58px;border-radius:18px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer;opacity:{{ nextOp }}">Дальше ›</button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+          <div style="display:flex;flex-direction:column;gap:8px;padding:2px 20px 8px;flex:none">
+            <div style="display:flex;align-items:center;justify-content:space-between"><button onClick="{{ exit }}" aria-label="Выйти" style="width:40px;height:40px;border:0;background:none;color:var(--mu);font-size:22px;cursor:pointer">×</button><span style="font-size:14px;font-weight:600">{{ qv.title }}</span><span style="min-width:40px;text-align:right;font-size:13px;color:var(--mu)">{{ qv.pos }}</span></div>
+            <div style="height:3px;border-radius:2px;background:var(--sf2);margin:0 8px"><div style="width:{{ qv.pct }}%;height:100%;border-radius:2px;background:var(--pr);transition:width .3s"></div></div>
+          </div>
+          <div style="flex:1;margin:10px 20px;border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;text-align:center">
+            <sc-if value="{{ wScreen }}" hint-placeholder-val="{{ false }}">
+              <div style="width:100%;display:flex;flex-direction:column;align-items:center;gap:10px">
+                <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)">Напишите иероглиф</span>
+                <span style="font:500 26px/1.25 'Noto Serif','Noto Serif SC',serif;padding-bottom:6px">{{ qv.m }}</span>
+                <sc-if value="{{ wWarnOn }}" hint-placeholder-val="{{ false }}"><span style="max-width:288px;font-size:13px;line-height:1.4;color:var(--seal);font-weight:600">{{ wWarn }}</span></sc-if><sc-if value="{{ qv.hidden }}" hint-placeholder-val="{{ true }}"><div style="width:288px;display:flex;align-items:center;justify-content:space-between;gap:8px"><div style="display:flex;align-items:center;gap:6px;min-width:0"><sc-for list="{{ wDots }}" as="d" hint-placeholder-count="0"><button onClick="{{ d.go }}" aria-label="{{ d.l }}" style="min-width:34px;height:36px;padding:0 6px;border-radius:10px;border:{{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};font:500 17px 'Noto Serif SC',serif;cursor:pointer;flex:none;display:flex;align-items:center;justify-content:center">{{ d.t }}</button></sc-for></div><div style="display:flex;gap:6px;flex:none"><button onClick="{{ wHintBtn }}" aria-label="Подсказать следующую черту" style="height:36px;min-width:36px;padding:0 10px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;color:var(--pr)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"></path></svg></button><button onClick="{{ wShowOrder }}" aria-label="Показать порядок черт" style="height:36px;min-width:36px;padding:0 10px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;color:var(--pr)"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"></path></svg></button><button onClick="{{ wUndo }}" aria-label="Отменить черту" style="height:36px;padding:0 12px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;cursor:pointer;font-size:16px;opacity:{{ wUndoOp }}">↶</button><button onClick="{{ wClear }}" style="height:36px;padding:0 12px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13px;cursor:pointer;opacity:{{ wClearOp }}">Стереть</button></div></div></sc-if>
+                <div style="position:relative;width:288px;height:288px;border:1.5px solid var(--grid);border-radius:10px;background:var(--bg)">
+                  <sc-if value="{{ wGridOn }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;color:var(--grid)"><line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></line><line x1="50" y1="0" x2="50" y2="100" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></line><line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke" stroke-opacity="{{ wMiOp }}"></line><line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" vector-effect="non-scaling-stroke" stroke-opacity="{{ wMiOp }}"></line></svg></sc-if>
+                  <sc-if value="{{ qv.rev }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;animation:fadeIn .3s"><span style="font:500 {{ wFs }}px/1 'Noto Serif','Noto Serif SC',serif;color:var(--pr);opacity:.38;white-space:nowrap">{{ qv.h }}</span></div></sc-if>
+                  <canvas ref="{{ wcRef }}" width="464" height="464" onPointerDown="{{ wDown }}" onPointerMove="{{ wMove }}" onPointerUp="{{ wUp }}" onPointerCancel="{{ wUp }}" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;color:var(--ink)"></canvas>
+                </div>
+                <sc-if value="{{ wNavShow }}" hint-placeholder-val="{{ false }}"><div style="width:288px;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px"><div style="width:92px;display:flex"><sc-if value="{{ wPrevShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ wPrev }}" style="height:40px;padding:0 12px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer">‹ {{ wPrevL }}</button></sc-if></div><span style="flex:1;text-align:center;font-size:12.5px;color:var(--mu)">{{ wCount }}</span><div style="width:92px;display:flex;justify-content:flex-end"><sc-if value="{{ wNextShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ wNext }}" style="height:40px;padding:0 12px;border-radius:14px;border:0;background:var(--prs);color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer">{{ wNextL }} ›</button></sc-if></div></div></sc-if>
+                <sc-if value="{{ wHasRes }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;align-items:center;gap:2px;animation:rise .25s"><span style="font-size:16px;font-weight:700;color:{{ wResC }}">{{ wResL }}</span><span style="font-size:12.5px;color:var(--mu);max-width:260px">{{ wResSub }}</span></div></sc-if><sc-if value="{{ wSelf }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu)">Сравните со своим и оцените себя</span></sc-if><sc-if value="{{ wCanAnim }}" hint-placeholder-val="{{ false }}"><button onClick="{{ wAnim }}" style="height:32px;padding:0 12px;border-radius:10px;border:1px solid var(--ln);background:transparent;color:var(--mu);font-size:12.5px;cursor:pointer">▸ Порядок черт</button></sc-if><sc-if value="{{ qv.rev }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:10px"><span style="font:500 26px 'Noto Serif','Noto Serif SC',serif">{{ qv.h }}</span><span style="font:500 20px 'Noto Sans',sans-serif;color:var(--ac)">{{ qv.p }}</span><button onClick="{{ speakQ }}" aria-label="Озвучить" style="width:36px;height:36px;border:0;border-radius:50%;background:var(--acs);color:var(--ac);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg></button></div></sc-if>
+              </div>
+            </sc-if>
+            <sc-if value="{{ qHid }}" hint-placeholder-val="{{ true }}">
+              <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu)">{{ qv.ask }}</span>
+              <sc-if value="{{ qv.isRu }}" hint-placeholder-val="{{ true }}"><span style="font:500 36px/1.25 'Noto Serif','Noto Serif SC',serif">{{ qv.m }}</span></sc-if>
+              <sc-if value="{{ qv.isHz }}" hint-placeholder-val="{{ false }}"><span style="font:500 {{ qv.fs }}px/1.1 'Noto Serif','Noto Serif SC',serif">{{ qv.h }}</span></sc-if>
+              <span style="font-size:13px;color:var(--mu)">{{ qv.line }}</span>
+              <sc-if value="{{ wPaper }}" hint-placeholder-val="{{ false }}"><span style="margin-top:6px;padding:8px 12px;border-radius:14px;background:var(--sf2);font-size:12.5px;color:var(--mu)">✎ Напишите иероглиф в тетради, потом откройте ответ</span></sc-if>
+            </sc-if>
+            <sc-if value="{{ qRev }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:15px;color:var(--mu)">{{ qv.m }}</span>
+              <div style="position:relative;width:170px;height:170px;border:1.5px solid var(--grid);border-radius:6px;display:flex;align-items:center;justify-content:center;animation:rise .25s"><div style="position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--grid)"></div><div style="position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed var(--grid)"></div><span style="position:relative;font:500 {{ qv.fs }}px/1 'Noto Serif','Noto Serif SC',serif;white-space:nowrap">{{ qv.h }}</span></div>
+              <div style="display:flex;align-items:center;gap:10px"><span style="font:500 24px 'Noto Sans',sans-serif;color:var(--ac)">{{ qv.p }}</span><button onClick="{{ speakQ }}" aria-label="Озвучить" style="width:38px;height:38px;border:0;border-radius:50%;background:var(--acs);color:var(--ac);display:flex;align-items:center;justify-content:center;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M16.5 8.5a5 5 0 0 1 0 7"></path></svg></button></div>
+            </sc-if>
+          </div>
+          <div style="padding:6px 20px 18px;flex:none">
+            <sc-if value="{{ qv.hidden }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:4px"><button onClick="{{ reveal }}" style="width:100%;height:58px;border-radius:18px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">Показать ответ</button><button onClick="{{ ansNo }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:14px;cursor:pointer">Не помню</button></div></sc-if>
+            <sc-if value="{{ qv.rev }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:10px"><button onClick="{{ ansNo }}" style="flex:1;height:64px;border-radius:18px;border:1.5px solid {{ noBd }};background:{{ noBg }};color:{{ noFg }};font-size:16px;font-weight:500;cursor:pointer">Не помню</button><button onClick="{{ ansYes }}" style="flex:1;height:64px;border-radius:18px;border:1.5px solid {{ yesBd }};background:{{ yesBg }};color:{{ yesFg }};font-size:16px;font-weight:600;cursor:pointer">Помню</button></div></sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .25s">
+          <div style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:16px;padding:48px 20px 12px">
+            <div style="display:flex;align-items:center;gap:14px"><div style="width:60px;height:60px;border-radius:50%;border:2px solid var(--seal);color:var(--seal);display:flex;align-items:center;justify-content:center;font:600 32px 'Noto Serif','Noto Serif SC',serif;transform:rotate(-6deg);flex:none">完</div><span style="font-size:12px;color:var(--ac)">wán · готово</span><sc-if value="{{ catOnResult }}" hint-placeholder-val="{{ true }}"><div style="margin-left:auto;display:flex;flex-direction:column;align-items:center;gap:2px"><svg width="64" height="58" viewBox="0 0 120 110"><defs><clipPath id="rh"><ellipse cx="60" cy="58" rx="44" ry="38"></ellipse></clipPath></defs><polygon points="22,42 30,6 56,28" fill="#E9A262" stroke="#1C1E1B" stroke-width="3.5"></polygon><polygon points="98,42 90,6 64,28" fill="#2E2E30" stroke="#1C1E1B" stroke-width="3.5"></polygon><ellipse cx="60" cy="58" rx="44" ry="38" fill="#FFFDF8"></ellipse><g clip-path="url(#rh)"><ellipse cx="30" cy="32" rx="36" ry="27" fill="#E9A262"></ellipse><ellipse cx="94" cy="32" rx="34" ry="29" fill="#2E2E30"></ellipse></g><ellipse cx="60" cy="58" rx="44" ry="38" fill="none" stroke="#1C1E1B" stroke-width="3.5"></ellipse><g fill="none" stroke="#1C1E1B" stroke-width="3.5" stroke-linecap="round"><path d="M34 62 Q43 52 52 62"></path><path d="M68 62 Q77 52 86 62"></path></g><polygon points="56,72 64,72 60,77" fill="#E9A5B4"></polygon><ellipse cx="18" cy="84" rx="13" ry="14" fill="#FFFDF8" stroke="#1C1E1B" stroke-width="3" transform="rotate(-30 18 84)"></ellipse><circle cx="16" cy="88" r="4" fill="#EFB3C0"></circle></svg><span style="font-size:11.5px;color:var(--mu)">Мур!</span></div></sc-if></div>
+            <div style="display:flex;flex-direction:column;gap:4px"><span style="font:600 26px/1.2 'Noto Serif','Noto Serif SC',serif">{{ rs.title }}</span><span style="font-size:14px;color:var(--mu)">{{ rs.sub }}</span></div>
+            <sc-if value="{{ rs.hasTotal }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)">
+                <div style="flex:1;padding:14px 0;display:flex;flex-direction:column;gap:2px"><span style="font:600 26px 'Noto Serif','Noto Serif SC',serif">{{ rs.first }} <span style="font-size:15px;color:var(--mu)">из {{ rs.total }}</span></span><span style="font-size:12.5px;color:var(--mu)">с первого раза</span></div>
+                <div style="flex:1;padding:14px 0;display:flex;flex-direction:column;gap:2px"><span style="font:600 26px 'Noto Serif','Noto Serif SC',serif">{{ rs.rounds }}</span><span style="font-size:12.5px;color:var(--mu)">{{ rs.roundsW }}</span></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ rs.hasHard }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column">
+                <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-bottom:4px">Вернутся на повторение</span>
+                <sc-for list="{{ rs.list }}" as="mw" hint-placeholder-count="2"><div style="display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln)"><span style="font:500 20px 'Noto Serif','Noto Serif SC',serif">{{ mw.h }}</span><span style="color:var(--ac);font-size:14px">{{ mw.p }}</span><span style="font-size:14px;color:var(--mu)">{{ mw.m }}</span></div></sc-for>
+              </div>
+            </sc-if>
+          </div>
+          <div style="padding:10px 20px 18px;flex:none;display:flex;gap:10px">
+            <button onClick="{{ resDone }}" style="flex:1;height:58px;border-radius:18px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer">Готово</button>
+            <button onClick="{{ resMore }}" style="flex:1;height:58px;border-radius:18px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">{{ resMoreL }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isChat }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .2s">
+          <div style="display:flex;align-items:center;gap:10px;padding:2px 20px 10px;border-bottom:1px solid var(--ln);flex:none">
+            <button onClick="{{ back }}" aria-label="Назад" style="width:40px;height:40px;border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer">←</button>
+            <svg width="42" height="38" viewBox="0 0 120 110"><defs><clipPath id="mh2"><ellipse cx="60" cy="58" rx="44" ry="38"></ellipse></clipPath></defs><polygon points="22,42 30,6 56,28" fill="#E9A262" stroke="#1C1E1B" stroke-width="4"></polygon><polygon points="98,42 90,6 64,28" fill="#2E2E30" stroke="#1C1E1B" stroke-width="4"></polygon><ellipse cx="60" cy="58" rx="44" ry="38" fill="#FFFDF8"></ellipse><g clip-path="url(#mh2)"><ellipse cx="30" cy="32" rx="36" ry="27" fill="#E9A262"></ellipse><ellipse cx="94" cy="32" rx="34" ry="29" fill="#2E2E30"></ellipse></g><ellipse cx="60" cy="58" rx="44" ry="38" fill="none" stroke="#1C1E1B" stroke-width="4"></ellipse><circle cx="44" cy="61" r="10" fill="#141414"></circle><circle cx="76" cy="61" r="10" fill="#141414"></circle><polygon points="56,71 64,71 60,76" fill="#E9A5B4"></polygon></svg>
+            <div style="display:flex;flex-direction:column"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">Мао <span style="font-weight:500">猫</span></span><span style="font-size:12px;color:var(--mu)">помощница · māo</span></div>
+          </div>
+          <div ref="{{ chatRef }}" style="flex:1;min-height:0;overflow-y:auto;padding:14px 20px;display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ chatMsgs }}" as="m" hint-placeholder-count="1">
+              <sc-if value="{{ m.isCat }}" hint-placeholder-val="{{ true }}"><div style="align-self:flex-start;max-width:82%;padding:11px 14px;border-radius:18px 18px 18px 6px;background:var(--sf);border:1px solid var(--ln);font-size:14.5px;line-height:1.55;white-space:pre-wrap;animation:rise .2s">{{ m.t }}</div></sc-if>
+              <sc-if value="{{ m.isMe }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-end;max-width:82%;padding:11px 14px;border-radius:18px 18px 6px 18px;background:var(--pr);color:var(--onpr);font-size:14.5px;line-height:1.5;white-space:pre-wrap">{{ m.t }}</div></sc-if>
+            </sc-for>
+            <sc-if value="{{ chatBusy }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;display:flex;align-items:center;gap:8px;padding:11px 14px;border-radius:18px;background:var(--sf);border:1px solid var(--ln)"><div style="display:flex;gap:4px"><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s .2s infinite"></div><div style="width:6px;height:6px;border-radius:50%;background:var(--ac);animation:dot 1s .4s infinite"></div></div><span style="font-size:13px;color:var(--mu)">Мао думает…</span></div></sc-if>
+            <sc-if value="{{ showQuick }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-top:10px"><span style="font-size:12px;color:var(--mu)">Можно спросить:</span><div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ quickAsk }}" as="qa" hint-placeholder-count="4"><button onClick="{{ qa.go }}" style="padding:8px 12px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13px;font-weight:500;cursor:pointer;text-align:left">{{ qa.t }}</button></sc-for></div></div></sc-if>
+          </div>
+          <div style="display:flex;gap:8px;padding:10px 20px 16px;border-top:1px solid var(--ln);flex:none">
+            <input value="{{ chatQ }}" onChange="{{ onChatQ }}" onKeyDown="{{ chatKey }}" placeholder="Спросить Мао…" style="flex:1;min-width:0;height:48px;border-radius:24px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;padding:0 16px;outline:none" style-focus="border:1.5px solid var(--pr)">
+            <button onClick="{{ sendChat }}" aria-label="Отправить" style="width:48px;height:48px;border-radius:50%;border:0;background:{{ sendBg }};color:{{ sendFg }};font-size:20px;cursor:pointer;flex:none">↑</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isGoal }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .2s">
+          <div style="padding:2px 12px 0;flex:none;min-height:12px"><sc-if value="{{ goalBackShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ goalBack }}" aria-label="Назад" style="width:44px;height:44px;border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer">←</button></sc-if></div>
+          <div style="flex:1;min-height:0;overflow-y:auto;padding:4px 20px 16px;display:flex;flex-direction:column;gap:18px">
+            <sc-if value="{{ obWelcome }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:26px 0 4px;animation:rise .3s">
+                <div style="width:150px;height:150px;border-radius:34px;box-shadow:0 0 0 1px var(--ln);overflow:hidden"><svg width="150" height="150" viewBox="0 0 120 120" style="display:block"><rect width="120" height="120" rx="27" fill="#16161D"></rect><g transform="translate(12 12) scale(0.8)"><polygon points="14,40 24,6 46,28" fill="#5B5BD6"></polygon><polygon points="106,40 96,6 74,28" fill="#5B5BD6"></polygon><ellipse cx="38" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="82" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="38" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><ellipse cx="82" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><polygon points="54,96 66,96 60,104" fill="#E5735F"></polygon></g></svg></div>
+                <span style="font:700 34px/1.1 'Noto Serif','Noto Serif SC',serif;margin-top:10px">Mao</span>
+                <span style="font-size:13.5px;color:var(--ac)">猫 māo · кошка</span>
+              </div>
+              <span style="font:500 17px/1.45 'Noto Serif','Noto Serif SC',serif;text-align:center">Китайский по дням — с пустой тетради</span>
+              <span style="font-size:14.5px;line-height:1.55;color:var(--mu);text-align:center">В тетради пока нет ни одного слова. Вы ставите цель — сколько слов выучить и к какому числу, а Mao считает, сколько учить каждый день.</span>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;gap:12px;align-items:center;font-size:14px"><span style="width:26px;height:26px;border-radius:50%;background:var(--prs);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:600;flex:none">1</span>Цель: число слов и дата</div>
+                <div style="display:flex;gap:12px;align-items:center;font-size:14px"><span style="width:26px;height:26px;border-radius:50%;background:var(--prs);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:600;flex:none">2</span>Каждый день — тема и свои слова, или их подберёт кошка Мао</div>
+                <div style="display:flex;gap:12px;align-items:center;font-size:14px"><span style="width:26px;height:26px;border-radius:50%;background:var(--prs);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:600;flex:none">3</span>Учите, пишите иероглифы пальцем, повторяйте</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ obGoalForm }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:4px"><span style="font:600 26px/1.15 'Noto Serif','Noto Serif SC',serif">{{ goalTitle }}</span><span style="font-size:13.5px;line-height:1.5;color:var(--mu)">Считаются выученные слова: те, что вы прошли и отметили «Помню».</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:14.5px;font-weight:600">Сколько слов выучить</span>
+                <input value="{{ gN }}" onChange="{{ onGN }}" type="number" inputmode="numeric" min="1" max="20000" style="height:54px;border-radius:14px;border:1.5px solid var(--pr);background:var(--sf);color:var(--ink);font:600 22px 'Noto Serif','Noto Serif SC',serif;padding:0 16px;outline:none;min-width:0">
+                <div style="display:flex;gap:6px;flex-wrap:wrap"><sc-for list="{{ nChips }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.pick }}" style="padding:8px 12px;border-radius:10px;border:1px solid {{ c.bd }};background:{{ c.bg }};color:var(--ink);font-size:13.5px;cursor:pointer">{{ c.l }}</button></sc-for></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--ln);background:var(--sf)">
+                <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14.5px;font-weight:600">Уже знаю ~</span><span style="font-size:12.5px;line-height:1.4;color:var(--mu)">Слова, которые вы знали до приложения. Вычитаются из цели.</span></div>
+                <input value="{{ gPre }}" onChange="{{ onGPre }}" type="number" inputmode="numeric" min="0" max="5000" placeholder="0" style="width:92px;height:46px;border-radius:14px;border:1.5px solid var(--ln);background:var(--bg);color:var(--ink);font-size:17px;font-weight:600;padding:0 12px;outline:none;text-align:center" style-focus="border:1.5px solid var(--pr)">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:14.5px;font-weight:600">До какого числа</span>
+                <input value="{{ gDate }}" onChange="{{ onGDate }}" type="date" min="{{ gMin }}" style="height:54px;border-radius:14px;border:1.5px solid var(--pr);background:var(--sf);color:var(--ink);font-size:17px;padding:0 16px;outline:none;min-width:0">
+                <div style="display:flex;gap:6px;flex-wrap:wrap"><sc-for list="{{ dChips }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.pick }}" style="padding:8px 12px;border-radius:10px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:13.5px;cursor:pointer">{{ c.l }}</button></sc-for></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;padding:14px 16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf)">
+                <button onClick="{{ toggleOff }}" style="display:flex;align-items:center;gap:12px;border:0;background:none;padding:0;color:var(--ink);cursor:pointer;text-align:left">
+                  <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">Выходные</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ offHint }}</span></div>
+                  <div style="width:50px;height:30px;border-radius:15px;background:{{ offBg }};padding:3px;box-sizing:border-box;display:flex;justify-content:{{ offJust }};flex:none;transition:background .2s"><div style="width:24px;height:24px;border-radius:50%;background:var(--sf);box-shadow:0 1px 3px rgba(0,0,0,.2)"></div></div>
+                </button>
+                <sc-if value="{{ offOn }}" hint-placeholder-val="{{ false }}"><div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px"><sc-for list="{{ dowChips }}" as="c" hint-placeholder-count="7"><button onClick="{{ c.pick }}" style="height:40px;border-radius:10px;border:1.5px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};font-size:13px;font-weight:{{ c.fw }};cursor:pointer;padding:0">{{ c.l }}</button></sc-for></div></sc-if>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:18px;background:var(--pr);color:var(--onpr)">
+                <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.75">План</span>
+                <div style="display:flex;align-items:baseline;gap:8px"><span style="font:600 40px/1 'Noto Serif','Noto Serif SC',serif">{{ gPerDay }}</span><span style="font-size:15px;opacity:.9">{{ gPerDayW }}</span></div>
+                <span style="font-size:13.5px;line-height:1.5;opacity:.9">{{ gLine1 }}</span>
+                <sc-if value="{{ gHasLine2 }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;line-height:1.5;opacity:.8">{{ gLine2 }}</span></sc-if>
+              </div>
+              <sc-if value="{{ gFastShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ gFastGo }}" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;border-radius:14px;border:1.5px dashed var(--pr);background:var(--prs);color:var(--pr);font-size:14px;font-weight:600;cursor:pointer;text-align:left"><span>{{ gFastL }}</span><span>›</span></button></sc-if>
+              <sc-if value="{{ gHasErr }}" hint-placeholder-val="{{ false }}"><span style="font-size:13.5px;color:var(--seal)">{{ gErr }}</span></sc-if>
+            </sc-if>
+          </div>
+          <div style="padding:6px 20px 18px;flex:none;display:flex;flex-direction:column;gap:4px">
+            <button onClick="{{ goalNext }}" style="width:100%;height:56px;border-radius:18px;border:0;background:{{ goalBtnBg }};color:{{ goalBtnFg }};font-size:15.5px;font-weight:600;cursor:pointer">{{ goalBtn }}</button>
+            <sc-if value="{{ obBackShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ obBack }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:14px;cursor:pointer">Назад</button></sc-if>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isBulk }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .2s">
+          <div style="padding:2px 12px 0;flex:none"><button onClick="{{ bulkBack }}" aria-label="Назад" style="width:44px;height:44px;border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer">←</button></div>
+          <div style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 16px;display:flex;flex-direction:column;gap:12px">
+            <span style="font:600 26px/1.1 'Noto Serif','Noto Serif SC',serif">Добавить списком</span>
+            <span style="font-size:13px;line-height:1.5;color:var(--mu)">Пишите иероглифами или пиньинем (тоны не обязательны) — через запятую или каждое слово с новой строки. Можно сразу дать свой перевод: «苹果 — яблоко».</span>
+            <textarea value="{{ bulkT }}" onChange="{{ onBulk }}" placeholder="姐姐, 弟弟&#10;mama&#10;苹果 — яблоко" rows="5" style="min-height:128px;resize:vertical;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font:500 18px/1.5 'Noto Serif','Noto Serif SC',serif;padding:12px 14px;outline:none;box-sizing:border-box;width:100%" style-focus="border:1.5px solid var(--pr)"></textarea>
+            <div style="display:flex;gap:8px">
+              <button onClick="{{ bulkFile }}" style="flex:1;height:42px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer">Из файла .json / .txt</button>
+              <sc-if value="{{ bulkEmpty }}" hint-placeholder-val="{{ true }}"><button onClick="{{ bulkEx }}" style="height:42px;padding:0 14px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer">Пример</button></sc-if>
+              <sc-if value="{{ bulkFull }}" hint-placeholder-val="{{ false }}"><button onClick="{{ bulkClear }}" style="height:42px;padding:0 14px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer">Очистить</button></sc-if>
+            </div>
+            <input ref="{{ bulkRef }}" type="file" accept=".json,.txt,application/json,text/plain" onChange="{{ onBulkFile }}" style="display:none">
+            <sc-if value="{{ bulkWait }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:var(--mu)">Словарь загружается…</span></sc-if>
+            <sc-if value="{{ bulkHas }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column">
+                <span style="font-size:12.5px;color:var(--mu);padding:4px 0 2px">{{ bulkSum }}</span>
+                <sc-for list="{{ bulkRows }}" as="b" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln);opacity:{{ b.op }}">
+                    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+                      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap"><span style="font:500 22px 'Noto Serif','Noto Serif SC',serif">{{ b.h }}</span><span style="color:var(--ac);font-size:14px;font-weight:500">{{ b.p }}</span></div>
+                      <span style="font-size:13.5px;line-height:1.35;color:{{ b.mc }}">{{ b.m }}</span>
+                    </div>
+                    <sc-if value="{{ b.alt }}" hint-placeholder-val="{{ false }}"><button onClick="{{ b.next }}" aria-label="Другое слово с таким пиньинем" style="height:34px;padding:0 9px;border-radius:10px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:12.5px;font-weight:600;cursor:pointer;flex:none">⇄ {{ b.altL }}</button></sc-if>
+                    <sc-if value="{{ b.hasTag }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:{{ b.tc }};white-space:nowrap;flex:none">{{ b.tag }}</span></sc-if>
+                    <button onClick="{{ b.rm }}" aria-label="Убрать из списка" style="width:32px;height:34px;border:0;background:none;color:var(--mu);font-size:19px;cursor:pointer;flex:none">×</button>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+          <div style="flex:none;padding:10px 20px 16px;border-top:1px solid var(--ln);background:var(--bg)"><button onClick="{{ bulkAdd }}" style="width:100%;height:54px;border-radius:18px;border:0;background:{{ bulkBg }};color:{{ bulkFg }};font-size:15px;font-weight:600;cursor:pointer">{{ bulkBtn }}</button></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1;min-height:0;display:flex;flex-direction:column;animation:fadeIn .2s">
+          <div style="padding:2px 12px 0;flex:none"><button onClick="{{ back }}" aria-label="Назад" style="width:44px;height:44px;border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer">←</button></div>
+          <div style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 24px;display:flex;flex-direction:column;gap:18px">
+            <span style="font:600 26px/1.1 'Noto Serif','Noto Serif SC',serif">Настройки</span>
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-top:6px">Учёба</span>
+            <div style="display:flex;align-items:center;gap:12px"><div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Цель</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ goalHint }}</span></div><button onClick="{{ openGoal }}" style="height:40px;padding:0 14px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">Изменить</button></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Слов в уроке</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ lessonHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ lessonOpts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Способ изучения</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ methodHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ methodOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <sc-if value="{{ isSnow }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:8px;padding-left:14px;border-left:2px solid var(--ln)"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:500">Сколько слов проверять</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ chunkHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ chunkOpts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div></sc-if>
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-top:10px;border-top:1px solid var(--ln)">Тесты</span>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Что показывать в тесте</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ hintHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ hintOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Письмо иероглифов</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ writeHint }}</span><sc-if value="{{ writeNote }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;line-height:1.45;color:var(--seal)">Работает, когда в тесте показывается русское слово.</span></sc-if></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ writeOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <sc-if value="{{ isWScreen }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:14px;padding-left:14px;border-left:2px solid var(--ln)">
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Толщина линии</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wWidthOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Сетка</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wGridOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Ровные черты</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ wSnapHint }}</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wSnapOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;min-width:0;height:34px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:12.5px;cursor:pointer;padding:0 2px">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Подсказка порядка черт</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ wOrdHint }}</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wOrdOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;min-width:0;height:34px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Контур-подсказка</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ wGhostHint }}</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wGhostOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;min-width:0;height:34px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:12.5px;cursor:pointer;padding:0 2px">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Проверка написания</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ wCheckHint }}</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wCheckOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;min-width:0;height:34px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:12.5px;cursor:pointer;padding:0 2px">{{ o.l }}</button></sc-for></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14px;font-weight:500">Многосложные слова</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ wMultiHint }}</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ wMultiOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;min-width:0;height:34px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:12.5px;cursor:pointer;padding:0 2px">{{ o.l }}</button></sc-for></div></div>
+            </div></sc-if>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Длина быстрого теста</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ quickHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ quickOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-top:10px;border-top:1px solid var(--ln)">Помощница Мао 猫</span>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Где показывать</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ catHint }}</span></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ catModeOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <sc-if value="{{ catIsOn }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14.5px;font-weight:600">Звук «мяу» при нажатии</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ catSoundOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer">{{ o.l }}</button></sc-for></div></div></sc-if>
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-top:10px;border-top:1px solid var(--ln)">Вид и звук</span>
+            <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14.5px;font-weight:600">Тема оформления</span><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ thOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:14.5px;font-weight:600">Цвета</span><div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px"><sc-for list="{{ palOpts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="height:60px;border-radius:14px;border:1.5px solid {{ o.bd }};background:var(--sf);color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:{{ o.fw }}"><span style="display:flex;gap:3px"><span style="width:14px;height:14px;border-radius:50%;background:{{ o.c1 }}"></span><span style="width:14px;height:14px;border-radius:50%;background:{{ o.c2 }}"></span></span>{{ o.l }}</button></sc-for></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:14.5px;font-weight:600">Скорость озвучки</span><button onClick="{{ testVoice }}" style="border:0;background:none;color:var(--ac);font-size:13.5px;font-weight:600;cursor:pointer;padding:0">▸ 你好 nǐ hǎo</button></div><div style="display:flex;padding:4px;border-radius:14px;background:var(--sf2);gap:4px"><sc-for list="{{ rateOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:10px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+            <span style="font:600 11px 'Noto Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);padding-top:10px;border-top:1px solid var(--ln)">Нейросеть и данные</span>
+            <div style="display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf)">
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">Нейросеть</span><span style="font-size:12px;font-weight:600;color:{{ apiStC }}">{{ apiStatus }}</span></div>
+              <span style="font-size:12.5px;color:var(--mu);line-height:1.45">Работает сама — без ключей и без оплаты. Нужна для Мао, «Объяснить» и перевода слов, которых нет в словаре. Нужен интернет.</span>
+              <div style="display:flex;gap:8px"><span style="flex:1;display:flex;align-items:center;font-size:13px;color:var(--mu)">{{ apiNote }}</span><button onClick="{{ checkApi }}" style="height:46px;padding:0 16px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:13.5px;font-weight:600;cursor:pointer">{{ checkL }}</button></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;border:1px solid var(--ln);background:var(--sf)">
+              <span style="font:600 16px 'Noto Serif','Noto Serif SC',serif">Добавить слова списком</span>
+              <span style="font-size:12.5px;color:var(--mu);line-height:1.45">Вставьте слова иероглифами или пиньинем — через запятую или по одному на строке. Можно открыть файл .json или .txt. Пиньинь и перевод подставятся из словаря.</span>
+              <button onClick="{{ openBulkS }}" style="height:48px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer">Открыть список</button>
+            </div>
+            <div style="display:flex;flex-direction:column;border-top:1px solid var(--ln)">
+              <button onClick="{{ exportJson }}" style="min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:10px;border:0;border-bottom:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;padding:8px 0;text-align:left"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14.5px;font-weight:600">Сохранить резервную копию</span><span style="font-size:12.5px;color:var(--mu)">Все слова и прогресс в один файл — для нового телефона</span></div><span style="color:var(--mu)">↓</span></button>
+              <sc-if value="{{ resetAsk }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:10px;padding:14px 0"><span style="font-size:13.5px;line-height:1.45">Удалить все слова, дни и серию? Это нельзя отменить — сначала сохраните копию.</span><div style="display:flex;gap:8px"><button onClick="{{ cancelReset }}" style="flex:1;height:44px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:14px;cursor:pointer">Отмена</button><button onClick="{{ doReset }}" style="flex:1;height:44px;border-radius:14px;border:0;background:var(--seal);color:#fff;font-size:14px;font-weight:600;cursor:pointer">Удалить всё</button></div></div></sc-if>
+              <button onClick="{{ askReset }}" style="height:50px;display:flex;align-items:center;border:0;background:none;color:var(--seal);font-size:14.5px;cursor:pointer;padding:0">Сбросить все данные</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--ln)"><div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;font-weight:600">Обновления</span><span style="font-size:12.5px;line-height:1.45;color:var(--mu)">{{ appVer }} · проверяются сами при запуске</span></div><button onClick="{{ checkUpd }}" style="height:40px;padding:0 14px;border-radius:14px;border:1.5px solid var(--ln);background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">Проверить</button></div>
+            <span style="font-size:12px;line-height:1.5;color:var(--mu)">Mao · Словарь CC-CEDICT (© MDBG, CC BY-SA 4.0), {{ dictCount }} слов; русские переводы HSK 1–3. Порядок черт — Make Me a Hanzi (Arphic Public License). Нейросеть — Pollinations, бесплатно и без ключа.</span>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ isTab }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:none;height:70px;border-top:1px solid var(--ln);background:var(--sf);display:grid;grid-template-columns:repeat(3,1fr);align-items:center;padding:0 12px 6px">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="3">
+          <button onClick="{{ n.go }}" style="border:0;background:none;color:{{ n.fg }};display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 0">
+            <div style="width:56px;height:28px;border-radius:14px;background:{{ n.bg }};display:flex;align-items:center;justify-content:center">
+              <sc-if value="{{ n.i1 }}" hint-placeholder-val="{{ true }}"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19V6a2 2 0 0 1 2-2h12v15H6a2 2 0 0 0-2 2z"></path><path d="M9 9h6"></path></svg></sc-if>
+              <sc-if value="{{ n.i2 }}" hint-placeholder-val="{{ false }}"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M12 4v16M4 12h16" stroke-dasharray="2 2"></path></svg></sc-if>
+              <sc-if value="{{ n.i3 }}" hint-placeholder-val="{{ false }}"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 20V12M12 20V5M19 20v-9"></path></svg></sc-if>
+            </div>
+            <span style="font-size:11.5px;font-weight:{{ n.fw }}">{{ n.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showCat }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ catClick }}" onPointerDown="{{ catDown }}" onPointerUp="{{ catUp }}" onPointerLeave="{{ catUp }}" onContextMenu="{{ stop }}" style="position:absolute;left:{{ catX }}px;top:{{ catY }}px;width:56px;height:56px;z-index:6;cursor:pointer;user-select:none;-webkit-touch-callout:none;transition:{{ catTr }};animation:fadeIn .4s">
+        <sc-if value="{{ hasSay }}" hint-placeholder-val="{{ false }}">
+          <sc-if value="{{ sayLeft }}" hint-placeholder-val="{{ false }}"><div onClick="{{ catSayGo }}" style="cursor:pointer;position:absolute;right:50px;top:-14px;white-space:nowrap;padding:8px 12px;border-radius:14px 14px 4px 14px;background:var(--ink);color:var(--bg);font-size:12.5px;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.18);animation:pop .25s">{{ catSay }}</div></sc-if>
+          <sc-if value="{{ sayRight }}" hint-placeholder-val="{{ false }}"><div onClick="{{ catSayGo }}" style="cursor:pointer;position:absolute;left:50px;top:-14px;white-space:nowrap;padding:8px 12px;border-radius:14px 14px 14px 4px;background:var(--ink);color:var(--bg);font-size:12.5px;font-weight:500;box-shadow:0 6px 18px rgba(0,0,0,.18);animation:pop .25s">{{ catSay }}</div></sc-if>
+        </sc-if>
+        <div style="width:56px;height:56px;transform:scaleX({{ catSc }})"><div style="width:56px;height:56px;animation:{{ catBob }};filter:{{ catFilt }}">
+          <svg width="56" height="56" viewBox="0 0 120 120" style="overflow:visible"><defs><clipPath id="mh"><ellipse cx="60" cy="50" rx="36" ry="30"></ellipse></clipPath><clipPath id="mb"><ellipse cx="60" cy="94" rx="28" ry="22"></ellipse></clipPath></defs>
+            <path d="M84 104 Q112 102 106 72" fill="none" stroke="#1C1E1B" stroke-width="10" stroke-linecap="round" style="transform-origin:84px 104px;transform-box:view-box;animation:{{ tailAnim }}"></path><path d="M84 104 Q112 102 106 72" fill="none" stroke="#2E2E30" stroke-width="5" stroke-linecap="round" style="transform-origin:84px 104px;transform-box:view-box;animation:{{ tailAnim }}"></path>
+            <ellipse cx="60" cy="94" rx="28" ry="22" fill="#FFFDF8"></ellipse><g clip-path="url(#mb)"><ellipse cx="84" cy="84" rx="16" ry="12" fill="#E9A262"></ellipse></g><ellipse cx="60" cy="94" rx="28" ry="22" fill="none" stroke="#1C1E1B" stroke-width="3.5"></ellipse>
+            <ellipse cx="47" cy="114" rx="9" ry="6" fill="#FFFDF8" stroke="#1C1E1B" stroke-width="3" style="transform-box:fill-box;animation:{{ pawA }}"></ellipse><ellipse cx="73" cy="114" rx="9" ry="6" fill="#FFFDF8" stroke="#1C1E1B" stroke-width="3" style="transform-box:fill-box;animation:{{ pawB }}"></ellipse>
+            <polygon points="28,40 34,6 56,26" fill="#E9A262" stroke="#1C1E1B" stroke-width="3.5" stroke-linejoin="round" style="transform-origin:42px 34px;transform-box:view-box;animation:{{ earAnim }}"></polygon><polygon points="92,40 86,6 64,26" fill="#2E2E30" stroke="#1C1E1B" stroke-width="3.5" stroke-linejoin="round"></polygon>
+            <ellipse cx="60" cy="50" rx="36" ry="30" fill="#FFFDF8"></ellipse><g clip-path="url(#mh)"><ellipse cx="34" cy="28" rx="30" ry="22" fill="#E9A262"></ellipse><ellipse cx="88" cy="28" rx="28" ry="24" fill="#2E2E30"></ellipse></g><ellipse cx="60" cy="50" rx="36" ry="30" fill="none" stroke="#1C1E1B" stroke-width="3.5"></ellipse>
+            <g opacity="{{ eyO }}" style="transform-origin:60px 52px;transform-box:view-box;animation:{{ eyeBlink }}"><circle cx="46" cy="52" r="9.5" fill="#F4EFC8" stroke="#1C1E1B" stroke-width="2.5"></circle><circle cx="47.5" cy="53" r="8" fill="#141414"></circle><circle cx="74" cy="52" r="9.5" fill="#F4EFC8" stroke="#1C1E1B" stroke-width="2.5"></circle><circle cx="72.5" cy="53" r="8" fill="#141414"></circle></g><g opacity="{{ eyD }}"><path d="M36 40 L52 44" stroke="#1C1E1B" stroke-width="3" stroke-linecap="round"></path><path d="M84 40 L68 44" stroke="#1C1E1B" stroke-width="3" stroke-linecap="round"></path></g><g opacity="{{ eyS }}" fill="none" stroke="#1C1E1B" stroke-width="3.5" stroke-linecap="round"><path d="M38 54 Q46 60 54 54"></path><path d="M66 54 Q74 60 82 54"></path><text x="92" y="18" font-size="18" font-weight="700" fill="#67645A" stroke="none" style="animation:{{ zAnim }}">z</text><text x="104" y="4" font-size="13" font-weight="700" fill="#67645A" stroke="none" style="animation:{{ zAnim }};animation-delay:1.2s">z</text></g><g opacity="{{ eyH }}" fill="none" stroke="#1C1E1B" stroke-width="3.5" stroke-linecap="round"><path d="M38 56 Q46 46 54 56"></path><path d="M66 56 Q74 46 82 56"></path></g>
+            <polygon points="56.5,62 63.5,62 60,66.5" fill="#E9A5B4"></polygon><path d="M38 74 Q60 84 82 74" fill="none" stroke="#2E2E30" stroke-width="5" stroke-linecap="round"></path><circle cx="60" cy="81" r="4.5" fill="#E8CB6A" stroke="#1C1E1B" stroke-width="2"></circle></svg>
+        </div></div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ catNod }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;right:14px;bottom:150px;z-index:6;pointer-events:none;animation:nodIn .95s ease-out forwards;filter:{{ catFilt }}">
+        <svg width="46" height="42" viewBox="0 0 120 110"><defs><clipPath id="nh"><ellipse cx="60" cy="58" rx="44" ry="38"></ellipse></clipPath></defs><polygon points="22,42 30,6 56,28" fill="#E9A262" stroke="#1C1E1B" stroke-width="4"></polygon><polygon points="98,42 90,6 64,28" fill="#2E2E30" stroke="#1C1E1B" stroke-width="4"></polygon><ellipse cx="60" cy="58" rx="44" ry="38" fill="#FFFDF8"></ellipse><g clip-path="url(#nh)"><ellipse cx="30" cy="32" rx="36" ry="27" fill="#E9A262"></ellipse><ellipse cx="94" cy="32" rx="34" ry="29" fill="#2E2E30"></ellipse></g><ellipse cx="60" cy="58" rx="44" ry="38" fill="none" stroke="#1C1E1B" stroke-width="4"></ellipse><g fill="none" stroke="#1C1E1B" stroke-width="4" stroke-linecap="round"><path d="M34 62 Q43 52 52 62"></path><path d="M68 62 Q77 52 86 62"></path></g><polygon points="56,72 64,72 60,77" fill="#E9A5B4"></polygon></svg>
+      </div>
+    </sc-if>
+    <sc-if value="{{ catMenu }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeMenu }}" style="position:absolute;inset:0;z-index:8;background:rgba(0,0,0,.08)">
+        <div onClick="{{ stop }}" style="position:absolute;left:{{ menuX }}px;top:{{ menuY }}px;width:236px;padding:6px;border-radius:18px;background:var(--sf);border:1px solid var(--ln);box-shadow:0 12px 32px rgba(0,0,0,.2);display:flex;flex-direction:column;animation:pop .18s">
+          <span style="font-size:11.5px;color:var(--mu);padding:8px 12px 4px">Мао поможет</span>
+          <sc-for list="{{ menuItems }}" as="mi" hint-placeholder-count="3"><button onClick="{{ mi.go }}" style="height:44px;border:0;border-radius:14px;background:transparent;color:var(--ink);font-size:14.5px;text-align:left;padding:0 12px;cursor:pointer" style-hover="background:var(--sf2)">{{ mi.l }}</button></sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ false }}"><sc-if value="{{ showCatBtn }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ openChatBtn }}" aria-label="Чат с Мао" style="position:absolute;right:16px;bottom:86px;z-index:6;width:52px;height:52px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);box-shadow:0 6px 18px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0"><svg width="34" height="31" viewBox="0 0 120 110"><polygon points="22,42 30,6 56,28" fill="#E9A262" stroke="#1C1E1B" stroke-width="5"></polygon><polygon points="98,42 90,6 64,28" fill="#2E2E30" stroke="#1C1E1B" stroke-width="5"></polygon><ellipse cx="60" cy="58" rx="44" ry="38" fill="#FFFDF8" stroke="#1C1E1B" stroke-width="5"></ellipse><circle cx="44" cy="61" r="10" fill="#141414"></circle><circle cx="76" cy="61" r="10" fill="#141414"></circle></svg></button>
+    </sc-if></sc-if>
+
+    <sc-if value="{{ hasUpd }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:16px;right:16px;bottom:86px;padding:12px 10px 12px 16px;border-radius:14px;background:var(--sf);border:1px solid var(--ln);box-shadow:0 10px 30px rgba(0,0,0,.18);display:flex;align-items:center;gap:10px;z-index:8;animation:toastIn .25s">
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:600">{{ updT }}</span><span style="font-size:12.5px;line-height:1.35;color:var(--mu)">{{ updSub }}</span></div>
+        <button onClick="{{ updGo }}" style="height:38px;padding:0 14px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">{{ updBtn }}</button>
+        <button onClick="{{ updX }}" aria-label="Позже" style="width:30px;height:38px;border:0;background:none;color:var(--mu);font-size:19px;cursor:pointer;flex:none">×</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;left:16px;right:16px;bottom:{{ toastBottom }}px;padding:13px 14px 13px 16px;border-radius:14px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;z-index:9;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:toastIn .25s">
+        <span>{{ toastMsg }}</span>
+        <sc-if value="{{ toastUndo }}" hint-placeholder-val="{{ false }}"><button onClick="{{ undo }}" style="border:0;background:none;color:var(--bg);font-weight:700;font-size:13.5px;cursor:pointer;padding:0">Отменить</button></sc-if>
+      </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const KEY='mao-v1';
+const T='问候|wènhòu|Приветствие;数字|shùzì|Числа;人|rén|Люди;食物|shíwù|Еда;交通|jiāotōng|Транспорт;购物|gòuwù|Покупки;天气|tiānqì|Погода;颜色|yánsè|Цвета;家庭|jiātíng|Семья;职业|zhíyè|Профессии;爱好|àihào|Хобби;城市|chéngshì|Город;健康|jiànkāng|Здоровье;学习|xuéxí|Учёба;时间|shíjiān|Время;房子|fángzi|Дом;衣服|yīfu|Одежда;动物|dòngwù|Животные;运动|yùndòng|Спорт;旅行|lǚxíng|Путешествия;工作|gōngzuò|Работа;身体|shēntǐ|Тело;情绪|qíngxù|Эмоции;自然|zìrán|Природа;节日|jiérì|Праздники;饭馆|fànguǎn|Ресторан;网络|wǎngluò|Интернет;方向|fāngxiàng|Направления;电影|diànyǐng|Кино;钱|qián|Деньги'.split(';').map(s=>s.split('|'));
+const RAW=`1|你好|nǐ hǎo|здравствуйте|k
+1|谢谢|xièxie|спасибо|k
+1|再见|zàijiàn|до свидания|k1
+1|我|wǒ|я|k
+1|你|nǐ|ты|k
+1|是|shì|быть, являться|k
+1|不|bù|не, нет|k1
+2|一|yī|один|k
+2|二|èr|два|k
+2|三|sān|три|k
+2|十|shí|десять|k1
+2|百|bǎi|сто|k
+2|几|jǐ|сколько (до 10)|h
+3|人|rén|человек|k
+3|朋友|péngyou|друг|k1
+3|老师|lǎoshī|учитель|k
+3|学生|xuésheng|студент|k
+3|医生|yīshēng|врач|h
+4|茶|chá|чай|k
+4|米饭|mǐfàn|варёный рис|k1
+4|水|shuǐ|вода|k
+4|吃|chī|есть, кушать|k
+4|喝|hē|пить|k
+4|苹果|píngguǒ|яблоко|k1
+5|火车|huǒchē|поезд|k
+5|出租车|chūzūchē|такси|k
+5|飞机|fēijī|самолёт|k1
+5|坐|zuò|сидеть; ехать на|h
+6|买|mǎi|покупать|h
+6|钱|qián|деньги|k
+6|多少|duōshao|сколько|k1
+6|商店|shāngdiàn|магазин|k
+6|贵|guì|дорогой|k
+7|天气|tiānqì|погода|k
+7|下雨|xià yǔ|идёт дождь|k1
+7|冷|lěng|холодный|k
+7|热|rè|жаркий|k
+8|红色|hóngsè|красный|k
+8|白色|báisè|белый|h
+8|黑色|hēisè|чёрный|k
+8|颜色|yánsè|цвет|k1
+9|妈妈|māma|мама|k
+9|爸爸|bàba|папа|k
+9|哥哥|gēge|старший брат|h
+9|姐姐|jiějie|старшая сестра|k
+9|弟弟|dìdi|младший брат|k
+9|妹妹|mèimei|младшая сестра|k
+9|爷爷|yéye|дедушка (по отцу)|h
+9|奶奶|nǎinai|бабушка (по отцу)|k
+9|姥姥|lǎolao|бабушка (по матери)|k
+9|姥爷|lǎoye|дедушка (по матери)|k
+9|儿子|érzi|сын|n
+9|女儿|nǚ'ér|дочь|n
+9|家|jiā|семья; дом|n
+9|孩子|háizi|ребёнок|n
+9|丈夫|zhàngfu|муж|n
+9|妻子|qīzi|жена|n
+9|父母|fùmǔ|родители|n
+9|叔叔|shūshu|дядя|n
+9|阿姨|āyí|тётя|n
+9|家人|jiārén|родные|n`;
+const MN={'妈妈':'女~женщина;马~mǎ, звук|Женщина + «ма» по звучанию.','爸爸':'父~отец;巴~bā, звук|Отец + «ба» по звучанию.','姐姐':'女~женщина;且~qiě, звук|Женщина + звук «цзе».','妹妹':'女~женщина;未~«ещё не»|Ещё не выросшая — младшая сестра.','奶奶':'女~женщина;乃~nǎi, звук|Женщина + «най».','儿子':'儿~ребёнок;子~младенец|Оба знака — дети.','女儿':'女~женщина;儿~ребёнок|Ребёнок-девочка.','家':'宀~крыша;豕~свинья|Свинья под крышей — достаток в доме.','孩子':'子~ребёнок;亥~hài, звук|Ребёнок + «хай».','你':'亻~человек;尔~ěr, «ты»|Человек, к которому обращаются.','谢谢':'讠~речь;射~shè, звук|Ключ «речь» + звук «се».','再见':'再~снова;见~видеть|«Снова увидимся».','丈夫':'丈~мера длины;夫~мужчина|Взрослый мужчина.','父母':'父~отец;母~мать|Отец + мать.','妻子':'妻~жена;子~суффикс|Жена.','好':'女~женщина;子~ребёнок|Мать с ребёнком — хорошо.'};
+const EX={'妈妈':'我妈妈是老师。|Wǒ māma shì lǎoshī.|Моя мама — учитель.','爸爸':'爸爸在家。|Bàba zài jiā.|Папа дома.','哥哥':'我有一个哥哥。|Wǒ yǒu yí ge gēge.|У меня есть старший брат.','姐姐':'姐姐喜欢看书。|Jiějie xǐhuan kàn shū.|Сестра любит читать.','弟弟':'弟弟八岁。|Dìdi bā suì.|Младшему брату восемь лет.','妹妹':'妹妹很漂亮。|Mèimei hěn piàoliang.|Сестрёнка очень красивая.','爷爷':'爷爷喜欢喝茶。|Yéye xǐhuan hē chá.|Дедушка любит пить чай.','奶奶':'我去看奶奶。|Wǒ qù kàn nǎinai.|Я еду к бабушке.','儿子':'他有两个儿子。|Tā yǒu liǎng ge érzi.|У него два сына.','女儿':"她女儿三岁。|Tā nǚ'ér sān suì.|Её дочери три года.",'家':'我家有四口人。|Wǒ jiā yǒu sì kǒu rén.|В моей семье четыре человека.','孩子':'你有孩子吗？|Nǐ yǒu háizi ma?|У вас есть дети?','丈夫':'她丈夫是医生。|Tā zhàngfu shì yīshēng.|Её муж — врач.','妻子':'我妻子在工作。|Wǒ qīzi zài gōngzuò.|Моя жена на работе.','父母':'我父母住在北京。|Wǒ fùmǔ zhù zài Běijīng.|Мои родители живут в Пекине.','叔叔':'叔叔是司机。|Shūshu shì sījī.|Дядя — водитель.','阿姨':'阿姨，你好！|Āyí, nǐ hǎo!|Здравствуйте, тётя!','你好':'你好，我叫安娜。|Nǐ hǎo, wǒ jiào Ānnà.|Здравствуйте, меня зовут Анна.','朋友':'他是我的好朋友。|Tā shì wǒ de hǎo péngyou.|Он мой хороший друг.','买':'我想买苹果。|Wǒ xiǎng mǎi píngguǒ.|Я хочу купить яблоки.'};
+const DICT=['友谊|友誼|yǒuyì|дружба','友好||yǒuhǎo|дружественный','猫|貓|māo|кошка','狗||gǒu|собака','学习|學習|xuéxí|учиться','中文||Zhōngwén|китайский язык','工作||gōngzuò|работа; работать','医院|醫院|yīyuàn|больница','喜欢|喜歡|xǐhuan|нравиться','漂亮||piàoliang|красивый','大||dà|большой','小||xiǎo|маленький','妈||mā|мама (разг.)','马|馬|mǎ|лошадь','爱|愛|ài|любить','姐妹||jiěmèi|сёстры','兄弟||xiōngdì|братья','亲戚|親戚|qīnqi|родственники','好||hǎo|хороший'].map(s=>{const [h,t,p,m]=s.split('|');return {h,t,p,m,hsk:true};});
+const WF=['слово','слова','слов'];
+const pl=(n,f)=>{const a=Math.abs(n)%100,b=a%10;return f[a>10&&a<20?2:b===1?0:b>=2&&b<=4?1:2];};
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const uniq=a=>[...new Set(a)];
+const dk=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+const ago=n=>new Date(Date.now()-n*864e5);
+const DOW=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const pISO=t=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(t||'');return m?new Date(+m[1],+m[2]-1,+m[3]):null;};
+const day0=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
+const addM=(d,m)=>{const x=new Date(d);x.setMonth(x.getMonth()+m);return x;};
+const DF=['день','дня','дней'];
+const fmtD=d=>d?d.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'}).replace(' г.',''):'';
+// plan: goal {n,date,offOn,off:[0..6]}; known = learned words; doneToday = new words learned today
+function planOf(g,known,doneToday,from){
+  from=day0(from||new Date());const end=pISO(g&&g.date);if(!g||!end)return null;
+  let all=0,study=0,off=0;const isOff=d=>!!g.offOn&&(g.off||[]).includes(d.getDay());
+  for(let d=new Date(from);d<=end;d.setDate(d.getDate()+1)){all++;if(isOff(d))off++;else study++;}
+  const pre=Math.max(0,+g.pre||0);const before=Math.max(0,known+pre-(doneToday||0));const left=Math.max(0,(+g.n||0)-before);
+  const todayOff=isOff(from);const past=end<from;
+  const quota=past?left:(study?(todayOff?0:Math.ceil(left/study)):left);
+  return {all,study,off,left,quota,todayOff,past,end,perPlain:all?Math.ceil(left/all):left,leftNow:Math.max(0,(+g.n||0)-known-pre)};
+}
+// Mao 2.4: old saves had one field perDay for both things. Now: lessonSize = how many words a new day gets (15/20/25/30),
+// dailyNew = pace when there is no goal (with a goal the pace comes from planOf). Old perDay -> lessonSize.
+function migrate(d){if(!d)return d;if(d.lessonSize==null){const p=+d.perDay||0;const opts=[15,20,25,30];const ls=p?opts.reduce((a,b)=>Math.abs(b-p)<Math.abs(a-p)?b:a):20;d={...d,lessonSize:ls};}if(d.dailyNew==null)d={...d,dailyNew:20};return d;}
+const TM={a:'āáǎà',e:'ēéěè',i:'īíǐì',o:'ōóǒò',u:'ūúǔù','ü':'ǖǘǚǜ'};
+const toMarks=s=>s.replace(/([a-zA-ZüÜ:]+?)([1-5])/g,(m,syl,t)=>{syl=syl.replace(/u:|v/g,'ü');if(t==='5')return syl;const k=+t-1,low=syl.toLowerCase();let i=low.search(/[ae]/);if(i<0)i=low.indexOf('ou');if(i<0)for(let j=low.length-1;j>=0;j--)if('iouü'.includes(low[j])){i=j;break;}if(i<0)return syl;return syl.slice(0,i)+TM[low[i]][k]+syl.slice(i+1);});
+const strip=s=>(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[\s'0-9:]/g,'').replace(/v/g,'u');
+const seedWords=()=>RAW.trim().split('\n').map((l,i)=>{const [d,h,p,m,c]=l.split('|');const mn=MN[h],ex=EX[h];return {id:i+1,d:+d,h,p,m,s:{k:'know',h:'hard',n:'new'}[c[0]],due:c[1]==='1',hsk:true,mn:mn?{parts:mn.split('|')[0].split(';').map(x=>x.split('~')),note:mn.split('|')[1]}:null,ex:ex?ex.split('|'):null};});
+const seedLog=()=>{const M=[0,48,0,55,38,71,45,0,58,90,47,62,35,80,55,44,-1,61,73,34];const o={};M.forEach((m,i)=>{const k=dk(ago(19-i));if(m<0)o[k]={fz:1,min:0,nw:0,rv:0};else if(m)o[k]={min:m,nw:i===19?10:Math.round(m*.4),rv:Math.round(m*.55)};});return o;};
+
+class Component extends DCLogic {
+  fileRef=React.createRef();
+  mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+  bulkRef=React.createRef();
+  importWords(e){const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(txt=>this.importText(txt));}
+  importText(txt){{try{let d=JSON.parse(txt);if(!Array.isArray(d))d=d.words;if(!Array.isArray(d))throw 0;let s=this.state;let id=s.nextId;const have=new Set(s.words.map(w=>w.h));const add=d.filter(o=>o&&o.h&&!have.has(o.h)).map(o=>{const e=window.EDict&&EDict.find(String(o.h));return {id:id++,h:String(o.h),p:toMarks(String(o.p||''))||(e&&e.p)||'',m:String(o.m||o.ru||(e&&e.m)||o.en||(e&&e.en)||''),d:+o.d||+o.lesson||s.cur||1,s:'new',due:false,hsk:o.hsk!=null?!!o.hsk:!!(e&&e.hsk),ex:o.ex||null,mn:null};});if(!s.cur&&add.length&&!s.lessons.length){s={...s,cur:1};}const ls=[...s.lessons];add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);this.upd({words:[...s.words,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0});this.toast('Загружено '+add.length+' '+pl(add.length,WF)+(d.length>add.length?' · '+(d.length-add.length)+' уже были':''));}catch(er){this.toast('Не удалось прочитать файл');}}}
+  PK=['wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
+  defaults(){return {lessonSize:20,dailyNew:20,pal:'indigo',th:'system',perDay:10,method:'snow',chunk:5,quickN:15,hint:'ru',rate:0.8,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'off'};}
+  load(){try{const d=JSON.parse(localStorage.getItem(KEY));return d&&d.words?d:null;}catch(e){return null;}}
+  state={...this.defaults(),...(migrate(this.load())||{}),tab:'home',screen:(this.load()||{}).onboarded?'tab':'goal',obStep:0,gd:null,topicOwn:'',mN:null,wRes:null,wIdx:0,bulkT:'',bulkAlt:{},bulkSkip:{},bulkFrom:'tab',apiMs:'',apiOk:false,q:'',catI:0,catFlip:false,catSay:null,catWalking:false,chat:[{r:'cat',t:'Мяу! Я Мао 猫 māo. Спроси про любое слово, грамматику — или попроси составить фразы со словами дня.'}],chatQ:'',chatBusy:false,wSeg:'lessons',filter:'all',view:null,study:null,quiz:null,result:null,ex:null,edit:null,toast:null,man:{h:'',p:'',m:''},manOpen:false,topicSel:null,clBusy:false};
+  save(){const o={};this.PK.forEach(k=>{o[k]=this.state[k];});try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+  upd(p,cb){this.setState(p,()=>{this.save();cb&&cb();});}
+  chatRef=React.createRef();
+  CATPOS=[{x:262,y:236},{x:24,y:318},{x:286,y:404},{x:150,y:470},{x:18,y:560},{x:290,y:628},{x:170,y:640}];
+  SAYS=['Мяу','Нужна помощь?','Мур-р…','Объяснить слово?','Мяу! 喵 miāo','Сделаем перерыв?'];
+  wcRef=React.createRef();
+  wcEl(){return this.wcCanvas||this.phoneRef.current?.querySelector('canvas')||null;}
+  wPt(e){const c=this.wcEl(),r=c.getBoundingClientRect(),k=c.width/r.width;return [(e.clientX-r.left)*k,(e.clientY-r.top)*k];}
+  wDown(e){const c=e.currentTarget||this.wcEl();if(!c)return;e.preventDefault();
+    // palm: a wide touch is ignored; a second finger while drawing is ignored
+    if(e.pointerType==='touch'&&((e.width||0)>40||(e.height||0)>40))return;if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
+    this.wcCanvas=c;this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;const [x,y]=this.wPt(e),g=c.getContext('2d');
+    this.wBase={thin:7,mid:12,bold:20}[this.state.wWidth||'mid'];this.wf=1;this.lt=performance.now();g.strokeStyle=getComputedStyle(c).color;g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);if(!this.state.wHas)this.setState({wHas:true});}
+  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const [x,y]=this.wPt(e),g=c.getContext('2d'),[px,py]=this.lp0;
+    // «Кисть»: faster = thinner, slower = thicker (w = base × (1.4 − v/vmax), from 0.5 to 1.4 of base), smoothed
+    const now=performance.now(),dt=Math.max(1,now-this.lt),v=Math.hypot(x-px,y-py)/dt;this.lt=now;
+    if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
+    const mx=(x+px)/2,my=(y+py)/2;g.lineWidth=this.wBase*this.wf;g.beginPath();g.moveTo(this.lm[0],this.lm[1]);g.quadraticCurveTo(px,py,mx,my);g.stroke();this.lm=[mx,my];this.lp0=[x,y];
+    const S=this.wS&&this.wS[this.wS.length-1];if(S)S.push([x/c.width,y/c.height,this.wf]);}
+  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;this.wSnapLast();this.wAuto();}
+  // compound word, one cell per character: when the character has all its strokes and the finger rests 1 s, go to the next one
+  wAuto(){const s=this.state,qz=s.quiz;clearTimeout(this.wAutoT);if(!qz||qz.rev)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const n=[...w.h].length,idx=s.wIdx||0;
+    if(n<2||(s.wMulti||'one')!=='one'||idx>=n-1)return;const R=this.wCurRef();if(!R||(this.wS||[]).length<R.length)return;
+    this.wAutoT=setTimeout(()=>{const q2=this.state.quiz;if(!this.drw&&q2&&!q2.rev&&q2.i===qz.i&&(this.state.wIdx||0)===idx)this.wNext();},1000);}
+  wUndo(){clearTimeout(this.wAutoT);if(this.wS&&this.wS.length){this.wS.pop();if(this.wMeta)this.wMeta.length=Math.min(this.wMeta.length,this.wS.length);this.wMiss={};this.setState({wHas:this.wS.length>0,wN:this.wS.length});this.wRender();return;}
+    const idx=this.state.wIdx||0;if(idx>0)this.wGo(idx-1);}
+  wCurRef(){const s=this.state,qz=s.quiz;if(!qz||!window.WCheck||!WCheck.ready())return null;const w=this.W(qz.ids[qz.i]);if(!w)return null;const chars=[...w.h];if(chars.length>1&&(s.wMulti||'one')!=='one')return null;return WCheck.ref(chars[Math.min(s.wIdx||0,chars.length-1)]);}
+  wSnapLast(){const s=this.state;this.wS=this.wS||[];this.wMeta=this.wMeta||[];this.wMiss=this.wMiss||{};const S=this.wS[this.wS.length-1];if(!S)return;
+    const R=this.wCurRef();if(!R||(s.wSnap||'on')==='off'){this.wMeta[this.wS.length-1]={k:-1};return;}
+    const used=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k));const strict=(s.wCheck||'strict')!=='soft';
+    let k=-1,best=1;if(strict){for(let i=0;i<R.length;i++)if(!used.has(i)){k=i;break;}if(k>=0)best=WCheck.strokeDist(S,R[k],false);}
+    else{for(let i=0;i<R.length;i++){if(used.has(i))continue;const d=WCheck.strokeDist(S,R[i],true);if(d<best){best=d;k=i;}}}
+    const lenU=S.length>1?S.reduce((a,p,i)=>i?a+Math.hypot(p[0]-S[i-1][0],p[1]-S[i-1][1]):0,0):0;
+    if(k>=0&&best<0.14&&(lenU>0.02||R[k].length<4)){this.wS[this.wS.length-1]=R[k].map(p=>[p[0],p[1]]);this.wMeta[this.wS.length-1]={k};}
+    else{this.wMeta[this.wS.length-1]={k:-1};const exp=strict?k:[...Array(R.length).keys()].find(i=>!used.has(i));if(exp!=null&&exp>=0)this.wMiss[exp]=(this.wMiss[exp]||0)+1;
+      if((s.wOrderHint||'err')!=='off'&&exp!=null&&exp>=0){const j=this.wS.length-1;this.wFlash=j;
+        if(this.wMiss[exp]>=3){this.wS[j]=R[exp].map(p=>[p[0],p[1]]);this.wMeta[j]={k:exp,help:1};this.wHelped=(this.wHelped||0)+1;this.wFlash=-1;this.wMiss[exp]=0;this.toast('Черту дорисовала подсказка — запомните её');}
+        else setTimeout(()=>{if(this.wFlash===j&&this.wS&&this.wS.length===j+1&&this.wMeta[j]&&this.wMeta[j].k<0){this.wS.pop();this.wMeta.length=j;this.wFlash=-1;this.setState({wHas:this.wS.length>0,wN:this.wS.length});this.wRender();}},600);}}
+    if(this.wMeta[this.wS.length-1]&&this.wMeta[this.wS.length-1].k>=0)this.wHint=false;
+    this.setState({wN:this.wS.length});this.wRender();}
+  wBrush(g,pts,w){if(!pts.length)return;const n=pts.length;g.lineCap='round';g.lineJoin='round';
+    if(n===1){g.lineWidth=w;g.beginPath();g.moveTo(pts[0][0],pts[0][1]);g.lineTo(pts[0][0]+.1,pts[0][1]+.1);g.stroke();return;}
+    for(let i=1;i<n;i++){const t=i/(n-1);g.lineWidth=w*(pts[i][2]||1)*(t>.7?1-(t-.7)/.3*.55:t<.12?.8+t/.12*.2:1);g.beginPath();g.moveTo(pts[i-1][0],pts[i-1][1]);g.lineTo(pts[i][0],pts[i][1]);g.stroke();}}
+  wRender(){const c=this.wcEl();if(!c)return;const s=this.state,qz=s.quiz;if(!qz||qz.rev)return;const g=c.getContext('2d'),W=c.width,H=c.height;const css=getComputedStyle(this.phoneRef.current||document.body);const ink=getComputedStyle(c).color,mu=css.getPropertyValue('--mu').trim()||'#888',grid=css.getPropertyValue('--grid').trim()||'rgba(0,0,0,.15)',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
+    const lw={thin:7,mid:12,bold:20}[s.wWidth||'mid'];g.clearRect(0,0,W,H);g.setLineDash([]);const R=this.wCurRef();const P=p=>[p[0]*W,p[1]*H,p[2]];
+    if(R&&(s.wGhost||'off')==='on'){g.strokeStyle=grid;R.forEach(st=>this.wBrush(g,st.map(P),lw*1.6));}
+    const red=css.getPropertyValue('--seal').trim()||'#c8372d',prc=css.getPropertyValue('--pr').trim()||'#5b5bd6';
+    (this.wS||[]).forEach((st,j)=>{const m=(this.wMeta||[])[j];const snapped=m&&m.k>=0;g.globalAlpha=snapped?1:.55;g.strokeStyle=snapped?ink:(j===this.wFlash?red:mu);this.wBrush(g,st.map(P),snapped?lw*1.25:lw*.8);g.globalAlpha=1;});
+    if(R){const used=new Set((this.wMeta||[]).filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));const oh=s.wOrderHint||'err';
+      if(exp!=null&&(this.wHint||oh==='always'||(oh!=='off'&&(this.wMiss||{})[exp]>=1))){const st=R[exp];g.strokeStyle=prc;g.globalAlpha=.85;g.lineWidth=5;g.setLineDash([12,10]);g.beginPath();st.forEach((p,i)=>{const q=P(p);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1]);});g.stroke();g.setLineDash([]);
+        // start point and an arrow at the end: where to begin and which way to go
+        const a=P(st[0]);g.fillStyle=prc;g.beginPath();g.arc(a[0],a[1],11,0,7);g.fill();g.fillStyle='#fff';g.font='600 13px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(exp+1),a[0],a[1]+.5);
+        if(st.length>1){const e=P(st[st.length-1]),f=P(st[Math.max(0,st.length-3)]);const an=Math.atan2(e[1]-f[1],e[0]-f[0]);g.fillStyle=prc;g.beginPath();g.moveTo(e[0]+Math.cos(an)*14,e[1]+Math.sin(an)*14);g.lineTo(e[0]+Math.cos(an+2.5)*14,e[1]+Math.sin(an+2.5)*14);g.lineTo(e[0]+Math.cos(an-2.5)*14,e[1]+Math.sin(an-2.5)*14);g.closePath();g.fill();}
+        g.globalAlpha=1;}}}
+  wClear(){clearInterval(this.wAnimT);const c=this.wcEl();if(c)c.getContext('2d').clearRect(0,0,c.width,c.height);this.wS=[];this.wMeta=[];this.wMiss={};this.wHint=false;if(this.state.wHas||this.state.wN)this.setState({wHas:false,wN:0});setTimeout(()=>this.wRender(),30);}
+  cardAnimRun(h){const c=this.cardCvEl;if(!c||!window.WCheck)return;WCheck.load().then(()=>{const chars=[...h].filter(ch=>WCheck.has(ch));if(!chars.length)return this.toast('Порядок черт для этого слова не найден');
+    const g=c.getContext('2d'),W=c.width,H=c.height,n=chars.length,cw=1/n;const prc=getComputedStyle(this.phoneRef.current||document.body).getPropertyValue('--ink').trim()||'#222';clearInterval(this.cardT);g.clearRect(0,0,W,H);g.lineCap='round';g.lineJoin='round';g.strokeStyle=prc;g.lineWidth=n>1?9:15;
+    const segs=[];chars.forEach((ch,k)=>(WCheck.ref(ch)||[]).forEach(st=>segs.push({k,st})));const P=(k,p)=>[(k*cw+p[0]*cw)*W,(.5+(p[1]-.5)*cw)*H];let si=0,pi=0;this.setState({cardAn:h});
+    this.cardT=setInterval(()=>{if(this.state.cardAn!==h||this._cardH!==h){clearInterval(this.cardT);g.clearRect(0,0,W,H);if(this.state.cardAn===h)this.setState({cardAn:null});return;}const sg=segs[si];if(!sg){clearInterval(this.cardT);setTimeout(()=>{if(this.state.cardAn===h){g.clearRect(0,0,W,H);this.setState({cardAn:null});}},1200);return;}
+      if(pi>0){const a=P(sg.k,sg.st[pi-1]),b=P(sg.k,sg.st[pi]);g.beginPath();g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.stroke();}pi++;if(pi>=sg.st.length){si++;pi=0;}},24);});}
+  wSave(){const i=this.state.wIdx||0;this.wCells=this.wCells||[];this.wCells[i]={S:(this.wS||[]).slice(),M:(this.wMeta||[]).slice()};}
+  wGo(k){clearTimeout(this.wAutoT);clearInterval(this.wAnimT);this.wSave();const c=(this.wCells||[])[k]||{S:[],M:[]};this.wS=c.S.slice();this.wMeta=c.M.slice();this.wMiss={};this.wHint=false;this.setState({wIdx:k,wHas:this.wS.length>0,wN:this.wS.length},()=>this.wRender());}
+  wReset(){clearTimeout(this.wAutoT);this.wCells=[];this.wHelped=0;this.wWarned=false;this.wHint=false;this.wS=[];this.wClear();if(this.state.wWarn)this.setState({wWarn:null});if(this.state.wRes||this.state.wIdx)this.setState({wRes:null,wIdx:0});}
+  wNext(){this.wGo((this.state.wIdx||0)+1);}
+  wLayout(n){const fs=n<=1?186:n===2?114:n===3?80:62;const W=288;const tot=Math.min(W,fs*n);return {x0:(W-tot)/2/W,w:tot/W};}
+  wDraw(res,h){const c=this.wcEl();if(!c)return;const g=c.getContext('2d'),W=c.width,H=c.height,st=getComputedStyle(c),ink=st.color;const css=getComputedStyle(this.phoneRef.current||document.body);const red=css.getPropertyValue('--seal').trim()||'#c0392b',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
+    const n=[...h].length,one=(this.state.wMulti||'one')==='one'&&n>1,lay=this.wLayout(n);g.clearRect(0,0,W,H);g.lineCap='round';g.lineJoin='round';
+    const lw={thin:7,mid:12,bold:20}[this.state.wWidth||'mid'];
+    const groups=this.wGroups||[];
+    const toCell=(k,p)=>one?[(lay.x0+(k+.5)*lay.w/n)*W+(p[0]-.5)*lay.w/n*W,(.5+(p[1]-.5)*Math.min(1,lay.w/n*1.15))*H]:[p[0]*W,p[1]*H];
+    groups.forEach((strokes,k)=>{const pr=res&&res.per&&res.per[k];const bad=new Set(pr&&pr.badUser||[]);
+      strokes.forEach((s,j)=>{g.strokeStyle=bad.has(j)?red:ink;g.lineWidth=one?lw*.6:lw;g.setLineDash([]);g.beginPath();s.forEach((p,i)=>{const q=one?toCell(k,p):(this.wRaw?p:[p[0]*W,p[1]*H]);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1]);});g.stroke();});
+      if(pr&&pr.ref&&pr.badRef&&pr.badRef.length){g.strokeStyle=ac;g.lineWidth=3;g.setLineDash([8,8]);
+        const cx0=one?(lay.x0+k*lay.w/n):(n>1?lay.x0+k*lay.w/n:0),cw=one||n>1?lay.w/n:1;
+        pr.badRef.forEach(ri=>{const s=pr.ref[ri];g.beginPath();s.forEach((p,i)=>{const x=(cx0+p[0]*cw)*W,y=(n>1?(.5+(p[1]-.5)*Math.min(1,cw*1.15)):p[1])*H;if(i)g.lineTo(x,y);else g.moveTo(x,y);});g.stroke();});g.setLineDash([]);}});}
+  async wCheckNow(){const s=this.state,qz=s.quiz;if(!qz)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const chars=[...w.h].filter(ch=>/[㐀-鿿]/.test(ch));
+    this.wSave();const C=this.wCells||[];const all=(s.wMulti||'one')==='one'&&chars.length>1?chars.map((_,k)=>(C[k]&&C[k].S)||[]):[this.wS||[]];const any=all.some(x=>x&&x.length);if(!any||!chars.length||(s.wCheck||'strict')==='off'||!window.WCheck){this.wGroups=null;return;}
+    await WCheck.load();const one=(s.wMulti||'one')==='one'&&chars.length>1;let groups;
+    if(one){groups=chars.map((_,k)=>all[k]||[]);}
+    else if(chars.length>1){const lay=this.wLayout(chars.length);groups=WCheck.split(all.flat(),chars.length,lay.x0,lay.w);}
+    else groups=[all.flat()];
+    this.wGroups=one?groups:(chars.length>1?groups.map((g,k)=>{const lay=this.wLayout(chars.length);return g.map(st=>st.map(p=>[lay.x0+(k+p[0])*lay.w/chars.length,p[1]]));}):groups);
+    const r=WCheck.check(chars,groups,s.wCheck==='soft'?'soft':'strict');
+    if(r.nodata){this.setState({wRes:{nodata:true}});return;}
+    this.setState({wRes:r},()=>this.wDraw(r,w.h));}
+  wAnimOne(){const s=this.state,qz=s.quiz;if(!qz||qz.rev||!window.WCheck)return;const R=this.wCurRef();const c=this.wcEl();if(!R||!c)return this.toast('Порядок черт для этого знака не найден');
+    const g=c.getContext('2d'),W=c.width,H=c.height;const prc=getComputedStyle(this.phoneRef.current||document.body).getPropertyValue('--pr').trim()||'#5b5bd6';clearInterval(this.wAnimT);g.clearRect(0,0,W,H);g.lineCap='round';g.lineJoin='round';g.lineWidth=16;g.strokeStyle=prc;
+    let si=0,pi=0;this.wAnimT=setInterval(()=>{const st=R[si];if(!st){clearInterval(this.wAnimT);setTimeout(()=>this.wRender(),900);return;}if(pi>0){g.beginPath();g.moveTo(st[pi-1][0]*W,st[pi-1][1]*H);g.lineTo(st[pi][0]*W,st[pi][1]*H);g.stroke();}else{g.fillStyle=prc;g.globalAlpha=.9;g.font='600 22px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(si+1),st[0][0]*W-18,st[0][1]*H-18);g.globalAlpha=1;}pi++;if(pi>=st.length){si++;pi=0;}},26);}
+  wAnim(){const s=this.state,qz=s.quiz;if(!qz||!window.WCheck)return;const w=this.W(qz.ids[qz.i]);const c=this.wcEl();if(!w||!c)return;const chars=[...w.h];const n=chars.length,lay=this.wLayout(n);const g=c.getContext('2d'),W=c.width,H=c.height;const ac=getComputedStyle(this.phoneRef.current||document.body).getPropertyValue('--pr').trim()||'#333';
+    clearInterval(this.wAnimT);g.clearRect(0,0,W,H);const segs=[];chars.forEach((ch,k)=>{const R=WCheck.ref(ch)||[];R.forEach(st=>segs.push({k,st}));});let si=0,pi=0;g.lineCap='round';g.lineJoin='round';g.strokeStyle=ac;g.lineWidth=n>1?9:14;
+    this.wAnimT=setInterval(()=>{const sg=segs[si];if(!sg){clearInterval(this.wAnimT);return;}const cw=n>1?lay.w/n:1,cx0=n>1?lay.x0+sg.k*cw:0;const P=p=>[(cx0+p[0]*cw)*W,(n>1?(.5+(p[1]-.5)*Math.min(1,cw*1.15)):p[1])*H];
+      if(pi>0){const a=P(sg.st[pi-1]),b=P(sg.st[pi]);g.beginPath();g.moveTo(a[0],a[1]);g.lineTo(b[0],b[1]);g.stroke();}pi++;if(pi>=sg.st.length){si++;pi=0;}},28);}
+  componentDidUpdate(pp,ps){const st0=this.state;ps=ps||this._ps||{};this._ps={tab:st0.tab,screen:st0.screen,q:st0.q,chat:st0.chat};const b=st0.quiz,a=this._pq;this._pq=b?{i:b.i,round:b.round}:null;if((b&&(!a||a.i!==b.i||a.round!==b.round))||(a&&!b))this.wReset();if(ps.tab!==this.state.tab||ps.screen!==this.state.screen||ps.q!==this.state.q)setTimeout(()=>this.catPlace(),60);if(ps.chat!==this.state.chat&&this.chatRef.current)this.chatRef.current.scrollTop=1e6;}
+  phoneRef=React.createRef();
+  catPlace(){const ph=this.phoneRef.current;if(!ph)return;const s=this.state;const ps=ph.querySelectorAll('[data-perch]');const p=ps[s.catPerch||0];if(!p){if(s.catVis)this.setState({catVis:false});return;}
+    const R=ph.getBoundingClientRect(),r=p.getBoundingClientRect(),k=1;if(!r.width||!R.width){clearTimeout(this.cpr);this.cpr=setTimeout(()=>this.catPlace(),300);return;}const w=r.width/k;const x=(r.left-R.left)/k+12+(s.catFx??.8)*(w-80);const y=(r.top-R.top)/k-55;const vis=y>110&&y<R.height-150;
+    if(Math.abs(x-(s.catX||0))>.5||Math.abs(y-(s.catY||0))>.5||vis!==s.catVis)this.setState({catX:x,catY:y,catVis:vis});}
+  catWalk(){const s=this.state;if(s.screen!=='tab'||s.tab!=='home'||s.q||s.catWalking)return;if(!s.catVis){this.catPlace();return;}const md=this.catMood();if(md==='sleep'||md==='sad'||s.catMenu)return;const r=Math.random();clearTimeout(this.ct1);clearTimeout(this.ct2);
+    if(r<0.28){let fx=Math.random()*.9+.05;if(Math.abs(fx-(s.catFx??.8))<.3)fx=fx>.5?fx-.4:fx+.4;this.setState({catFx:fx,catFlip:fx<(s.catFx??.8),catWalking:true,catSay:null},()=>this.catPlace());
+      this.ct1=setTimeout(()=>{this.setState({catWalking:false});const tips=this.catTips();if(tips.length&&Math.random()<.5){const tp=tips[Math.floor(Math.random()*tips.length)];this.tipGo=tp.go;this.setState({catSay:tp.t});this.ct2=setTimeout(()=>this.setState({catSay:null}),5000);}},2800);}
+}
+  catMood(){const s=this.state;if(s.catMoodForce)return s.catMoodForce;const t=s.log[dk(new Date())]||{};const act=(t.min||0)+(t.nw||0)+(t.rv||0)>0;const away=s.lastActive?Math.round((new Date(dk(new Date()))-new Date(s.lastActive))/864e5):99;
+    if(!act)return away>=2?'sad':'sleep';if((t.nw||0)>=Math.max(1,this.quota())||(s.catHappyUntil||0)>Date.now())return 'happy';return 'awake';}
+  catTips(){const s=this.state,t=s.log[dk(new Date())]||{},o=[];const hard=s.words.filter(w=>w.s==='hard').length;
+    if((t.min||0)>=50)o.push({t:'Уже '+t.min+' мин — потянись',go:null});
+    if(hard>=3)o.push({t:hard+' трудных — повторим?',go:()=>this.startTest('hard')});
+    const left=this.quota()-(t.nw||0);if(left>0)o.push({t:'Ещё '+left+' до цели дня',go:()=>this.dw(this.state.cur).some(w=>w.s==='new')?this.startStudy():this.goTab('home')});
+    if(this.catMood()==='sad')o.unshift({t:'Скучала… повторим немного?',go:()=>this.startTest('quick')});return o;}
+  catDown(){this.lp=false;clearTimeout(this.lpt);this.lpt=setTimeout(()=>{this.lp=true;this.setState({catMenu:true,catSay:null});},500);}
+  catUp(){clearTimeout(this.lpt);}
+  catClick(){if(this.lp){this.lp=false;return;}clearTimeout(this.ct2);this.meow();this.setState({catSay:'Мур-р…'});this.ct2=setTimeout(()=>this.setState({screen:'chat',catSay:null}),650);}
+  catAsk(txt){this.setState({catMenu:false,screen:'chat'},()=>this.sendChat(txt));}
+  async sendChat(txt){txt=(txt||'').trim();if(!txt||this.state.chatBusy)return;const chat=[...this.state.chat,{r:'me',t:txt}];this.setState({chat,chatQ:'',chatBusy:true});
+    const hist=chat.slice(-8).map(m=>(m.r==='me'?'Ученик: ':'Мао: ')+m.t).join('\n');let ans;
+    try{ans=String(await this.ask('Ты Мао — дружелюбная кошка-помощница в приложении для изучения китайского (HSK 1–3). Отвечай по-русски, коротко (до 80 слов), тепло, иногда можешь мяукнуть. Каждый иероглиф пиши с пиньинем с тоновыми знаками и переводом. Без markdown. Сейчас ученик в дне «'+((this.state.lessons.find(l=>l.n===this.state.cur)||{}).t||'')+'».\n'+hist+'\nМао:')).replace(/[*#]/g,'').trim();}
+    catch(e){ans='Мяу… не получилось связаться с нейросетью. Проверьте интернет и спросите ещё раз.';}
+    this.setState({chat:[...this.state.chat,{r:'cat',t:ans}],chatBusy:false});}
+  componentDidMount(){window.__app=this;if(window.__updQ){window.__updQ.forEach(u=>this.onUpdate(u));window.__updQ=null;}setTimeout(()=>this.fixRu(),2500);window.EDict&&EDict.onReady(()=>setTimeout(()=>this.fixRu(),800));window.EDict&&EDict.onReady(()=>this.forceUpdate());window.WCheck&&setTimeout(()=>WCheck.load(),1500);this.cw=setInterval(()=>this.catWalk(),9000);setTimeout(()=>this.catPlace(),700);this.mq=window.matchMedia('(prefers-color-scheme: dark)');this.mqh=()=>this.forceUpdate();this.mq.addEventListener?.('change',this.mqh);}
+  componentWillUnmount(){clearTimeout(this.cpr);clearInterval(this.cw);clearTimeout(this.ct1);clearTimeout(this.ct2);this.mq?.removeEventListener?.('change',this.mqh);clearInterval(this.si);clearTimeout(this.tt);}
+  thId(){const t=this.state.th;return t==='system'?(this.mq?.matches?'d':'l'):t==='dark'?'d':'l';}
+  dw(n,w=this.state.words){return w.filter(x=>x.d===n);}
+  W(id){return this.state.words.find(w=>w.id===id);}
+  dotC(s){return s==='know'?'var(--pr)':s==='hard'?'var(--ac)':'var(--ln)';}
+  toast(msg,undo){clearTimeout(this.tt);this.setState({toast:{msg,undo}});this.tt=setTimeout(()=>this.setState({toast:null}),3800);}
+  speak(t){if(window.EVINE&&EVINE.native){EVINE.speak(t,this.state.rate,'f');return;}try{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=this.state.rate;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+  async ask(p){if(!window.claude?.complete)throw 0;return await Promise.race([window.claude.complete(p),new Promise((_,r)=>setTimeout(()=>r(0),60000))]);}
+  touch(x){const s=this.state,k=dk(new Date()),log={...s.log},t=log[k]||{min:0,nw:0,rv:0};log[k]={...t,fz:0,min:t.min+(x.min||0),nw:t.nw+(x.nw||0),rv:t.rv+(x.rv||0)};let streak=s.streak,pauseTomorrow=s.pauseTomorrow;if(s.lastActive!==k){const g=s.goal,offOnly=(()=>{if(!s.lastActive||!g||!g.offOn)return false;for(let i=1;i<30;i++){const d=ago(i);if(dk(d)===s.lastActive)return true;if(!(g.off||[]).includes(d.getDay()))return false;}return false;})();if(s.lastActive===dk(ago(1))||offOnly)streak++;else if(pauseTomorrow&&s.lastActive===dk(ago(2))){streak++;log[dk(ago(1))]={fz:1,min:0,nw:0,rv:0};pauseTomorrow=false;}else streak=1;}return {log,streak,lastActive:k,pauseTomorrow};}
+  mins(t0){return Math.max(1,Math.round((Date.now()-t0)/60000));}
+  goTab(tab){this.setState({tab,screen:'tab',q:'',ex:null,edit:null,manOpen:false});}
+  openView(ids,i){if(!ids.length)return;this.setState({screen:'view',view:{ids,i:Math.max(0,i)},ex:null,edit:null});}
+  exit(){const s=this.state;const p={screen:'tab',ex:null,edit:null};let t0=null;if(s.screen==='quiz'&&s.quiz&&s.quiz.kind==='test'){t0=s.quiz.t0;p.quiz=null;}else if(s.study&&(s.screen==='learn'||s.screen==='quiz')){t0=s.study.t0;p.study={...s.study,t0:Date.now(),check:s.quiz&&s.quiz.kind==='check'?s.quiz:s.study.check};if(s.quiz&&s.quiz.kind==='check')p.quiz=null;}if(t0)Object.assign(p,this.touch({min:this.mins(t0)}));this.upd(p);}
+  mkQuiz(ids,title,kind){return {ids:shuffle(ids),i:0,rev:false,round:1,miss:[],first:[],ever:[],total:ids.length,title,kind,t0:Date.now()};}
+  startTest(kind,arg){const s=this.state,ws=s.words,isRv=w=>w.due||w.s==='hard';let list,title;
+    if(kind==='review'){list=ws.filter(isRv);title='Повторение';}
+    else if(kind==='quick'){const pool=ws.filter(w=>w.s!=='new');list=[...shuffle(pool.filter(isRv)),...shuffle(pool.filter(w=>!isRv(w)))].slice(0,s.quickN);title='Быстрый тест';}
+    else if(kind==='hard'){list=ws.filter(w=>w.s==='hard');title='Трудные слова';}
+    else{const l=this.dw(arg);list=l.filter(w=>w.s!=='new');if(!list.length)list=l;title='День '+arg;}
+    if(!list.length)return this.toast('Пока нечего проверять');
+    this.setState({screen:'quiz',quiz:this.mkQuiz(list.map(w=>w.id),title,'test'),ex:null,q:''});}
+  meow(){if(this.state.catSound===false)return;try{const A=this.actx||(this.actx=new (window.AudioContext||window.webkitAudioContext)());const t=A.currentTime,o=A.createOscillator(),f=A.createBiquadFilter(),g=A.createGain();o.type='sawtooth';o.frequency.setValueAtTime(520,t);o.frequency.linearRampToValueAtTime(880,t+.12);o.frequency.linearRampToValueAtTime(600,t+.45);f.type='bandpass';f.frequency.setValueAtTime(1200,t);f.frequency.linearRampToValueAtTime(1800,t+.15);f.frequency.linearRampToValueAtTime(900,t+.45);f.Q.value=4;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.12,t+.05);g.gain.linearRampToValueAtTime(.08,t+.3);g.gain.linearRampToValueAtTime(0,t+.5);o.connect(f);f.connect(g);g.connect(A.destination);o.start(t);o.stop(t+.55);}catch(e){}}
+  answer(ok){const s=this.state,q=s.quiz,id=q.ids[q.i];if(ok&&(s.catMode||'always')!=='off'&&s.catMet!==false){clearTimeout(this.nodT);this.setState({catNod:true});this.nodT=setTimeout(()=>this.setState({catNod:false}),950);}
+    const words=s.words.map(w=>w.id===id?{...w,s:ok?'know':'hard',due:ok?false:w.due}:w);
+    const nq={...q,rev:false,i:q.i+1,first:ok&&q.round===1?[...q.first,id]:q.first,miss:ok?q.miss:[...q.miss,id],ever:ok||q.ever.includes(id)?q.ever:[...q.ever,id]};
+    if(nq.i<nq.ids.length)return this.upd({words,quiz:nq});
+    if(nq.miss.length)return this.upd({words,quiz:{...nq,ids:shuffle(nq.miss),miss:[],i:0,round:nq.round+1}});
+    const r={first:nq.first.length,total:nq.total,rounds:nq.round};
+    if(q.kind==='check'){const st=s.study,hard=uniq([...st.hard,...nq.ever]);
+      if(st.li<st.ids.length)return this.upd({words,quiz:null,study:{...st,hard,phase:'learn'},screen:'learn'});
+      const L=s.lessons.find(l=>l.n===st.day)||{};const w2=words.map(w=>hard.includes(w.id)?{...w,due:true}:w);
+      return this.upd({words:w2,quiz:null,study:null,screen:'result',result:{...r,title:'День '+st.day+' · '+(L.t||''),sub:'Новые слова выучены',hard,more:'lesson'},...this.touch({min:this.mins(st.t0)})});}
+    this.upd({words,quiz:null,screen:'result',result:{...r,title:q.title,sub:'Все ответы — «Помню»',hard:nq.ever,more:'quick'},...this.touch({min:this.mins(q.t0),rv:nq.total})});}
+  startStudy(day){const s=this.state;day=day??s.cur;
+    if(s.study&&s.study.day===day){const st=s.study;if(st.phase==='quiz'){const chk=s.quiz&&s.quiz.kind==='check'?s.quiz:st.check;if(chk)return this.setState({screen:'quiz',quiz:{...chk,rev:false},study:{...st,check:null},q:'',ex:null});if(st.li<st.ids.length)return this.setState({screen:'learn',study:{...st,phase:'learn'},quiz:null,q:'',ex:null});}else return this.setState({screen:'learn',q:'',ex:null});}
+    const ids=this.dw(day).filter(w=>w.s==='new').map(w=>w.id);
+    if(!ids.length)return this.startTest('lesson',day);
+    this.setState({screen:'learn',q:'',ex:null,edit:null,quiz:null,study:{day,ids,li:0,since:0,skip:[],hard:[],phase:'learn',t0:Date.now()}});}
+  learnNext(known){const s=this.state,st=s.study,id=st.ids[st.li];let words=s.words;if(known)words=words.map(w=>w.id===id?{...w,s:'know'}:w);
+    const li=st.li+1,skip=known?[...st.skip,id]:st.skip,since=known?st.since:st.since+1;const learned=st.ids.slice(0,li).filter(x=>!skip.includes(x));
+    const base={words,ex:null,edit:null,...this.touch({nw:1})};const chunk=s.method==='cards'?1e9:s.chunk;
+    if(li>=st.ids.length){if(!learned.length){const L=s.lessons.find(l=>l.n===st.day)||{};return this.upd({...base,study:null,screen:'result',result:{first:0,total:0,rounds:1,title:'День '+st.day+' · '+(L.t||''),sub:'Все слова отмечены как знакомые',hard:[],more:'lesson'}});}
+      return this.upd({...base,study:{...st,li,skip,since:0,phase:'quiz'},quiz:this.mkQuiz(learned,'Итоговая проверка','check'),screen:'quiz'});}
+    if(s.method!=='cards'&&!known&&learned.length>=2){const Wn=s.chunk;const set=learned.length<=Wn?learned:[...learned.slice(-Wn),...shuffle(learned.slice(0,-Wn)).slice(0,2)];return this.upd({...base,study:{...st,li,skip,since:0,phase:'quiz'},quiz:this.mkQuiz(set,'Проверка «Снежного кома»','check'),screen:'quiz'});}
+    this.upd({...base,study:{...st,li,skip,since}});}
+  startLesson(name,cb){const s=this.state,n=(s.lessons.reduce((a,l)=>Math.max(a,l.n),0))+1,tp=T.find(x=>x[2]===name)||['新','xīn',name];this.upd({lessons:[...s.lessons,{n,zh:tp[0],py:tp[1],t:name,date:iso(new Date())}],cur:n,topicSel:null,topicOwn:''},cb);this.toast('День '+n+' · '+name);}
+  // ---- Mao 2.2: add many words at once ----
+  // Text -> items {q, m, d}. Accepts JSON (array of strings or {h,p,m,d}) or plain text split by new lines / commas.
+  bulkItems(t){const items=[];t=(t||'').trim();if(!t)return items;
+    const RU=/[а-яё][а-яё\s\-().,!?]*$/i;
+    const line=x=>{x=String(x).trim().replace(/^[\s"'«»“”\[\]{}]+|[\s"'«»“”\[\]{}]+$/g,'');if(!x)return;
+      const ru=(x.match(RU)||[''])[0].trim().replace(/[,.]+$/,'');const rest=x.replace(RU,'');const han=rest.match(/[㐀-鿿]+/g);
+      if(han){if(han.length===1)items.push({q:han[0],m:ru});else han.forEach(h=>items.push({q:h}));}
+      else{const lat=rest.replace(/[—–:=|\-]+/g,' ').trim();if(lat)items.push({q:lat,m:ru});}};
+    let js=null;if(/^[\[{]/.test(t)){try{js=JSON.parse(t);}catch(e){}}
+    if(js){if(!Array.isArray(js))js=Array.isArray(js.words)?js.words:[js];
+      js.forEach(o=>{if(typeof o==='string')line(o);else if(o&&(o.h||o.p))items.push({q:String(o.h||o.p).trim(),m:String(o.m||o.ru||'').trim(),p:o.h&&o.p?String(o.p):'',d:+o.d||+o.lesson||0});});}
+    else t.split(/[\n,，、;；]+/).forEach(line);
+    return items;}
+  bulkRows(){const s=this.state,E=window.EDict;if(!E||!E.ready())return [];
+    const ck=s.bulkT+'\u0001'+JSON.stringify(s.bulkAlt)+JSON.stringify(s.bulkSkip)+s.words.length;if(this._bk&&this._bk.k===ck)return this._bk.rows;
+    const have=new Set(s.words.map(w=>w.h)),seen=new Set(),rows=[];const isHan=x=>/[㐀-鿿]/.test(x);
+    const exact=x=>E.best(x).filter(e=>e.h===x||e.t===x);
+    // characters written without separators ("姐姐弟弟"): split into dictionary words, longest first
+    const seg=x=>{const c=[...x],out=[];let i=0;while(i<c.length){let l=Math.min(4,c.length-i);for(;l>1;l--)if(exact(c.slice(i,i+l).join('')).length)break;out.push(c.slice(i,i+l).join(''));i+=l;}return out;};
+    const push=(it,L)=>{const key=it.q;if(s.bulkSkip[key])return;
+      if(!L.length){if(isHan(it.q)){const p=[...it.q].map(ch=>(exact(ch)[0]||{}).p||'').join('');rows.push({key,h:it.q,p:toMarks(it.p||'')||p,m:it.m||'',kind:have.has(it.q)?'have':'nodict',d:it.d,alts:0,ai:0});}
+        else rows.push({key,h:it.q,p:'',m:'',kind:'miss',alts:0,ai:0});return;}
+      const ai=Math.min(L.length-1,(s.bulkAlt[key]||0)%L.length),e=L[ai];
+      rows.push({key,h:e.h,t:e.t,p:e.p,m:it.m||e.m||'',en:e.en,hsk:e.hsk,lv:e.lv,ekey:e.key,kind:have.has(e.h)?'have':'ok',d:it.d,alts:L.length,ai});};
+    const res=it=>{const L=isHan(it.q)?exact(it.q):E.best(it.q);
+      if(!L.length&&isHan(it.q)&&[...it.q].length>2){const parts=seg(it.q);if(parts.length>1&&parts.every(p=>exact(p).length)){parts.forEach(p=>res({q:p}));return;}}
+      if(!L.length&&!isHan(it.q)&&/\s/.test(it.q)){it.q.split(/\s+/).forEach(x=>x&&res({q:x}));return;}
+      push(it,L);};
+    this.bulkItems(s.bulkT).forEach(res);
+    const out=rows.filter(r=>{const k=r.kind==='miss'?'?'+r.h:r.h;if(seen.has(k))return false;seen.add(k);return true;}).map(r=>({...r,add:r.kind==='ok'||r.kind==='nodict'}));
+    this._bk={k:ck,rows:out};return out;}
+  bulkTarget(){const s=this.state;return s.cur&&s.lessons.some(l=>l.n===s.cur)?s.cur:(s.lessons.reduce((a,l)=>Math.max(a,l.n),0)+1);}
+  bulkAdd(){const R=this.bulkRows().filter(r=>r.add);if(!R.length)return this.toast('Нечего добавлять — напишите слова');
+    const s0=this.state;if(R.some(r=>!r.d)&&(!s0.cur||!s0.lessons.some(l=>l.n===s0.cur)))return this.startLesson('Мои слова',()=>this.bulkAdd());
+    const s=this.state;let id=s.nextId;const cur=s.cur;const ls=[...s.lessons];const prev=s.words;
+    const add=R.map(r=>({id:id++,h:r.h,t:r.t||'',p:r.p||'',m:r.m||'перевод загружается…',en:r.en||'',d:r.d||cur,s:'new',due:false,hsk:r.hsk!=null?!!r.hsk:!!(window.EDict&&EDict.isHsk(r.h))}));
+    add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);
+    const days=[...new Set(add.map(w=>w.d))];this._bk=null;
+    this.upd({words:[...prev,...add],nextId:id,lessons:ls,cur:cur||(ls[ls.length-1]||{}).n||0,bulkT:'',bulkAlt:{},bulkSkip:{},screen:'tab',tab:'home',q:''},()=>this.fixRu());
+    this.toast('Добавлено '+add.length+' '+pl(add.length,WF)+' → день '+days.join(', '),()=>this.upd({words:prev}));}
+  onUpdate(u){if(!u)return;if(u.type==='web')this.setState({upd:{type:'web',t:'Обновление готово',sub:u.notes||'Новая версия экранов загружена',btn:'Перезапустить'}});
+    else if(u.type==='app')this.setState({upd:{type:'app',t:'Доступна версия '+(u.name||''),sub:u.notes||'Новая версия приложения',btn:'Обновить'}});
+    else if(u.notes)this.toast(u.notes);}
+  ruNeed(m){return !m||m==='перевод загружается…'||!/[а-яё]/i.test(m);}
+  fixRu(){const s=this.state;if(!window.EDict||!EDict.ready())return;const ai=window.claude&&claude.hasKey&&claude.hasKey();const upd=[];const need=[];const pyUp=[];const nz=x=>String(x||'').replace(/[\s']/g,'').toLowerCase();
+    s.words.forEach(w=>{if(!w.p||!(/\s/.test(w.p)||/^[A-ZĀÁǍÀĒÉĚÈŌÓǑÒ]/.test(w.p)))return;const e=EDict.find(w.h);if(e&&e.p&&e.p!==w.p&&nz(e.p)===nz(w.p))pyUp.push([w.id,e.p]);});
+    s.words.forEach(w=>{if(!this.ruNeed(w.m))return;const e=EDict.find(w.h);if(e&&e.m&&/[а-яё]/i.test(e.m)){upd.push([w.id,e.m]);return;}if(ai)need.push({key:(e&&e.key)||('w|'+w.h),h:w.h,p:w.p||(e&&e.p)||'',en:(w.en||(e&&e.en)||(/[a-z]/i.test(w.m||'')?w.m:'')||'?'),id:w.id});});
+    if(upd.length||pyUp.length)this.upd({words:this.state.words.map(w=>{const u=upd.find(x=>x[0]===w.id),q=pyUp.find(x=>x[0]===w.id);return (u||q)?{...w,...(u?{m:u[1]}:{}),...(q?{p:q[1]}:{})}:w;})});
+    if(need.length)EDict.translate(need.slice(0,24),()=>{const ws=this.state.words;let ch=false;const nw=ws.map(w=>{const it=need.find(x=>x.id===w.id);if(!it)return w;const r=EDict.ru(it.key);if(r){ch=true;return {...w,m:r};}return w;});if(ch)this.upd({words:nw});});}
+  quota(){const s=this.state,t=s.log[dk(new Date())]||{};const p=planOf(s.goal,s.words.filter(w=>w.s!=='new').length,t.nw||0);return p?p.quota:(s.dailyNew||20);}
+  topicName(){const s=this.state;const used={};s.lessons.forEach(l=>{used[l.t]=l.n;});const free=T.filter(x=>!used[x[2]]);return (s.topicOwn||'').trim()||s.topicSel||(free[0]||T[0])[2];}
+  async pickWords(N,newTopic){const s=this.state;N=N||this.state.mN||Math.max(5,this.quota())||10;
+    const L0=s.lessons.find(l=>l.n===s.cur)||{};const topic=newTopic||L0.t||'Мои слова';const have=new Set(s.words.map(w=>w.h));
+    const pack=(window.EDict?EDict.topic(topic):[]).filter(h=>!have.has(h));
+    const mk=(h,o)=>{const e=window.EDict&&EDict.find(h);return {h,t:e&&e.t||'',p:(o&&o.p)||(e&&e.p)||'',m:(e&&e.m&&/[а-яё]/i.test(e.m)?e.m:'')||(o&&o.m)||'перевод загружается…',en:e&&e.en||'',hsk:!!(e&&e.hsk)};};
+    let list=pack.slice(0,N).map(h=>mk(h));
+    const ai=window.claude&&claude.hasKey&&claude.hasKey();
+    if(list.length<N&&ai){this.setState({clBusy:true});
+      try{const known=[...have,...list.map(x=>x.h)].slice(-180).join(', ');const need=N-list.length;
+        const r=await this.ask('Подбери '+need+' полезных слов китайского языка (упрощённые иероглифы, сначала уровень HSK 1–3) по теме «'+topic+'».'+(known?' Не повторяй эти слова: '+known+'.':'')+' Перевод — только на русском языке. Ответь только JSON-массивом: [{"h":"иероглифы","p":"пиньинь с тоновыми знаками","m":"перевод на русский"}]');
+        const arr=JSON.parse(String(r).match(/\[[\s\S]*\]/)[0]);const seen=new Set([...have,...list.map(x=>x.h)]);
+        arr.forEach(o=>{if(o&&o.h&&!seen.has(String(o.h))&&list.length<N){seen.add(String(o.h));list.push(mk(String(o.h),{p:o.p?String(o.p):'',m:o.m&&/[а-яё]/i.test(String(o.m))?String(o.m):''}));}});}
+      catch(e){if(!list.length){this.setState({clBusy:false});return this.toast('Мао не смогла ответить — проверьте интернет или добавьте слова поиском');}}
+      this.setState({clBusy:false});}
+    if(!list.length)return this.toast(ai?'Мао не нашла новых слов на эту тему — добавьте их поиском':'Для своей темы Мао нужна нейросеть (Настройки → Нейросеть). Или добавьте слова поиском');
+    if(newTopic&&!(s.cur&&L0.t===newTopic&&!this.dw(s.cur).length))await new Promise(res=>this.startLesson(newTopic,res));
+    let id=this.state.nextId;const add=list.map(x=>({id:id++,...x,d:this.state.cur,s:'new',due:false}));
+    this.upd({words:[...this.state.words,...add],nextId:id},()=>{this.fixRu();this.startStudy(this.state.cur);});
+    this.toast('Мао подобрала '+add.length+' '+pl(add.length,WF)+(add.length<N?' (больше на эту тему не нашлось)':''));}
+  addWord(e){let s=this.state;if(!s.cur||!s.lessons.some(l=>l.n===s.cur)){return this.startLesson('Мои слова',()=>this.addWord(e));}let n=s.cur;const over=this.dw(n).length>=Math.max(1,this.quota());const prev=s.words;const ru=(e.m&&/[а-яё]/i.test(e.m)?e.m:'')||(window.EDict&&e.key?EDict.ru(e.key):'');
+    const w={id:s.nextId,h:e.h,t:e.t,p:e.p,m:ru||'перевод загружается…',en:e.en||'',d:n,s:'new',due:false,hsk:e.hsk!=null?!!e.hsk:!!(window.EDict&&EDict.isHsk(e.h))};
+    if(!ru&&window.EDict&&window.claude&&claude.hasKey&&claude.hasKey())EDict.translate([{...e,key:e.key||('w|'+e.h),en:e.en||'?'}],()=>{const r2=EDict.ru(e.key||('w|'+e.h));if(r2)this.upd({words:this.state.words.map(x=>x.id===w.id&&this.ruNeed(x.m)?{...x,m:r2}:x)});});
+    this.upd({words:[...prev,w],nextId:s.nextId+1,man:{h:'',p:'',m:''},manOpen:false});
+    this.toast(e.h+' → день '+n+(over?' · сверх нормы на сегодня':''),()=>this.upd({words:prev}));}
+  async claudeFill(){const q=this.state.q.trim();this.setState({clBusy:true});
+    try{const r=await this.ask('Переведи на китайский (упрощённые иероглифы) «'+q+'». Ответь только JSON: {"h":"иероглифы","p":"пиньинь с тоновыми знаками","m":"краткий перевод на русский"}');const o=JSON.parse(String(r).match(/\{[\s\S]*\}/)[0]);this.setState({man:{h:o.h||'',p:o.p||'',m:o.m||''},clBusy:false,manOpen:true});}
+    catch(e){this.setState({clBusy:false});this.toast('Мао не смогла ответить — проверьте интернет');}}
+  async explain(w){clearInterval(this.si);this.setState({ex:{id:w.id,loading:true,text:'',full:''}});let full;
+    try{full=String(await this.ask('Ты преподаватель китайского. Объясни по-русски для взрослого ученика HSK 1–3 слово '+w.h+' ('+w.p+', «'+w.m+'»): употребление, конструкции, отличия от похожих слов. Примеры — с пиньинем с тоновыми знаками и переводом. Без markdown. До 90 слов.')).replace(/[*#]/g,'').trim();}
+    catch(e){full=w.h+' '+w.p+' — «'+w.m+'».'+(w.ex?'\n'+w.ex[0]+'\n'+w.ex[1]+'\n'+w.ex[2]:'')+'\n\nНейросеть сейчас не ответила — нажмите «Объяснить» ещё раз чуть позже.';}
+    if(this.state.ex?.id!==w.id)return;let k=0;this.setState({ex:{id:w.id,loading:false,text:'',full}});
+    this.si=setInterval(()=>{const ex=this.state.ex;if(!ex||ex.id!==w.id){clearInterval(this.si);return;}k+=3;this.setState({ex:{...ex,text:full.slice(0,k)}});if(k>=full.length)clearInterval(this.si);},20);}
+  demoCheck(){const s=this.state;const ids=this.dw(s.cur).filter(w=>w.s==='new').map(w=>w.id);if(ids.length<5)return this.startStudy();this.setState({screen:'quiz',q:'',ex:null,study:{day:s.cur,ids,li:5,since:0,skip:[],hard:[],phase:'quiz',t0:Date.now()},quiz:this.mkQuiz(ids.slice(0,5),'Проверка «Снежного кома»','check')});}
+  renderVals(){
+    const s=this.state,th=this.thId(),scr=s.screen,tab=s.tab,cur=s.cur,L=s.lessons.find(l=>l.n===cur)||{t:''};
+    const curW=this.dw(cur),newLeft=curW.filter(w=>w.s==='new').length,learnedN=curW.length-newLeft,curIds=curW.map(w=>w.id);
+    const isRv=w=>w.due||w.s==='hard',dueN=s.words.filter(isRv).length;
+    const today=s.log[dk(new Date())]||{min:0,nw:0,rv:0};
+    const seg=(list,val,pick)=>list.map(([k,l])=>({l,bg:k===val?'var(--sf)':'transparent',fg:k===val?'var(--ink)':'var(--mu)',fw:k===val?600:400,sh:k===val?'0 1px 3px rgba(0,0,0,.12)':'none',pick:()=>pick(k)}));
+    const q=s.q.trim(),isTab=scr==='tab';
+    let results=[];
+    if(q){const latin=/^[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü0-9\s':]+$/.test(q),nq=strip(q),lq=q.toLowerCase();
+      const base=s.words.filter(e=>e.h.includes(q)||(latin&&strip(e.p).startsWith(nq))||(!latin&&(e.m||'').toLowerCase().includes(lq))).slice(0,6).map(x=>({...x,inB:true}));
+      const found=window.EDict&&EDict.ready()?EDict.search(q,30):DICT.filter(e=>e.h.includes(q)||(latin&&strip(e.p).startsWith(nq))||(!latin&&(e.m||'').toLowerCase().includes(lq)));
+      results=[...base,...found.filter(d=>!s.words.some(x=>x.h===d.h))].slice(0,30);
+      const need=results.filter(e=>!e.inB&&!(e.m&&/[а-яё]/i.test(e.m))&&!(window.EDict&&EDict.ru(e.key)));if(need.length&&window.EDict&&window.claude&&claude.hasKey&&claude.hasKey())EDict.translate(need.slice(0,12),()=>this.forceUpdate());}
+    const resIds=results.filter(e=>e.inB).map(e=>e.id);
+    const res=results.map(e=>({h:e.h,tr:e.t&&e.t!==e.h?e.t:'',p:e.p,m:(e.m&&/[а-яё]/i.test(e.m)?e.m:'')||(window.EDict&&EDict.ru(e.key))||(window.EDict&&EDict.failed(e.key)?'нет русского перевода — нужен интернет':'перевожу…'),inB:!!e.inB,add:!e.inB,tag:e.inB?'день '+e.d:'',dc:e.inB?this.dotC(e.s):'transparent',go:()=>e.inB?this.openView(resIds,resIds.indexOf(e.id)):this.addWord(e),plus:ev=>{ev.stopPropagation();this.addWord(e);}}));
+    const stIn=s.study&&s.study.day===cur&&s.study.li>0;
+    const used={};s.lessons.forEach(l=>{used[l.t]=l.n;});const free=T.filter(x=>!used[x[2]]);const sel=s.topicSel||(free[0]||T[0])[2];
+    const Q=this.quota(),mN=s.mN||s.lessonSize||20,topic=this.topicName();
+    let hero;
+    const newDay=()=>({k:cur?'День '+cur+' выучен':'Первый день',t:cur?'Новый день — новая тема':'Выберите тему первого дня',sub:'Соберите слова сами поиском или попросите Мао подобрать их по теме',btn:s.clBusy?'Мао подбирает…':'✦ Мао подберёт '+mN+' '+pl(mN,WF),go:()=>!s.clBusy&&this.pickWords(mN,topic),topics:true,hasAlt:true,altL:'Соберу сам: '+topic,alt:()=>this.startLesson(topic)});
+    if(!cur||!s.lessons.some(l=>l.n===cur))hero=newDay();
+    else if(!curW.length)hero={k:'День '+cur+' · '+L.t,t:'День пока пуст',sub:'Найдите слова поиском сверху или попросите Мао подобрать их',btn:s.clBusy?'Мао подбирает…':'✦ Мао подберёт '+mN+' '+pl(mN,WF),go:()=>!s.clBusy&&this.pickWords(mN),topics:false,hasAlt:false};
+    else if(newLeft)hero={k:'День '+cur+' · '+L.t,t:newLeft+' '+pl(newLeft,['новое слово','новых слова','новых слов']),sub:'выучено '+learnedN+' из '+curW.length+' · '+(s.method==='cards'?'карточки':'снежный ком'),btn:stIn?'Продолжить':'Учить',go:()=>this.startStudy(cur),topics:false};
+    else hero=newDay();
+    {const PLh=s.goal?planOf(s.goal,s.words.filter(w=>w.s!=='new').length,(s.log[dk(new Date())]||{}).nw||0):null;const knownN=s.words.filter(w=>w.s!=='new').length;
+     if(PLh&&PLh.todayOff&&!PLh.past&&(dueN||knownN)&&!stIn){const base=hero;hero={k:'休 xiū · выходной',t:dueN?'Выходной · повторите '+dueN+' '+pl(dueN,WF):'Выходной',sub:'Новые слова сегодня не обязательны — серия не прервётся',
+       btn:dueN?'Повторить '+dueN+' '+pl(dueN,WF):'Быстрый тест · '+Math.min(s.quickN,knownN),go:()=>this.startTest(dueN?'review':'quick'),topics:false,hasAlt:true,altL:'Всё равно учить новые',alt:base.go};}}
+    const F={all:()=>true,new:w=>w.s==='new',hard:w=>w.s==='hard',know:w=>w.s==='know'};
+    const fl=[...s.words].reverse().filter(F[s.filter]),flIds=fl.map(w=>w.id);
+    const logArr=Object.values(s.log),totalMin=logArr.reduce((a,e)=>a+(e.min||0),0);
+    const wk=[];for(let i=6;i>=0;i--){const d=ago(i),e=s.log[dk(d)]||{};wk.push({d,e});}
+    const mx=Math.max(30,...wk.map(x=>x.e.min||0));
+    const heat=[];for(let i=34;i>=0;i--){const e=s.log[dk(ago(i))]||{},m=e.min||0;const offD=s.goal&&s.goal.offOn&&(s.goal.off||[]).includes(ago(i).getDay())&&!m&&i>0&&(!s.goal.set||day0(ago(i))>=pISO(s.goal.set));heat.push({fz:!!e.fz||offD,bg:e.fz||offD?'transparent':m?'var(--pr)':'var(--sf2)',op:!m||e.fz?1:m<30?.3:m<60?.6:1,bd:i===0?'2px solid var(--ink)':e.fz||offD?'1px dashed var(--mu)':'0'});}
+    const hist=[];for(let i=0;i<20&&hist.length<7;i++){const d=ago(i),e=s.log[dk(d)];if(e&&(e.min||e.fz))hist.push({d:i===0?'Сегодня':i===1?'Вчера':d.toLocaleDateString('ru-RU',{day:'numeric',month:'short'}),v:e.fz?'выходной — серия сохранена':e.min+' мин · '+e.nw+' нов. · '+e.rv+' повт.',c:e.fz?'var(--mu)':'var(--ink)'});}
+    const hskK=s.words.filter(w=>w.s!=='new'&&w.hsk).length;const knownAll=s.words.filter(w=>w.s!=='new').length;const PL=planOf(s.goal,knownAll,today.nw||0);
+    const st=s.study,vw=s.view;let cw=null;
+    if(scr==='learn'&&st)cw=this.W(st.ids[st.li]);if(scr==='view'&&vw)cw=this.W(vw.ids[vw.i]);
+    const ex=s.ex&&cw&&s.ex.id===cw.id?s.ex:null;const fsz=h=>h.length>2?58:h.length>1?76:96;
+    const card=cw?{h:cw.h,p:cw.p,m:cw.m,fs:fsz(cw.h),hasMn:!!cw.mn,parts:(cw.mn?.parts||[]).map((x,i)=>({c:x[0],l:x[1],plus:i>0})),note:cw.mn?.note||'',hasEx:!!cw.ex,exZh:cw.ex?.[0],exPy:cw.ex?.[1],exRu:cw.ex?.[2],stl:{new:'Новое',know:'Выучено',hard:'Трудное'}[cw.s],stc:this.dotC(cw.s==='new'?'x':cw.s),d:cw.d,next:cw.d+1}:{parts:[]};
+    const learn=scr==='learn'&&!!st;
+    const cardHead=learn?{t:'День '+st.day+' · новые',n:(st.li+1)+' / '+st.ids.length,pct:st.li/st.ids.length*100,until:s.method==='cards'||st.li-st.skip.length<1?'':'потом проверка по выученным'}:vw?{t:'Просмотр',n:(vw.i+1)+' / '+vw.ids.length,pct:(vw.i+1)/vw.ids.length*100,until:''}:{};
+    const qz=s.quiz;let qv={};
+    if(qz){const w=this.W(qz.ids[Math.min(qz.i,qz.ids.length-1)])||{h:'',p:'',m:''},hz=s.hint==='hz';
+      qv={chars:[...w.h].length,title:qz.title,pos:(qz.round>1?'круг '+qz.round+' · ':'')+Math.min(qz.i+1,qz.ids.length)+' / '+qz.ids.length,pct:qz.i/qz.ids.length*100,h:w.h,p:w.p,m:w.m,fs:fsz(w.h),hidden:!qz.rev,rev:qz.rev,isRu:!hz,isHz:hz,ask:hz?'Что это значит?':'Как по-китайски?',line:hz?'Вспомни чтение и перевод':'Напиши на листочке, потом проверь'};}
+    const rs=s.result?{...s.result,roundsW:pl(s.result.rounds,['круг','круга','кругов']),hasHard:s.result.hard.length>0,list:s.result.hard.map(id=>this.W(id)).filter(Boolean).map(w=>({h:w.h,p:w.p,m:w.m})),hasTotal:s.result.total>0}:{list:[]};
+    const editing=!!(s.edit&&cw&&s.edit.id===cw.id);const mpm=toMarks(s.man.p.trim());const manOk=s.man.h.trim()&&s.man.m.trim();
+    const jumps=[['Учёба',()=>this.goTab('home')],['Поиск «сем»',()=>this.setState({tab:'home',screen:'tab',q:'сем'})],['Слова · дни',()=>{this.goTab('words');this.setState({wSeg:'lessons'});}],['Слова · все',()=>{this.goTab('words');this.setState({wSeg:'all'});}],['Прогресс',()=>this.goTab('progress')],['Учить новые',()=>this.startStudy()],['Проверка «Снежного кома»',()=>this.demoCheck()],['Просмотр слова',()=>this.openView(curIds,0)],['Быстрый тест',()=>this.startTest('quick')],['Настройки',()=>this.setState({screen:'settings'})],['Чат с Мао',()=>this.setState({screen:'chat'})],['Мао: спит',()=>{this.goTab('home');this.setState({catMoodForce:'sleep'});}],['Мао: грустит',()=>{this.goTab('home');this.setState({catMoodForce:'sad'});}],['Мао: довольна',()=>{this.goTab('home');this.setState({catMoodForce:'happy'});}],['Мао: обычная',()=>{this.goTab('home');this.setState({catMoodForce:null});}],['Мао: знакомство',()=>{this.upd({catMet:false});this.setState({result:{title:'День выучен',sub:'Первый день позади',first:8,total:10,rounds:1,hard:[],more:'lesson'},screen:'result'});}]];
+    return {
+      th,pageBg:th==='d'?'#0A0B0A':'#E4E0D7',sideFg:th==='d'?'#E4E2DA':'#1C1E1B',
+      sideTh:[['light','Светлая'],['dark','Тёмная']].map(([k,l])=>{const on=th===(k==='dark'?'d':'l');return {l,fw:on?600:400,bd:on?'currentColor':'rgba(128,120,110,.3)',pick:()=>this.upd({th:k})};}),
+      jumps:jumps.map(([l,go])=>({l,go})),
+      pal:s.pal||'indigo',
+      palOpts:[['indigo','Индиго','oklch(0.5 0.2 275)','oklch(0.6 0.18 22)'],['mint','Мята','oklch(0.55 0.12 180)','oklch(0.62 0.16 50)'],['sakura','Сакура','oklch(0.48 0.13 350)','oklch(0.55 0.14 250)'],['classic','Тетрадь','oklch(0.42 0.07 165)','oklch(0.55 0.15 35)']].map(([k,l,c1,c2])=>{const on=(s.pal||'indigo')===k;return {l,c1,c2,fw:on?600:400,bd:on?'currentColor':'rgba(128,120,110,.3)',pick:()=>this.upd({pal:k})};}),
+      isTab,isHome:isTab&&tab==='home'&&!q,isWords:isTab&&tab==='words'&&!q,isProgress:isTab&&tab==='progress'&&!q,showResults:isTab&&!!q,
+      isCard:(scr==='learn'&&!!st&&!!cw)||(scr==='view'&&!!cw),isLearn:learn,isView:scr==='view',isQuiz:scr==='quiz'&&!!qz,isResult:scr==='result'&&!!s.result,isSettings:scr==='settings',
+      tabTitle:{home:'Учёба',words:'Слова',progress:'Прогресс'}[tab],
+      dateLabel:new Date().toLocaleDateString('ru-RU',{weekday:'long',day:'numeric',month:'long'}).replace(/^./,c=>c.toUpperCase()),
+      streak:s.streak,goProgress:()=>this.goTab('progress'),goSettings:()=>this.setState({screen:'settings'}),
+      q:s.q,hasQ:!!q,onQ:e=>this.setState({q:e.target.value,manOpen:false}),clearQ:()=>this.setState({q:'',manOpen:false}),
+      res,noRes:!!q&&!results.length&&!/[,，、;；]/.test(q),showMan:!!q&&!/[,，、;；]/.test(q)&&(!results.length||s.manOpen),showManLink:!!q&&results.length>0&&!s.manOpen,openMan:()=>this.setState({manOpen:true,man:{h:/[\u4e00-\u9fff]/.test(q)?q:'',p:/^[a-z0-9\s]+$/i.test(q)?q:'',m:/[а-яё]/i.test(q)?q:''}}),
+      man:s.man,onMh:e=>this.setState({man:{...s.man,h:e.target.value}}),onMp:e=>this.setState({man:{...s.man,p:e.target.value}}),onMm:e=>this.setState({man:{...s.man,m:e.target.value}}),
+      mpConv:/\d/.test(s.man.p),mpm,manBg:manOk?'var(--pr)':'var(--sf2)',manFg:manOk?'var(--onpr)':'var(--mu)',saveMan:()=>manOk&&this.addWord({h:s.man.h.trim(),p:mpm,m:s.man.m.trim()}),
+      claudeFill:()=>!s.clBusy&&this.claudeFill(),clLabel:s.clBusy?'Мао думает…':'✦ Заполнит Мао',
+      todayNew:today.nw||0,hasOver:(today.nw||0)>Math.max(0,Q),overN:(today.nw||0)-Math.max(0,Q),perDay:Math.max(1,Q),todayMin:today.min||0,todayPct:Q>0?Math.min(100,(today.nw||0)/Q*100):((today.nw||0)?100:0),
+      hero,topicChips:free.slice(0,8).map(x=>({zh:x[0],py:x[1],t:x[2],bg:x[2]===sel?'var(--onhero)':'transparent',fg:x[2]===sel?'var(--hero)':'var(--onhero)',pick:()=>this.setState({topicSel:x[2]})})),
+      quick:[{big:String(dueN),l:'Повторить',sub:pl(dueN,WF)+' ждут',go:()=>this.startTest('review')},{big:'5 мин',l:'Быстрый тест',sub:s.quickN+' '+pl(s.quickN,WF),go:()=>this.startTest('quick')},{big:String(curW.length),l:'Листать',sub:'день '+cur+' без теста',go:()=>curW.length?this.openView(curIds,0):this.toast('День пуст')}],
+      cur,curTopic:L.t,curProg:learnedN+' / '+curW.length,goWordsAll:()=>{this.goTab('words');this.setState({wSeg:'all',filter:'all'});},
+      tiles:curW.map((w,i)=>({h:w.h,p:w.p,fs:w.h.length>2?14:w.h.length>1?19:24,c:w.s==='new'?'var(--mu)':'var(--ink)',bg:w.s==='new'?'transparent':'var(--sf)',dot:w.s!=='new',dc:this.dotC(w.s),go:()=>this.openView(curIds,i)})),
+      wSegOpts:seg([['lessons','Дни · '+s.lessons.length],['all','Все слова · '+s.words.length]],s.wSeg,k=>this.setState({wSeg:k})),wLessons:s.wSeg==='lessons',wAll:s.wSeg==='all',
+      lessonsList:[...s.lessons].reverse().map(l=>{const ws=this.dw(l.n),k=ws.filter(w=>w.s!=='new').length,h=ws.filter(w=>w.s==='hard').length,ids=ws.map(w=>w.id);return {n:l.n,zh:l.zh,py:l.py,t:l.t,prog:k+' / '+ws.length,pct:ws.length?k/ws.length*100:0,bc:ws.length&&k===ws.length?'var(--pr)':'var(--ac)',hard:h?h+' трудн.':'',isCur:l.n===cur,canLearn:ws.some(w=>w.s==='new'),view:()=>ids.length?this.openView(ids,0):this.toast('День пуст'),test:()=>this.startTest('lesson',l.n),learn:()=>this.startStudy(l.n)};}),
+      filters:[['all','Все'],['new','Новые'],['hard','Трудные'],['know','Выучены']].map(([k,l])=>{const on=k===s.filter;return {l:l+' '+s.words.filter(F[k]).length,bg:on?'var(--ink)':'transparent',fg:on?'var(--bg)':'var(--mu)',bd:on?'var(--ink)':'var(--ln)',pick:()=>this.setState({filter:k})};}),
+      allList:fl.slice(0,120).map((w,i)=>({h:w.h,p:w.p,m:w.m,tag:'дн. '+w.d,dc:this.dotC(w.s),go:()=>this.openView(flIds,i)})),
+      hasHardAll:s.words.some(w=>w.s==='hard'),testHard:()=>this.startTest('hard'),
+      stKnown:s.words.filter(w=>w.s!=='new').length,stHours:(totalMin/60).toFixed(1).replace('.',','),stStreak:s.streak,
+      week:wk.map((x,i)=>({l:DOW[x.d.getDay()],h:x.e.min?Math.max(6,x.e.min/mx*84):3,bg:i===6?'var(--ac)':x.e.min?'var(--pr)':'var(--sf2)',v:x.e.min||'',fw:i===6?700:400})),
+      weekSum:(()=>{const m=wk.reduce((a,x)=>a+(x.e.min||0),0);return Math.floor(m/60)+' ч '+(m%60)+' мин за неделю';})(),
+      heat,hist,freezes:s.freezes,pauseOn:s.pauseTomorrow,pauseOff:!s.pauseTomorrow,
+      pauseBg:s.pauseTomorrow?'var(--ink)':'var(--ln)',pauseJust:s.pauseTomorrow?'flex-end':'flex-start',
+      togglePause:()=>{if(s.pauseTomorrow)this.upd({pauseTomorrow:false,freezes:s.freezes+1});else if(s.freezes>0)this.upd({pauseTomorrow:true,freezes:s.freezes-1});else this.toast('Выходные закончились — новые за каждые 7 дней подряд');},
+      hskK,hskPct:Math.min(100,hskK/2245*100),
+      card,cardHead,hasUntil:!!cardHead.until,speakCard:()=>cw&&this.speak(cw.h),
+      exOpen:!!ex,exClosed:!ex,exLoading:!!ex?.loading,exReady:!!ex&&!ex.loading,exText:ex?.text||'',exStreaming:!!ex&&!ex.loading&&ex.text.length<ex.full.length,
+      explain:()=>cw&&this.explain(cw),closeEx:()=>{clearInterval(this.si);this.setState({ex:null});},
+      learnNext:()=>this.learnNext(false),learnKnown:()=>this.learnNext(true),exit:()=>this.exit(),
+      prevW:()=>vw&&vw.i>0&&this.setState({view:{...vw,i:vw.i-1},ex:null,edit:null}),nextW:()=>vw&&vw.i<vw.ids.length-1&&this.setState({view:{...vw,i:vw.i+1},ex:null,edit:null}),
+      prevOp:vw&&vw.i>0?1:.35,nextOp:vw&&vw.i<vw.ids.length-1?1:.35,
+      editing,notEditing:!editing,em:s.edit?.m||'',onEm:e=>this.setState({edit:{...s.edit,m:e.target.value}}),startEdit:()=>cw&&this.setState({edit:{id:cw.id,m:cw.m}}),
+      saveEdit:()=>{const prev=s.words;this.upd({words:prev.map(x=>x.id===cw.id?{...x,m:s.edit.m.trim()||x.m}:x),edit:null});this.toast('Перевод сохранён',()=>this.upd({words:prev}));},
+      moveW:()=>{const prev=s.words;this.upd({words:prev.map(x=>x.id===cw.id?{...x,d:x.d+1}:x)});this.toast(cw.h+' → день '+(cw.d+1),()=>this.upd({words:prev}));},
+      delW:()=>{const prev=s.words,ids=vw.ids.filter(x=>x!==cw.id);this.upd({words:prev.filter(x=>x.id!==cw.id),view:ids.length?{ids,i:Math.min(vw.i,ids.length-1)}:null,screen:ids.length?'view':'tab'});this.toast(cw.h+' удалено',()=>this.upd({words:prev}));},
+      ...(()=>{const wm=s.writeMode||'screen',hz=s.hint==='hz',ws=!!qz&&wm==='screen'&&!hz,n=(qv.h||'').length;return {
+        qHid:!!qv.hidden&&!ws,qRev:!!qv.rev&&!ws,wScreen:ws,wPaper:!!qv.hidden&&wm==='paper'&&!hz,wGridOn:s.wGrid!==false,wFs:n<=1?186:n===2?114:n===3?80:62,
+        wcRef:el=>{this.wcCanvas=el;},wDown:e=>this.wDown(e),wMove:e=>this.wMove(e),wUp:e=>this.wUp(e),wClear:()=>this.wClear(),wUndo:()=>this.wUndo(),wHas:!!s.wHas,wClearOp:s.wHas?1:.4,wUndoOp:s.wHas||(s.wIdx||0)>0?1:.4,wMiOp:s.wGrid==='mi'?1:0,
+        writeOpts:seg([['off','Не писать'],['paper','На бумаге'],['screen','На экране']],wm,k=>this.upd({writeMode:k})),
+        writeHint:{off:'Только вспоминаете ответ и открываете его.',paper:'Видите русское слово — пишете иероглиф в тетради, потом открываете ответ.',screen:'Пишете пальцем в клетке 田字格 прямо в тесте. После ответа правильный иероглиф появится бледно поверх вашего — легко сравнить.'}[wm],
+        writeNote:hz,isWScreen:wm==='screen',
+        wWidthOpts:seg([['thin','Тонкая'],['mid','Средняя'],['bold','Кисть']],s.wWidth||'mid',k=>this.upd({wWidth:k})),
+        wOrdOpts:seg([['always','Всегда'],['err','После ошибки'],['off','Нет']],s.wOrderHint||'err',k=>this.upd({wOrderHint:k})),
+        wOrdHint:{always:'Следующая черта всегда видна пунктиром: точка — откуда начинать, стрелка — куда вести. Для разучивания.',err:'Если черта не та, она исчезнет, а пунктиром покажется нужная. Кнопка с лампочкой подсказывает в любой момент.',off:'Без подсказок: пишете как помните, проверка — после ответа.'}[s.wOrderHint||'err'],
+        wGridOpts:seg([['on','田字格'],['mi','米字格'],['off','Скрыть']],s.wGrid===false?'off':s.wGrid==='mi'?'mi':'on',k=>this.upd({wGrid:k==='off'?false:k}))};})(),
+      qv,reveal:()=>{if(s.writeMode==='screen'&&s.hint!=='hz'&&qz&&!qz.rev&&(s.wMulti||'one')==='one'&&[...(qv.h||'')].length>1&&!this.wWarned){this.wSave();const n=[...qv.h].length;const empty=[...Array(n).keys()].find(k=>!((this.wCells||[])[k]&&this.wCells[k].S.length));if(empty!=null&&this.wCells.some(c=>c&&c.S&&c.S.length)){this.wWarned=true;this.wGo(empty);return this.setState({wWarn:'Знак '+(empty+1)+' ещё не написан — допишите или нажмите «Показать ответ» ещё раз'});}}this.setState({quiz:{...qz,rev:true}});if(s.writeMode==='screen'&&s.hint!=='hz')this.wCheckNow();},ansYes:()=>this.answer(true),ansNo:()=>this.answer(false),speakQ:()=>qv.h&&this.speak(qv.h),
+      rs,resMore:()=>s.result?.more==='lesson'?this.startStudy():this.startTest('quick'),resMoreL:s.result?.more==='lesson'?'Дальше':'Ещё тест',resDone:()=>{const first=s.catMet===false&&(s.catMode||'always')!=='off';this.upd({catHappyUntil:Date.now()+90000,catMet:true});this.goTab(s.tab);if(first){this.setState({catIntro:true});clearTimeout(this.ct2);setTimeout(()=>{this.tipGo=null;this.setState({catSay:'Привет, я Мао. Буду рядом'});this.meow();},900);this.ct2=setTimeout(()=>this.setState({catSay:null,catIntro:false}),7500);}},
+      thOpts:seg([['system','Система'],['light','Светлая'],['dark','Тёмная']],s.th,k=>this.upd({th:k})),
+      methodOpts:seg([['snow','Снежный ком'],['cards','Карточки']],s.method,k=>this.upd({method:k})),isSnow:s.method==='snow',
+      lessonOpts:seg([[15,'15'],[20,'20'],[25,'25'],[30,'30']],s.lessonSize||20,k=>this.upd({lessonSize:k,mN:null})),
+      lessonHint:(()=>{const P=s.goal?planOf(s.goal,s.words.filter(w=>w.s!=='new').length,0):null;const per=P&&!P.past?Math.ceil(P.leftNow/Math.max(1,P.study)):(s.dailyNew||20);return 'Столько слов Мао подбирает в новый день. Норма по цели — '+per+' '+pl(per,WF)+' в учебный день.';})(),
+      chunkOpts:seg([[3,'3'],[5,'5'],[7,'7'],[10,'10']],s.chunk,k=>this.upd({chunk:k})),
+      quickOpts:seg([[10,'10'],[15,'15'],[25,'25']],s.quickN,k=>this.upd({quickN:k})),
+      hintOpts:seg([['ru','Русский'],['hz','Иероглиф']],s.hint,k=>this.upd({hint:k})),
+      rateOpts:seg([[0.6,'0,6×'],[0.8,'0,8×'],[1,'1,0×']],s.rate,k=>this.upd({rate:k})),testVoice:()=>this.speak('你好'),
+      methodHint:s.method==='snow'?'Новое слово — и сразу короткая проверка по уже выученным в этом дне. Медленнее, но запоминается крепче.':'Слова идут по очереди, проверка одна — в конце дня. Быстрее.',
+      chunkHint:'После каждого нового слова проверяются последние '+s.chunk+' выученных и 2 случайных из начала дня.',
+      perDayHint:'',
+      quickHint:'Сколько слов в кнопке «Быстрый тест» на главной.',
+      hintHint:s.hint==='ru'?'Видите русское слово — вспоминаете иероглиф и пиньинь.':'Видите иероглиф — вспоминаете пиньинь и перевод.',
+      catHint:{always:'Мао сидит на главной, подсказывает по делу. Нажмите — чат, удерживайте — меню.',chat:'Фигурки на главной нет. Чат с Мао — круглая кнопка внизу справа.',off:'Мао не появляется нигде. Чат с нейросетью остаётся в меню «Объяснить».'}[s.catMode||'always'],
+      catIsOn:(s.catMode||'always')!=='off',resetAsk:!!s.resetAsk,askReset:()=>this.setState({resetAsk:true}),cancelReset:()=>this.setState({resetAsk:false}),
+      doReset:()=>{this.setState({resetAsk:false});this.upd({...this.defaults(),study:null,quiz:null,screen:'goal',obStep:0,tab:'home',gd:null});this.toast('Данные сброшены');},
+      exportJson:()=>{this.save();const name='mao-backup-'+iso(new Date())+'.json';const ok=window.EVINE?EVINE.saveFile(name,localStorage.getItem(KEY)||'{}'):false;if(!(window.EVINE&&EVINE.native))this.toast(ok?'Копия сохранена':'Не удалось сохранить');},
+      back:()=>this.setState({screen:'tab'}),
+      showCat:isTab&&tab==='home'&&!q&&!!s.catVis&&(s.catMode||'always')==='always'&&s.catMet!==false,
+      showSearch:isTab&&tab!=='progress',
+      catFilt:th==='d'?'brightness(.85) saturate(.85) drop-shadow(0 0 1.2px rgba(255,255,255,.55)) drop-shadow(0 2px 3px rgba(0,0,0,.4))':'drop-shadow(0 2px 3px rgba(0,0,0,.12))',
+      catNod:!!s.catNod&&scr==='quiz',
+      catSoundOpts:seg([['on','Мяу вкл'],['off','Без звука']],s.catSound===false?'off':'on',k=>{this.upd({catSound:k==='on'});if(k==='on')setTimeout(()=>this.meow(),50);}),
+      ...(()=>{const md=this.catMood();return {eyO:md==='awake'||md==='sad'?1:0,eyS:md==='sleep'?1:0,eyH:md==='happy'?1:0,eyD:md==='sad'?1:0};})(),
+      catDown:()=>this.catDown(),catUp:()=>this.catUp(),catClick:()=>this.catClick(),
+      catSayGo:ev=>{ev.stopPropagation();const g=this.tipGo;this.tipGo=null;this.setState({catSay:null});if(g)g();else this.setState({screen:'chat'});},
+      catMenu:!!s.catMenu,closeMenu:()=>this.setState({catMenu:false}),stop:ev=>ev.stopPropagation(),
+      menuX:Math.max(16,Math.min(((this.phoneRef.current&&this.phoneRef.current.clientWidth)||380)-252,(s.catX||0)-90)),menuY:(s.catY||0)+60,
+      menuItems:[['Объясни слово',()=>{const w=curW.find(x=>x.s!=='know')||curW[0];this.catAsk('Объясни слово '+(w?w.h+' ('+w.p+')':''));}],['Составь фразы со словами дня',()=>this.catAsk('Составь 3 простые фразы со словами дня '+cur)],['Проверь меня',()=>this.catAsk('Проверь меня: спроси 3 слова из дня '+cur)]].map(([l,go])=>({l,go})),
+      catModeOpts:seg([['always','На главной'],['chat','Только кнопка'],['off','Выключить']],s.catMode||'always',k=>this.upd({catMode:k})),
+      showCatBtn:(s.catMode||'always')==='chat',catOnResult:(s.catMode||'always')!=='off',openChatBtn:()=>this.setState({screen:'chat'}),catX:s.catX||0,catY:s.catY||0,catSc:s.catFlip?-1:1,catTr:s.catWalking?'left 2.8s linear':'none',phoneRef:this.phoneRef,catScroll:()=>this.catPlace(),
+      catBob:s.catWalking?'catIdle .4s ease-in-out infinite':({sleep:'breathe 3.6s ease-in-out infinite',sad:'breathe 4.2s ease-in-out infinite',happy:'hop 1.6s ease-in-out infinite',awake:'breathe 2.6s ease-in-out infinite'})[this.catMood()],
+      eyeBlink:this.catMood()==='awake'?'blinkEye 4.5s infinite':'none',earAnim:this.catMood()==='sleep'?'none':'ear 6s ease-in-out infinite',zAnim:'zz 2.4s ease-in-out infinite',pawA:s.catWalking?'pawUp .4s ease-in-out infinite':'none',pawB:s.catWalking?'pawUp .4s ease-in-out .2s infinite':'none',tailAnim:s.catWalking?'none':'tail 3.5s ease-in-out infinite',
+      hasSay:!!s.catSay,catSay:s.catSay,sayLeft:(s.catX||0)>190,sayRight:(s.catX||0)<=190,
+      openChat:()=>this.setState({screen:'chat',catSay:null}),isChat:scr==='chat',chatRef:this.chatRef,
+      chatMsgs:s.chat.map(m=>({t:m.t,isCat:m.r==='cat',isMe:m.r==='me'})),chatBusy:s.chatBusy,chatQ:s.chatQ,onChatQ:e=>this.setState({chatQ:e.target.value}),
+      chatKey:e=>{if(e.key==='Enter')this.sendChat(s.chatQ);},sendChat:()=>this.sendChat(s.chatQ),showQuick:s.chat.length===1,
+      quickAsk:['Чем отличаются 二 и 两?','Как запомнить 姐姐?','Составь 3 фразы со словами дня','Проверь меня по дню'].map(t=>({t,go:()=>this.sendChat(t)})),
+      sendBg:s.chatQ.trim()?'var(--pr)':'var(--sf2)',sendFg:s.chatQ.trim()?'var(--onpr)':'var(--mu)',
+      apiStatus:s.apiOk?'● Работает':'Без ключа',apiStC:s.apiOk?'var(--pr)':'var(--mu)',apiNote:s.apiMs||'Нажмите, чтобы проверить связь',
+      checkApi:()=>{if(!(window.claude&&claude.complete))return this.toast('Проверка работает в приложении на телефоне');const t0=Date.now();this.setState({clBusy:true,apiMs:''});this.ask('Ответь одним словом: мяу').then(()=>{const sec=((Date.now()-t0)/1000).toFixed(1).replace('.',',');this.setState({apiOk:true,clBusy:false,apiMs:'Ответ за '+sec+' с'});if(window.EDict)EDict.retry();this.fixRu();}).catch(er=>{this.setState({apiOk:false,clBusy:false,apiMs:'Не ответила'});this.toast(String((er&&er.message)||'нет ответа').slice(0,120));});},checkL:s.clBusy?'Проверяю…':'Проверить',
+      noQ:!q,openBulk:()=>this.setState({screen:'bulk',bulkFrom:'tab'}),openBulkS:()=>this.setState({screen:'bulk',bulkFrom:'settings'}),
+      qList:!!q&&/[,，、;；]/.test(q)&&q.split(/[,，、;；]+/).filter(x=>x.trim()).length>1,qListN:pl(q.split(/[,，、;；]+/).filter(x=>x.trim()).length,WF).replace(/^/,q.split(/[,，、;；]+/).filter(x=>x.trim()).length+' '),
+      qToBulk:()=>this.setState({screen:'bulk',bulkFrom:'tab',bulkT:q.split(/[,，、;；]+/).map(x=>x.trim()).filter(Boolean).join('\n'),q:'',manOpen:false}),
+      isBulk:scr==='bulk',bulkAdd:()=>this.bulkAdd(),bulkT:s.bulkT,onBulk:e=>this.setState({bulkT:e.target.value}),bulkEmpty:!s.bulkT.trim(),bulkFull:!!s.bulkT.trim(),
+      bulkClear:()=>this.setState({bulkT:'',bulkAlt:{},bulkSkip:{}}),bulkEx:()=>this.setState({bulkT:'姐姐, 弟弟\nmama\nbaba\n苹果 — яблоко'}),
+      bulkBack:()=>this.setState({screen:s.bulkFrom==='settings'?'settings':'tab'}),bulkRef:this.bulkRef,
+      bulkFile:()=>{if(!(window.EVINE&&EVINE.openFile(t=>t!=null&&this.setState({bulkT:String(t)}))))this.bulkRef.current?.click();},
+      onBulkFile:e=>{const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(t=>this.setState({bulkT:t}));},
+      bulkWait:!!s.bulkT.trim()&&!(window.EDict&&EDict.ready()),
+      ...(()=>{const R=this.bulkRows(),nAdd=R.filter(r=>r.add).length,nHave=R.filter(r=>r.kind==='have').length,nMiss=R.filter(r=>r.kind==='miss').length,tg=this.bulkTarget();
+        const sum=[nAdd?'Добавится '+nAdd:'',nHave?nHave+' уже в тетради':'',nMiss?'не нашла: '+nMiss:''].filter(Boolean).join(' · ');
+        return {bulkHas:R.length>0,bulkSum:sum,
+          bulkRows:R.map(r=>({h:r.h,p:r.p,m:r.kind==='miss'?'нет в словаре — проверьте написание или впишите иероглифами':r.kind==='nodict'&&!r.m?'нет в словаре — перевод сделает нейросеть':(r.m||r.en||''),
+            mc:r.kind==='miss'?'var(--seal)':(r.m?'var(--ink)':'var(--mu)'),op:r.add?1:.55,hasTag:r.kind==='have'||!!r.lv,tag:r.kind==='have'?'уже есть':'HSK '+r.lv,tc:'var(--mu)',
+            alt:r.alts>1,altL:(r.ai+1)+'/'+Math.min(r.alts,6),next:()=>this.setState({bulkAlt:{...this.state.bulkAlt,[r.key]:(r.ai+1)%Math.min(r.alts,6)}}),
+            rm:()=>this.setState({bulkSkip:{...this.state.bulkSkip,[r.key]:1}})})),
+          bulkBtn:nAdd?'Добавить '+nAdd+' '+pl(nAdd,WF)+' в день '+tg:'Добавить',bulkBg:nAdd?'var(--pr)':'var(--sf2)',bulkFg:nAdd?'var(--onpr)':'var(--mu)'};})(),
+      fileRef:this.fileRef,pickJson:()=>{if(!(window.EVINE&&EVINE.openFile(t=>t!=null&&this.importText(t))))this.fileRef.current?.click();},onJson:e=>this.importWords(e),
+      nav:[['home','Учёба'],['words','Слова'],['progress','Прогресс']].map(([k,label],i)=>({label,i1:i===0,i2:i===1,i3:i===2,fg:tab===k?'var(--ink)':'var(--mu)',bg:tab===k?'var(--sf2)':'transparent',fw:tab===k?600:400,go:()=>this.goTab(k)})),
+      ...(()=>{const g=s.gd||s.goal||{n:500,date:iso(addM(new Date(),6)),offOn:false,off:[6,0]};const n=+g.n||0,end=pISO(g.date);const P=planOf({...g,n},knownAll,0);
+        const ob=s.screen==='goal'&&!s.onboarded,step=s.obStep||0;const err=!n||n<1?'Укажите, сколько слов хотите выучить':!end?'Выберите дату':end<=day0(new Date())?'Дата должна быть позже сегодняшней':'';
+        const setG=p=>this.setState({gd:{...g,...p}});
+        return {isGoal:s.screen==='goal',obWelcome:ob&&step===0,obGoalForm:!ob||step===1,goalBackShow:!ob,goalBack:()=>this.setState({screen:'tab',gd:null}),obBackShow:ob&&step===1,obBack:()=>this.setState({obStep:0}),
+          goalTitle:ob?'Ваша цель':'Изменить цель',gN:g.n===''?'':String(g.n),onGN:e=>setG({n:e.target.value===''?'':Math.max(0,Math.min(20000,parseInt(e.target.value,10)||0))}),
+          nChips:[[100,'100'],[300,'300'],[500,'500 · HSK 1'],[1272,'1272 · HSK 2'],[2245,'2245 · HSK 3']].map(([v,l])=>({l,bd:n===v?'var(--pr)':'var(--ln)',bg:n===v?'var(--prs)':'var(--sf)',pick:()=>setG({n:v})})),
+          gPre:g.pre?String(g.pre):'',onGPre:e=>setG({pre:Math.max(0,Math.min(5000,parseInt(e.target.value,10)||0))}),gDate:g.date||'',gMin:iso(new Date(Date.now()+864e5)),onGDate:e=>setG({date:e.target.value}),
+          dChips:[[1,'1 месяц'],[3,'3 месяца'],[6,'полгода'],[12,'1 год']].map(([m,l])=>({l,pick:()=>setG({date:iso(addM(new Date(),m))})})),
+          offOn:!!g.offOn,offBg:g.offOn?'var(--pr)':'var(--ln)',offJust:g.offOn?'flex-end':'flex-start',toggleOff:()=>setG({offOn:!g.offOn,off:g.off&&g.off.length?g.off:[6,0]}),
+          offHint:g.offOn?'В отмеченные дни не учим — норма пересчитана на остальные дни':'Сейчас учим каждый день без выходных. Включите, чтобы не учить по выбранным дням',
+          dowChips:[1,2,3,4,5,6,0].map(d=>{const on=(g.off||[]).includes(d);return {l:DOW[d],bd:on?'var(--pr)':'var(--ln)',bg:on?'var(--pr)':'transparent',fg:on?'var(--onpr)':'var(--ink)',fw:on?600:400,pick:()=>{const off=on?(g.off||[]).filter(x=>x!==d):[...(g.off||[]),d];if(off.length>=7)return this.toast('Нужен хотя бы один учебный день');setG({off});}};}),
+          gPerDay:P&&!err?String(P.study?Math.ceil(P.leftNow/P.study):P.leftNow):'—',gPerDayW:pl(P&&P.study?Math.ceil(P.leftNow/P.study):0,WF)+' в день',
+          gLine1:P&&!err?('До '+fmtD(end)+': '+P.all+' '+pl(P.all,DF)+(g.offOn?' — из них '+P.study+' учебных и '+P.off+' '+pl(P.off,['выходной','выходных','выходных']):', без выходных')+'. Осталось выучить '+P.leftNow+' '+pl(P.leftNow,WF)+'.'):'Заполните число слов и дату',
+          gHasLine2:!!(P&&!err&&g.offOn&&P.off),gLine2:P?'Без выходных было бы '+Math.ceil(P.leftNow/Math.max(1,P.all))+' '+pl(Math.ceil(P.leftNow/Math.max(1,P.all)),WF)+' в день.':'',
+          gHasErr:!!err&&!(ob&&step===0),gErr:err,
+          ...(()=>{const per=P&&P.study?Math.ceil(P.leftNow/P.study):0;if(err||!P||per>=5||!P.leftNow)return {gFastShow:false};
+            const need=Math.ceil(P.leftNow/10);let d=day0(new Date()),c=0;while(c<need){if(!(g.offOn&&(g.off||[]).includes(d.getDay())))c++;if(c<need)d.setDate(d.getDate()+1);}
+            return {gFastShow:true,gFastL:'Можно быстрее: 10 в день — к '+fmtD(d),gFastGo:()=>setG({date:iso(d)})};})(),
+          goalBtn:ob&&step===0?'Поставить цель':ob?'Начать с пустой тетради':'Сохранить цель',goalBtnBg:(ob&&step===0)||!err?'var(--pr)':'var(--sf2)',goalBtnFg:(ob&&step===0)||!err?'var(--onpr)':'var(--mu)',
+          goalNext:()=>{if(ob&&step===0)return this.setState({obStep:1,gd:g});if(err)return this.toast(err);this.upd({goal:{n,pre:Math.max(0,+g.pre||0),date:g.date,offOn:!!g.offOn,off:g.off||[6,0],set:iso(new Date())},gd:null,onboarded:true,screen:'tab',tab:'home',mN:null});this.toast(ob?'Цель поставлена — выберите тему первого дня':'Цель обновлена');},
+          openGoal:()=>this.setState({screen:'goal',gd:{...(s.goal||g)}}),
+          quotaLine:PL?(PL.past?'Срок цели прошёл — поставьте новую дату':PL.todayOff?'сегодня выходной':'из '+PL.quota+' новых сегодня'):'новых сегодня',
+          gKnown:knownAll,gTarget:s.goal?s.goal.n:'—',gDateL:s.goal?'к '+fmtD(pISO(s.goal.date)):'цель не задана',gPct:s.goal?Math.min(100,(knownAll+(+s.goal.pre||0))/Math.max(1,s.goal.n)*100):0,
+          gPlanL:PL?(PL.past?'Срок цели прошёл. Нажмите «Изменить цель», чтобы поставить новую дату.':'Осталось '+PL.leftNow+' '+pl(PL.leftNow,WF)+' · '+PL.study+' учебных '+pl(PL.study,DF)+(s.goal.offOn?' и '+PL.off+' '+pl(PL.off,['выходной','выходных','выходных']):'')+'. Норма сегодня: '+(PL.todayOff?'выходной':PL.quota)+'.'):'',
+          hskLine:'Из них в списках HSK 3.0: '+hskK,
+          goalHint:s.goal?s.goal.n+' '+pl(s.goal.n,WF)+' к '+fmtD(pISO(s.goal.date))+(s.goal.offOn?' · выходные: '+[1,2,3,4,5,6,0].filter(d=>s.goal.off.includes(d)).map(d=>DOW[d]).join(', '):' · без выходных')+(PL&&!PL.past?' · '+(PL.todayOff?'сегодня выходной':'сегодня '+PL.quota):''):'Цель не задана',
+          topicOwn:s.topicOwn||'',onTopicOwn:e=>this.setState({topicOwn:e.target.value}),mN,mNDec:()=>this.setState({mN:Math.max(1,mN-1)}),mNInc:()=>this.setState({mN:Math.min(60,mN+1)}),
+          dayHead:cur&&s.lessons.some(l=>l.n===cur)?'День '+cur+' · '+L.t:'Слов пока нет',
+          dictCount:window.EDict&&EDict.count()?EDict.count().toLocaleString('ru-RU'):'≈116 000'};})(),
+      ...(()=>{const r=s.wRes,qz=s.quiz;const wm=s.writeMode||'screen';const ws=!!qz&&wm==='screen'&&s.hint!=='hz';const nch=qv.chars||1;const one=(s.wMulti||'one')==='one'&&nch>1;const idx=s.wIdx||0;
+        const has=!!(r&&!r.nodata&&qz&&qz.rev);const vd=has?r.verdict:null;
+        const badChars=has?r.per.map((p,k)=>p.badRef&&p.badRef.length&&p.ok&&!p.nodata?((nch>1?[...qv.h][k]+': ':'')+'штрихи '+p.badRef.map(x=>x+1).join(', ')):'' ).filter(Boolean).join(' · '):'';
+        return {wMulti:ws&&nch>1&&!!qz&&!qz.rev,wCellL:one?'Иероглиф '+Math.min(idx+1,nch)+' из '+nch+' — пишите по одному':'Все '+nch+' иероглифа в одной клетке, слева направо',
+          wWarnOn:!!s.wWarn&&ws&&!!qz&&!qz.rev,wWarn:s.wWarn||'',wNavShow:ws&&!!qz&&!qz.rev&&(one||!!this.wCurRef()),wNextShow:ws&&one&&idx<nch-1,wNext:()=>this.wNext(),wNextL:'Знак '+(idx+2),wPrevShow:ws&&one&&idx>0,wPrev:()=>this.wGo(idx-1),wPrevL:'Знак '+idx,
+          wCount:(()=>{const R=ws&&qz&&!qz.rev?this.wCurRef():null;const n2=s.wN||0;const ch=one?'Знак '+(idx+1)+' из '+nch:'';return R?(ch?ch+' · ':'')+'черта '+Math.min(n2+1,R.length)+' из '+R.length:ch;})(),
+          cardCv:el=>{this.cardCvEl=el;},cardAnim:()=>cw&&this.cardAnimRun(cw.h),cardOp:(this._cardH=cw?cw.h:null,cw&&s.cardAn===cw.h?.12:1),
+          wHintBtn:()=>{if(!this.wCurRef())return this.toast('Для этого знака нет данных о чертах');this.wHint=true;this.wRender();},wShowOrder:()=>this.wAnimOne(),wSelf:ws&&!!qz&&!!qz.rev,
+          wDots:ws&&one&&!!qz&&!qz.rev?Array.from({length:nch},(_,k)=>{const filled=k===idx?(s.wN||0)>0:!!((this.wCells||[])[k]&&this.wCells[k].S.length);return {t:String(k+1),l:'Знак '+(k+1)+(filled?', написан':''),bd:k===idx?'2px solid var(--pr)':filled?'1.5px solid var(--pr)':'1.5px solid var(--ln)',bg:k===idx?'var(--prs)':filled?'var(--pr)':'transparent',fg:k!==idx&&filled?'var(--onpr)':'var(--ink)',go:()=>k!==idx&&this.wGo(k)};}):[],
+          wDotsL:ws&&nch>1&&!!qz&&!qz.rev?(one?'Знак '+Math.min(idx+1,nch)+' из '+nch:'Все '+nch+' в одной клетке'):'',
+          wHasRes:has,wResL:vd==='ok'?'Верно ✓':vd==='close'?'Почти':'Не похоже',wResC:vd==='ok'?'var(--pr)':vd==='close'?'var(--ac)':'var(--seal)',
+          wResSub:has?(vd==='ok'?'Совпадает с эталоном на '+r.score+'%':(badChars?'Проверьте '+badChars+' (пунктир — как надо)':'Совпадение '+r.score+'%'))+(this.wHelped?' · с подсказкой: '+this.wHelped+' '+pl(this.wHelped,['черта','черты','черт']):''):'',
+          wCanAnim:ws&&!!qz&&qz.rev&&!!window.WCheck&&WCheck.ready()&&[...(qv.h||'')].some(ch=>WCheck.has(ch)),wAnim:()=>this.wAnim(),
+          noBd:vd==='bad'?'var(--seal)':'var(--ln)',noBg:vd==='bad'?'var(--seal)':'transparent',noFg:vd==='bad'?'var(--onseal)':'var(--ink)',
+          yesBd:vd==='bad'?'var(--ln)':'var(--pr)',yesBg:vd==='bad'?'transparent':'var(--pr)',yesFg:vd==='bad'?'var(--ink)':'var(--onpr)',
+          wSnapOpts:seg([['on','Выравнивать'],['off','Как нарисовал']],s.wSnap||'on',k=>this.upd({wSnap:k})),
+          wSnapHint:(s.wSnap||'on')==='on'?'Нарисованная черта сразу становится ровной по шаблону, если она похожа на нужную. Непохожая остаётся бледной, после двух промахов появится подсказка пунктиром.':'Линии остаются такими, как вы их нарисовали.',
+          wGhostOpts:seg([['off','Без контура'],['on','Показывать']],s.wGhost||'off',k=>this.upd({wGhost:k})),
+          wGhostHint:(s.wGhost||'off')==='on'?'В клетке бледно виден иероглиф — его можно обводить. Удобно для разучивания, но это подсказка к ответу.':'Клетка пустая — пишете по памяти.',
+          wCheckOpts:seg([['strict','Строгая'],['soft','Мягкая'],['off','Выкл']],s.wCheck||'strict',k=>this.upd({wCheck:k})),
+          wCheckHint:{strict:'Учитывается порядок и направление черт.',soft:'Только форма: порядок и направление черт не важны.',off:'Просто покажем правильный иероглиф поверх вашего.'}[s.wCheck||'strict'],
+          wMultiOpts:seg([['one','По одному иероглифу'],['all','Все в одной клетке']],s.wMulti||'one',k=>this.upd({wMulti:k})),
+          wMultiHint:(s.wMulti||'one')==='one'?'Пишете первый иероглиф, нажимаете «Следующий» — клетка очищается для следующего.':'Пишете всё слово слева направо в одной клетке.'};})(),
+      hasUpd:!!s.upd&&isTab&&!s.toast,updT:s.upd?.t||'',updSub:s.upd?.sub||'',updBtn:s.upd?.btn||'',updX:()=>this.setState({upd:null}),
+      updGo:()=>{const u=s.upd;this.setState({upd:null});try{if(u.type==='web')EvineNative.updateApply();else EvineNative.updateInstall();}catch(e){}},
+      appVer:(()=>{try{const i=JSON.parse(EvineNative.appInfo());return 'Версия '+i.app+' · экраны '+i.web+(i.pending>i.web?' (готово обновление '+i.pending+')':'');}catch(e){return 'Версия в браузере';}})(),
+      checkUpd:()=>{try{EvineNative.updateCheck();this.toast('Проверяю обновления…');}catch(e){this.toast('Проверка работает в приложении на телефоне');}},
+      hasToast:!!s.toast,toastMsg:s.toast?.msg,toastUndo:!!s.toast?.undo,toastBottom:isTab?86:(scr==='bulk'?92:scr==='quiz'?140:20),undo:()=>{const u=s.toast?.undo;this.setState({toast:null});u&&u();}
+    };
+  }
+}
+</script>
+</body>
+</html>

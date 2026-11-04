@@ -1,0 +1,34 @@
+{
+ "web": {
+  "ver": 1,
+  "tag": "web-1",
+  "minApp": 10,
+  "notes": "",
+  "files": {
+   "dict.js": "b61c826e9dacadf6ecfcc08ad544c8792c33d09abe5042ade4706dd598cea7c4",
+   "dict.txt": "d6611ddeb74a57da42ae0fa1a48e4b1637b5e67744cd847f8fe5a35b63e5865a",
+   "fonts.css": "20d791b22c45709f507617dcc6a5f14d777ef8fc4624bf4747cdcefea597da6d",
+   "fonts/notoserif-400.woff": "6d7b4a879fcf0ee1f9b445822d53164f519f44a8ac1c5e489e5e58cdd1b719df",
+   "fonts/notoserif-500.woff": "33b9322aaa7d613742acc5627da8968cff22ba534592b89a128ec106914b2207",
+   "fonts/notoserif-600.woff": "10a8d6aef1f4800edd3ea88a95252d163d37ed1d89ca131881c238239fddb05c",
+   "fonts/notoserif-700.woff": "3a63e5f680cf8889f18f7cb5bf33b06241f6158bb0e6ef200aada47b865d7d61",
+   "fonts/serif-500.woff": "bba3d333bffdc58ca5a8e61fa8920b02539bf649903fde788fc8782b76f1d1a3",
+   "fonts/serif-600.woff": "f7a3cb750088d8287cec8dbd40ed124164593aa772479c59b1a8e4a0ddda949a",
+   "fonts/serif-700.woff": "b6c9aad215b0eb89568671a034b67af93f3d76df0a6462cff355af467b45071f",
+   "index.html": "ef2d625ff5bbfa53884e93a031dae4a9a1ce7379c065b1689dee693cf13ad28a",
+   "native.js": "b01f7dbf32cc18d649c0d667258b06bd1099c739e95344c63c400e5d7a28e626",
+   "react.js": "cf1f831cca85b9f9f7f35b5ef7c6995a9d6568e545176867ef0599023a8f187c",
+   "strokes.txt": "b40344022813d9d7fa80488617b8215ed77e4192f7434829f61d19b9d711c360",
+   "support.js": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
+   "topics.txt": "34454ad6c1a4c1b7bb0dec1d258c0d0f71417878bdefdec5dea280cc767eb779",
+   "writecheck.js": "d48c4a75042edf329eae3412420eb8c2ef174535858de63933c836bb93ce468f"
+  }
+ },
+ "app": {
+  "code": 10,
+  "name": "2.7",
+  "tag": "app-10",
+  "path": "apk/Mao.apk",
+  "notes": "Обновления через GitHub: приложение теперь обновляется само"
+ }
+}
