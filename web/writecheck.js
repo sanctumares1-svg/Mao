@@ -112,5 +112,31 @@
     const d = mean(U, F); if (!allowRev) return d;
     return Math.min(d, mean(U.slice().reverse(), F));
   }
-  window.WCheck = { load, ref, check, split, strokeDist, ready: () => !!map, has: ch => !!(map && map.has(ch)) };
+  // calligraphic stroke shapes (outlines) — what a correct stroke turns into, like in Laoshi / Hanzi Writer.
+  // Stored in the 1024 box of Make Me a Hanzi with y up; the transform maps them into the 0..1 cell.
+  let omap = null, oload = null; const pcache = new Map();
+  function loadOutlines() {
+    if (omap) return Promise.resolve(omap);
+    if (oload) return oload;
+    oload = fetch('outlines.txt').then(r => { if (!r.ok) throw 0; return r.text(); }).then(t => {
+      const m = new Map(); let i = 0;
+      while (i < t.length) { let j = t.indexOf('\n', i); if (j < 0) j = t.length; const k = t.indexOf('\t', i); if (k > i && k < j) m.set(t.slice(i, k), t.slice(k + 1, j)); i = j + 1; }
+      omap = m; return m;
+    }).catch(() => { oload = null; omap = new Map(); return omap; });
+    return oload;
+  }
+  // Path2D list for a character in a canvas of W×H (cached)
+  function paths(ch, W, H) {
+    if (!omap || typeof Path2D === 'undefined') return null;
+    const raw = omap.get(ch); if (!raw) return null;
+    const key = ch + '|' + W + 'x' + H; if (pcache.has(key)) return pcache.get(key);
+    let out = null;
+    try {
+      const M = new DOMMatrix([W / 1024, 0, 0, -H / 1024, 0, 900 * H / 1024]);
+      out = raw.split('|').map(d => { const p = new Path2D(); p.addPath(new Path2D(d), M); return p; });
+    } catch (e) { out = null; }
+    if (pcache.size > 300) pcache.clear();
+    pcache.set(key, out); return out;
+  }
+  window.WCheck = { load, ref, check, split, strokeDist, ready: () => !!map, has: ch => !!(map && map.has(ch)), loadOutlines, paths, outlinesReady: () => !!omap };
 })();

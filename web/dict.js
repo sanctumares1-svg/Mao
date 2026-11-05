@@ -46,7 +46,7 @@
   let rows = [], state = 'loading';
   const listeners = [];
   let RUC = {};
-  try { RUC = JSON.parse(localStorage.getItem('evine-ruc') || '{}') || {}; } catch (e) { RUC = {}; }
+  try { localStorage.removeItem('evine-ruc'); } catch (e) {}
   const saveRuc = () => { try { localStorage.setItem('evine-ruc', JSON.stringify(RUC)); } catch (e) {} };
 
   function parse(txt) {
@@ -82,7 +82,8 @@
   }
 
   const shortEn = en => { let t = en.split(';').map(x => x.trim()).filter(x => !/[\u3400-\u9fff]/.test(x)).slice(0, 3).join('; '); if (t.length > 90) t = t.slice(0, 88).replace(/[ ,;]+[^ ,;]*$/, '') + '…'; return t; };
-  const ruOf = e => e.ru || RUC[e.key] || '';
+  // only the dictionary's own Russian: old neural-network translations were sometimes attached to the wrong word
+  const ruOf = e => e.ru || '';
   const rank = (exact) => (a, b) => (exact(b) - exact(a)) || ((b.lv ? 1 : 0) - (a.lv ? 1 : 0)) || ((ruOf(b) ? 1 : 0) - (ruOf(a) ? 1 : 0)) || (a.len - b.len) || (b.f - a.f);
 
   function search(q, limit) {
@@ -164,7 +165,7 @@
   }
   function flush() {
     const c = window.claude; if (!c || !c.complete || !(c.hasKey && c.hasKey())) { queue = []; return; }
-    const batch = queue.splice(0, 12); if (!batch.length) return;
+    const batch = queue.splice(0, 1); if (!batch.length) return;
     batch.forEach(x => { pending.add(x.key); tried.add(x.key); });
     const list = batch.map((x, i) => i + '. ' + x.h + ' (' + x.p + '): ' + x.en).join('\n');
     const prompt = 'Переведи на русский язык китайские слова для словаря ученика. Дай краткий перевод ТОЛЬКО по-русски (кириллицей): 1–3 основных значения через «; », без пояснений и без английских слов.\n' + list + '\nОтветь только JSON-массивом строк в том же порядке, длиной ' + batch.length + '.';
