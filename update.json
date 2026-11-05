@@ -1,12 +1,12 @@
 {
  "web": {
-  "ver": 2,
-  "tag": "2d0ddb6e079825df29375d301aa0c215e00072e3",
-  "minApp": 11,
+  "ver": 3,
+  "tag": "c53868b32f2d48f75723cddf40774130f8ca2a24",
+  "minApp": 12,
   "notes": "",
   "files": {
    "decomp.txt": "80ead836fdb985a6af620bfa841acd319f6271dd0518d26889163ce8f6da70c4",
-   "dict.js": "5bdb4ff94100553c6a458866e68daf6bae2c8e9b834065900d2a25ad2bbb875b",
+   "dict.js": "e0d030e5a960aeb51817986e59b41f584ae2ab90f717010c79d507f58d2ed852",
    "dict.txt": "d6611ddeb74a57da42ae0fa1a48e4b1637b5e67744cd847f8fe5a35b63e5865a",
    "explain.js": "b5278142dcb44970bfc755cb36da64f4418b7051db893f59925d2e0d543a9f21",
    "fonts.css": "20d791b22c45709f507617dcc6a5f14d777ef8fc4624bf4747cdcefea597da6d",
@@ -17,20 +17,21 @@
    "fonts/serif-500.woff": "bba3d333bffdc58ca5a8e61fa8920b02539bf649903fde788fc8782b76f1d1a3",
    "fonts/serif-600.woff": "f7a3cb750088d8287cec8dbd40ed124164593aa772479c59b1a8e4a0ddda949a",
    "fonts/serif-700.woff": "b6c9aad215b0eb89568671a034b67af93f3d76df0a6462cff355af467b45071f",
-   "index.html": "f869997e2c27d6f8be228d5b9901feae0bcb10640401f44a05c3df080bf9df54",
+   "index.html": "ffeb3580d71cb102f88af031b08c35033640bccc80b1895304d7267adf6113e4",
    "native.js": "b01f7dbf32cc18d649c0d667258b06bd1099c739e95344c63c400e5d7a28e626",
+   "outlines.txt": "aa67abe10fbd4474066bd257d28b9a6c9ce9f21748239f7663faa08a1350cb36",
    "react.js": "cf1f831cca85b9f9f7f35b5ef7c6995a9d6568e545176867ef0599023a8f187c",
    "strokes.txt": "b40344022813d9d7fa80488617b8215ed77e4192f7434829f61d19b9d711c360",
    "support.js": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
    "topics.txt": "34454ad6c1a4c1b7bb0dec1d258c0d0f71417878bdefdec5dea280cc767eb779",
-   "writecheck.js": "d48c4a75042edf329eae3412420eb8c2ef174535858de63933c836bb93ce468f"
+   "writecheck.js": "936b7891f1a8dcf48c76eefb286d2feae7577d33c818fda705206b60217ba373"
   }
  },
  "app": {
-  "code": 11,
-  "name": "2.8",
-  "tag": "2d0ddb6e079825df29375d301aa0c215e00072e3",
+  "code": 12,
+  "name": "2.9",
+  "tag": "c53868b32f2d48f75723cddf40774130f8ca2a24",
   "path": "apk/Mao.apk",
-  "notes": "Офлайн-Мао, быстрый урок вместо «Снежного кома», письмо черта за чертой как в Laoshi"
+  "notes": "Линии как в Laoshi, правка дня и переименование тем, исправленные переводы, понятные настройки, интервальное повторение (тест)"
  }
 }
