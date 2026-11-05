@@ -39,23 +39,23 @@ def main():
         ver += 1                                     # screens get a new number; the APK inside phones stays
         open(vfile, 'w').write(str(ver))
     files = copy_web(ver)
-    u['web'] = {'ver': ver, 'tag': f'web-{ver}', 'minApp': CODE, 'notes': notes if kind == 'web' else (u.get('web', {}).get('notes', '')), 'files': files}
-    tags = [f'web-{ver}']
+    u['web'] = {'ver': ver, 'tag': '', 'minApp': CODE, 'notes': notes if kind == 'web' else (u.get('web', {}).get('notes', '')), 'files': files}
     if kind == 'app':
         apk = os.path.join(HERE, 'android', 'out', 'EVINE.apk')
         os.makedirs(os.path.join(REPO, 'apk'), exist_ok=True)
         shutil.copy2(apk, os.path.join(REPO, 'apk', 'Mao.apk'))
-        u['app'] = {'code': CODE, 'name': NAME, 'tag': f'app-{CODE}', 'path': 'apk/Mao.apk', 'notes': notes}
-        tags.append(f'app-{CODE}')
-    json.dump(u, open(upath, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+        u['app'] = {'code': CODE, 'name': NAME, 'tag': '', 'path': 'apk/Mao.apk', 'notes': notes}
+    # 1) commit the files; 2) point update.json at that commit (jsDelivr and GitHub serve files by commit, no tags needed)
     git('add', '-A')
     git('commit', '-m', f'Mao {NAME}: ' + (f'экраны {ver}' if kind == 'web' else f'приложение {NAME} (код {CODE})') + (f' — {notes}' if notes else ''))
-    existing = subprocess.run(['git', '-C', REPO, 'tag'], capture_output=True, text=True).stdout.split()
-    for t in tags:
-        if t not in existing: git('tag', t)
-    if os.environ.get('NOPUSH')!='1':
+    sha = subprocess.run(['git', '-C', REPO, 'rev-parse', 'HEAD'], capture_output=True, text=True, check=True).stdout.strip()
+    u['web']['tag'] = sha
+    if kind == 'app': u['app']['tag'] = sha
+    json.dump(u, open(upath, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+    git('add', 'update.json')
+    git('commit', '-m', f'update.json → {sha[:7]}')
+    if os.environ.get('NOPUSH') != '1':
         git('push', 'origin', 'HEAD:main')
-        git('push', 'origin', *[t for t in tags if t not in existing] or ['--tags'])
     print('published', kind, 'web', ver, 'app', CODE, NAME)
 
 if __name__ == '__main__':
