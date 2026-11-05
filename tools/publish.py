@@ -10,7 +10,7 @@ import json, os, re, shutil, subprocess, sys, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.environ.get('MAO_REPO', '/home/claude/mao')
 WWW = os.path.join(HERE, 'www')
-FILES = ['index.html', 'react.js', 'native.js', 'dict.js', 'writecheck.js', 'strokes.txt', 'topics.txt', 'support.js', 'fonts.css', 'dict.txt']
+FILES = ['index.html', 'react.js', 'native.js', 'dict.js', 'writecheck.js', 'strokes.txt', 'topics.txt', 'support.js', 'fonts.css', 'dict.txt', 'explain.js', 'decomp.txt']
 BUILD = open(os.path.join(HERE, 'android', 'build.sh'), encoding='utf8').read()
 CODE = int(re.search(r'android:versionCode="(\d+)"', BUILD).group(1))
 NAME = re.search(r'android:versionName="([^"]+)"', BUILD).group(1)
