@@ -129,6 +129,9 @@
     const add = (m, k, e) => { const a = m.get(k); if (a) a.push(e); else m.set(k, [e]); };
     for (const e of rows) { add(byH, e.h, e); if (e.t && e.t !== e.h) add(byH, e.t, e); add(byP, e.plain, e); }
   }
+  let hskPool = null;
+  const STOP = new Set(['про', 'для', 'тему', 'теме', 'тема', 'слова', 'слов', 'слово', 'подбери', 'подбор', 'дай', 'мне', 'как', 'что', 'это', 'по', 'на', 'или', 'все', 'весь']);
+  const outE = e => out(e);
   const out = e => ({ h: e.h, t: e.t && e.t !== e.h ? e.t : '', p: e.p || displayPy(e.n), m: ruOf(e), en: shortEn(e.en), hsk: e.lv > 0, lv: e.lv, key: e.key });
   const lvR = e => e.lv > 0 ? e.lv : 9;
   const low = e => (/^[A-Z]/.test(e.n) ? 1 : 0);
@@ -187,6 +190,20 @@
     // one entry of a pasted list -> dictionary matches, best first (characters or pinyin with/without tones)
     best: q => bestRows(q).slice(0, 6).map(out),
     py: displayPy,
+    // ---- offline helpers (Mao 2.8) ----
+    // words that contain a character: HSK first, short first
+    withChar: (ch, n, except) => { if (state !== 'ready') return []; index(); const out = []; for (const e of rows) { if (e.h.indexOf(ch) < 0 || e.h === except || !ruOf(e)) continue; out.push(e); } out.sort((a, b) => (lvR(a) - lvR(b)) || (a.len - b.len) || (b.f - a.f)); const seen = new Set(); return out.filter(e => !seen.has(e.h) && seen.add(e.h)).slice(0, n || 4).map(outE); },
+    // words by a Russian word or topic ("еда", "кошка", "на работе"): match the beginning of words in the translation
+    byRu: (q, n) => { if (state !== 'ready') return []; const stems = String(q || '').toLowerCase().replace(/ё/g, 'е').split(/[^а-я]+/).filter(t => t.length >= 3 && !STOP.has(t)).map(t => t.length >= 7 ? t.slice(0, t.length - 2) : t.length >= 5 ? t.slice(0, t.length - 1) : t);
+      if (!stems.length) return [];
+      const full = String(q || '').toLowerCase().replace(/ё/g, 'е').split(/[^а-я]+/).filter(t => t.length >= 3 && !STOP.has(t));
+      // first the whole words ("семья"), then shorter stems ("работ" for «работать, работа»)
+      const whole = new RegExp('(^|[^а-я])(' + full.join('|') + ')([^а-я]|$)', 'i');
+      const pass = list => { const re = new RegExp('(^|[^а-я])(' + list.join('|') + ')', 'i'); const o = []; for (const e of rows) { const r = ruOf(e); if (r && re.test(r.toLowerCase().replace(/ё/g, 'е'))) o.push(e); } const w = e => whole.test(ruOf(e).toLowerCase().replace(/ё/g, 'е')) ? 0 : 1; o.sort((a, b) => (w(a) - w(b)) || (lvR(a) - lvR(b)) || (a.len - b.len) || (b.f - a.f)); return o; };
+      const out = [...pass(full), ...pass(stems)];
+      const seen = new Set(); return out.filter(e => !seen.has(e.h) && seen.add(e.h)).slice(0, n || 20).map(outE); },
+    // random HSK words of a given length (for answer choices)
+    sample: (n, len) => { if (state !== 'ready') return []; if (!hskPool) hskPool = rows.filter(e => e.lv > 0 && ruOf(e)); let p = hskPool.filter(e => !len || e.len === len); if (p.length < n) p = hskPool; const out = []; for (let i = 0; i < n * 3 && out.length < n; i++) { const e = p[Math.floor(Math.random() * p.length)]; if (!out.includes(e)) out.push(e); } return out.map(outE); },
     isHsk: h => rows.some(x => x.h === h && x.lv > 0)
   };
   load();

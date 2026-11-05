@@ -1,12 +1,14 @@
 {
  "web": {
-  "ver": 1,
-  "tag": "web-1",
-  "minApp": 10,
+  "ver": 2,
+  "tag": "web-2",
+  "minApp": 11,
   "notes": "",
   "files": {
-   "dict.js": "b61c826e9dacadf6ecfcc08ad544c8792c33d09abe5042ade4706dd598cea7c4",
+   "decomp.txt": "80ead836fdb985a6af620bfa841acd319f6271dd0518d26889163ce8f6da70c4",
+   "dict.js": "5bdb4ff94100553c6a458866e68daf6bae2c8e9b834065900d2a25ad2bbb875b",
    "dict.txt": "d6611ddeb74a57da42ae0fa1a48e4b1637b5e67744cd847f8fe5a35b63e5865a",
+   "explain.js": "b5278142dcb44970bfc755cb36da64f4418b7051db893f59925d2e0d543a9f21",
    "fonts.css": "20d791b22c45709f507617dcc6a5f14d777ef8fc4624bf4747cdcefea597da6d",
    "fonts/notoserif-400.woff": "6d7b4a879fcf0ee1f9b445822d53164f519f44a8ac1c5e489e5e58cdd1b719df",
    "fonts/notoserif-500.woff": "33b9322aaa7d613742acc5627da8968cff22ba534592b89a128ec106914b2207",
@@ -15,7 +17,7 @@
    "fonts/serif-500.woff": "bba3d333bffdc58ca5a8e61fa8920b02539bf649903fde788fc8782b76f1d1a3",
    "fonts/serif-600.woff": "f7a3cb750088d8287cec8dbd40ed124164593aa772479c59b1a8e4a0ddda949a",
    "fonts/serif-700.woff": "b6c9aad215b0eb89568671a034b67af93f3d76df0a6462cff355af467b45071f",
-   "index.html": "ef2d625ff5bbfa53884e93a031dae4a9a1ce7379c065b1689dee693cf13ad28a",
+   "index.html": "f869997e2c27d6f8be228d5b9901feae0bcb10640401f44a05c3df080bf9df54",
    "native.js": "b01f7dbf32cc18d649c0d667258b06bd1099c739e95344c63c400e5d7a28e626",
    "react.js": "cf1f831cca85b9f9f7f35b5ef7c6995a9d6568e545176867ef0599023a8f187c",
    "strokes.txt": "b40344022813d9d7fa80488617b8215ed77e4192f7434829f61d19b9d711c360",
@@ -25,10 +27,10 @@
   }
  },
  "app": {
-  "code": 10,
-  "name": "2.7",
-  "tag": "app-10",
+  "code": 11,
+  "name": "2.8",
+  "tag": "app-11",
   "path": "apk/Mao.apk",
-  "notes": "Обновления через GitHub: приложение теперь обновляется само"
+  "notes": "Офлайн-Мао, быстрый урок вместо «Снежного кома», письмо черта за чертой как в Laoshi"
  }
 }
