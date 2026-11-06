@@ -87,16 +87,17 @@
   window.__evineBack = function () {
     const a = window.__app; if (!a) return false;
     const s = a.state;
-    if (s.catMenu) { a.setState({ catMenu: false }); return true; }
-    if (s.ex) { clearInterval(a.si); a.setState({ ex: null }); return true; }
-    if (s.resetAsk) { a.setState({ resetAsk: false }); return true; }
-    if (s.screen === 'bulk' && s.bulkFrom === 'settings') { a.setState({ screen: 'settings' }); return true; }
-    if (s.screen === 'goal') { if (!s.onboarded) { if ((s.obStep || 0) > 0) { a.setState({ obStep: 0 }); return true; } return false; } a.setState({ screen: 'tab', gd: null }); return true; }
-    if (s.screen === 'quiz' || s.screen === 'learn') { a.exit(); return true; }
-    if (s.screen === 'result') { a.goTab(s.tab || 'home'); return true; }
+    if (s.toast && s.toast.act) { a.setState({ toast: null }); }
+    if (s.sheet) { a.setState({ sheet: null, resetAsk: false }); return true; }
+    if (s.screen === 'goal') { if (!s.onboarded) return false; a.setState({ screen: 'tab', gd: null }); return true; }
+    if (s.screen === 'quiz' || s.screen === 'learn' || s.screen === 'mc') { a.exit(); return true; }
+    if (s.screen === 'result') { a.goTab('home'); return true; }
+    if (s.screen === 'add' && s.addFrom === 'dayEdit' && s.de) { a.setState({ screen: 'dayEdit' }); return true; }
+    if (s.screen === 'dayEdit') { a.setState({ screen: 'tab', tab: 'words', de: null }); return true; }
     if (s.screen !== 'tab') { a.setState({ screen: 'tab' }); return true; }
-    if (s.q) { a.setState({ q: '', manOpen: false }); return true; }
+    if (s.q) { a.setState({ q: '' }); return true; }
     if (s.tab !== 'home') { a.goTab('home'); return true; }
     return false;
   };
+
 })();

@@ -1,0 +1,409 @@
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Noto Serif SC';font-weight:400 500;font-display:block;src:url(fonts/serif-500.woff) format('woff')}
+@font-face{font-family:'Noto Serif SC';font-weight:600;font-display:block;src:url(fonts/serif-600.woff) format('woff')}
+@font-face{font-family:'Noto Serif SC';font-weight:700 900;font-display:block;src:url(fonts/serif-700.woff) format('woff')}
+@font-face{font-family:'Noto Serif';font-weight:400;font-display:block;src:url(fonts/notoserif-400.woff) format('woff')}
+@font-face{font-family:'Noto Serif';font-weight:500;font-display:block;src:url(fonts/notoserif-500.woff) format('woff')}
+@font-face{font-family:'Noto Serif';font-weight:600;font-display:block;src:url(fonts/notoserif-600.woff) format('woff')}
+@font-face{font-family:'Noto Serif';font-weight:700 900;font-display:block;src:url(fonts/notoserif-700.woff) format('woff')}
+@font-face{font-family:'Noto Sans';font-weight:400;font-display:block;src:url(fonts/sans-400.woff) format('woff')}
+@font-face{font-family:'Noto Sans';font-weight:500;font-display:block;src:url(fonts/sans-500.woff) format('woff')}
+@font-face{font-family:'Noto Sans';font-weight:600;font-display:block;src:url(fonts/sans-600.woff) format('woff')}
+@font-face{font-family:'Noto Sans';font-weight:700 900;font-display:block;src:url(fonts/sans-700.woff) format('woff')}
+@font-face{font-family:'Mao Icons';font-weight:400;font-display:block;src:url(fonts/icons.woff) format('woff')}
+html,body{margin:0;height:100%;background:#F5F5F8}
+body{font-family:'Noto Sans',sans-serif;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+*{box-sizing:border-box}
+input,textarea,button{font-family:inherit}
+input:focus,textarea:focus{border-color:var(--pr)!important;box-shadow:0 0 0 .5px var(--pr)}
+*{scrollbar-width:none}*::-webkit-scrollbar{display:none}
+.scr>*{flex-shrink:0}
+.mi{font-family:'Mao Icons';font-weight:400;font-style:normal;font-size:22px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;display:inline-block}
+button{-webkit-tap-highlight-color:transparent;transition:filter .12s,background .15s}
+button:active{filter:brightness(.92)}
+[data-th="d"] button:active{filter:brightness(1.18)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{transform:scale(.7);opacity:0}100%{transform:none;opacity:1}}
+[data-th="l"]{--bg:#F5F5F8;--sf:#FFFFFF;--sf2:#EDEDF3;--ink:#16161D;--mu:#62626F;--ln:#E1E1E9;--pr:#5B5BD6;--onpr:#FFFFFF;--prs:#ECECFB;--ac:#B4570F;--ok:#2F9E62;--oks:#E3F4EA;--bad:#D6453D;--bads:#FBE6E4;--gl:#E8E8EF;--ol:#D2D2DC;--lbd:transparent;--seal:#D6453D;--onseal:#FFFFFF;--dim:rgba(22,22,29,.38);--tst:#16161D;--onTst:#F5F5F8}
+[data-th="d"]{--bg:#0F0F14;--sf:#1A1A22;--sf2:#24242E;--ink:#F1F1F5;--mu:#9A9AAA;--ln:#2E2E3A;--pr:#8484F2;--onpr:#0F0F14;--prs:#25254A;--ac:#F0A860;--ok:#4CC184;--oks:#16301F;--bad:#F07068;--bads:#3A1C1C;--gl:#262630;--ol:#3A3A48;--lbd:#2E2E3A;--seal:#F07068;--onseal:#0F0F14;--dim:rgba(0,0,0,.6);--tst:#F1F1F5;--onTst:#0F0F14}
+</style>
+</helmet>
+<div ref="{{ phoneRef }}" data-th="{{ th }}" style="height:100vh;height:100dvh;width:100%;background:var(--bg);color:var(--ink);position:relative;overflow:hidden;display:flex;flex-direction:column">
+
+<!-- ============ СЕГОДНЯ ============ -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:14px 20px 20px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:9px;background:#16161D;border:1px solid var(--lbd);display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 120 120"><polygon points="14,40 24,6 46,28" fill="#5B5BD6"></polygon><polygon points="106,40 96,6 74,28" fill="#5B5BD6"></polygon><ellipse cx="38" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="82" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="38" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><ellipse cx="82" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><polygon points="54,96 66,96 60,104" fill="#E5735F"></polygon></svg></div><span style="font:700 22px 'Noto Serif',serif">Mao</span></div>
+      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:13px;color:var(--mu)">{{ streakL }}</span><div style="width:34px;height:34px;border-radius:8px;background:#C8372D;color:#FFF;display:flex;align-items:center;justify-content:center;font:700 20px 'Noto Serif SC',serif;transform:rotate(-5deg)">学</div></div>
+    </div>
+
+    <div style="padding:22px 20px 20px;border-radius:22px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font:700 27px/1.2 'Noto Serif','Noto Serif SC',serif">{{ hero.t }}</span>
+        <span style="font-size:14px;line-height:1.45;color:var(--mu)">{{ hero.sub }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px;padding:4px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="2"><div style="display:flex;align-items:center;gap:12px;padding:8px 0"><span style="width:26px;height:26px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;background:{{ st.bg }};color:{{ st.fg }};border:1.5px solid {{ st.bd }}"><span class="mi" style="font-size:17px">{{ st.mk }}</span><span style="width:8px;height:8px;border-radius:4px;background:var(--onpr);display:{{ st.dot }}"></span></span><span style="flex:1;font-size:14.5px;font-weight:{{ st.fw }};color:{{ st.tc }}">{{ st.l }}</span><span style="font-size:13px;color:var(--mu)">{{ st.r }}</span></div></sc-for>
+      </div>
+      <sc-if value="{{ hasChips }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><sc-for list="{{ hero.chips }}" as="c" hint-placeholder-count="5"><span style="height:44px;min-width:44px;padding:0 10px;border-radius:12px;background:var(--sf2);display:flex;align-items:center;justify-content:center;font:600 22px 'Noto Serif SC',serif">{{ c.h }}</span></sc-for></div>
+      </sc-if>
+      <button onClick="{{ hero.go }}" style="height:56px;border-radius:16px;border:1.5px solid {{ heroBd }};background:{{ heroBg }};color:{{ heroFg }};font-size:16px;font-weight:600;cursor:pointer">{{ hero.btn }}</button>
+      <sc-if value="{{ hero.link }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ openTopics }}" style="align-self:center;border:0;background:none;color:var(--mu);font-size:13.5px;cursor:pointer;padding:4px;margin-top:-6px">{{ hero.linkL }}</button>
+      </sc-if>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span style="font-size:13px;font-weight:600;color:var(--mu);padding-left:4px">ТРЕНИРОВКА</span>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+        <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.go }}" style="height:96px;padding:12px;border-radius:18px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;text-align:left;cursor:pointer"><span style="font:600 24px/1 'Noto Serif SC',serif;color:{{ t.c }}">{{ t.zh }}</span><span style="display:flex;flex-direction:column;gap:1px"><span style="font-size:13.5px;font-weight:600">{{ t.l }}</span><span style="font-size:12px;color:var(--mu)">{{ t.sub }}</span></span></button></sc-for>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:18px;background:var(--sf);border:1px solid var(--ln)">
+      <div style="display:flex;justify-content:space-between">
+        <sc-for list="{{ week }}" as="d" hint-placeholder-count="7"><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><span style="font-size:12px;color:var(--mu)">{{ d.l }}</span><span style="width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:{{ d.bg }};color:var(--pr);border:1.5px solid {{ d.bd }}"><span class="mi" style="font-size:18px">{{ d.mk }}</span></span></div></sc-for>
+      </div>
+      <button onClick="{{ openGoal }}" style="display:flex;flex-direction:column;gap:8px;border:0;background:none;padding:0;color:var(--ink);text-align:left;cursor:pointer">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;width:100%"><span style="font-size:15px;font-weight:600;white-space:nowrap">Знаю {{ known }} из {{ goalN }}</span><span style="font-size:13px;color:var(--mu);text-align:right">{{ goalL }}</span></div>
+        <div style="height:8px;border-radius:4px;background:var(--sf2);overflow:hidden;width:100%"><div style="height:100%;width:{{ knownPct }}%;min-width:6px;border-radius:4px;background:var(--pr)"></div></div>
+      </button>
+    </div>
+
+    <sc-if value="{{ hasRecent }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:0 4px"><span style="font-size:13px;font-weight:600;color:var(--mu)">НЕДАВНО ВЫУЧЕНО</span><button onClick="{{ goWords }}" style="border:0;background:none;color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;padding:4px 0;display:flex;align-items:center">Все слова<span class="mi" style="font-size:18px">&#xe5cc;</span></button></div>
+        <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;margin:0 -20px;padding-left:20px;padding-right:20px"><sc-for list="{{ recent }}" as="w" hint-placeholder-count="5"><button onClick="{{ w.open }}" style="flex:none;min-width:76px;max-width:130px;padding:10px 12px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer"><span style="font:600 22px 'Noto Serif SC',serif">{{ w.h }}</span><span style="font-size:12.5px;color:var(--ac)">{{ w.p }}</span><span style="font-size:12px;color:var(--mu);text-align:center;line-height:1.3">{{ w.m }}</span></button></sc-for></div>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<!-- ============ СЛОВА ============ -->
+<sc-if value="{{ isWords }}" hint-placeholder-val="{{ false }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:14px 20px 20px;display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:center;justify-content:space-between"><span style="font:700 26px 'Noto Serif',serif">Слова</span><button onClick="{{ openAdd }}" style="height:40px;padding:0 14px 0 10px;border-radius:12px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px"><span class="mi" style="font-size:20px">&#xe145;</span>Добавить</button></div>
+    <input value="{{ q }}" onChange="{{ onQ }}" placeholder="Поиск: 家, jia, семья" style="flex:none;height:48px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;padding:0 14px;outline:none">
+    <sc-if value="{{ hasQ }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;border-radius:16px;background:var(--sf);border:1px solid var(--ln);overflow:hidden">
+        <sc-for list="{{ found }}" as="w" hint-placeholder-count="2"><button onClick="{{ w.open }}" style="display:flex;align-items:center;gap:14px;padding:12px 16px;border:0;border-bottom:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="font:600 26px 'Noto Serif SC',serif;min-width:56px">{{ w.h }}</span><span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--ac)">{{ w.p }}</span><span style="font-size:14px">{{ w.m }}</span></span><span style="font-size:12px;color:var(--mu);flex:none">{{ w.day }}</span></button></sc-for>
+        <div style="padding:14px 16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start"><sc-if value="{{ noFound }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:var(--mu)">У вас такого слова нет.</span></sc-if><button onClick="{{ openAddQ }}" style="height:40px;padding:0 14px;border-radius:12px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14px;font-weight:600;cursor:pointer">Найти в словаре</button></div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noQ }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ openTopics }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:18px;border:1.5px dashed var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span class="mi" style="color:var(--pr)">&#xe990;</span><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">Следующий урок: {{ nextTopic }}</span><span style="font-size:13px;color:var(--mu)">нажмите, чтобы сменить тему</span></span></button>
+      <sc-if value="{{ noLessons }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;line-height:1.5;color:var(--mu);padding:0 4px">Уроков пока нет. Начните первый на вкладке «Сегодня» или добавьте свои слова.</span></sc-if>
+      <sc-for list="{{ days }}" as="d" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;background:var(--sf);border:1px solid var(--ln)">
+          <div style="display:flex;align-items:center;gap:10px"><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span style="font-size:15px;font-weight:600">{{ d.title }}</span><span style="font-size:13px;color:var(--mu)">{{ d.stat }}</span></span><sc-if value="{{ d.canRep }}" hint-placeholder-val="{{ true }}"><button onClick="{{ d.rep }}" aria-label="Повторить урок" style="height:36px;padding:0 10px 0 8px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;flex:none"><span class="mi" style="font-size:18px">&#xe042;</span>Повторить</button></sc-if><button onClick="{{ d.edit }}" aria-label="Править урок" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xf097;</span></button></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ d.ws }}" as="w" hint-placeholder-count="5"><button onClick="{{ w.open }}" style="display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 10px;border-radius:12px;border:0;background:var(--sf2);color:var(--ink);cursor:pointer;position:relative"><span style="font:600 20px 'Noto Serif SC',serif">{{ w.h }}</span><span style="font-size:12.5px;color:var(--ac)">{{ w.p }}</span><span style="position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:3px;background:{{ w.dot }}"></span></button></sc-for><sc-if value="{{ d.empty }}" hint-placeholder-val="{{ false }}"><button onClick="{{ d.add }}" style="height:40px;padding:0 12px;border-radius:12px;border:1.5px dashed var(--ln);background:none;color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer">Урок пуст · добавить слова</button></sc-if></div>
+        </div>
+      </sc-for>
+    </sc-if>
+  </div>
+</sc-if>
+
+<!-- ============ ВОПРОСЫ ============ -->
+<sc-if value="{{ isAsk }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 20px 12px;border-bottom:1px solid var(--ln);flex:none">
+      <div style="width:40px;height:40px;border-radius:12px;background:var(--prs);color:var(--pr);display:flex;align-items:center;justify-content:center;font:700 22px 'Noto Serif SC',serif">问</div>
+      <span style="flex:1;display:flex;flex-direction:column;gap:1px;min-width:0"><span style="font:700 20px 'Noto Serif',serif">Вопросы</span><span style="font-size:12.5px;color:{{ aiC }}">{{ aiL }}</span></span>
+      <button onClick="{{ clearChat }}" aria-label="Новый чат" style="width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xf88d;</span></button>
+    </div>
+    <div ref="{{ chatRef }}" class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:10px">
+      <sc-if value="{{ chatEmpty }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:10px;padding-top:12px">
+          <span style="font-size:15px;line-height:1.5;color:var(--mu)">Спросите про слово, иероглиф или грамматику. Например:</span>
+          <sc-for list="{{ starters }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.go }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);text-align:left;cursor:pointer"><span class="mi" style="font-size:20px;color:var(--pr)">{{ c.ic }}</span><span style="flex:1;font-size:14.5px">{{ c.l }}</span></button></sc-for>
+        </div>
+      </sc-if>
+      <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="0"><div style="align-self:{{ m.al }};max-width:84%;padding:11px 14px;border-radius:18px;background:{{ m.bg }};color:{{ m.fg }};font-size:15px;line-height:1.55;white-space:pre-line;word-break:break-word">{{ m.t }}<span style="display:{{ m.noteD }};margin-top:6px;font-size:12.5px;color:var(--mu)">{{ m.note }}</span></div></sc-for>
+      <sc-if value="{{ thinking }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;padding:11px 14px;border-radius:18px;background:var(--sf2);color:var(--mu);font-size:14px">Думаю…</div></sc-if>
+    </div>
+    <sc-if value="{{ chatFull }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:6px;padding:0 20px 8px;overflow-x:auto;flex:none"><sc-for list="{{ quickQ }}" as="c" hint-placeholder-count="3"><button onClick="{{ c.go }}" style="flex:none;height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:13px;cursor:pointer">{{ c.l }}</button></sc-for></div></sc-if>
+    <div style="display:flex;gap:8px;padding:8px 16px 12px;flex:none;border-top:1px solid var(--ln);background:var(--sf)"><input value="{{ chatQ }}" onChange="{{ onChatQ }}" onKeyDown="{{ chatKey }}" placeholder="Вопрос о китайском…" style="flex:1;min-width:0;height:48px;border-radius:24px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:15px;padding:0 18px;outline:none"><button onClick="{{ sendChatB }}" aria-label="Отправить" style="width:48px;height:48px;flex:none;border-radius:24px;border:0;background:{{ sendBg }};color:{{ sendFg }};cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5d8;</span></button></div>
+  </div>
+</sc-if>
+
+<!-- ============ НАСТРОЙКИ ============ -->
+<sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:14px 20px 24px;display:flex;flex-direction:column;gap:22px">
+    <span style="font:700 26px 'Noto Serif',serif">Настройки</span>
+    <button onClick="{{ openGoal }}" style="display:flex;align-items:center;gap:12px;padding:16px;border-radius:18px;border:0;background:var(--prs);color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">Цель: {{ goalShort }}</span><span style="font-size:13px;color:var(--mu)">{{ goalL }}</span></span><span class="mi" style="color:var(--pr)">&#xe5cc;</span></button>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">УЧЁБА</span>
+      <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Новых слов в день</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Это один урок. Хочется больше — «Ещё урок» на главной</span></div><div style="display:flex;align-items:center;gap:4px"><button onClick="{{ dailyDn }}" aria-label="Меньше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe15b;</span></button><span style="min-width:28px;text-align:center;font-size:16px;font-weight:600">{{ daily }}</span><button onClick="{{ dailyUp }}" aria-label="Больше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe145;</span></button></div></div>
+        <button onClick="{{ tglMore1 }}" style="display:flex;justify-content:space-between;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;align-items:center;text-align:left"><span>Способ урока</span><span style="font-size:13.5px;font-weight:400;color:var(--mu);display:flex;align-items:center;gap:2px">{{ methodL }}<span class="mi" style="font-size:20px">{{ more1Ic }}</span></span></button>
+        <sc-if value="{{ more1 }}" hint-placeholder-val="{{ false }}"><div style="padding:0 16px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ methodOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ methodD }}</span></div></sc-if>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">ПИСЬМО</span>
+      <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
+        <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Где писать иероглифы</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ writeD }}</span></div><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ writeOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+        <button onClick="{{ tglOutline }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Обводить новые слова</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Бледный контур знака, когда пишете слово впервые</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ outlineT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ outlineT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--ln)"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Сетка клетки</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Пунктир помогает держать пропорции</span></span><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ gridOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="width:48px;height:34px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font:600 17px 'Noto Serif SC',serif;box-shadow:{{ o.sh }};cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">ВИД И ЗВУК</span>
+      <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
+        <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px"><span style="font-size:15px;font-weight:500">Тема</span><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ themeOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px;border-top:1px solid var(--ln)"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Скорость озвучки</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">При смене прозвучит 你好</span></div><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ speedOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">ДАННЫЕ</span>
+      <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
+        <button onClick="{{ openBackup }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Резервная копия</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Сохранить или восстановить файл JSON</span></span><span class="mi" style="color:var(--mu)">&#xe5cc;</span></button>
+        <button onClick="{{ updGo }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Обновления</span><span style="font-size:12.5px;color:{{ updC }};line-height:1.4">{{ updL }}</span></span><span class="mi" style="color:var(--mu)">&#xe5cc;</span></button>
+        <button onClick="{{ tglAi }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Нейросеть</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Не обязательно: всё работает без интернета. Включите для свободных вопросов</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ aiT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ aiT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
+        <sc-if value="{{ aiOnS }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:6px;padding:0 16px 14px"><sc-for list="{{ models }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:1px"><span style="font-size:14px;font-weight:600">{{ o.l }}</span><span style="font-size:12.5px;color:var(--mu);line-height:1.35">{{ o.d }}</span></span></button></sc-for><sc-if value="{{ needKey }}" hint-placeholder-val="{{ false }}"><input type="password" value="{{ apiKey }}" onChange="{{ onKey }}" placeholder="{{ keyPh }}" autocomplete="off" style="height:44px;border-radius:12px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:14px;padding:0 12px;outline:none"><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ keyHelp }}</span></sc-if><button onClick="{{ checkApi }}" style="align-self:flex-start;height:36px;padding:0 12px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);font-size:13.5px;cursor:pointer">{{ checkL }}</button><sc-if value="{{ hasApiMs }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:{{ apiMsC }}">{{ apiMs }}</span></sc-if></div></sc-if>
+      </div>
+    </div>
+    <span style="font-size:12px;color:var(--mu);text-align:center;line-height:1.5">{{ footL }}</span>
+  </div>
+</sc-if>
+
+<!-- ============ ЦЕЛЬ ============ -->
+<sc-if value="{{ isGoal }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:12px 20px 16px;display:flex;flex-direction:column;gap:16px">
+      <sc-if value="{{ goalBackShow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ goalBack }}" aria-label="Назад" style="align-self:flex-start;width:44px;height:44px;margin-left:-10px;border:0;background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5c4;</span></button></sc-if>
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:8px">
+        <sc-if value="{{ firstRun }}" hint-placeholder-val="{{ true }}"><div style="width:56px;height:56px;border-radius:14px;background:#16161D;border:1px solid var(--lbd);display:flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="40" height="40" viewBox="0 0 120 120"><polygon points="14,40 24,6 46,28" fill="#5B5BD6"></polygon><polygon points="106,40 96,6 74,28" fill="#5B5BD6"></polygon><ellipse cx="38" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="82" cy="66" rx="20" ry="22" fill="#F0B44C"></ellipse><ellipse cx="38" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><ellipse cx="82" cy="66" rx="5" ry="18" fill="#16161D"></ellipse><polygon points="54,96 66,96 60,104" fill="#E5735F"></polygon></svg></div></sc-if>
+        <span style="font:700 26px/1.2 'Noto Serif',serif">{{ goalTitle }}</span>
+        <span style="font-size:15px;line-height:1.45;color:var(--mu)">Сколько слов и к какой дате — Mao посчитает норму на каждый день.</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;padding:16px;border-radius:20px;background:var(--sf);border:1px solid var(--ln)">
+        <span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Сколько слов выучить</span><span style="font-size:12.5px;color:var(--mu)">{{ gKnownL }}</span></span>
+        <div style="display:flex;align-items:center;gap:4px"><button onClick="{{ gDn }}" aria-label="Меньше" style="width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe15b;</span></button><input value="{{ gN }}" onChange="{{ onGN }}" inputmode="numeric" aria-label="Сколько слов" style="width:66px;height:40px;text-align:center;font-size:18px;font-weight:700;border:0;border-radius:10px;background:transparent;color:var(--ink);outline:none;padding:0"><button onClick="{{ gUp }}" aria-label="Больше" style="width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe145;</span></button></div>
+      </div>
+      <div style="display:flex;flex-direction:column;border-radius:20px;background:var(--sf);border:1px solid var(--ln)">
+        <div style="display:flex;flex-direction:column;gap:12px;padding:14px 16px">
+          <button onClick="{{ openCal }}" style="display:flex;align-items:center;gap:12px;border:0;background:none;color:var(--ink);text-align:left;cursor:pointer;padding:0"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">К какой дате</span><span style="font-size:13px;color:var(--mu)">{{ gLeftL }}</span></span><span style="display:flex;align-items:center;gap:6px;height:40px;padding:0 12px;border-radius:12px;background:var(--prs);color:var(--pr);font-size:14.5px;font-weight:600;white-space:nowrap"><span class="mi" style="font-size:19px">&#xebcc;</span>{{ gDateL }}</span></button>
+          <div style="display:flex;gap:6px"><sc-for list="{{ gQuick }}" as="p" hint-placeholder-count="4"><button onClick="{{ p.go }}" style="flex:1;height:34px;border-radius:10px;border:1.5px solid {{ p.bd }};background:{{ p.bg }};color:var(--ink);font-size:13px;cursor:pointer;padding:0">{{ p.l }}</button></sc-for></div>
+        </div>
+        <button onClick="{{ tglWk }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Учиться в выходные</span><span style="font-size:13px;color:var(--mu);line-height:1.4">{{ wkD }}</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ wkT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ wkT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:4px;padding:18px;border-radius:20px;background:var(--prs)">
+        <span style="font:700 30px 'Noto Serif',serif;color:var(--pr)">{{ gPer }}</span>
+        <span style="font-size:14px;line-height:1.45;color:var(--ink)">{{ gSub }}</span>
+      </div>
+    </div>
+    <div style="padding:10px 20px 18px;flex:none"><button onClick="{{ gSave }}" style="width:100%;height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">{{ gBtn }}</button></div>
+  </div>
+</sc-if>
+
+<!-- ============ ДОБАВИТЬ СЛОВА ============ -->
+<sc-if value="{{ isAdd }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:8px;padding:10px 12px 10px"><button onClick="{{ back }}" aria-label="Назад" style="width:44px;height:44px;border:0;background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5c4;</span></button><span style="font:700 20px 'Noto Serif',serif">Добавить слова</span></div>
+    <div style="padding:0 20px 12px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ addModeOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:38px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:14px;cursor:pointer">{{ o.l }}</button></sc-for></div>
+      <button onClick="{{ cycleAddDay }}" style="align-self:flex-start;height:34px;padding:0 6px 0 12px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:2px">В {{ addDayL }}<span class="mi" style="font-size:20px;color:var(--mu)">&#xe5cf;</span></button>
+    </div>
+    <sc-if value="{{ addOne }}" hint-placeholder-val="{{ true }}">
+      <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 20px;display:flex;flex-direction:column;gap:12px">
+        <input value="{{ aq }}" onChange="{{ onAq }}" placeholder="Иероглиф, пиньинь или по-русски" style="height:50px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;padding:0 14px;outline:none">
+        <sc-if value="{{ hasDictRes }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;border-radius:16px;background:var(--sf);border:1px solid var(--ln);overflow:hidden">
+          <sc-for list="{{ dictRes }}" as="r" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:14px;padding:12px 12px 12px 16px;border-bottom:1px solid var(--ln)"><span style="font:600 26px 'Noto Serif SC',serif;min-width:56px">{{ r.h }}</span><span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--ac)">{{ r.p }}</span><span style="font-size:14px;line-height:1.35">{{ r.m }}</span></span><sc-if value="{{ r.have }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);flex:none">{{ r.dayL }}</span></sc-if><sc-if value="{{ r.can }}" hint-placeholder-val="{{ true }}"><button onClick="{{ r.add }}" style="height:36px;padding:0 12px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">Добавить</button></sc-if></div></sc-for>
+        </div></sc-if>
+        <sc-if value="{{ dictEmpty }}" hint-placeholder-val="{{ false }}"><span style="padding:4px 4px;font-size:14px;color:var(--mu);line-height:1.45">{{ dictEmptyL }}</span></sc-if>
+        <sc-if value="{{ addHelp }}" hint-placeholder-val="{{ false }}"><span style="padding:4px 4px;font-size:14px;color:var(--mu);line-height:1.5">Напишите иероглифы (家), пиньинь без тонов (jia) или русское слово (семья). Словарь работает без интернета.</span></sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ addList }}" hint-placeholder-val="{{ false }}">
+      <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 12px;display:flex;flex-direction:column;gap:12px">
+        <textarea value="{{ bulkT }}" onChange="{{ onBulk }}" placeholder="По одному в строке или через запятую: jiejie, 弟弟, кошка. Можно JSON." style="height:120px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;line-height:1.5;padding:12px 14px;outline:none;resize:none"></textarea>
+        <sc-if value="{{ bulkWait }}" hint-placeholder-val="{{ false }}"><span style="font-size:13.5px;color:var(--mu)">Загружаю словарь…</span></sc-if>
+        <div style="display:flex;flex-direction:column;gap:6px"><sc-for list="{{ bulkRows }}" as="r" hint-placeholder-count="2"><div style="display:flex;align-items:center;gap:12px;padding:8px 6px 8px 14px;border-radius:14px;background:var(--sf);border:1px solid var(--ln)"><span style="font:600 22px 'Noto Serif SC',serif;min-width:48px">{{ r.h }}</span><span style="flex:1;min-width:0;display:flex;flex-direction:column"><span style="font-size:13px;color:var(--ac)">{{ r.p }}</span><span style="font-size:13.5px;line-height:1.35;color:{{ r.mc }}">{{ r.m }}</span></span><sc-if value="{{ r.alt }}" hint-placeholder-val="{{ false }}"><button onClick="{{ r.next }}" style="height:30px;padding:0 8px;border-radius:8px;border:1px solid var(--ln);background:none;color:var(--mu);font-size:12px;cursor:pointer;flex:none">{{ r.altL }}</button></sc-if><button onClick="{{ r.rm }}" aria-label="Убрать" style="width:36px;height:36px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xe5cd;</span></button></div></sc-for></div>
+        <button onClick="{{ bulkFile }}" style="align-self:flex-start;height:36px;padding:0 10px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--mu);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px"><span class="mi" style="font-size:18px">&#xe9fc;</span>Из файла</button>
+        <input type="file" ref="{{ bulkRef }}" accept=".txt,.json,.csv,text/plain,application/json" onChange="{{ onBulkFile }}" style="display:none">
+      </div>
+      <div style="padding:10px 20px 18px;flex:none"><button onClick="{{ bulkAddB }}" style="width:100%;height:54px;border-radius:16px;border:0;background:{{ bulkBg }};color:{{ bulkFg }};font-size:15px;font-weight:600;cursor:pointer">{{ bulkBtn }}</button></div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<!-- ============ ПРАВИТЬ УРОК ============ -->
+<sc-if value="{{ isEdit }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:8px;padding:10px 12px 10px"><button onClick="{{ deBack }}" aria-label="Назад" style="width:44px;height:44px;border:0;background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5c4;</span></button><span style="font:700 20px 'Noto Serif',serif">Править урок {{ deN }}</span></div>
+    <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 12px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:var(--mu)">Тема</span><input value="{{ deT }}" onChange="{{ onDeT }}" style="height:50px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:16px;font-weight:600;padding:0 14px;outline:none"></div>
+      <div style="display:flex;flex-direction:column;border-radius:16px;background:var(--sf);border:1px solid var(--ln);overflow:hidden">
+        <sc-for list="{{ deRows }}" as="r" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:8px;padding:8px 6px 8px 12px;border-bottom:1px solid var(--ln)"><span style="font:600 22px 'Noto Serif SC',serif;min-width:44px">{{ r.h }}</span><input value="{{ r.p }}" onChange="{{ r.onP }}" aria-label="Пиньинь" style="width:84px;height:38px;border-radius:10px;border:1px solid var(--ln);background:var(--sf2);color:var(--ac);font-size:13.5px;padding:0 8px;outline:none;flex:none"><input value="{{ r.m }}" onChange="{{ r.onM }}" aria-label="Перевод" style="flex:1;min-width:0;height:38px;border-radius:10px;border:1px solid {{ r.mbd }};background:var(--sf2);color:var(--ink);font-size:13.5px;padding:0 8px;outline:none"><button onClick="{{ r.del }}" aria-label="Удалить" style="width:36px;height:36px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xe92e;</span></button></div></sc-for>
+        <button onClick="{{ deAdd }}" style="height:48px;border:0;background:none;color:var(--pr);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px"><span class="mi" style="font-size:20px">&#xe145;</span>Добавить слово</button>
+      </div>
+      <sc-if value="{{ deWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);line-height:1.4;padding:0 4px">Перевод с красной рамкой не из словаря — проверьте его.</span></sc-if>
+    </div>
+    <div style="padding:10px 20px 18px;flex:none"><button onClick="{{ deBack }}" style="width:100%;height:54px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">Готово</button></div>
+  </div>
+</sc-if>
+
+<!-- ============ ЗАНЯТИЕ: шапка ============ -->
+<sc-if value="{{ isRun }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:none;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 4px"><button onClick="{{ exitRun }}" aria-label="Закрыть" style="width:40px;height:40px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5cd;</span></button><div style="flex:1;height:6px;border-radius:3px;background:var(--sf2);overflow:hidden"><div style="height:100%;width:{{ runPct }}%;background:var(--pr);border-radius:3px;transition:width .3s"></div></div><div style="width:12px"></div></div>
+    <span style="text-align:center;font-size:13px;color:var(--mu);padding-bottom:4px">{{ runLabel }}</span>
+  </div>
+</sc-if>
+
+<!-- ============ ЗНАКОМСТВО ============ -->
+<sc-if value="{{ isCard }}" hint-placeholder-val="{{ false }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:8px 24px">
+    <span style="font:600 {{ card.fs }}px/1.1 'Noto Serif SC',serif;text-align:center">{{ card.h }}</span>
+    <span style="font-size:24px;font-weight:500;color:var(--ac);text-align:center">{{ card.p }}</span>
+    <span style="font-size:19px;text-align:center;line-height:1.35">{{ card.m }}</span>
+    <sc-if value="{{ card.mWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--bad)">перевод не из словаря — проверьте</span></sc-if>
+    <button onClick="{{ speakCard }}" style="margin-top:6px;height:40px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button>
+    <sc-if value="{{ card.hasParts }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ tglParts }}" style="margin-top:10px;width:100%;padding:12px 14px;border-radius:14px;border:0;background:var(--sf2);color:var(--ink);font-size:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px"><span style="display:flex;justify-content:space-between;align-items:center;width:100%"><span style="font-weight:600">Из чего состоит</span><span class="mi" style="color:var(--mu)">{{ partsIc }}</span></span><sc-if value="{{ partsOpen }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;line-height:1.5;color:var(--mu);white-space:pre-line">{{ card.parts }}</span></sc-if></button>
+    </sc-if>
+  </div>
+  <div style="padding:10px 20px 18px;flex:none;display:flex;flex-direction:column;gap:4px"><button onClick="{{ learnNextB }}" style="height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">Дальше</button><button onClick="{{ learnKnownB }}" style="height:44px;border:0;background:none;color:var(--mu);font-size:14px;cursor:pointer">Уже знаю это слово</button></div>
+</sc-if>
+
+<!-- ============ ВЫБОР ИЗ 4 ============ -->
+<sc-if value="{{ isMc }}" hint-placeholder-val="{{ false }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;padding:0 20px 20px;gap:16px">
+    <div style="min-height:220px;padding-top:48px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px">
+      <span style="font-size:15px;font-weight:500;color:var(--mu)">{{ mcv.ask }}</span>
+      <span style="font:600 {{ mcv.fs }}px/1.15 {{ mcv.ff }};text-align:center">{{ mcv.prompt }}</span>
+      <span style="font-size:18px;color:var(--ac);font-weight:500;opacity:{{ mcv.pOp }};min-height:24px">{{ mcv.p }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><sc-for list="{{ mcv.opts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.go }}" style="min-height:76px;padding:8px;border-radius:16px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.fg }};font-size:{{ o.fs }}px;font-family:{{ o.ff }};font-weight:500;line-height:1.3;cursor:pointer;transition:background .15s">{{ o.t }}</button></sc-for></div>
+    <sc-if value="{{ mcv.back }}" hint-placeholder-val="{{ false }}"><span style="text-align:center;font-size:13.5px;color:var(--bad)">Это слово вернётся в конце круга</span></sc-if>
+  </div>
+</sc-if>
+
+<!-- ============ ПИСЬМО / ПРОВЕРКА ============ -->
+<sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;gap:14px;padding:4px 20px 18px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:13px;color:var(--mu)">{{ wAskL }}</span><span style="font-size:22px;font-weight:600;text-align:center;line-height:1.3">{{ qv.m }}</span></div>
+    <sc-if value="{{ wTabsShow }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:8px"><sc-for list="{{ wTabs }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.go }}" aria-label="{{ t.al }}" style="width:40px;height:40px;border-radius:12px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font:600 {{ t.fs }}px 'Noto Serif SC',serif;cursor:pointer;padding:0">{{ t.l }}</button></sc-for></div></sc-if>
+    <sc-if value="{{ wScreen }}" hint-placeholder-val="{{ true }}">
+      <div style="position:relative;width:min(288px,calc(100vw - 48px));aspect-ratio:1;flex:none;border-radius:14px;background:var(--sf);border:2px solid var(--ln);overflow:hidden">
+        <sc-if value="{{ wGridOn }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:50%;border-top:1.5px dashed var(--gl)"></div><div style="position:absolute;top:0;bottom:0;left:50%;border-left:1.5px dashed var(--gl)"></div></sc-if>
+        <sc-if value="{{ wGridMi }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(45deg)"></div><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(-45deg)"></div></sc-if>
+        <canvas ref="{{ wcRef }}" width="576" height="576" onPointerDown="{{ wDown }}" onPointerMove="{{ wMove }}" onPointerUp="{{ wUp }}" onPointerCancel="{{ wUp }}" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;color:var(--ink)"></canvas>
+        <sc-if value="{{ wRevOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 min(220px,calc((100vw - 48px) * .76))/1 'Noto Serif SC',serif;color:var(--pr);opacity:.28;pointer-events:none">{{ wCurCh }}</span></sc-if>
+        <sc-if value="{{ wOkOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;right:10px;height:30px;padding:0 10px 0 6px;border-radius:999px;background:var(--oks);color:var(--ok);font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:4px;animation:pop .2s"><span class="mi" style="font-size:18px">&#xe668;</span>{{ wOkL }}</span></sc-if>
+      </div>
+      <span style="font-size:12.5px;color:var(--mu);min-height:17px;text-align:center">{{ wCount }}</span>
+    </sc-if>
+    <sc-if value="{{ wPaper }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(288px,calc(100vw - 48px));height:200px;border-radius:14px;border:2px dashed var(--ln);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--mu)"><span style="font-size:15px">Напишите знак на бумаге</span><span style="font-size:13px">потом сверьтесь с ответом</span></div>
+    </sc-if>
+    <sc-if value="{{ wPaperRev }}" hint-placeholder-val="{{ false }}">
+      <div style="width:min(288px,calc(100vw - 48px));aspect-ratio:1;border-radius:14px;background:var(--sf);border:2px solid var(--ln);display:flex;align-items:center;justify-content:center"><span style="font:600 {{ qv.fs }}px/1.1 'Noto Serif SC',serif">{{ qv.h }}</span></div>
+    </sc-if>
+    <div style="flex:1"></div>
+    <sc-if value="{{ wBtns }}" hint-placeholder-val="{{ true }}">
+      <div style="width:100%;display:flex;gap:8px">
+        <button onClick="{{ wUndoB }}" style="flex:1;height:52px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:{{ undoFg }};font-size:14.5px;font-weight:500;cursor:pointer;padding:0 4px">Отменить</button>
+        <button onClick="{{ hintGo }}" style="flex:1;height:52px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14.5px;font-weight:500;cursor:pointer;padding:0 4px">{{ hintL }}</button>
+        <button onClick="{{ wDoneB }}" style="flex:1.3;height:52px;border-radius:14px;border:0;background:{{ doneBg }};color:{{ doneFg }};font-size:14.5px;font-weight:600;cursor:pointer;padding:0 4px">{{ doneL }}</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{ wPaper }}" hint-placeholder-val="{{ false }}"><button onClick="{{ reveal }}" style="width:100%;height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">Показать ответ</button></sc-if>
+    <sc-if value="{{ qRev }}" hint-placeholder-val="{{ false }}">
+      <div style="width:100%;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap"><span style="font:600 40px 'Noto Serif SC',serif">{{ qv.h }}</span><span style="font-size:18px;color:var(--ac);font-weight:500">{{ qv.p }}</span><button onClick="{{ speakQ }}" aria-label="Послушать" style="width:40px;height:40px;border-radius:20px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe050;</span></button></div>
+        <sc-if value="{{ wHasRes }}" hint-placeholder-val="{{ false }}"><span style="text-align:center;font-size:13.5px;color:{{ wResC }}">{{ wResL }}</span></sc-if>
+        <div style="display:flex;gap:10px"><button onClick="{{ ansNo }}" style="flex:1;height:56px;border-radius:16px;border:0;background:var(--bads);color:var(--bad);font-size:15.5px;font-weight:600;cursor:pointer">Ошибся</button><button onClick="{{ ansYes }}" style="flex:1;height:56px;border-radius:16px;border:0;background:var(--oks);color:var(--ok);font-size:15.5px;font-weight:600;cursor:pointer">Верно</button></div>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<!-- ============ ИТОГ ============ -->
+<sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+    <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px 28px;text-align:center">
+      <div style="width:88px;height:88px;border-radius:16px;background:#C8372D;color:#FFF;display:flex;align-items:center;justify-content:center;font:700 54px 'Noto Serif SC',serif;transform:rotate(-6deg);animation:pop .3s">完</div>
+      <span style="font:700 26px/1.25 'Noto Serif','Noto Serif SC',serif">{{ rs.title }}</span>
+      <sc-if value="{{ rs.hasTotal }}" hint-placeholder-val="{{ true }}"><span style="font-size:16px;color:var(--mu)">С первого раза {{ rs.first }} из {{ rs.total }}</span></sc-if>
+      <sc-if value="{{ rs.noTotal }}" hint-placeholder-val="{{ false }}"><span style="font-size:16px;color:var(--mu)">{{ rs.sub }}</span></sc-if>
+      <sc-if value="{{ rs.hasNext }}" hint-placeholder-val="{{ true }}"><span style="padding:8px 14px;border-radius:999px;background:var(--prs);color:var(--pr);font-size:13.5px;font-weight:600">Следующее повторение · {{ rs.next }}</span></sc-if>
+      <sc-if value="{{ rs.hasHard }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:8px;align-items:center;margin-top:8px"><span style="font-size:13px;color:var(--mu)">Ошибки были в словах</span><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center"><sc-for list="{{ rs.list }}" as="w" hint-placeholder-count="2"><span style="display:flex;flex-direction:column;align-items:center;padding:6px 10px;border-radius:12px;background:var(--bads)"><span style="font:600 20px 'Noto Serif SC',serif">{{ w.h }}</span><span style="font-size:12px;color:var(--ac)">{{ w.p }}</span></span></sc-for></div></div></sc-if>
+    </div>
+    <div style="padding:10px 20px 18px;flex:none;display:flex;flex-direction:column;gap:8px">
+      <sc-if value="{{ rs.hasHard }}" hint-placeholder-val="{{ false }}"><button onClick="{{ resHard }}" style="height:52px;border-radius:16px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:600;cursor:pointer">Повторить трудные · {{ rs.hardN }}</button></sc-if>
+      <button onClick="{{ resDone }}" style="height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">Готово</button>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ============ НИЖНЕЕ МЕНЮ ============ -->
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+  <div style="height:68px;flex:none;display:flex;border-top:1px solid var(--ln);background:var(--sf);padding-bottom:4px">
+    <sc-for list="{{ navs }}" as="n" hint-placeholder-count="4"><button onClick="{{ n.go }}" style="flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:{{ n.c }};padding:0"><span style="width:56px;height:30px;border-radius:15px;background:{{ n.bar }};display:flex;align-items:center;justify-content:center;transition:background .15s"><span class="mi" style="font-size:22px">{{ n.ic }}</span></span><span style="font-size:12.5px;font-weight:{{ n.fw }}">{{ n.l }}</span></button></sc-for>
+  </div>
+</sc-if>
+
+<!-- ============ ШТОРКИ ============ -->
+<sc-if value="{{ hasSheet }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeSheet }}" style="position:absolute;inset:0;z-index:20;background:var(--dim);animation:fade .2s">
+    <div onClick="{{ stop }}" style="position:absolute;left:0;right:0;bottom:0;max-height:86%;display:flex;flex-direction:column;border-radius:26px 26px 0 0;background:var(--sf);animation:up .24s ease-out">
+      <div style="width:40px;height:5px;border-radius:3px;background:var(--ln);align-self:center;margin:10px 0 4px;flex:none"></div>
+      <sc-if value="{{ sheetCal }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:6px 20px 20px;display:flex;flex-direction:column;gap:14px;overflow-y:auto">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="flex:1;font:700 21px 'Noto Serif',serif">{{ calTitle }}</span>
+            <button onClick="{{ calPrev }}" aria-label="Предыдущий месяц" style="width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:none;color:{{ calPrevFg }};cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5cb;</span></button>
+            <button onClick="{{ calNext }}" aria-label="Следующий месяц" style="width:40px;height:40px;border-radius:12px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5cc;</span></button>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px">
+            <sc-for list="{{ calWd }}" as="d" hint-placeholder-count="7"><span style="height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:{{ d.c }}">{{ d.l }}</span></sc-for>
+            <sc-for list="{{ calDays }}" as="d" hint-placeholder-count="35"><button onClick="{{ d.go }}" style="height:44px;border-radius:14px;border:1.5px solid {{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};font-size:15px;font-weight:{{ d.fw }};cursor:{{ d.cur }};padding:0;opacity:{{ d.op }}">{{ d.l }}</button></sc-for>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:14px;background:var(--sf2)"><span style="font-size:14px;color:var(--mu)">{{ gDateFull }}</span><span style="font-size:14px;font-weight:600;color:var(--pr);text-align:right">{{ gPer }}</span></div>
+          <button onClick="{{ closeSheet }}" style="height:54px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:15.5px;font-weight:600;cursor:pointer;flex:none">Готово</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sheetTopic }}" hint-placeholder-val="{{ false }}">
+        <div class="scr" style="padding:8px 20px 20px;display:flex;flex-direction:column;gap:12px;overflow-y:auto">
+          <span style="font:700 20px 'Noto Serif',serif">Тема следующего урока</span>
+          <div style="display:flex;gap:8px"><input value="{{ topicOwn }}" onChange="{{ onTopicOwn }}" placeholder="Своя тема, например «Кино»" style="flex:1;min-width:0;height:48px;border-radius:14px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:15px;padding:0 14px;outline:none"><button onClick="{{ addCustom }}" style="height:48px;padding:0 16px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer;flex:none">Выбрать</button></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><sc-for list="{{ topics }}" as="t" hint-placeholder-count="6"><button onClick="{{ t.go }}" style="display:flex;align-items:center;gap:10px;min-height:50px;padding:0 16px;border-radius:14px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font-size:15px;cursor:pointer;text-align:left"><span style="font:600 17px 'Noto Serif SC',serif;min-width:40px;color:{{ t.zc }}">{{ t.zh }}</span><span style="flex:1">{{ t.l }}</span><span style="font-size:12.5px;color:var(--mu)">{{ t.tag }}</span></button></sc-for></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sheetWord }}" hint-placeholder-val="{{ false }}">
+        <div class="scr" style="padding:8px 24px 24px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow-y:auto">
+          <span style="font-size:12.5px;color:var(--mu)">{{ sw.meta }}</span>
+          <span style="font:600 {{ sw.fs }}px/1.1 'Noto Serif SC',serif;text-align:center">{{ sw.h }}</span>
+          <span style="font-size:22px;color:var(--ac);font-weight:500">{{ sw.p }}</span>
+          <span style="font-size:18px;text-align:center;line-height:1.35">{{ sw.m }}</span>
+          <sc-if value="{{ sw.hasParts }}" hint-placeholder-val="{{ false }}"><div style="width:100%;margin-top:6px;padding:12px 14px;border-radius:14px;background:var(--sf2);font-size:14px;line-height:1.5;color:var(--mu);white-space:pre-line">{{ sw.parts }}</div></sc-if>
+          <div style="width:100%;display:flex;gap:8px;margin-top:8px"><button onClick="{{ sw.say }}" style="flex:1;height:50px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button><button onClick="{{ sw.ask }}" style="flex:1;height:50px;border-radius:14px;border:0;background:var(--prs);color:var(--pr);font-size:14.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe8af;</span>Спросить</button></div>
+          <button onClick="{{ sw.edit }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:4px"><span class="mi" style="font-size:18px">&#xf097;</span>Править урок</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sheetBackup }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:8px 20px 22px;display:flex;flex-direction:column;gap:10px">
+          <span style="font:700 20px 'Noto Serif',serif">Резервная копия</span>
+          <span style="font-size:14px;line-height:1.5;color:var(--mu)">Все слова, уроки, цель и настройки — в одном файле JSON. Сохраните его в облако или на компьютер.</span>
+          <button onClick="{{ exportJson }}" style="height:52px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px"><span class="mi" style="font-size:20px">&#xf090;</span>Сохранить копию</button>
+          <button onClick="{{ pickJson }}" style="height:52px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px"><span class="mi" style="font-size:20px">&#xe9fc;</span>Восстановить из файла</button>
+          <input type="file" ref="{{ fileRef }}" accept=".json,application/json,text/plain" onChange="{{ onJson }}" style="display:none">
+          <button onClick="{{ askReset }}" style="height:44px;border:0;background:none;color:var(--bad);font-size:14px;cursor:pointer">{{ resetL }}</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:16px;right:16px;bottom:{{ toastBottom }}px;z-index:30;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:14px;background:var(--tst);color:var(--onTst);font-size:14px;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:fade .2s"><span style="flex:1">{{ toastMsg }}</span><sc-if value="{{ toastAct }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toastGo }}" style="height:34px;padding:0 12px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">{{ toastActL }}</button></sc-if></div>
+</sc-if>
+</div>
+</x-dc>
