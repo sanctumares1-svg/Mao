@@ -1,4 +1,9 @@
-/* EVINE dictionary: CC-CEDICT (CC BY-SA 4.0, MDBG) + Russian for HSK 3.0 levels 1–3 */
+/* Mao dictionary.
+   Index: CC-CEDICT (CC BY-SA 4.0, MDBG) — characters, readings, English.
+   Russian: Mao's checked translations of HSK 1–3 (src m) and 大БКРС, bkrs.info (src b):
+   «Базы можно использовать свободно в любых целях». Built by tools/build_dict.py.
+   dict.txt columns: h, trad, pinyin, en, ru-short, hsk level, src, measure words.
+   ru/NNN.json: БКРС senses and examples for the word card, loaded when a card opens. */
 (function () {
   'use strict';
   const TONES = { a: 'āáǎà', e: 'ēéěè', i: 'īíǐì', o: 'ōóǒò', u: 'ūúǔù', 'ü': 'ǖǘǚǜ' };
@@ -49,13 +54,32 @@
   try { localStorage.removeItem('evine-ruc'); } catch (e) {}
   const saveRuc = () => { try { localStorage.setItem('evine-ruc', JSON.stringify(RUC)); } catch (e) {} };
 
-  function parse(txt) {
-    const out = [], freq = new Map();
-    const lines = txt.split('\n');
-    for (const l of lines) {
-      if (!l) continue;
+  let VER = '';
+  // parse in slices of ~25 ms so touches and drawing are never blocked while the dictionary loads
+  function parseAsync(txt, done) {
+    const out = [], freq = new Map(); let pos = 0;
+    const step = () => {
+      const t0 = performance.now();
+      while (pos < txt.length && performance.now() - t0 < 25) {
+        for (let k = 0; k < 400 && pos < txt.length; k++) {
+          let j = txt.indexOf('\n', pos); if (j < 0) j = txt.length;
+          const l = txt.slice(pos, j); pos = j + 1;
+          if (!l) continue;
+          if (l.charCodeAt(0) === 35) { if (l.startsWith('#mao-dict')) VER = l.split('\t')[1] || ''; continue; }
+          out.push(row(l, freq));
+        }
+      }
+      if (pos < txt.length) return setTimeout(step, 0);
+      let k = 0;
+      const fin = () => { const t1 = performance.now(); for (; k < out.length && performance.now() - t1 < 25; k++) { const e = out[k]; let m = 1e9; for (const ch of e.h) m = Math.min(m, freq.get(ch) || 0); e.f = m; } if (k < out.length) return setTimeout(fin, 0); done(out); };
+      fin();
+    };
+    step();
+  }
+  function row(l, freq) {
+    {
       const c = l.split('\t');
-      const e = { h: c[0], t: c[1] || '', n: c[2] || '', en: c[3] || '', ru: c[4] || '', lv: +(c[5] || 0) };
+      const e = { h: c[0], t: c[1] || '', n: c[2] || '', en: c[3] || '', ru: c[4] || '', lv: +(c[5] || 0), src: c[6] || (c[4] ? 'm' : ''), cl: c[7] || '' };
       // Russian was attached to a surname entry ("San1", "Yu2"): the word itself is written in lower case.
       // Real names (Китай, Пекин) and languages (китайский язык) keep the capital letter.
       if (e.ru && /^[A-Z]/.test(e.n) && /^[а-яё]/.test(e.ru) && !/язык/.test(e.ru)) e.n = e.n.toLowerCase();
@@ -68,16 +92,15 @@
       }
       e.key = e.h + '|' + e.num;
       e.len = [...e.h].length;
-      out.push(e);
       for (const ch of e.h) freq.set(ch, (freq.get(ch) || 0) + 1);
+      return e;
     }
-    for (const e of out) { let m = 1e9; for (const ch of e.h) m = Math.min(m, freq.get(ch) || 0); e.f = m; }
-    return out;
   }
 
   function load() {
-    fetch('dict.txt').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
-      .then(txt => { rows = parse(txt); state = 'ready'; listeners.splice(0).forEach(f => { try { f(); } catch (e) {} }); })
+    (window.MaoText ? MaoText('dict.txt') : fetch('dict.txt').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }))
+      .then(txt => new Promise(res => parseAsync(txt, res)))
+      .then(out => { rows = out; state = 'ready'; listeners.splice(0).forEach(f => { try { f(); } catch (e) {} }); })
       .catch(() => { state = 'error'; listeners.splice(0).forEach(f => { try { f(); } catch (e) {} }); });
   }
 
@@ -95,7 +118,8 @@
     } else if (/[а-яё]/i.test(q)) {
       const hit = e => { const r = ruOf(e); if (!r) return 0; const low = r.toLowerCase(); const parts = low.split(/[;,()]\s*/).map(s => s.trim()); return parts.includes(lq) ? 3 : parts.some(p => p.startsWith(lq)) ? 2 : low.includes(lq) ? 1 : 0; };
       res = rows.filter(e => hit(e) > 0);
-      res.sort((a, b) => hit(b) - hit(a) || (b.lv ? 1 : 0) - (a.lv ? 1 : 0) || a.len - b.len || b.f - a.f);
+      // rare characters (low frequency in words) after common ones
+      res.sort((a, b) => hit(b) - hit(a) || (b.lv ? 1 : 0) - (a.lv ? 1 : 0) || ((b.f > 20) - (a.f > 20)) || a.len - b.len || b.f - a.f);
     } else {
       const raw = lq.replace(/[\s'’]/g, '');
       if (/\d/.test(raw)) {
@@ -117,7 +141,7 @@
         res = res.concat(en.slice(0, limit - res.length));
       }
     }
-    return res.slice(0, limit).map(e => ({ h: e.h, t: e.t && e.t !== e.h ? e.t : '', p: e.p || displayPy(e.n), m: ruOf(e), en: shortEn(e.en), hsk: e.lv > 0, lv: e.lv, key: e.key }));
+    return res.slice(0, limit).map(e => out(e));
   }
 
   // background Russian translation of English-only entries through Claude (needs API key)
@@ -133,7 +157,25 @@
   let hskPool = null;
   const STOP = new Set(['про', 'для', 'тему', 'теме', 'тема', 'слова', 'слов', 'слово', 'подбери', 'подбор', 'дай', 'мне', 'как', 'что', 'это', 'по', 'на', 'или', 'все', 'весь']);
   const outE = e => out(e);
-  const out = e => ({ h: e.h, t: e.t && e.t !== e.h ? e.t : '', p: e.p || displayPy(e.n), m: ruOf(e), en: shortEn(e.en), hsk: e.lv > 0, lv: e.lv, key: e.key });
+  const toneKey = p => { let L = '', T = ''; for (const part of String(p).toLowerCase().replace(/['’\-,]/g, ' ').split(/\s+/)) for (const c of part) { if (MARK[c]) { L += MARK[c][0]; T += MARK[c][1]; } else L += c; } return L.replace(/ü/g, 'v') + '|' + T; };
+  const out = e => ({ h: e.h, t: e.t && e.t !== e.h ? e.t : '', p: e.p || displayPy(e.n), m: ruOf(e), src: e.src, en: shortEn(e.en), hsk: e.lv > 0, lv: e.lv, cl: e.cl, key: e.key, syl: sylOf(e) });
+  // one syllable per character (for pinyin under each character); null when they do not line up
+  function sylOf(e) {
+    const ch = [...e.h]; let sy;
+    if (e.n.charAt(0) === '=') return null;
+    sy = e.n.split(' ').filter(Boolean).map(x => numToMarks(x.replace(/u:/g, 'ü')).toLowerCase());
+    return sy.length === ch.length ? sy : null;
+  }
+  // ---- БКРС details for a word card: ru/NNN.json, NNN = code of the first character mod 256 ----
+  const SH = new Map(), SHP = new Map();
+  const shardOf = h => String(h.codePointAt(0) % 256).padStart(3, '0');
+  function details(h) {
+    const k = shardOf(h);
+    if (SH.has(k)) return Promise.resolve(SH.get(k)[h] || null);
+    if (!SHP.has(k)) SHP.set(k, fetch('ru/' + k + '.json').then(r => r.ok ? r.json() : {}).catch(() => ({})).then(j => { SH.set(k, j); SHP.delete(k); return j; }));
+    return SHP.get(k).then(j => j[h] || null);
+  }
+  const detailsNow = h => { const j = SH.get(shardOf(h)); return j ? (j[h] || null) : undefined; };
   const lvR = e => e.lv > 0 ? e.lv : 9;
   const low = e => (/^[A-Z]/.test(e.n) ? 1 : 0);
   function bestRows(q) {
@@ -205,7 +247,13 @@
       const seen = new Set(); return out.filter(e => !seen.has(e.h) && seen.add(e.h)).slice(0, n || 20).map(outE); },
     // random HSK words of a given length (for answer choices)
     sample: (n, len) => { if (state !== 'ready') return []; if (!hskPool) hskPool = rows.filter(e => e.lv > 0 && ruOf(e)); let p = hskPool.filter(e => !len || e.len === len); if (p.length < n) p = hskPool; const out = []; for (let i = 0; i < n * 3 && out.length < n; i++) { const e = p[Math.floor(Math.random() * p.length)]; if (!out.includes(e)) out.push(e); } return out.map(outE); },
-    isHsk: h => rows.some(x => x.h === h && x.lv > 0)
+    isHsk: h => { index(); return (byH.get(h) || []).some(x => x.lv > 0); },
+    version: () => VER,
+    details, detailsNow,
+    // all readings of a word or character in the index (for «чтения» on the card)
+    readings: h => { if (state !== 'ready') return []; index(); const seen = new Set(); return (byH.get(h) || []).filter(e => e.h === h && !/^[A-Z]/.test(e.n) && !seen.has(e.num) && seen.add(e.num)).sort((a, b) => lvR(a) - lvR(b)).map(out); },
+    // does a БКРС reading (marked pinyin) belong to this word's reading?
+    sameReading: (y, p) => { const a = toneKey(y), b = toneKey(p); return a === b || (a.split('|')[0] === b.split('|')[0] && a.endsWith('|')); }
   };
   load();
 })();

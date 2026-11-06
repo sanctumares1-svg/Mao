@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mao</title>
-<script src="./react.js"></script><script src="./native.js"></script><script src="./dict.js"></script><script src="./writecheck.js"></script><script src="./explain.js"></script><script src="./support.js"></script>
+<script src="./react.js"></script><script src="./native.js"></script><script src="./loadtext.js"></script><script src="./dict.js"></script><script src="./writecheck.js"></script><script src="./explain.js"></script><script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -52,7 +52,7 @@ button:active{filter:brightness(.92)}
 
     <div style="padding:22px 20px 20px;border-radius:22px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column;gap:16px">
       <div style="display:flex;flex-direction:column;gap:6px">
-        <span style="font:700 27px/1.2 'Noto Serif','Noto Serif SC',serif">{{ hero.t }}</span>
+        <span style="font:700 27px/1.2 'Noto Serif','Noto Serif SC',serif;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical">{{ hero.t }}</span>
         <span style="font-size:14px;line-height:1.45;color:var(--mu)">{{ hero.sub }}</span>
       </div>
       <div style="display:flex;flex-direction:column;gap:2px;padding:4px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)">
@@ -109,7 +109,7 @@ button:active{filter:brightness(.92)}
       <sc-if value="{{ noLessons }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;line-height:1.5;color:var(--mu);padding:0 4px">Уроков пока нет. Начните первый на вкладке «Сегодня» или добавьте свои слова.</span></sc-if>
       <sc-for list="{{ days }}" as="d" hint-placeholder-count="3">
         <div style="display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;background:var(--sf);border:1px solid var(--ln)">
-          <div style="display:flex;align-items:center;gap:10px"><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span style="font-size:15px;font-weight:600">{{ d.title }}</span><span style="font-size:13px;color:var(--mu)">{{ d.stat }}</span></span><sc-if value="{{ d.canRep }}" hint-placeholder-val="{{ true }}"><button onClick="{{ d.rep }}" aria-label="Повторить урок" style="height:36px;padding:0 10px 0 8px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;flex:none"><span class="mi" style="font-size:18px">&#xe042;</span>Повторить</button></sc-if><button onClick="{{ d.edit }}" aria-label="Править урок" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xf097;</span></button></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span style="font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">{{ d.title }}</span><span style="font-size:12.5px;color:var(--mu)">{{ d.stat }}</span></span><sc-if value="{{ d.canLearn }}" hint-placeholder-val="{{ false }}"><button onClick="{{ d.learn }}" style="height:36px;padding:0 12px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13px;font-weight:600;cursor:pointer;flex:none">{{ d.learnL }}</button></sc-if><sc-if value="{{ d.canRep }}" hint-placeholder-val="{{ true }}"><button onClick="{{ d.rep }}" aria-label="Повторить урок" style="height:36px;padding:0 10px 0 8px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;flex:none"><span class="mi" style="font-size:18px">&#xe042;</span>Повторить</button></sc-if><button onClick="{{ d.edit }}" aria-label="Править урок" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xf097;</span></button></div>
           <div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ d.ws }}" as="w" hint-placeholder-count="5"><button onClick="{{ w.open }}" style="display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 10px;border-radius:12px;border:0;background:var(--sf2);color:var(--ink);cursor:pointer;position:relative"><span style="font:600 20px 'Noto Serif SC',serif">{{ w.h }}</span><span style="font-size:12.5px;color:var(--ac)">{{ w.p }}</span><span style="position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:3px;background:{{ w.dot }}"></span></button></sc-for><sc-if value="{{ d.empty }}" hint-placeholder-val="{{ false }}"><button onClick="{{ d.add }}" style="height:40px;padding:0 12px;border-radius:12px;border:1.5px dashed var(--ln);background:none;color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer">Урок пуст · добавить слова</button></sc-if></div>
         </div>
       </sc-for>
@@ -148,7 +148,7 @@ button:active{filter:brightness(.92)}
     <div style="display:flex;flex-direction:column;gap:8px">
       <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">УЧЁБА</span>
       <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
-        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Новых слов в день</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Это один урок. Хочется больше — «Ещё урок» на главной</span></div><div style="display:flex;align-items:center;gap:4px"><button onClick="{{ dailyDn }}" aria-label="Меньше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe15b;</span></button><span style="min-width:28px;text-align:center;font-size:16px;font-weight:600">{{ daily }}</span><button onClick="{{ dailyUp }}" aria-label="Больше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe145;</span></button></div></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Новых слов в день</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Это один урок. Хочется больше — «Ещё урок» на главной</span><sc-if value="{{ dailyWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--ac);line-height:1.4">{{ dailyWarnL }}</span></sc-if></div><div style="display:flex;align-items:center;gap:4px"><button onClick="{{ dailyDn }}" aria-label="Меньше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe15b;</span></button><span style="min-width:28px;text-align:center;font-size:16px;font-weight:600">{{ daily }}</span><button onClick="{{ dailyUp }}" aria-label="Больше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe145;</span></button></div></div>
         <button onClick="{{ tglMore1 }}" style="display:flex;justify-content:space-between;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;align-items:center;text-align:left"><span>Способ урока</span><span style="font-size:13.5px;font-weight:400;color:var(--mu);display:flex;align-items:center;gap:2px">{{ methodL }}<span class="mi" style="font-size:20px">{{ more1Ic }}</span></span></button>
         <sc-if value="{{ more1 }}" hint-placeholder-val="{{ false }}"><div style="padding:0 16px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ methodOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ methodD }}</span></div></sc-if>
       </div>
@@ -177,7 +177,7 @@ button:active{filter:brightness(.92)}
         <sc-if value="{{ aiOnS }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:6px;padding:0 16px 14px"><sc-for list="{{ models }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:1px"><span style="font-size:14px;font-weight:600">{{ o.l }}</span><span style="font-size:12.5px;color:var(--mu);line-height:1.35">{{ o.d }}</span></span></button></sc-for><sc-if value="{{ needKey }}" hint-placeholder-val="{{ false }}"><input type="password" value="{{ apiKey }}" onChange="{{ onKey }}" placeholder="{{ keyPh }}" autocomplete="off" style="height:44px;border-radius:12px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:14px;padding:0 12px;outline:none"><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ keyHelp }}</span></sc-if><button onClick="{{ checkApi }}" style="align-self:flex-start;height:36px;padding:0 12px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);font-size:13.5px;cursor:pointer">{{ checkL }}</button><sc-if value="{{ hasApiMs }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:{{ apiMsC }}">{{ apiMs }}</span></sc-if></div></sc-if>
       </div>
     </div>
-    <span style="font-size:12px;color:var(--mu);text-align:center;line-height:1.5">{{ footL }}</span>
+    <span style="font-size:12px;color:var(--mu);text-align:center;line-height:1.5;white-space:pre-line">{{ footL }}</span>
   </div>
 </sc-if>
 
@@ -223,7 +223,7 @@ button:active{filter:brightness(.92)}
       <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 20px;display:flex;flex-direction:column;gap:12px">
         <input value="{{ aq }}" onChange="{{ onAq }}" placeholder="Иероглиф, пиньинь или по-русски" style="height:50px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:15px;padding:0 14px;outline:none">
         <sc-if value="{{ hasDictRes }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-direction:column;border-radius:16px;background:var(--sf);border:1px solid var(--ln);overflow:hidden">
-          <sc-for list="{{ dictRes }}" as="r" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:14px;padding:12px 12px 12px 16px;border-bottom:1px solid var(--ln)"><span style="font:600 26px 'Noto Serif SC',serif;min-width:56px">{{ r.h }}</span><span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--ac)">{{ r.p }}</span><span style="font-size:14px;line-height:1.35">{{ r.m }}</span></span><sc-if value="{{ r.have }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);flex:none">{{ r.dayL }}</span></sc-if><sc-if value="{{ r.can }}" hint-placeholder-val="{{ true }}"><button onClick="{{ r.add }}" style="height:36px;padding:0 12px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">Добавить</button></sc-if></div></sc-for>
+          <sc-for list="{{ dictRes }}" as="r" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:14px;padding:12px 12px 12px 16px;border-bottom:1px solid var(--ln)"><button onClick="{{ r.open }}" style="display:flex;align-items:center;gap:14px;flex:1;min-width:0;border:0;background:none;color:var(--ink);text-align:left;padding:0;cursor:pointer"><span style="font:600 26px 'Noto Serif SC',serif;min-width:56px">{{ r.h }}</span><span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><span style="font-size:14px;font-weight:500;color:var(--ac)">{{ r.p }}</span><span style="font-size:14px;line-height:1.35;color:{{ r.mc }}">{{ r.m }}</span></span></button><sc-if value="{{ r.have }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);flex:none">{{ r.dayL }}</span></sc-if><sc-if value="{{ r.can }}" hint-placeholder-val="{{ true }}"><button onClick="{{ r.add }}" style="height:36px;padding:0 12px;border-radius:10px;border:0;background:var(--prs);color:var(--pr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">Добавить</button></sc-if></div></sc-for>
         </div></sc-if>
         <sc-if value="{{ dictEmpty }}" hint-placeholder-val="{{ false }}"><span style="padding:4px 4px;font-size:14px;color:var(--mu);line-height:1.45">{{ dictEmptyL }}</span></sc-if>
         <sc-if value="{{ addHelp }}" hint-placeholder-val="{{ false }}"><span style="padding:4px 4px;font-size:14px;color:var(--mu);line-height:1.5">Напишите иероглифы (家), пиньинь без тонов (jia) или русское слово (семья). Словарь работает без интернета.</span></sc-if>
@@ -249,10 +249,10 @@ button:active{filter:brightness(.92)}
     <div class="scr" style="flex:1;min-height:0;overflow-y:auto;padding:0 20px 12px;display:flex;flex-direction:column;gap:12px">
       <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:var(--mu)">Тема</span><input value="{{ deT }}" onChange="{{ onDeT }}" style="height:50px;border-radius:14px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:16px;font-weight:600;padding:0 14px;outline:none"></div>
       <div style="display:flex;flex-direction:column;border-radius:16px;background:var(--sf);border:1px solid var(--ln);overflow:hidden">
-        <sc-for list="{{ deRows }}" as="r" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:8px;padding:8px 6px 8px 12px;border-bottom:1px solid var(--ln)"><span style="font:600 22px 'Noto Serif SC',serif;min-width:44px">{{ r.h }}</span><input value="{{ r.p }}" onChange="{{ r.onP }}" aria-label="Пиньинь" style="width:84px;height:38px;border-radius:10px;border:1px solid var(--ln);background:var(--sf2);color:var(--ac);font-size:13.5px;padding:0 8px;outline:none;flex:none"><input value="{{ r.m }}" onChange="{{ r.onM }}" aria-label="Перевод" style="flex:1;min-width:0;height:38px;border-radius:10px;border:1px solid {{ r.mbd }};background:var(--sf2);color:var(--ink);font-size:13.5px;padding:0 8px;outline:none"><button onClick="{{ r.del }}" aria-label="Удалить" style="width:36px;height:36px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xe92e;</span></button></div></sc-for>
+        <sc-for list="{{ deRows }}" as="r" hint-placeholder-count="5"><div style="display:flex;align-items:center;gap:8px;padding:8px 6px 8px 12px;border-bottom:1px solid var(--ln)"><span style="font:600 22px 'Noto Serif SC',serif;min-width:44px">{{ r.h }}</span><input value="{{ r.p }}" onChange="{{ r.onP }}" aria-label="Пиньинь" style="width:84px;height:38px;border-radius:10px;border:1px solid var(--ln);background:var(--sf2);color:var(--ac);font-size:13.5px;padding:0 8px;outline:none;flex:none"><input value="{{ r.m }}" onChange="{{ r.onM }}" placeholder="{{ r.mph }}" aria-label="Перевод" style="flex:1;min-width:0;height:38px;border-radius:10px;border:1px solid {{ r.mbd }};background:var(--sf2);color:var(--ink);font-size:13.5px;padding:0 8px;outline:none"><button onClick="{{ r.del }}" aria-label="Удалить" style="width:36px;height:36px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;flex:none"><span class="mi" style="font-size:20px">&#xe92e;</span></button></div></sc-for>
         <button onClick="{{ deAdd }}" style="height:48px;border:0;background:none;color:var(--pr);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px"><span class="mi" style="font-size:20px">&#xe145;</span>Добавить слово</button>
       </div>
-      <sc-if value="{{ deWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);line-height:1.4;padding:0 4px">Перевод с красной рамкой не из словаря — проверьте его.</span></sc-if>
+      <sc-if value="{{ deWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);line-height:1.4;padding:0 4px">У слов с оранжевой рамкой нет русского перевода в словаре. Впишите свой — после этого слово можно учить.</span></sc-if>
     </div>
     <div style="padding:10px 20px 18px;flex:none"><button onClick="{{ deBack }}" style="width:100%;height:54px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">Готово</button></div>
   </div>
@@ -268,15 +268,27 @@ button:active{filter:brightness(.92)}
 
 <!-- ============ ЗНАКОМСТВО ============ -->
 <sc-if value="{{ isCard }}" hint-placeholder-val="{{ false }}">
-  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:8px 24px">
-    <span style="font:600 {{ card.fs }}px/1.1 'Noto Serif SC',serif;text-align:center">{{ card.h }}</span>
-    <span style="font-size:24px;font-weight:500;color:var(--ac);text-align:center">{{ card.p }}</span>
+  <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:10px;padding:8px 24px">
+    <div style="display:flex;justify-content:center;gap:{{ card.gap }}px;flex-wrap:wrap">
+      <sc-for list="{{ card.cs }}" as="c" hint-placeholder-count="2"><span style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font:600 {{ card.fs }}px/1.1 'Noto Serif SC',serif">{{ c.c }}</span><span style="font-size:{{ card.pfs }}px;font-weight:500;color:var(--ac);min-height:1.1em">{{ c.py }}</span></span></sc-for>
+    </div>
+    <sc-if value="{{ card.pyLine }}" hint-placeholder-val="{{ false }}"><span style="font-size:22px;font-weight:500;color:var(--ac);text-align:center">{{ card.p }}</span></sc-if>
     <span style="font-size:19px;text-align:center;line-height:1.35">{{ card.m }}</span>
-    <sc-if value="{{ card.mWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--bad)">перевод не из словаря — проверьте</span></sc-if>
-    <button onClick="{{ speakCard }}" style="margin-top:6px;height:40px;padding:0 16px 0 12px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button>
-    <sc-if value="{{ card.hasParts }}" hint-placeholder-val="{{ false }}">
-      <button onClick="{{ tglParts }}" style="margin-top:10px;width:100%;padding:12px 14px;border-radius:14px;border:0;background:var(--sf2);color:var(--ink);font-size:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:6px"><span style="display:flex;justify-content:space-between;align-items:center;width:100%"><span style="font-weight:600">Из чего состоит</span><span class="mi" style="color:var(--mu)">{{ partsIc }}</span></span><sc-if value="{{ partsOpen }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;line-height:1.5;color:var(--mu);white-space:pre-line">{{ card.parts }}</span></sc-if></button>
-    </sc-if>
+    <sc-if value="{{ card.noRu }}" hint-placeholder-val="{{ false }}"><span style="font-size:13.5px;color:var(--ac);text-align:center;line-height:1.4;max-width:300px">Русского перевода в словаре нет. Впишите свой — тогда слово можно учить и проверять.</span></sc-if>
+    <sc-if value="{{ card.hasMeta }}" hint-placeholder-val="{{ true }}"><span style="font-size:12.5px;color:var(--mu);text-align:center">{{ card.meta }}</span></sc-if>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:4px">
+      <button onClick="{{ card.say }}" style="height:40px;padding:0 14px 0 10px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button>
+      <sc-if value="{{ card.canAnim }}" hint-placeholder-val="{{ true }}"><button onClick="{{ card.anim }}" style="height:40px;padding:0 14px 0 10px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px"><span class="mi" style="font-size:20px">&#xe037;</span>Порядок черт</button></sc-if>
+    </div>
+    <sc-if value="{{ card.animOn }}" hint-placeholder-val="{{ false }}"><canvas ref="{{ card.animRef }}" style="width:150px;height:150px;border-radius:12px;background:var(--sf);border:1.5px solid var(--ln);flex:none;color:var(--ink)"></canvas></sc-if>
+    <sc-if value="{{ card.hasSen }}" hint-placeholder-val="{{ false }}"><div style="width:100%;display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:14px;background:var(--sf2);text-align:left">
+      <span style="font-size:12px;font-weight:600;color:var(--mu)">{{ card.senL }}</span>
+      <sc-for list="{{ card.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;line-height:1.45"><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
+      <span style="font-size:11.5px;color:var(--mu);line-height:1.4">{{ card.exNote }}</span>
+    </div></sc-if>
+    <sc-if value="{{ card.loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:var(--mu)">Открываю статью словаря…</span></sc-if>
+    <sc-if value="{{ card.hasRd }}" hint-placeholder-val="{{ false }}"><div style="width:100%;padding:10px 14px;border-radius:14px;background:var(--sf2);font-size:13.5px;line-height:1.5;text-align:left"><span style="color:var(--mu)">Другие чтения: </span>{{ card.rd }}</div></sc-if>
+    <sc-if value="{{ card.hasParts }}" hint-placeholder-val="{{ false }}"><div style="width:100%;padding:10px 14px;border-radius:14px;background:var(--sf2);font-size:13.5px;line-height:1.5;color:var(--ink);white-space:pre-line;text-align:left"><span style="color:var(--mu)">Из чего состоит: </span>{{ card.parts }}</div></sc-if>
   </div>
   <div style="padding:10px 20px 18px;flex:none;display:flex;flex-direction:column;gap:4px"><button onClick="{{ learnNextB }}" style="height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">Дальше</button><button onClick="{{ learnKnownB }}" style="height:44px;border:0;background:none;color:var(--mu);font-size:14px;cursor:pointer">Уже знаю это слово</button></div>
 </sc-if>
@@ -298,16 +310,16 @@ button:active{filter:brightness(.92)}
 <sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
   <div class="scr" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;gap:14px;padding:4px 20px 18px">
     <div style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:13px;color:var(--mu)">{{ wAskL }}</span><span style="font-size:22px;font-weight:600;text-align:center;line-height:1.3">{{ qv.m }}</span></div>
-    <sc-if value="{{ wTabsShow }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:8px"><sc-for list="{{ wTabs }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.go }}" aria-label="{{ t.al }}" style="width:40px;height:40px;border-radius:12px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font:600 {{ t.fs }}px 'Noto Serif SC',serif;cursor:pointer;padding:0">{{ t.l }}</button></sc-for></div></sc-if>
+    <sc-if value="{{ wTabsShow }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><sc-for list="{{ wTabs }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.go }}" aria-label="{{ t.al }}" style="width:40px;height:40px;border-radius:12px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font:600 {{ t.fs }}px 'Noto Serif SC',serif;cursor:pointer;padding:0">{{ t.l }}</button></sc-for></div></sc-if>
     <sc-if value="{{ wScreen }}" hint-placeholder-val="{{ true }}">
-      <div style="position:relative;width:min(288px,calc(100vw - 48px));aspect-ratio:1;flex:none;border-radius:14px;background:var(--sf);border:2px solid var(--ln);overflow:hidden">
+      <div style="position:relative;width:min(288px,calc(100vw - 48px),calc(100dvh - 330px));min-width:200px;aspect-ratio:1;flex:none;border-radius:14px;background:var(--sf);border:2px solid var(--ln);overflow:hidden">
         <sc-if value="{{ wGridOn }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:50%;border-top:1.5px dashed var(--gl)"></div><div style="position:absolute;top:0;bottom:0;left:50%;border-left:1.5px dashed var(--gl)"></div></sc-if>
         <sc-if value="{{ wGridMi }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(45deg)"></div><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(-45deg)"></div></sc-if>
         <canvas ref="{{ wcRef }}" width="576" height="576" onPointerDown="{{ wDown }}" onPointerMove="{{ wMove }}" onPointerUp="{{ wUp }}" onPointerCancel="{{ wUp }}" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;color:var(--ink)"></canvas>
         <sc-if value="{{ wRevOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 min(220px,calc((100vw - 48px) * .76))/1 'Noto Serif SC',serif;color:var(--pr);opacity:.28;pointer-events:none">{{ wCurCh }}</span></sc-if>
         <sc-if value="{{ wOkOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;right:10px;height:30px;padding:0 10px 0 6px;border-radius:999px;background:var(--oks);color:var(--ok);font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:4px;animation:pop .2s"><span class="mi" style="font-size:18px">&#xe668;</span>{{ wOkL }}</span></sc-if>
       </div>
-      <span style="font-size:12.5px;color:var(--mu);min-height:17px;text-align:center">{{ wCount }}</span>
+      <span style="font-size:13px;color:{{ wCountC }};font-weight:{{ wCountW }};min-height:18px;text-align:center;line-height:1.35;padding:0 8px">{{ wCount }}</span>
     </sc-if>
     <sc-if value="{{ wPaper }}" hint-placeholder-val="{{ false }}">
       <div style="width:min(288px,calc(100vw - 48px));height:200px;border-radius:14px;border:2px dashed var(--ln);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--mu)"><span style="font-size:15px">Напишите знак на бумаге</span><span style="font-size:13px">потом сверьтесь с ответом</span></div>
@@ -387,14 +399,43 @@ button:active{filter:brightness(.92)}
         </div>
       </sc-if>
       <sc-if value="{{ sheetWord }}" hint-placeholder-val="{{ false }}">
-        <div class="scr" style="padding:8px 24px 24px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow-y:auto">
-          <span style="font-size:12.5px;color:var(--mu)">{{ sw.meta }}</span>
-          <span style="font:600 {{ sw.fs }}px/1.1 'Noto Serif SC',serif;text-align:center">{{ sw.h }}</span>
-          <span style="font-size:22px;color:var(--ac);font-weight:500">{{ sw.p }}</span>
-          <span style="font-size:18px;text-align:center;line-height:1.35">{{ sw.m }}</span>
-          <sc-if value="{{ sw.hasParts }}" hint-placeholder-val="{{ false }}"><div style="width:100%;margin-top:6px;padding:12px 14px;border-radius:14px;background:var(--sf2);font-size:14px;line-height:1.5;color:var(--mu);white-space:pre-line">{{ sw.parts }}</div></sc-if>
-          <div style="width:100%;display:flex;gap:8px;margin-top:8px"><button onClick="{{ sw.say }}" style="flex:1;height:50px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button><button onClick="{{ sw.ask }}" style="flex:1;height:50px;border-radius:14px;border:0;background:var(--prs);color:var(--pr);font-size:14.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe8af;</span>Спросить</button></div>
-          <button onClick="{{ sw.edit }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:13.5px;cursor:pointer;display:flex;align-items:center;gap:4px"><span class="mi" style="font-size:18px">&#xf097;</span>Править урок</button>
+        <div class="scr" style="padding:8px 22px 24px;display:flex;flex-direction:column;align-items:center;gap:8px;overflow-y:auto">
+          <span style="font-size:12.5px;color:var(--mu)">{{ sw.top }}</span>
+    <div style="display:flex;justify-content:center;gap:{{ sw.gap }}px;flex-wrap:wrap">
+      <sc-for list="{{ sw.cs }}" as="c" hint-placeholder-count="2"><span style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font:600 {{ sw.fs }}px/1.1 'Noto Serif SC',serif">{{ c.c }}</span><span style="font-size:{{ sw.pfs }}px;font-weight:500;color:var(--ac);min-height:1.1em">{{ c.py }}</span></span></sc-for>
+    </div>
+    <sc-if value="{{ sw.pyLine }}" hint-placeholder-val="{{ false }}"><span style="font-size:22px;font-weight:500;color:var(--ac);text-align:center">{{ sw.p }}</span></sc-if>
+    <span style="font-size:19px;text-align:center;line-height:1.35">{{ sw.m }}</span>
+    <sc-if value="{{ sw.noRu }}" hint-placeholder-val="{{ false }}"><span style="font-size:13.5px;color:var(--ac);text-align:center;line-height:1.4;max-width:300px">Русского перевода в словаре нет. Впишите свой — тогда слово можно учить и проверять.</span></sc-if>
+    <sc-if value="{{ sw.hasMeta }}" hint-placeholder-val="{{ true }}"><span style="font-size:12.5px;color:var(--mu);text-align:center">{{ sw.meta }}</span></sc-if>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:4px">
+      <button onClick="{{ sw.say }}" style="height:40px;padding:0 14px 0 10px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px"><span class="mi" style="font-size:20px">&#xe050;</span>Послушать</button>
+      <sc-if value="{{ sw.canAnim }}" hint-placeholder-val="{{ true }}"><button onClick="{{ sw.anim }}" style="height:40px;padding:0 14px 0 10px;border-radius:999px;border:1px solid var(--ln);background:var(--sf);color:var(--ink);font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px"><span class="mi" style="font-size:20px">&#xe037;</span>Порядок черт</button></sc-if>
+    </div>
+    <sc-if value="{{ sw.animOn }}" hint-placeholder-val="{{ false }}"><canvas ref="{{ sw.animRef }}" style="width:150px;height:150px;border-radius:12px;background:var(--sf);border:1.5px solid var(--ln);flex:none;color:var(--ink)"></canvas></sc-if>
+    <sc-if value="{{ sw.hasSen }}" hint-placeholder-val="{{ false }}"><div style="width:100%;display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:14px;background:var(--sf2);text-align:left">
+      <span style="font-size:12px;font-weight:600;color:var(--mu)">{{ sw.senL }}</span>
+      <sc-for list="{{ sw.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;line-height:1.45"><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
+      <span style="font-size:11.5px;color:var(--mu);line-height:1.4">{{ sw.exNote }}</span>
+    </div></sc-if>
+    <sc-if value="{{ sw.loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:var(--mu)">Открываю статью словаря…</span></sc-if>
+    <sc-if value="{{ sw.hasRd }}" hint-placeholder-val="{{ false }}"><div style="width:100%;padding:10px 14px;border-radius:14px;background:var(--sf2);font-size:13.5px;line-height:1.5;text-align:left"><span style="color:var(--mu)">Другие чтения: </span>{{ sw.rd }}</div></sc-if>
+    <sc-if value="{{ sw.hasParts }}" hint-placeholder-val="{{ false }}"><div style="width:100%;padding:10px 14px;border-radius:14px;background:var(--sf2);font-size:13.5px;line-height:1.5;color:var(--ink);white-space:pre-line;text-align:left"><span style="color:var(--mu)">Из чего состоит: </span>{{ sw.parts }}</div></sc-if>
+          <sc-if value="{{ sw.editing }}" hint-placeholder-val="{{ false }}"><div style="width:100%;display:flex;flex-direction:column;gap:6px"><input value="{{ sw.editV }}" onChange="{{ sw.onEdit }}" placeholder="Свой перевод" style="height:46px;border-radius:12px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);font-size:15px;padding:0 12px;outline:none"><div style="display:flex;gap:8px"><button onClick="{{ sw.editCancel }}" style="flex:1;height:44px;border-radius:12px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14px;cursor:pointer">Отмена</button><button onClick="{{ sw.editSave }}" style="flex:1;height:44px;border-radius:12px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer">Сохранить</button></div></div></sc-if>
+          <sc-if value="{{ sw.isWord }}" hint-placeholder-val="{{ true }}"><div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+            <button onClick="{{ sw.write }}" style="height:48px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:14px;font-weight:600;cursor:pointer">Потренировать письмо</button>
+            <button onClick="{{ sw.ask }}" style="height:48px;border-radius:14px;border:0;background:var(--prs);color:var(--pr);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="mi" style="font-size:20px">&#xe8af;</span>Спросить</button>
+            <button onClick="{{ sw.editOpen }}" style="height:44px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:13.5px;cursor:pointer">{{ sw.editL }}</button>
+            <button onClick="{{ sw.edit }}" style="height:44px;border-radius:14px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:13.5px;cursor:pointer">Править урок</button>
+          </div></sc-if>
+          <sc-if value="{{ sw.canRestore }}" hint-placeholder-val="{{ false }}"><button onClick="{{ sw.restore }}" style="height:40px;border:0;background:none;color:var(--mu);font-size:13px;cursor:pointer">Вернуть перевод словаря: {{ sw.dictM }}</button></sc-if>
+          <sc-if value="{{ sw.isDict }}" hint-placeholder-val="{{ false }}"><button onClick="{{ sw.addIt }}" style="width:100%;height:50px;border-radius:14px;border:0;background:{{ sw.addBg }};color:{{ sw.addFg }};font-size:15px;font-weight:600;cursor:pointer;margin-top:6px">{{ sw.addL }}</button></sc-if>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sheetPickDay }}" hint-placeholder-val="{{ false }}">
+        <div class="scr" style="padding:8px 20px 20px;display:flex;flex-direction:column;gap:8px;overflow-y:auto">
+          <span style="font:700 20px 'Noto Serif',serif">В какой урок добавить</span>
+          <sc-for list="{{ pickDays }}" as="d" hint-placeholder-count="3"><button onClick="{{ d.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 16px;border-radius:14px;border:1.5px solid {{ d.bd }};background:{{ d.bg }};color:var(--ink);text-align:left;cursor:pointer"><span style="font-size:15px;font-weight:600">{{ d.l }}</span><span style="font-size:12.5px;color:var(--mu)">{{ d.sub }}</span></button></sc-for>
         </div>
       </sc-if>
       <sc-if value="{{ sheetBackup }}" hint-placeholder-val="{{ false }}">
@@ -412,7 +453,7 @@ button:active{filter:brightness(.92)}
 </sc-if>
 
 <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
-  <div style="position:absolute;left:16px;right:16px;bottom:{{ toastBottom }}px;z-index:30;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:14px;background:var(--tst);color:var(--onTst);font-size:14px;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:fade .2s"><span style="flex:1">{{ toastMsg }}</span><sc-if value="{{ toastAct }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toastGo }}" style="height:34px;padding:0 12px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">{{ toastActL }}</button></sc-if></div>
+  <div style="position:absolute;left:16px;right:16px;{{ toastPos }};z-index:30;display:flex;align-items:center;gap:12px;padding:12px 12px 12px 16px;border-radius:14px;background:var(--tst);color:var(--onTst);font-size:14px;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:fade .2s"><span style="flex:1">{{ toastMsg }}</span><sc-if value="{{ toastAct }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toastGo }}" style="height:34px;padding:0 12px;border-radius:10px;border:0;background:var(--pr);color:var(--onpr);font-size:13.5px;font-weight:600;cursor:pointer;flex:none">{{ toastActL }}</button></sc-if></div>
 </sc-if>
 </div>
 </x-dc>
@@ -491,7 +532,7 @@ const uniq=a=>[...new Set(a)];
 const dk=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 const ago=n=>new Date(Date.now()-n*864e5);
 // ---- Mao 3.0 (design v8) ----
-const APPV='3.0';
+const APPV='3.1';
 const MNAME=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 // Material Symbols Rounded, bundled offline as fonts/icons.woff (only these glyphs)
 const ICONS={check:'',today:'',book:'',forum:'',settings:'',more:'',less:'',cat:'',list:'',tr:'',help:''};
@@ -543,53 +584,72 @@ class Component extends DCLogic {
   mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
   bulkRef=React.createRef();
   importWords(e){const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(txt=>this.importText(txt));}
-  importText(txt){{try{let d=JSON.parse(txt);if(!Array.isArray(d))d=d.words;if(!Array.isArray(d))throw 0;let s=this.state;let id=s.nextId;const have=new Set(s.words.map(w=>w.h));const add=d.filter(o=>o&&o.h&&!have.has(o.h)).map(o=>{const e=window.EDict&&EDict.find(String(o.h));return {id:id++,h:String(o.h),p:toMarks(String(o.p||''))||(e&&e.p)||'',m:String(o.m||o.ru||(e&&e.m)||o.en||(e&&e.en)||''),d:+o.d||+o.lesson||s.cur||1,s:'new',due:false,hsk:o.hsk!=null?!!o.hsk:!!(e&&e.hsk),ex:o.ex||null,mn:null};});if(!s.cur&&add.length&&!s.lessons.length){s={...s,cur:1};}const ls=[...s.lessons];add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);this.upd({words:[...s.words,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0});this.toast('Загружено '+add.length+' '+pl(add.length,WF)+(d.length>add.length?' · '+(d.length-add.length)+' уже были':''));}catch(er){this.toast('Не удалось прочитать файл');}}}
-  PK=['m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
-  defaults(){return {m30:1,m28:1,lessonSize:20,dailyNew:10,aiProv:'free',aiKeys:{},topicSel:null,srs:'on',pal:'indigo',th:'system',perDay:10,method:'fast',chunk:5,quickN:15,hint:'ru',rate:0.85,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'first'};}
+  importText(txt){{try{let d=JSON.parse(txt);if(!Array.isArray(d))d=d.words;if(!Array.isArray(d))throw 0;let s=this.state;let id=s.nextId;const have=new Set(s.words.map(w=>w.h));const add=d.filter(o=>o&&o.h&&!have.has(o.h)).map(o=>{const e=window.EDict&&EDict.find(String(o.h));const own=String(o.m||o.ru||'');const ok=/[а-яё]/i.test(own);return {id:id++,h:String(o.h),p:toMarks(String(o.p||''))||(e&&e.p)||'',m:ok?own:((e&&e.m)||''),mSrc:ok?'user':(e&&e.m?(e.src||'m'):'none'),k:e?e.key:'',d:+o.d||+o.lesson||s.cur||1,s:'new',due:false,hsk:o.hsk!=null?!!o.hsk:!!(e&&e.hsk),ex:o.ex||null,mn:null};});if(!s.cur&&add.length&&!s.lessons.length){s={...s,cur:1};}const ls=[...s.lessons];add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);this.upd({words:[...s.words,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0});this.toast('Загружено '+add.length+' '+pl(add.length,WF)+(d.length>add.length?' · '+(d.length-add.length)+' уже были':''));}catch(er){this.toast('Не удалось прочитать файл');}}}
+  PK=['m31','study','myRu','m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
+  defaults(){return {m31:1,m30:1,myRu:{},study:null,m28:1,lessonSize:20,dailyNew:10,aiProv:'free',aiKeys:{},topicSel:null,srs:'on',pal:'indigo',th:'system',perDay:10,method:'fast',chunk:5,quickN:15,hint:'ru',rate:0.85,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'first'};}
   load(){try{const d=JSON.parse(localStorage.getItem(KEY));return d&&d.words?d:null;}catch(e){return null;}}
-  state={...this.defaults(),...(migrate(this.load())||{}),tab:'home',screen:(this.load()||{}).onboarded?'tab':'goal',obStep:0,gd:null,topicOwn:'',mN:null,wRes:null,wIdx:0,bulkT:'',bulkAlt:{},bulkSkip:{},bulkFrom:'tab',apiMs:'',apiOk:false,q:'',catI:0,catFlip:false,catSay:null,catWalking:false,chat:[],sheet:null,addMode:'one',aq:'',addDay:null,addFrom:'tab',partsOpen:false,calM:null,more1:false,upd:null,wPeekS:false,chatQ:'',chatBusy:false,wSeg:'lessons',filter:'all',view:null,study:null,quiz:null,result:null,ex:null,edit:null,toast:null,man:{h:'',p:'',m:''},manOpen:false,topicSel:null,clBusy:false};
+  state={...this.defaults(),...(migrate(this.load())||{}),tab:'home',screen:(this.load()||{}).onboarded?'tab':'goal',obStep:0,gd:null,topicOwn:'',mN:null,wRes:null,wIdx:0,bulkT:'',bulkAlt:{},bulkSkip:{},bulkFrom:'tab',apiMs:'',apiOk:false,q:'',catI:0,catFlip:false,catSay:null,catWalking:false,chat:[],sheet:null,addMode:'one',aq:'',addDay:null,addFrom:'tab',partsOpen:false,calM:null,more1:false,upd:null,wPeekS:false,chatQ:'',chatBusy:false,wSeg:'lessons',filter:'all',view:null,quiz:null,result:null,ex:null,edit:null,toast:null,man:{h:'',p:'',m:''},manOpen:false,clBusy:false};
   save(){const o={};this.PK.forEach(k=>{o[k]=this.state[k];});try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
   upd(p,cb){this.setState(p,()=>{this.save();cb&&cb();});}
   chatRef=React.createRef();
   wcRef=React.createRef();
   wcEl(){return this.wcCanvas||this.phoneRef.current?.querySelector('canvas')||null;}
-  wPt(e){const c=this.wcEl(),r=c.getBoundingClientRect(),k=c.width/r.width;return [(e.clientX-r.left)*k,(e.clientY-r.top)*k];}
+  wPt(e){const c=this.wcEl();if(!this.wRect||this.wRectC!==c||performance.now()-this.wRectT>500){this.wRect=c.getBoundingClientRect();this.wRectC=c;this.wRectT=performance.now();}const r=this.wRect,k=c.width/r.width;return [(e.clientX-r.left)*k,(e.clientY-r.top)*k];}
+  // canvas size follows the screen's pixel density (sharp lines on 2.75–3× screens); points are kept in 0..1
+  wFit(c){c=c||this.wcEl();if(!c)return 1;const r=Math.min(3,window.devicePixelRatio||1),w=Math.round((c.clientWidth||288)*r);if(w>0&&c.width!==w){c.width=w;c.height=w;}return c.width/576;}
   wDown(e){const c=e.currentTarget||this.wcEl();if(!c)return;e.preventDefault();
-    // palm: a wide touch is ignored; a second finger while drawing is ignored
-    if(this.state.wDone)return;if(e.pointerType==='touch'&&((e.width||0)>40||(e.height||0)>40))return;if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
-    this.wcCanvas=c;this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;const [x,y]=this.wPt(e),g=c.getContext('2d');
-    this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid'];this.wf=1;this.lt=performance.now();g.strokeStyle=getComputedStyle(c).color;g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);if(!this.state.wHas)this.setState({wHas:true});}
-  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const [x,y]=this.wPt(e),g=c.getContext('2d'),[px,py]=this.lp0;
-    // «Кисть»: faster = thinner, slower = thicker (w = base × (1.4 − v/vmax), from 0.5 to 1.4 of base), smoothed
-    const now=performance.now(),dt=Math.max(1,now-this.lt),v=Math.hypot(x-px,y-py)/dt;this.lt=now;
-    if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
-    const mx=(x+px)/2,my=(y+py)/2;g.lineWidth=this.wBase*this.wf;g.beginPath();g.moveTo(this.lm[0],this.lm[1]);g.quadraticCurveTo(px,py,mx,my);g.stroke();this.lm=[mx,my];this.lp0=[x,y];
-    const S=this.wS&&this.wS[this.wS.length-1];if(S)S.push([x/c.width,y/c.height,this.wf]);}
+    if(this.state.wDone||(this.state.quiz&&this.state.quiz.rev))return;
+    // a second finger while drawing is ignored; a very wide touch (palm) too, but with a hint
+    if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
+    if(e.pointerType==='touch'&&((e.width||0)>90||(e.height||0)>90)){if(!this.wPalmT||Date.now()-this.wPalmT>4000){this.wPalmT=Date.now();this.wSay('Касание слишком широкое — ведите кончиком пальца');}return;}
+    this.wcCanvas=c;const k=this.wFit(c);this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;const [x,y]=this.wPt(e),g=c.getContext('2d');
+    this.wK=k;this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid']*k;this.wf=1;this.lt=performance.now();g.strokeStyle=this.wInkC||(this.wInkC=getComputedStyle(c).color);g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);if(this.state.wMsg)this.setState({wMsg:null});if(!this.state.wHas)this.setState({wHas:true});}
+  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const g=c.getContext('2d');
+    // Android sends one event per frame; the points in between are in getCoalescedEvents()
+    const evs=(e.getCoalescedEvents&&e.getCoalescedEvents())||[];const list=evs.length?evs:[e];const S=this.wS&&this.wS[this.wS.length-1];
+    for(const ev of list){const [x,y]=this.wPt(ev),[px,py]=this.lp0;
+      const now=ev.timeStamp||performance.now(),dt=Math.max(1,now-this.lt),v=Math.hypot(x-px,y-py)/dt/(this.wK||1);this.lt=now;
+      if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
+      const mx=(x+px)/2,my=(y+py)/2;g.lineWidth=this.wBase*this.wf;g.beginPath();g.moveTo(this.lm[0],this.lm[1]);g.quadraticCurveTo(px,py,mx,my);g.stroke();this.lm=[mx,my];this.lp0=[x,y];
+      if(S)S.push([x/c.width,y/c.height,this.wf]);}}
   wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;this.wSnapLast();}
   // compound word, one cell per character: when the character has all its strokes and the finger rests 1 s, go to the next one
   wAuto(){const s=this.state,qz=s.quiz;clearTimeout(this.wAutoT);if(!qz||qz.rev)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const n=[...w.h].length,idx=s.wIdx||0;
     return;const R=this.wCurRef();if(!R||(this.wS||[]).length<R.length)return;
     this.wAutoT=setTimeout(()=>{const q2=this.state.quiz;if(!this.drw&&q2&&!q2.rev&&q2.i===qz.i&&(this.state.wIdx||0)===idx)this.wNext();},1000);}
-  wUndo(){clearTimeout(this.wAutoT);if(this.wS&&this.wS.length){this.wS.pop();if(this.wMeta)this.wMeta.length=Math.min(this.wMeta.length,this.wS.length);this.wMiss={};this.setState({wHas:this.wS.length>0,wN:this.wS.length});this.wRender();return;}
+  wUndo(){clearTimeout(this.wAutoT);if(this.state.wMsg)this.setState({wMsg:null});if(this.wS&&this.wS.length){this.wS.pop();if(this.wMeta)this.wMeta.length=Math.min(this.wMeta.length,this.wS.length);if(this.wRaw)this.wRaw.length=Math.min(this.wRaw.length,this.wS.length);this.wMiss={};this.setState({wHas:this.wS.length>0,wN:this.wS.length});this.wRender();return;}
     const idx=this.state.wIdx||0;if(idx>0)this.wGo(idx-1);}
   wCurRef(){const s=this.state,qz=s.quiz;if(!qz||!window.WCheck||!WCheck.ready())return null;const w=this.W(qz.ids[qz.i]);if(!w)return null;const chars=[...w.h];if(chars.length>1&&'one'!=='one')return null;return WCheck.ref(chars[Math.min(s.wIdx||0,chars.length-1)]);}
-  wSnapLast(){const s=this.state;this.wS=this.wS||[];this.wMeta=this.wMeta||[];this.wMiss=this.wMiss||{};const S=this.wS[this.wS.length-1];if(!S)return;
-    const R=this.wCurRef();if(!R){this.wMeta[this.wS.length-1]={k:-1};this.setState({wN:this.wS.length});return;}const thr={soft:.19,normal:.14,strict:.10}[s.wMatch||'normal'];
-    const used=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k));const strict=(s.wCheck||'strict')!=='soft';
-    let k=-1,best=1;if(strict){for(let i=0;i<R.length;i++)if(!used.has(i)){k=i;break;}if(k>=0)best=WCheck.strokeDist(S,R[k],false);}
-    else{for(let i=0;i<R.length;i++){if(used.has(i))continue;const d=WCheck.strokeDist(S,R[i],true);if(d<best){best=d;k=i;}}}
+  // a short message under the cell (not a toast: nothing covers the cell)
+  wSay(msg,bad){clearTimeout(this.wSayT);this.setState({wMsg:{t:msg,bad:!!bad}});this.wSayT=setTimeout(()=>this.setState({wMsg:null}),3200);}
+  // scale and offset of the user's writing, from strokes already accepted (a smaller or shifted character still matches)
+  wFitXf(R){const M=this.wMeta||[],raw=this.wRaw||[];const U=[],F=[];M.forEach((m,j)=>{if(m&&m.k>=0&&raw[j]&&!m.help){U.push(...raw[j]);F.push(...R[m.k]);}});
+    if(U.length<6)return null;const bb=a=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;a.forEach(p=>{x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1]);});return [x0,y0,x1,y1];};
+    const u=bb(U),f=bb(F);const su=Math.max(u[2]-u[0],u[3]-u[1]),sf=Math.max(f[2]-f[0],f[3]-f[1]);if(su<.05||sf<.05)return null;const k=Math.max(.45,Math.min(1.6,sf/su));
+    return {k,ux:(u[0]+u[2])/2,uy:(u[1]+u[3])/2,fx:(f[0]+f[2])/2,fy:(f[1]+f[3])/2};}
+  wSnapLast(){const s=this.state;this.wS=this.wS||[];this.wMeta=this.wMeta||[];this.wMiss=this.wMiss||{};this.wRaw=this.wRaw||[];const j=this.wS.length-1;const S=this.wS[j];if(!S)return;
+    const R=this.wCurRef();if(!R){this.wMeta[j]={k:-1};this.setState({wN:this.wS.length});return;}const thr={soft:.21,normal:.17,strict:.12}[s.wMatch||'normal'];
+    const used=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));if(exp==null)return;
+    const xf=this.wFitXf(R);const T=xf?S.map(p=>[(p[0]-xf.ux)*xf.k+xf.fx,(p[1]-xf.uy)*xf.k+xf.fy]):S;
+    const nrm=a=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;a.forEach(p=>{x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1]);});const m=Math.max(x1-x0,y1-y0,.02);return {pts:a.map(p=>[(p[0]-(x0+x1)/2)/m,(p[1]-(y0+y1)/2)/m]),cx:(x0+x1)/2,cy:(y0+y1)/2,m};};
+    const ang=st=>Math.atan2(st[st.length-1][1]-st[0][1],st[st.length-1][0]-st[0][0]);const dAng=(x,y)=>{let d=Math.abs(x-y);return d>Math.PI?2*Math.PI-d:d;};
+    let d2=1;if(!xf){const a=nrm(S),b=nrm(R[exp]);if(Math.hypot(a.cx-b.cx,a.cy-b.cy)<.24&&a.m>b.m*.4&&a.m<b.m*1.8&&dAng(ang(S),ang(R[exp]))<.6)d2=WCheck.strokeDist(a.pts,b.pts,false)*.85;}
+    const d0=WCheck.strokeDist(S,R[exp],false),d1=xf?WCheck.strokeDist(T,R[exp],false):1,best=Math.min(d0,d1,d2);
     const lenU=S.length>1?S.reduce((a,p,i)=>i?a+Math.hypot(p[0]-S[i-1][0],p[1]-S[i-1][1]):0,0):0;
-    if(k>=0&&best<thr&&(lenU>0.02||R[k].length<4)){this.wS[this.wS.length-1]=R[k].map(p=>[p[0],p[1]]);this.wMeta[this.wS.length-1]={k};this.wSnapAn={j:this.wS.length-1,t0:performance.now()};}
-    else{this.wMeta[this.wS.length-1]={k:-1};const exp=strict?k:[...Array(R.length).keys()].find(i=>!used.has(i));if(exp!=null&&exp>=0)this.wMiss[exp]=(this.wMiss[exp]||0)+1;this.wMist=(this.wMist||0)+1;
-      if(exp!=null&&exp>=0){const j=this.wS.length-1;this.wFlash=j;
-        if(this.wMiss[exp]>=3){this.wS[j]=R[exp].map(p=>[p[0],p[1]]);this.wMeta[j]={k:exp,help:1};this.wHelped=(this.wHelped||0)+1;this.wFlash=-1;this.wMiss[exp]=0;this.toast('Черту дорисовала подсказка — запомните её');}
-        else setTimeout(()=>{if(this.wFlash===j&&this.wS&&this.wS.length===j+1&&this.wMeta[j]&&this.wMeta[j].k<0){this.wS.pop();this.wMeta.length=j;this.wFlash=-1;this.setState({wHas:this.wS.length>0,wN:this.wS.length});this.wRender();}},450);}}
-    if(this.wMeta[this.wS.length-1]&&this.wMeta[this.wS.length-1].k>=0)this.wHint=false;
-    this.setState({wN:this.wS.length});this.wRender();
+    if(best<thr&&(lenU>0.02||R[exp].length<4)){this.wRaw[j]=S.slice();this.wS[j]=R[exp].map(p=>[p[0],p[1]]);this.wMeta[j]={k:exp};this.wSnapAn={j,t0:performance.now()};this.wHint=false;}
+    else{// why it is wrong: direction, order or shape — said in words, the stroke flashes red and is removed
+      const U=xf?T:S;const rev=WCheck.strokeDist([...U].reverse(),R[exp],false);let other=-1;for(let i=0;i<R.length;i++){if(i===exp||used.has(i))continue;if(WCheck.strokeDist(U,R[i],false)<thr){other=i;break;}}
+      const dirOf=st=>{const a=st[0],b=st[st.length-1],dx=b[0]-a[0],dy=b[1]-a[1];if(Math.abs(dx)>Math.abs(dy)*1.7)return dx>0?'слева направо':'справа налево';if(Math.abs(dy)>Math.abs(dx)*1.7)return dy>0?'сверху вниз':'снизу вверх';return (dy>0?'сверху вниз':'снизу вверх')+(dx>0?' и вправо':' и влево');};
+      const msg=rev<thr&&lenU>0.02?'Не то направление: эта черта пишется '+dirOf(R[exp]):other>=0?'Не тот порядок: сейчас черта '+(exp+1)+', а эта — '+(other+1):'Не похоже на черту '+(exp+1)+' — посмотрите подсказку';
+      this.wMiss[exp]=(this.wMiss[exp]||0)+1;this.wMist=(this.wMist||0)+1;this.wS.pop();this.wMeta.length=Math.min(this.wMeta.length,this.wS.length);
+      this.wBad={pts:S,t0:performance.now()};
+      if(this.wMiss[exp]>=3){const k=this.wS.length;this.wS.push(R[exp].map(p=>[p[0],p[1]]));this.wMeta[k]={k:exp,help:1};this.wHelped=(this.wHelped||0)+1;this.wMiss[exp]=0;this.wSnapAn={j:k,t0:performance.now()};this.wSay('Черту '+(exp+1)+' дорисовала подсказка — запомните её',true);}
+      else this.wSay(msg,true);}
+    this.setState({wN:this.wS.length,wHas:this.wS.length>0});this.wRender();
     const done=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k)).size;if(done>=R.length)this.wCharDone();}
   // all strokes of the character are right: next character, or the word is done and graded
   wCharDone(){const s=this.state,qz=s.quiz;if(!qz||qz.rev)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const n=[...w.h].length,idx=s.wIdx||0;this.wSave();clearTimeout(this.wNextT);
-    if(idx<n-1){this.wNextT=setTimeout(()=>{if(this.state.quiz===qz&&(this.state.wIdx||0)===idx)this.wGo(idx+1);},300);return;}
+    if(idx<n-1){this.wSay('Знак '+(idx+1)+' готов');this.wGo(idx+1);return;}
     const mist=this.wMist||0,help=(this.wHelped||0)+(this.wPeek?1:0);const ok=help===0&&mist<=({soft:3,normal:2,strict:1}[s.wMatch||'normal']);
     this.setState({wDone:{ok,mist,help}});try{this.speak(w.h);}catch(e){}
     if(qz.kind==='trace'||ok){this.wNextT=setTimeout(()=>{if(this.state.quiz===qz)this.answer(true);},qz.kind==='trace'?700:900);return;}
@@ -600,26 +660,27 @@ class Component extends DCLogic {
   wCurChar(){const s=this.state,qz=s.quiz;if(!qz)return '';const w=this.W(qz.ids[qz.i]);if(!w)return '';const ch=[...w.h];return ch[Math.min(s.wIdx||0,ch.length-1)]||'';}
   // a stroke drawn along its centre line, but only inside its calligraphic outline — this is how the real shape «flows» in
   wInk(g,path,med,W,H,upto){g.save();g.clip(path);g.lineCap='round';g.lineJoin='round';g.lineWidth=W*.13;g.beginPath();const n=Math.max(2,Math.ceil(med.length*upto));med.slice(0,n).forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();}
-  wRender(){const c=this.wcEl();if(!c)return;const s=this.state,qz=s.quiz;if(!qz)return;const g=c.getContext('2d'),W=c.width,H=c.height;const css=getComputedStyle(this.phoneRef.current||document.body);const ink=getComputedStyle(c).color,mu=css.getPropertyValue('--mu').trim()||'#888',grid=css.getPropertyValue('--grid').trim()||'rgba(0,0,0,.15)',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
-    const lw={thin:7,mid:12,bold:20}[s.wWidth||'mid'];g.clearRect(0,0,W,H);g.setLineDash([]);const R=this.wCurRef();const P=p=>[p[0]*W,p[1]*H,p[2]];
+  wRender(){const c=this.wcEl();if(!c)return;const s=this.state,qz=s.quiz;if(!qz)return;const KZ=this.wFit(c);this.wInkC=getComputedStyle(c).color;const g=c.getContext('2d'),W=c.width,H=c.height;const css=getComputedStyle(this.phoneRef.current||document.body);const ink=getComputedStyle(c).color,mu=css.getPropertyValue('--mu').trim()||'#888',grid=css.getPropertyValue('--grid').trim()||'rgba(0,0,0,.15)',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
+    const lw={thin:7,mid:12,bold:20}[s.wWidth||'mid']*KZ;g.clearRect(0,0,W,H);g.setLineDash([]);const R=this.wCurRef();const P=p=>[p[0]*W,p[1]*H,p[2]];
     const OP=R&&window.WCheck&&WCheck.paths?WCheck.paths(this.wCurChar(),W,H):null;
     const ol=css.getPropertyValue('--ol').trim()||'#D2D2DC';const gm=s.wGhost||'first';if(R&&!qz.rev&&(this.wPeek||gm==='on'||(gm==='first'&&qz.kind==='trace'))){if(OP){g.fillStyle=ol;g.globalAlpha=1;OP.forEach(p=>g.fill(p));g.globalAlpha=1;}else{g.strokeStyle=mu;g.globalAlpha=.22;R.forEach(st=>this.wBrush(g,st.map(P),lw*1.7));g.globalAlpha=1;}}
     const red=css.getPropertyValue('--seal').trim()||'#c8372d',prc=css.getPropertyValue('--pr').trim()||'#5b5bd6';
     const an=this.wSnapAn,now=performance.now();let anim=false;
     (this.wS||[]).forEach((st,j)=>{const m=(this.wMeta||[])[j];const snapped=m&&m.k>=0;
-      if(snapped&&OP&&OP[m.k]){g.fillStyle=ink;g.strokeStyle=ink;const pr=an&&an.j===j?Math.min(1,(now-an.t0)/170):1;if(pr<1){anim=true;this.wInk(g,OP[m.k],R[m.k],W,H,pr);}else g.fill(OP[m.k]);return;}
+      if(snapped&&OP&&OP[m.k]){g.fillStyle=ink;g.strokeStyle=ink;const pr=an&&an.j===j?Math.min(1,(now-an.t0)/240):1;if(pr<1){anim=true;const raw=(this.wRaw||[])[j];if(raw&&raw.length>1){g.save();g.globalAlpha=.55*(1-pr);g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();raw.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();g.strokeStyle=ink;}this.wInk(g,OP[m.k],R[m.k],W,H,pr);}else g.fill(OP[m.k]);return;}
       g.globalAlpha=snapped?1:.6;g.strokeStyle=snapped?ink:(j===this.wFlash?red:mu);if(snapped)this.wBrush(g,st.map(P),lw*1.25);else{g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();st.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();}g.globalAlpha=1;});
+    const bd=this.wBad;if(bd){const pr=(now-bd.t0)/450;if(pr<1){anim=true;g.save();g.globalAlpha=.85*(1-pr);g.strokeStyle=red;g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();bd.pts.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();}else this.wBad=null;}
     if(anim){cancelAnimationFrame(this.wRaf);this.wRaf=requestAnimationFrame(()=>this.wRender());}
     if(R){const used=new Set((this.wMeta||[]).filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));const oh=s.wOrderHint||'err';
-      if(exp!=null&&!qz.rev&&(this.wHint||oh==='always'||qz.kind==='trace'||(oh!=='off'&&(this.wMiss||{})[exp]>=1))){const st=R[exp];if(OP&&OP[exp]){g.fillStyle=prc;g.globalAlpha=.25;g.fill(OP[exp]);}g.strokeStyle=prc;g.globalAlpha=.85;g.lineWidth=OP?3:5;g.setLineDash([12,10]);g.beginPath();st.forEach((p,i)=>{const q=P(p);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1]);});g.stroke();g.setLineDash([]);
+      if(exp!=null&&!qz.rev&&(this.wHint||oh==='always'||qz.kind==='trace'||(oh!=='off'&&(this.wMiss||{})[exp]>=1))){const st=R[exp];if(OP&&OP[exp]){g.fillStyle=prc;g.globalAlpha=.25;g.fill(OP[exp]);}g.strokeStyle=prc;g.globalAlpha=.85;g.lineWidth=(OP?3:5)*KZ;g.setLineDash([12*KZ,10*KZ]);g.beginPath();st.forEach((p,i)=>{const q=P(p);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1]);});g.stroke();g.setLineDash([]);
         // start point and an arrow at the end: where to begin and which way to go
-        const a=P(st[0]);g.fillStyle=prc;g.beginPath();g.arc(a[0],a[1],11,0,7);g.fill();g.fillStyle='#fff';g.font='600 13px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(exp+1),a[0],a[1]+.5);
-        if(st.length>1){const e=P(st[st.length-1]),f=P(st[Math.max(0,st.length-3)]);const an=Math.atan2(e[1]-f[1],e[0]-f[0]);g.fillStyle=prc;g.beginPath();g.moveTo(e[0]+Math.cos(an)*14,e[1]+Math.sin(an)*14);g.lineTo(e[0]+Math.cos(an+2.5)*14,e[1]+Math.sin(an+2.5)*14);g.lineTo(e[0]+Math.cos(an-2.5)*14,e[1]+Math.sin(an-2.5)*14);g.closePath();g.fill();}
+        const a=P(st[0]);g.fillStyle=prc;g.beginPath();g.arc(a[0],a[1],11*KZ,0,7);g.fill();g.fillStyle='#fff';g.font='600 '+Math.round(13*KZ)+'px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(exp+1),a[0],a[1]+.5);
+        if(st.length>1){const e=P(st[st.length-1]),f=P(st[Math.max(0,st.length-3)]);const an=Math.atan2(e[1]-f[1],e[0]-f[0]),A=14*KZ;g.fillStyle=prc;g.beginPath();g.moveTo(e[0]+Math.cos(an)*A,e[1]+Math.sin(an)*A);g.lineTo(e[0]+Math.cos(an+2.5)*A,e[1]+Math.sin(an+2.5)*A);g.lineTo(e[0]+Math.cos(an-2.5)*A,e[1]+Math.sin(an-2.5)*A);g.closePath();g.fill();}
         g.globalAlpha=1;}}}
   wClear(){clearInterval(this.wAnimT);const c=this.wcEl();if(c)c.getContext('2d').clearRect(0,0,c.width,c.height);this.wS=[];this.wMeta=[];this.wMiss={};this.wHint=false;if(this.state.wHas||this.state.wN)this.setState({wHas:false,wN:0});setTimeout(()=>this.wRender(),30);}
-  wSave(){const i=this.state.wIdx||0;this.wCells=this.wCells||[];this.wCells[i]={S:(this.wS||[]).slice(),M:(this.wMeta||[]).slice()};}
-  wGo(k){clearTimeout(this.wAutoT);clearInterval(this.wAnimT);if(!(this.state.quiz&&this.state.quiz.rev))this.wSave();const c=(this.wCells||[])[k]||{S:[],M:[]};this.wS=c.S.slice();this.wMeta=c.M.slice();this.wMiss={};this.wHint=false;this.setState({wIdx:k,wHas:this.wS.length>0,wN:this.wS.length},()=>this.wRender());}
-  wReset(){clearTimeout(this.wAutoT);clearTimeout(this.wNextT);if(this.state.wPeekS)this.setState({wPeekS:false});this.wCells=[];this.wHelped=0;this.wMist=0;this.wPeek=false;if(this.state.wDone)this.setState({wDone:null});this.wWarned=false;this.wHint=false;this.wS=[];this.wClear();if(this.state.wWarn)this.setState({wWarn:null});if(this.state.wRes||this.state.wIdx)this.setState({wRes:null,wIdx:0});}
+  wSave(){const i=this.state.wIdx||0;this.wCells=this.wCells||[];this.wCells[i]={S:(this.wS||[]).slice(),M:(this.wMeta||[]).slice(),W:(this.wRaw||[]).slice()};}
+  wGo(k){clearTimeout(this.wAutoT);clearInterval(this.wAnimT);if(!(this.state.quiz&&this.state.quiz.rev))this.wSave();const c=(this.wCells||[])[k]||{S:[],M:[],W:[]};this.wS=c.S.slice();this.wMeta=c.M.slice();this.wRaw=(c.W||[]).slice();this.wMiss={};this.wHint=false;this.wBad=null;this.wSnapAn=null;this.drw=false;this.setState({wIdx:k,wHas:this.wS.length>0,wN:this.wS.length},()=>this.wRender());}
+  wReset(){clearTimeout(this.wAutoT);clearTimeout(this.wNextT);if(this.state.wPeekS)this.setState({wPeekS:false});this.wCells=[];this.wRaw=[];this.wBad=null;this.wSnapAn=null;this.wRect=null;this.wHelped=0;this.wMist=0;this.wPeek=false;if(this.state.wMsg)this.setState({wMsg:null});if(this.state.wDone)this.setState({wDone:null});this.wWarned=false;this.wHint=false;this.wS=[];this.wClear();if(this.state.wWarn)this.setState({wWarn:null});if(this.state.wRes||this.state.wIdx)this.setState({wRes:null,wIdx:0});}
   wNext(){this.wGo((this.state.wIdx||0)+1);}
   wLayout(n){const fs=n<=1?186:n===2?114:n===3?80:62;const W=288;const tot=Math.min(W,fs*n);return {x0:(W-tot)/2/W,w:tot/W};}
   wDraw(res,h){const c=this.wcEl();if(!c)return;const g=c.getContext('2d'),W=c.width,H=c.height,st=getComputedStyle(c),ink=st.color;const css=getComputedStyle(this.phoneRef.current||document.body);const red=css.getPropertyValue('--seal').trim()||'#c0392b',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
@@ -653,22 +714,31 @@ class Component extends DCLogic {
     if(st0.screen==='tab'&&this.updToast&&st0.onboarded){const u=this.updToast;this.updToast=null;setTimeout(()=>{if(this.state.screen==='tab')this.toast(u.type==='web'?'Обновление загружено':'Доступна версия '+(u.name||''),()=>this.applyUpd(),u.type==='web'?'Перезапустить':'Обновить');},1200);}}
   phoneRef=React.createRef();
   offlineMao(t){const E=window.EDict;if(!E||!E.ready())return 'Словарь ещё загружается — спросите через пару секунд.';
-    const sh=m=>String(m||'').split(/[;(]/)[0].trim();
+    const sh=m=>shortM(m);const line=e=>e.h+' '+e.p+' — '+(e.m?sh(e.m):'русского перевода в словаре нет');
     const seg=x=>{const c=[...x],o=[];let i=0;while(i<c.length){let l=Math.min(4,c.length-i);for(;l>1;l--)if(E.find(c.slice(i,i+l).join('')))break;o.push(c.slice(i,i+l).join(''));i+=l;}return o;};
-    const han=t.match(/[㐀-鿿]+/g);
-    if(han){const out=[];han.slice(0,3).forEach(hh=>(E.find(hh)?[hh]:seg(hh)).slice(0,3).forEach(x=>{const e=E.find(x);out.push(e?(window.Explain&&Explain.ready()?Explain.text(e):e.h+' '+e.p+' — «'+e.m+'»'):x+' — этого слова нет в моём словаре.');}));return out.join('\n\n');}
-    const low=t.toLowerCase();const m=low.match(/(?:про|на тему|по теме|тема|тему)\s+([а-яё -]{3,40})/);
-    if(m||/подбер|слова/.test(low)){const topic=(m?m[1]:low.replace(/подбер\S*|слова?|мне|пожалуйста|[?!.,]/g,'')).trim();if(!topic)return 'На какую тему подобрать слова? Например: «подбери слова про еду».';
+    const low=t.toLowerCase().replace(/ё/g,'е').trim();const han=t.match(/[㐀-鿿]+/g);
+    const why=/(почему|зачем|объясни|грамматик|когда (ставят|употребл|использ)|как (употребл|использ|строит)|правил|разниц|отлича)/.test(low);
+    if(han){const out=[];han.slice(0,3).forEach(hh=>(E.find(hh)?[hh]:seg(hh)).slice(0,3).forEach(x=>{const e=E.find(x);out.push(e?(window.Explain&&Explain.ready()?Explain.text(e):line(e)):x+' — этого слова нет в словаре Mao.');}));
+      if(why)out.push('Это то, что есть в словаре. Объяснить грамматику подробно без нейросети я не могу — включите её в Настройках.');return out.join('\n\n');}
+    const tm=low.match(/(?:слова|слов)?\s*(про|на тему|по теме|о|об)\s+([а-я -]{3,40})/);
+    if(/подбер|подобра|слова (про|на|по|о)|слов (про|на|по|о)/.test(low)){const topic=(tm?tm[2]:low.replace(/подбер\S*|подобра\S*|слова?|мне|пожалуйста|[?!.,]/g,'')).trim();if(!topic)return 'На какую тему подобрать слова? Например: «подбери слова про еду».';
       let list=(E.topic(topic)||[]).slice(0,8).map(h=>E.find(h)).filter(Boolean);if(list.length<8)E.byRu(topic,12).forEach(e=>{if(list.length<8&&!list.some(x=>x.h===e.h))list.push(e);});
-      if(!list.length)return 'На тему «'+topic+'» в словаре ничего не нашлось. Попробуйте другое слово: «еда», «семья», «работа», «погода».';
-      return 'Слова на тему «'+topic+'»:\n'+list.map(e=>e.h+' '+e.p+' — '+sh(e.m)).join('\n')+'\n\nЧтобы учить их: «Слова» → «Следующий урок» → своя тема «'+topic+'».';}
-    const q=low.replace(/как (сказать|будет|по-китайски|написать)|что значит|по-китайски|перевод\S*|переведи|[?!.,«»"]/g,'').trim();
-    const r=q?E.byRu(q,6):[];if(r.length)return '«'+q+'» по-китайски:\n'+r.map(e=>e.h+' '+e.p+' — '+sh(e.m)).join('\n');
-    return 'Без нейросети я понимаю иероглиф (饭), русское слово («как сказать кошка») или «подбери слова про еду». Для свободных вопросов включите нейросеть в Настройках.';}
+      const head=tm?'Слова '+tm[1]+' '+tm[2]:'Слова по теме «'+topic+'»';
+      if(!list.length)return 'В словаре не нашлось слов по запросу «'+topic+'». Попробуйте другое слово: «еда», «семья», «работа», «погода».';
+      return head+':\n'+list.map(line).join('\n')+'\n\nЧтобы учить их: «Слова» → «Следующий урок» → своя тема.';}
+    if(why)return 'Это вопрос не про одно слово, а про язык. Без нейросети я отвечаю только по словарю: пришлите иероглиф (了), русское слово («как сказать кошка») или тему («подбери слова про еду»). Для объяснений грамматики включите нейросеть в Настройках.';
+    // pinyin: «xuexi», «xué xí»
+    const py=low.replace(/[?!.,«»"]/g,'').trim();if(/^[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü' 0-9]+$/.test(py)&&/[a-z]/.test(py)){const r=E.search(py,6);return r.length?'«'+py+'» в словаре:\n'+r.map(line).join('\n'):'Слова с пиньинем «'+py+'» в словаре нет.';}
+    const q=low.replace(/как (сказать|будет|по-китайски|написать)|что значит|что такое|по-китайски|перевод\S*|переведи|слово|[?!.,«»"]/g,'').replace(/\s+/g,' ').trim();
+    if(!q)return 'Напишите иероглиф, русское слово или тему — отвечу по словарю.';
+    // the whole phrase first («как дела» is a phrase, not «дела» + «как»)
+    let r=E.search(q,6).filter(e=>e.m);const whole=r.filter(e=>e.m.toLowerCase().replace(/ё/g,'е').split(/[;,]\s*/).some(x=>x.trim()===q));if(whole.length)r=whole;
+    if(r.length)return '«'+q+'» по-китайски:\n'+r.slice(0,6).map(line).join('\n')+(whole.length?'':'\n\nТочного совпадения нет — это ближайшие слова из словаря.');
+    return 'В словаре нет «'+q+'». Попробуйте одно слово в начальной форме («кошка», «работать») или включите нейросеть в Настройках.';}
   async sendChat(txt){txt=(txt||'').trim();if(!txt||this.state.chatBusy)return;const chat=[...this.state.chat,{r:'me',t:txt}];this.setState({chat,chatQ:'',chatBusy:true});const seq=this.chatSeq||0;
     const put=(m)=>{if((this.chatSeq||0)!==seq)return;const c=[...this.state.chat];const i=c.findIndex(x=>x.live);if(i>=0)c[i]=m;else c.push(m);this.setState({chat:c});};
     if(!this.aiOn()){const ans=this.offlineMao(txt);setTimeout(()=>{put({r:'ai',t:ans});this.setState({chatBusy:false});},250);return;}
-    const msgs=[{role:'system',content:AISYS},...chat.slice(-10).map(m=>({role:m.r==='me'?'user':'assistant',content:m.t}))];
+    const ctx=this.dictContext(txt);const msgs=[{role:'system',content:AISYS+(ctx?'\n\nПроверенные данные словаря Mao (БКРС, CC-CEDICT) — используй их как источник значений:\n'+ctx+'\nЕсли нужного слова здесь нет и ты не уверен в переводе — так и скажи, не придумывай.':'\nЕсли не уверен в переводе слова — так и скажи, не придумывай.')},...chat.slice(-10).map(m=>({role:m.r==='me'?'user':'assistant',content:m.t}))];
     try{const full=await this.aiChat(msgs,t=>put({r:'ai',t:clean(t),live:true}));put({r:'ai',t:clean(full)||'…'});}
     catch(e){put({r:'ai',t:this.offlineMao(txt),note:aiErr(e)+' — ответ из словаря'});}
     if((this.chatSeq||0)===seq)this.setState({chatBusy:false});}
@@ -678,13 +748,18 @@ class Component extends DCLogic {
   dw(n,w=this.state.words){return w.filter(x=>x.d===n);}
   W(id){return this.state.words.find(w=>w.id===id);}
   dotC(s){return s==='know'?'var(--pr)':s==='hard'?'var(--ac)':'var(--ln)';}
-  toast(msg,act,actL){clearTimeout(this.tt);this.setState({toast:{msg,act:typeof act==='function'?act:null,actL:actL||'Вернуть'}});this.tt=setTimeout(()=>this.setState({toast:null}),act?5200:3800);}
+  toast(msg,act,actL){clearTimeout(this.tt);this.setState({toast:{msg,act:typeof act==='function'?act:null,actL:actL||'Вернуть',scr:this.state.screen==='tab'?'tab:'+this.state.tab:this.state.screen}});this.tt=setTimeout(()=>this.setState({toast:null}),act?5200:3800);}
   speak(t){if(window.EVINE&&EVINE.native){EVINE.speak(t,this.state.rate,'f');return;}try{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=this.state.rate;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
   // the neural network is optional (Settings → Нейросеть). Off = everything works offline.
   // the neural network is optional (Settings → Нейросеть). Off = everything works offline.
   aiOn(){const s=this.state;if(s.aiOn!==true)return false;const P=PROV[s.aiProv||'free']||PROV.free;if(!P.key)return !!(window.claude&&window.claude.complete);return !!((s.aiKeys||{})[s.aiProv]);}
   async ask(p){if(!this.aiOn())throw 0;return await this.aiChat([{role:'system',content:AISYS},{role:'user',content:p}],null);}
   // one client for every provider: free (no key) or an OpenAI-compatible chat/completions with the user's key; the answer streams in
+  // dictionary lines for the words in a question (characters, or a Russian word to look up)
+  dictContext(t){const E=window.EDict;if(!E||!E.ready())return '';const out=[];const add=e=>{if(e&&out.length<8&&!out.some(x=>x.startsWith(e.h+' '+e.p)))out.push(e.h+' '+e.p+' — '+(e.m||'русского перевода нет')+(e.lv?' (HSK '+e.lv+')':''));};
+    (t.match(/[㐀-鿿]+/g)||[]).slice(0,4).forEach(h=>{const f=E.find(h);if(f){add(f);E.readings(h).slice(0,3).forEach(add);}else[...h].slice(0,4).forEach(c=>add(E.find(c)));});
+    if(!out.length){const q=t.toLowerCase().replace(/как (сказать|будет)|по-китайски|что значит|[?!.,«»"]/g,'').trim();if(q&&/[а-я]/.test(q))E.search(q,5).filter(e=>e.m).forEach(add);}
+    return out.join('\n');}
   aiChat(msgs,onChunk){const s=this.state,prov=s.aiProv||'free',P=PROV[prov]||PROV.free;
     if(!P.key){const flat=msgs.map(m=>(m.role==='system'?'':m.role==='user'?'Ученик: ':'Учитель: ')+m.content).join('\n')+'\nУчитель:';
       return Promise.race([window.claude.complete(flat),new Promise((_,r)=>setTimeout(()=>r(Object.assign(new Error('timeout'),{code:0})),60000))]).then(t=>{t=String(t);onChunk&&onChunk(t);return t;});}
@@ -711,6 +786,7 @@ class Component extends DCLogic {
     else if(kind==='hard'){list=ws.filter(w=>w.s==='hard');title='Трудные слова';}
     else if(kind==='ids'){list=(arg||[]).map(id=>this.W(id)).filter(Boolean);title=title||'Повторение';}
     else{const l=this.dw(arg);list=l.filter(w=>w.s!=='new');if(!list.length)list=l;title='Урок '+arg;}
+    list=list.filter(w=>this.mOk(w));
     if(!list.length)return this.toast(kind==='write'||kind==='quick'?'Пока нет выученных слов — начните с урока':'Пока нечего проверять');
     const ids=list.map(w=>w.id);
     if(kind==='write'){const qz=this.mkQuiz(ids,title,'test');qz.write=true;return this.setState({screen:'quiz',quiz:qz,sheet:null,q:''});}
@@ -732,7 +808,8 @@ class Component extends DCLogic {
       if(st.phase==='trace'){const id=(st.batch||[])[st.batch.length-1];if(id)return go({screen:'quiz',quiz:this.mkQuiz([id],'Обведите знак','trace')});return this.fastAfter(st,{quiz:null});}
       if(st.phase==='quiz'){const chk=s.quiz&&s.quiz.kind==='check'?s.quiz:st.check;if(chk)return go({screen:'quiz',quiz:{...chk,rev:false},study:{...st,check:null}});if(st.li<st.ids.length)return go({screen:'learn',study:{...st,phase:'learn'},quiz:null});return this.fastFinal(st,{});}
       if(st.li<st.ids.length)return go({screen:'learn'});}
-    const ids=this.dw(day).filter(w=>w.s==='new').map(w=>w.id);
+    const nw=this.dw(day).filter(w=>w.s==='new');const ids=nw.filter(w=>this.mOk(w)).map(w=>w.id);
+    if(!ids.length&&nw.length){this.setState({screen:'dayEdit',de:{n:day,t0:(this.state.lessons.find(l=>l.n===day)||{}).t}});return this.toast('У этих слов нет русского перевода — впишите его, и урок начнётся');}
     if(!ids.length)return this.startTest('lesson',day);
     this.setState({screen:'learn',q:'',ex:null,edit:null,quiz:null,mc:null,sheet:null,partsOpen:false,study:{day,ids,li:0,since:0,skip:[],hard:[],batch:[],done:[],phase:'learn',t0:Date.now()}});}
   wOn(){const s=this.state;return (s.writeMode||'screen')==='screen'&&s.hint!=='hz'&&!!window.WCheck;}
@@ -747,7 +824,7 @@ class Component extends DCLogic {
   mkMc(ids,mode){const sh=shuffle(ids);const items=mode==='alt'?sh.map((id,i)=>({id,dir:i%2?'m2h':'h2m'})):[...sh.map(id=>({id,dir:'h2m'})),...shuffle(ids).map(id=>({id,dir:'m2h'}))];return {kind:'lesson',items,i:0,pick:null,ever:[],total:items.length,opts:this.mcOpts(items[0])};}
   mcOpts(it){const w=this.W(it.id);if(!w)return [];const sh=m=>String(m||'').split(/[;(]/)[0].trim().slice(0,30);const key=it.dir==='h2m'?(x=>sh(x.m)):(x=>x.h);
     const right=key(w),pool=[],len=[...w.h].length;const add=x=>{const k=key(x);if(k&&k!==right&&!pool.includes(k)&&x.h!==w.h&&(it.dir==='h2m'||/[㐀-鿿]/.test(k)))pool.push(k);};
-    shuffle(this.state.words.filter(x=>x.id!==it.id&&x.m&&!this.ruNeed(x.m)&&!/^нет перевода/.test(x.m))).slice(0,6).forEach(add);
+    shuffle(this.state.words.filter(x=>x.id!==it.id&&this.mOk(x))).slice(0,6).forEach(add);
     (window.EDict&&EDict.ready()?EDict.sample(10,len):[]).forEach(add);
     return shuffle([{t:right,ok:true},...shuffle(pool.slice(0,8)).slice(0,3).map(t=>({t,ok:false}))]);}
   mcPick(k){const s=this.state,mc=s.mc;if(!mc||mc.pick!=null)return;const it=mc.items[mc.i],o=mc.opts[k];if(!o)return;const ok=o.ok;const w=this.W(it.id);
@@ -767,7 +844,15 @@ class Component extends DCLogic {
   deRename(n,t){const s=this.state;const tp=T.find(x=>x[2].toLowerCase()===t.trim().toLowerCase());let zh,py;if(tp){zh=tp[0];py=tp[1];}
     else if(t.trim().length>=3&&window.EDict&&EDict.ready()){const e=EDict.byRu(t,1)[0];if(e){zh=e.h;py=e.p;}}
     this.upd({lessons:s.lessons.map(l=>l.n===n?{...l,t,...(zh?{zh,py}:{})}:l)});}
-  deWord(id,f,v){this.upd({words:this.state.words.map(w=>w.id===id?{...w,[f]:v,...(f==='m'?{mEdited:true,mSrc:null}:{})}:w)});}
+  deWord(id,f,v){const w0=this.W(id);const de=this.state.de||{};const orig={...(de.orig||{})};if(w0&&!orig[id])orig[id]={p:w0.p,m:w0.m,mSrc:w0.mSrc,mEdited:w0.mEdited};
+    this.setState({de:{...de,orig}});this.upd({words:this.state.words.map(w=>w.id===id?{...w,[f]:v,...(f==='m'?{mEdited:true,mSrc:'user'}:{})}:w)});}
+  // leaving the lesson editor: an emptied field goes back to what it was; a new translation is remembered for this word
+  deCommit(){const s=this.state,de=s.de;if(!de)return;const orig=de.orig||{};let back=0;const my={...(s.myRu||{})};
+    const words=s.words.map(w=>{if(!orig[w.id])return w;let x=w;if(!String(x.p||'').trim()){x={...x,p:orig[w.id].p};back++;}
+      if(!String(x.m||'').trim()){const o=orig[w.id];x={...x,m:o.m,mSrc:o.mSrc,mEdited:o.mEdited};back++;}
+      else if(x.m!==orig[w.id].m&&x.mSrc==='user')my[x.k||x.h]=x.m.trim();return x;});
+    const L=s.lessons.find(l=>l.n===de.n);let lessons=s.lessons;if(L&&!String(L.t||'').trim()){lessons=s.lessons.map(l=>l.n===de.n?{...l,t:de.t0||'Урок '+de.n}:l);back++;}
+    this.upd({words,lessons,myRu:my});if(back)this.toast('Пустые поля не сохраняются — вернула прежние значения');}
   deDel(id){const prev=this.state.words;const w=prev.find(x=>x.id===id);this.upd({words:prev.filter(x=>x.id!==id)});this.toast('Удалено: '+(w?w.h:''),()=>this.upd({words:prev}));}
   isDue(w){const s=this.state;if(s.srs!=='off'){if(w.s==='new')return false;if(!w.next)return w.s==='hard'||!!w.due;return w.next<=iso(new Date());}return !!w.due||w.s==='hard';}
   srsNext(w,ok){if(this.state.srs==='off')return {};const INT=[1,3,7,14,30,60,120];const day=n=>{const d=new Date();d.setDate(d.getDate()+n);return iso(d);};
@@ -802,10 +887,10 @@ class Component extends DCLogic {
     // characters written without separators ("姐姐弟弟"): split into dictionary words, longest first
     const seg=x=>{const c=[...x],out=[];let i=0;while(i<c.length){let l=Math.min(4,c.length-i);for(;l>1;l--)if(exact(c.slice(i,i+l).join('')).length)break;out.push(c.slice(i,i+l).join(''));i+=l;}return out;};
     const push=(it,L)=>{const key=it.q;if(s.bulkSkip[key])return;
-      if(!L.length){if(isHan(it.q)){const p=[...it.q].map(ch=>(exact(ch)[0]||{}).p||'').join('');rows.push({key,h:it.q,p:toMarks(it.p||'')||p,m:it.m||'',kind:have.has(it.q)?'have':'nodict',d:it.d,alts:0,ai:0});}
+      if(!L.length){if(isHan(it.q)){const p=[...it.q].map(ch=>(exact(ch)[0]||{}).p||'').join('');rows.push({key,h:it.q,p:toMarks(it.p||'')||p,m:it.m||'',own:!!it.m,kind:have.has(it.q)?'have':'nodict',d:it.d,alts:0,ai:0});}
         else rows.push({key,h:it.q,p:'',m:'',kind:'miss',alts:0,ai:0});return;}
       const ai=Math.min(L.length-1,(s.bulkAlt[key]||0)%L.length),e=L[ai];
-      rows.push({key,h:e.h,t:e.t,p:e.p,m:it.m||e.m||'',en:e.en,hsk:e.hsk,lv:e.lv,ekey:e.key,kind:have.has(e.h)?'have':'ok',d:it.d,alts:L.length,ai});};
+      rows.push({key,h:e.h,t:e.t,p:e.p,m:it.m||e.m||'',own:!!it.m,src:e.src,en:e.en,hsk:e.hsk,lv:e.lv,ekey:e.key,kind:have.has(e.h)?'have':'ok',d:it.d,alts:L.length,ai});};
     const res=it=>{const L=isHan(it.q)?exact(it.q):it.ru?E.byRu(it.q,6):E.best(it.q);
       if(!L.length&&isHan(it.q)&&[...it.q].length>2){const parts=seg(it.q);if(parts.length>1&&parts.every(p=>exact(p).length)){parts.forEach(p=>res({q:p}));return;}}
       if(!L.length&&!isHan(it.q)&&/\s/.test(it.q)){it.q.split(/\s+/).forEach(x=>x&&res({q:x}));return;}
@@ -817,7 +902,7 @@ class Component extends DCLogic {
   bulkAdd(){const R=this.bulkRows().filter(r=>r.add);if(!R.length)return this.toast('Вставьте слова — по одному в строке или через запятую');
     const s0=this.state,tg0=s0.addDay||this.bulkTarget();if(!s0.lessons.some(l=>l.n===tg0))return this.startLesson('Мои слова',()=>{this.setState({addDay:this.state.cur},()=>this.bulkAdd());});
     const s=this.state;let id=s.nextId;const tg=s.addDay||this.bulkTarget();const ls=[...s.lessons];const prev=s.words;
-    const add=R.map(r=>({id:id++,h:r.h,t:r.t||'',p:r.p||'',m:r.m||'перевод загружается…',en:r.en||'',d:r.d||tg,s:'new',due:false,hsk:r.hsk!=null?!!r.hsk:!!(window.EDict&&EDict.isHsk(r.h))}));
+    const add=R.map(r=>{const my=(this.state.myRu||{})[r.ekey||r.h];const m=my||(r.m&&/[а-яё]/i.test(r.m)?r.m:'');return {id:id++,h:r.h,t:r.t||'',p:r.p||'',m,mSrc:my?'user':m?(r.own?'user':(r.src||'m')):'none',k:r.ekey||'',en:r.en||'',d:r.d||tg,s:'new',due:false,hsk:r.hsk!=null?!!r.hsk:!!(window.EDict&&EDict.isHsk(r.h))};});
     add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);
     const days=[...new Set(add.map(w=>w.d))];this._bk=null;const back=s.addFrom==='dayEdit'&&s.de?{screen:'dayEdit'}:{screen:'tab',tab:'words'};
     this.upd({words:[...prev,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0,bulkT:'',bulkAlt:{},bulkSkip:{},q:'',...back},()=>this.fixRu());
@@ -827,35 +912,52 @@ class Component extends DCLogic {
   appVer(){try{const i=JSON.parse(EvineNative.appInfo());return i.app+(i.web?' · экраны '+i.web:'');}catch(e){return APPV;}}
   pkData(){const o={};this.PK.forEach(k=>{o[k]=this.state[k];});return o;}
   // a full backup (words + lessons + settings) replaces everything; a plain word list is added to the current lesson
+  backupText(){this.save();let o={};try{o=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}delete o.aiKeys;o.backupOf='Mao '+APPV;o.backupAt=new Date().toISOString();return JSON.stringify(o);}
   restoreText(t){let o=null;try{o=JSON.parse(t);}catch(e){}this.setState({sheet:null});
-    if(o&&!Array.isArray(o)&&Array.isArray(o.words)&&Array.isArray(o.lessons)){const prev=this.pkData();this.upd({...migrate(o),onboarded:true,screen:'tab',study:null,quiz:null,mc:null});this.toast('Копия восстановлена: '+o.words.length+' '+pl(o.words.length,WF),()=>this.upd(prev));return;}
+    if(o&&!Array.isArray(o)&&Array.isArray(o.words)&&Array.isArray(o.lessons)){const prev=this.pkData();const keep={aiKeys:this.state.aiKeys,aiProv:this.state.aiProv};delete o.aiKeys;this.upd({...this.defaults(),...migrate(o),...keep,onboarded:true,screen:'tab',study:o.study||null,quiz:null,mc:null},()=>this.fixRu());this.toast('Копия восстановлена: '+o.words.length+' '+pl(o.words.length,WF),()=>this.upd(prev));return;}
     this.importText(t);}
-  ruNeed(m){return !m||m==='перевод загружается…'||!/[а-яё]/i.test(m);}
+  ruNeed(m){return !m||m==='перевод загружается…'||!/[а-яё]/i.test(m)||/^нет перевода/.test(m);}
+  // a word can be learned and tested only with a Russian meaning from the dictionary or written by the user
+  mOk(w){return !!w&&!!w.m&&/[а-яё]/i.test(w.m)&&!/^нет перевода|^перевод загружается/.test(w.m)&&w.mSrc!=='none'&&w.mSrc!=='ai';}
+  // the dictionary entry of this word's reading (w.k = dictionary key, else the pinyin)
+  dictFor(w){if(!window.EDict||!EDict.ready())return null;const L=EDict.best(w.h).filter(e=>e.h===w.h||e.t===w.h);if(!L.length)return null;const nz=x=>String(x||'').replace(/[\s'’]/g,'').toLowerCase();
+    return (w.k&&L.find(e=>e.key===w.k))||L.find(e=>nz(e.p)===nz(w.p)&&e.m)||L.find(e=>nz(e.p)===nz(w.p))||L.find(e=>e.m)||L[0];}
+  // meaning for a new word: the user's own translation of this word, else the dictionary, else none (shown honestly)
+  ruFor(e){const my=(this.state.myRu||{})[e.key||e.h];if(my)return {m:my,mSrc:'user'};if(e.m&&/[а-яё]/i.test(e.m))return {m:e.m,mSrc:e.src||'m'};return {m:'',mSrc:'none'};}
   fixRu(){const s=this.state;if(!window.EDict||!EDict.ready())return;
     if(!s.m29fix){let fixed=0,flag=0;const t0=new Date();const words=s.words.map(w=>{let x=w;const e=EDict.find(w.h);
         if(!w.mEdited&&e&&e.m&&/[а-яё]/i.test(e.m)&&w.m!==e.m&&!this.ruNeed(w.m)){x={...x,m:e.m,mSrc:null};fixed++;}
         else if(!w.mEdited&&(!e||!e.m||!/[а-яё]/i.test(e.m))&&w.m&&!this.ruNeed(w.m)&&!/^нет перевода/.test(w.m)){x={...x,mSrc:'ai'};flag++;}
         if(x.s==='hard'&&!x.next)x={...x,box:0,next:iso(t0)};else if(x.s!=='new'&&!x.next){const d=new Date(t0);d.setDate(d.getDate()+1+(x.id%7));x={...x,box:1,next:iso(d)};}
         return x;});
-      this.upd({words,m29fix:true});if(fixed||flag)setTimeout(()=>this.toast('Переводы проверены: исправлено '+fixed+(flag?', проверьте вручную '+flag+' («Слова» → кнопка правки у урока)':'')),800);return setTimeout(()=>this.fixRu(),50);}const ai=this.aiOn();const upd=[];const need=[];const pyUp=[];const nz=x=>String(x||'').replace(/[\s']/g,'').toLowerCase();
+      this.upd({words,m29fix:true});return setTimeout(()=>this.fixRu(),50);}
+    {let ch=0;const words=this.state.words.map(w=>{if(w.mEdited)return w.mSrc==='user'?w:(ch++,{...w,mSrc:'user'});const e=this.dictFor(w);
+      if(e&&e.m&&/[а-яё]/i.test(e.m)){if(w.m!==e.m||w.mSrc!==e.src||w.k!==e.key){ch++;return {...w,m:e.m,mSrc:e.src||'m',k:e.key};}return w;}
+      if(this.ruNeed(w.m)){if(w.m!==''||w.mSrc!=='none'){ch++;return {...w,m:'',mSrc:'none',...(e?{k:e.key}:{})};}return w;}
+      if(w.mSrc!=='ai'){ch++;return {...w,mSrc:'ai'};}return w;});
+      if(ch||!this.state.m31)this.upd({words,m31:1});}const ai=this.aiOn();const upd=[];const need=[];const pyUp=[];const nz=x=>String(x||'').replace(/[\s']/g,'').toLowerCase();
     s.words.forEach(w=>{if(!w.p||!(/\s/.test(w.p)||/^[A-ZĀÁǍÀĒÉĚÈŌÓǑÒ]/.test(w.p)))return;const e=EDict.find(w.h);if(e&&e.p&&e.p!==w.p&&nz(e.p)===nz(w.p))pyUp.push([w.id,e.p]);});
-    s.words.forEach(w=>{if(!this.ruNeed(w.m))return;const e=EDict.find(w.h);if(e&&e.m&&/[а-яё]/i.test(e.m)){upd.push([w.id,e.m]);return;}if(!ai){if(w.m==='перевод загружается…')upd.push([w.id,'нет перевода — впишите в «Править урок»']);return;}need.push({key:(e&&e.key)||('w|'+w.h),h:w.h,p:w.p||(e&&e.p)||'',en:(w.en||(e&&e.en)||(/[a-z]/i.test(w.m||'')?w.m:'')||'?'),id:w.id});});
+    s.words.forEach(w=>{if(!this.ruNeed(w.m)||w.mSrc==='none'||!ai||true)return;need.push({key:(e&&e.key)||('w|'+w.h),h:w.h,p:w.p||(e&&e.p)||'',en:(w.en||(e&&e.en)||(/[a-z]/i.test(w.m||'')?w.m:'')||'?'),id:w.id});});
     if(upd.length||pyUp.length)this.upd({words:this.state.words.map(w=>{const u=upd.find(x=>x[0]===w.id),q=pyUp.find(x=>x[0]===w.id);return (u||q)?{...w,...(u?{m:u[1]}:{}),...(q?{p:q[1]}:{})}:w;})});
     if(need.length)EDict.translate(need.slice(0,24),()=>{const ws=this.state.words;let ch=false;const nw=ws.map(w=>{const it=need.find(x=>x.id===w.id);if(!it)return w;const r=EDict.ru(it.key);if(r){ch=true;return {...w,m:r};}return w;});if(ch)this.upd({words:nw});});}
   quota(){return this.state.dailyNew||10;}
   topicName(){const s=this.state;const used={};s.lessons.forEach(l=>{used[l.t]=l.n;});const free=T.filter(x=>!used[x[2]]);return (s.topicSel||'').trim()||(free[0]||T[0])[2];}
+  // the streak as of today: a missed study day (weekends off are not missed) means it has ended
+  streakNow(){const s=this.state;if(!s.lastActive||!s.streak)return 0;const today=dk(new Date());if(s.lastActive===today||s.lastActive===dk(ago(1)))return s.streak;
+    const g=s.goal;if(g&&g.offOn){for(let i=1;i<30;i++){const d=ago(i);if(dk(d)===s.lastActive)return s.streak;if(!(g.off||[6,0]).includes(d.getDay()))return 0;}}return 0;}
+  finishDate(g,known,per){const left=Math.max(0,(+g.n||0)-known);let need=Math.ceil(left/Math.max(1,per));const d=day0(new Date());while(need>0){d.setDate(d.getDate()+1);const wd=d.getDay();if(!g.offOn||(wd!==0&&wd!==6))need--;}return d;}
   goalDraft(){const g=this.state.goal;return g?{n:+g.n||1000,date:g.date,offOn:!!g.offOn}:{n:1000,date:iso(addM(day0(new Date()),6)),offOn:false};}
   // study days from tomorrow to the date (without Sat/Sun when weekends are off); words per day = left / days, kept within 3…30
   goalPlan(g,known){if(!g)return {days:0,left:0,raw:0,per:0};const end=pISO(g.date);let days=0;if(end){const d=day0(new Date());d.setDate(d.getDate()+1);while(d<=end&&days<5000){const wd=d.getDay();if(!g.offOn||(wd!==0&&wd!==6))days++;d.setDate(d.getDate()+1);}}
     const left=Math.max(0,(+g.n||0)-known);const raw=days?Math.ceil(left/days):0;return {days,left,raw,per:days?Math.min(30,Math.max(3,raw)):0};}
-  saveGoal(gd){const n=+gd.n||0;if(n<1)return this.toast('Укажите, сколько слов хотите выучить');const p=this.goalPlan(gd,this.state.words.filter(w=>w.s!=='new').length);if(!p.days)return this.toast('Дата должна быть позже сегодняшней');
+  saveGoal(gd){const n=+gd.n||0;const kn=this.state.words.filter(w=>w.s!=='new').length;if(n<1)return this.toast('Укажите, сколько слов хотите выучить');if(n<=kn)return this.toast('Вы уже знаете '+kn+' '+pl(kn,WF)+' — поставьте цель больше');const p=this.goalPlan(gd,kn);if(!p.days)return this.toast('Дата должна быть позже сегодняшней');
     const first=!this.state.onboarded;this.upd({goal:{n,date:gd.date,offOn:!!gd.offOn,off:[6,0],set:iso(new Date())},dailyNew:p.per,gd:null,onboarded:true,screen:'tab',tab:first?'home':this.state.tab,sheet:null});this.toast('Норма: '+p.per+' '+pl(p.per,WF)+' в день');}
   openAdd(day,mode,aq,from){this.setState({screen:'add',addMode:mode||'one',addDay:day||null,aq:aq||'',addFrom:from||'tab',sheet:null});}
   moreLesson(){const t=this.topicName();this.pickWords(this.state.dailyNew||10,t);}
   async pickWords(N,newTopic){const s=this.state;N=N||this.state.mN||Math.max(5,this.quota())||10;
     const L0=s.lessons.find(l=>l.n===s.cur)||{};const topic=newTopic||L0.t||'Мои слова';const have=new Set(s.words.map(w=>w.h));
     const pack=(window.EDict?EDict.topic(topic):[]).filter(h=>!have.has(h));
-    const mk=(h,o)=>{const e=window.EDict&&EDict.find(h);return {h,t:e&&e.t||'',p:(o&&o.p)||(e&&e.p)||'',m:(e&&e.m&&/[а-яё]/i.test(e.m)?e.m:'')||(o&&o.m)||'перевод загружается…',en:e&&e.en||'',hsk:!!(e&&e.hsk)};};
+    const mk=(h,o)=>{const e=window.EDict&&EDict.find(h);const r=e?this.ruFor(e):{m:'',mSrc:'none'};const ai=!r.m&&o&&o.m;return {h,t:e&&e.t||'',p:(e&&e.p)||(o&&o.p)||'',m:r.m||(ai?o.m:''),mSrc:r.m?r.mSrc:(ai?'ai':'none'),k:e?e.key:'',en:e&&e.en||'',hsk:!!(e&&e.hsk)};};
     let list=pack.slice(0,N).map(h=>mk(h));
     if(list.length<N&&!this.aiOn()&&window.EDict&&EDict.ready()){const seen=new Set([...have,...list.map(x=>x.h)]);EDict.byRu(topic,N*3).forEach(e=>{if(list.length<N&&!seen.has(e.h)){seen.add(e.h);list.push(mk(e.h));}});}
     const ai=this.aiOn();
@@ -868,14 +970,13 @@ class Component extends DCLogic {
       this.setState({clBusy:false});}
     if(!list.length){const go=()=>{this.openAdd(this.state.cur,'one');this.toast('В теме «'+topic+'» нет готовых слов — добавьте свои');};if(newTopic&&!(s.cur&&L0.t===newTopic&&!this.dw(s.cur).length))return this.startLesson(newTopic,go);return go();}
     if(newTopic&&!(s.cur&&L0.t===newTopic&&!this.dw(s.cur).length))await new Promise(res=>this.startLesson(newTopic,res));
-    let id=this.state.nextId;const add=list.map(x=>({id:id++,...x,d:this.state.cur,s:'new',due:false}));
+    let id=this.state.nextId;const add=list.filter(x=>x.m).map(x=>({id:id++,...x,d:this.state.cur,s:'new',due:false}));
     this.upd({words:[...this.state.words,...add],nextId:id},()=>{this.fixRu();this.startStudy(this.state.cur);});
     if(add.length<N)this.toast('Подобрано '+add.length+' '+pl(add.length,WF)+' — больше на эту тему не нашлось');}
-  addWord(e,day){let s=this.state;const n=day||s.cur;if(!n||!s.lessons.some(l=>l.n===n)){return this.startLesson(this.topicName(),()=>{this.setState({addDay:this.state.cur});this.addWord(e,this.state.cur);});}const prev=s.words;const ru=(e.m&&/[а-яё]/i.test(e.m)?e.m:'')||(window.EDict&&e.key?EDict.ru(e.key):'');
-    const w={id:s.nextId,h:e.h,t:e.t,p:e.p,m:ru||'перевод загружается…',en:e.en||'',d:n,s:'new',due:false,hsk:e.hsk!=null?!!e.hsk:!!(window.EDict&&EDict.isHsk(e.h))};
-    if(!ru&&window.EDict&&this.aiOn())EDict.translate([{...e,key:e.key||('w|'+e.h),en:e.en||'?'}],()=>{const r2=EDict.ru(e.key||('w|'+e.h));if(r2)this.upd({words:this.state.words.map(x=>x.id===w.id&&this.ruNeed(x.m)?{...x,m:r2}:x)});});
+  addWord(e,day){let s=this.state;const n=day||s.cur;if(!n||!s.lessons.some(l=>l.n===n)){return this.startLesson(this.topicName(),()=>{this.setState({addDay:this.state.cur});this.addWord(e,this.state.cur);});}const prev=s.words;const r=this.ruFor(e);
+    const w={id:s.nextId,h:e.h,t:e.t,p:e.p,m:r.m,mSrc:r.mSrc,k:e.key||'',en:e.en||'',d:n,s:'new',due:false,hsk:e.hsk!=null?!!e.hsk:!!(window.EDict&&EDict.isHsk(e.h))};
     this.upd({words:[...prev,w],nextId:s.nextId+1},()=>this.fixRu());
-    this.toast(e.h+' → урок '+n,()=>this.upd({words:prev}));}
+    this.toast(r.m?e.h+' → урок '+n:e.h+' → урок '+n+' · русского перевода нет — впишите его в «Править урок»',()=>this.upd({words:prev}));}
   async explain(w){clearInterval(this.si);if(!this.aiOn()){const full=window.Explain&&Explain.ready()?Explain.text(w):w.h+' '+(w.p||'')+' — «'+(w.m||'')+'»';this.setState({ex:{id:w.id,loading:false,text:full,full}});return;}this.setState({ex:{id:w.id,loading:true,text:'',full:''}});let full;
     try{full=String(await this.ask('Ты преподаватель китайского. Объясни по-русски для взрослого ученика HSK 1–3 слово '+w.h+' ('+w.p+', «'+w.m+'»): употребление, конструкции, отличия от похожих слов. Примеры — с пиньинем с тоновыми знаками и переводом. Без markdown. До 90 слов.')).replace(/[*#]/g,'').trim();}
     catch(e){full=w.h+' '+w.p+' — «'+w.m+'».'+(w.ex?'\n'+w.ex[0]+'\n'+w.ex[1]+'\n'+w.ex[2]:'')+'\n\nНейросеть сейчас не ответила — нажмите «Объяснить» ещё раз чуть позже.';}
@@ -888,9 +989,11 @@ class Component extends DCLogic {
     const tg=on=>({bg:on?'var(--pr)':'var(--ln)',x:on?'20px':'2px'});
     const ws=s.words,known=ws.filter(w=>w.s!=='new'),knownN=known.length;
     const due=ws.filter(w=>this.isDue(w)),dueN=due.length;
-    const curW=this.dw(cur),newW=curW.filter(w=>w.s==='new'),hasCur=!!cur&&s.lessons.some(l=>l.n===cur);
+    const curW=this.dw(cur),newW=curW.filter(w=>w.s==='new'&&this.mOk(w)),hasCur=!!cur&&s.lessons.some(l=>l.n===cur);
+    const today0=iso(new Date());const nextDay=hasCur&&!newW.length&&curW.length&&(L.date||'')<today0;
+    const other=s.lessons.filter(l=>l.n!==cur).map(l=>({l,n:this.dw(l.n).filter(w=>w.s==='new'&&this.mOk(w)).length})).find(x=>x.n>0);
     const stIn=!!(s.study&&s.study.day===cur&&(s.study.li>0||s.study.phase!=='learn'));
-    const openW=id=>()=>this.setState({sheet:'word',wid:id,partsOpen:false});
+    const openW=id=>()=>this.setState({sheet:'word',wid:id,partsOpen:false,swEdit:null,animK:null});
     const lessonL=n=>{const l=s.lessons.find(x=>x.n===n);return 'Урок '+n+(l&&l.t?' · '+l.t:'');};
     const topic=this.topicName(),daily=this.state.dailyNew||10;
     const g=s.goal,GL=this.goalPlan(g,knownN);
@@ -904,16 +1007,19 @@ class Component extends DCLogic {
     else if(hasCur&&newW.length)hero={t:lessonL(cur),sub:newW.length+' '+pl(newW.length,['новое слово','новых слова','новых слов'])+' · ≈ '+Math.max(3,Math.round(newW.length*1.3))+' мин · знакомство, выбор, письмо',btn:stIn?'Продолжить':'Учить',go:()=>this.startStudy(cur),chips:newW.slice(0,12).map(w=>({h:w.h})),done:false};
     else if(hasCur&&!curW.length)hero={t:'Урок '+cur+' пока пуст',sub:'В теме «'+L.t+'» пока нет слов. Найдите их в словаре или вставьте списком.',btn:'Добавить слова',go:()=>this.openAdd(cur,'one'),chips:[],done:false,link:true,linkL:'Выбрать другую тему'};
     else if(!hasCur)hero={t:'Первый урок',sub:'Тема «'+topic+'» · Mao подберёт '+daily+' '+pl(daily,WF)+' из словаря',btn:s.clBusy?'Подбираю слова…':'Начать: '+topic,go:()=>!s.clBusy&&this.moreLesson(),chips:[],done:false,link:true,linkL:'Другая тема'};
+    else if(other&&!dueN)hero={t:'Урок '+other.l.n+' · '+other.l.t,sub:other.n+' '+pl(other.n,['новое слово','новых слова','новых слов'])+' ещё не выучено',btn:'Учить',go:()=>this.startStudy(other.l.n),chips:this.dw(other.l.n).filter(w=>w.s==='new'&&this.mOk(w)).slice(0,12).map(w=>({h:w.h})),done:false};
+    else if(nextDay&&!isWkOff)hero={t:'Урок '+(cur+1)+' · '+topic,sub:'Новый урок на сегодня · '+daily+' '+pl(daily,WF)+' · Mao подберёт их из словаря',btn:s.clBusy?'Подбираю слова…':'Учить',go:()=>!s.clBusy&&this.moreLesson(),chips:[],done:false,link:true,linkL:'Другая тема'};
     else if(isWkOff)hero={t:'Сегодня выходной',sub:'Новые слова по плану — в будни. Хочется заниматься — можно начать урок сейчас.',btn:s.clBusy?'Подбираю слова…':'Ещё урок: '+topic,go:()=>!s.clBusy&&this.moreLesson(),chips:[],done:true,link:true,linkL:'Другая тема для следующего урока'};
     else hero={t:'На сегодня всё',sub:'Завтра — урок '+(cur+1)+' · '+topic+'. Хочется ещё — можно начать сейчас.',btn:s.clBusy?'Подбираю слова…':'Ещё урок: '+topic,go:()=>!s.clBusy&&this.moreLesson(),chips:[],done:true,link:true,linkL:'Другая тема для следующего урока'};
     const stp=(st,l,r)=>({l,r,mk:st==='done'?IC.check:'',dot:st==='now'?'block':'none',bg:st==='done'?'var(--oks)':st==='now'?'var(--pr)':'transparent',fg:'var(--ok)',bd:st==='done'?'var(--oks)':st==='now'?'var(--pr)':'var(--ln)',fw:st==='now'?600:500,tc:st==='later'?'var(--mu)':'var(--ink)'});
-    const lessonState=!hasCur?'later':newW.length?(dueN&&!stIn?'later':'now'):curW.length?'done':'now';
+    const lessonState=!hasCur?'later':newW.length?(dueN&&!stIn?'later':'now'):nextDay?(dueN?'later':'now'):curW.length?'done':'now';
     const steps=[stp(dueN?(stIn?'later':'now'):'done','Повторение',dueN?dueN+' '+pl(dueN,WF):'готово'),
+      nextDay?stp(lessonState,'Урок '+(cur+1)+' · '+topic,daily+' '+pl(daily,['новое','новых','новых'])):
       stp(lessonState,hasCur?lessonL(cur):'Урок 1 · '+topic,hasCur?(newW.length?newW.length+' '+pl(newW.length,['новое','новых','новых']):curW.length?'выучен':'пуст'):daily+' '+pl(daily,['новое','новых','новых']))];
     const hardW=ws.filter(w=>w.s==='hard');
     const tiles=[{zh:'难',c:'var(--bad)',l:'Трудные',sub:hardW.length?hardW.length+' '+pl(hardW.length,WF):'нет',go:()=>hardW.length?this.startTest('hard'):this.toast('Трудных слов нет — так держать')},
-      {zh:'考',c:'var(--pr)',l:'Тест',sub:'по прошлым урокам',go:()=>this.startTest('quick')},
-      {zh:'写',c:'var(--ac)',l:'Прописи',sub:'5 знаков',go:()=>this.startTest('write')}];
+      {zh:'考',c:'var(--pr)',l:'Тест',sub:'10 слов',go:()=>this.startTest('quick')},
+      {zh:'写',c:'var(--ac)',l:'Прописи',sub:'5 слов от руки',go:()=>this.startTest('write')}];
     const mon=(()=>{const d=day0(new Date());d.setDate(d.getDate()-((d.getDay()+6)%7));return d;})();const t0=day0(new Date());
     const week=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map((l,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);const e=s.log[dk(d)]||{};const done=(e.min||0)+(e.nw||0)+(e.rv||0)>0&&!e.fz;const now=+d===+t0;return {l,mk:done?IC.check:'',bg:done?'var(--prs)':'transparent',bd:now?'var(--pr)':done?'var(--prs)':'var(--ln)'};});
     const recent=[...known].sort((a,b)=>(b.lt||b.id)-(a.lt||a.id)).slice(0,10).map(w=>({h:w.h,p:w.p,m:shortM(w.m),open:openW(w.id)}));
@@ -921,9 +1027,11 @@ class Component extends DCLogic {
     // ---------- words ----------
     const q=(s.q||'').trim();
     const found=q?ws.filter(w=>matchW(w,q)).slice(0,60).map(w=>({h:w.h,p:w.p,m:shortM(w.m),day:'Урок '+w.d,open:openW(w.id)})):[];
-    const days=[...s.lessons].reverse().map(l=>{const lw=this.dw(l.n),k=lw.filter(w=>w.s!=='new').length;return {title:'Урок '+l.n+' · '+l.t,stat:k+' из '+lw.length,empty:!lw.length,add:()=>this.openAdd(l.n,'one'),
-      ws:lw.map(w=>({h:w.h,p:w.p,open:openW(w.id),dot:w.s==='hard'?'var(--bad)':w.s==='new'?'transparent':'var(--ok)'})),
-      edit:()=>this.setState({screen:'dayEdit',de:{n:l.n}}),canRep:k>0,rep:()=>this.startTest('lesson',l.n)};});
+    const days=[...s.lessons].reverse().map(l=>{const lw=this.dw(l.n),k=lw.filter(w=>w.s!=='new').length,hd=lw.filter(w=>w.s==='hard').length,nn=lw.filter(w=>w.s==='new'&&this.mOk(w)).length,nt=lw.filter(w=>!this.mOk(w)).length;
+      const stat=lw.length?[k?(k-hd)+' '+pl(k-hd,['выучено','выучено','выучено']):'',hd?hd+' '+pl(hd,['трудное','трудных','трудных']):'',nn?nn+' '+pl(nn,['новое','новых','новых']):'',nt?nt+' без перевода':''].filter(Boolean).join(' · '):'пусто';
+      return {title:'Урок '+l.n+' · '+l.t,stat,empty:!lw.length,add:()=>this.openAdd(l.n,'one'),canLearn:nn>0,learnL:'Учить · '+nn,learn:()=>this.startStudy(l.n),
+      edit:()=>this.setState({screen:'dayEdit',de:{n:l.n,t0:l.t}}),canRep:k>0&&!nn,rep:()=>this.startTest('lesson',l.n),
+      ws:lw.map(w=>({h:w.h,p:w.p,open:openW(w.id),dot:!this.mOk(w)?'var(--ac)':w.s==='hard'?'var(--bad)':w.s==='new'?'transparent':'var(--ok)'}))};});
     const used={};s.lessons.forEach(l=>{used[l.t]=l.n;});const firstFree=(T.find(x=>!used[x[2]])||T[0])[2];
     const topics=T.map(x=>{const was=!!used[x[2]],sel=x[2]===topic;return {zh:x[0],l:x[2],tag:sel?'выбрана':was?'была':x[2]===firstFree?'по порядку':'',zc:was&&!sel?'var(--mu)':'var(--ac)',
       go:()=>{this.setState({topicSel:x[2],topicOwn:'',sheet:null});this.save();this.toast('Следующий урок: '+x[2]);},bd:sel?'var(--pr)':'var(--ln)',bg:sel?'var(--prs)':'transparent',fg:was&&!sel?'var(--mu)':'var(--ink)'};});
@@ -931,7 +1039,7 @@ class Component extends DCLogic {
     // ---------- add ----------
     const addDay=s.addDay||this.bulkTarget();const E=window.EDict&&EDict.ready()?EDict:null;
     const aq=(s.aq||'').trim();let dictRes=[];
-    if(aq&&E){dictRes=E.search(aq,24).slice(0,24).map(e=>{const ex=ws.find(x=>x.h===e.h);const ru=(e.m&&/[а-яё]/i.test(e.m)?e.m:'')||E.ru(e.key)||'';return {h:e.h,p:e.p,m:shortM(ru)||(e.en?e.en+' (англ.)':''),have:!!ex,can:!ex,dayL:ex?'Урок '+ex.d:'',add:()=>this.addWord(e,addDay)};});}
+    if(aq&&E){dictRes=E.search(aq,24).slice(0,24).map(e=>{const ex=ws.find(x=>x.h===e.h);const ru=(e.m&&/[а-яё]/i.test(e.m)?e.m:'')||E.ru(e.key)||'';return {h:e.h,p:e.p,m:shortM(ru)||(e.en?'нет русского перевода · англ.: '+e.en:'нет перевода'),mc:ru?'var(--ink)':'var(--mu)',have:!!ex,can:!ex,dayL:ex?'Урок '+ex.d:'',add:()=>this.addWord(e,addDay),open:()=>this.setState({sheet:'dict',dictE:e,animK:null})};});}
     const bulkR=scr==='add'&&s.addMode==='list'?this.bulkRows():[];const nAdd=bulkR.filter(r=>r.add).length;
 
     // ---------- run: card / mc / quiz ----------
@@ -939,7 +1047,7 @@ class Component extends DCLogic {
     let card={};const cw=scr==='learn'&&st?this.W(st.ids[st.li]):null;
     if(cw){const n=st.ids.length;runPct=Math.max(4,st.li/n*33);runLabel=(snow?'Снежный ком · слово ':'Знакомство · ')+(st.li+1)+' из '+n;
       const parts=cw.mn?(cw.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(cw.mn.note?'\n'+cw.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(cw.h):'');
-      card={h:cw.h,p:cw.p,m:cw.m,fs:cw.h.length>2?72:cw.h.length>1?92:120,mWarn:cw.mSrc==='ai',hasParts:!!parts,parts};}
+      card={...this.cardData(cw.h,cw.p,{m:cw.m,mSrc:cw.mSrc,mn:cw.mn,tag:'learn'}),h:cw.h};}
     const mc=s.mc;let mcv={opts:[]};
     if(scr==='mc'&&mc&&mc.items[mc.i]){const it=mc.items[mc.i],w=this.W(it.id)||{h:'',p:'',m:''},pk=mc.pick,h2m=it.dir==='h2m';const left=mc.items.length-mc.i;const p=mc.i/mc.items.length;
       runPct=Math.max(4,les?33+p*33:p*100);runLabel=(snow&&les?'Снежный ком · проверка · осталось ':'Выбор · осталось ')+left;
@@ -974,7 +1082,8 @@ class Component extends DCLogic {
 
     // ---------- chat ----------
     const prov=PROV[s.aiProv||'free']||PROV.free;const aiReady=this.aiOn();
-    const toastBottom=scr==='tab'?84:(scr==='learn'||scr==='quiz')?150:(scr==='add'||scr==='dayEdit'||scr==='goal'||scr==='result')?96:20;
+    const scrKey=scr==='tab'?'tab:'+tab:scr;const toastOn=!!s.toast&&(!s.toast.scr||s.toast.scr===scrKey);const toastUp=scr==='quiz'||scr==='mc'||scr==='learn';
+    const toastBottom=scr==='tab'?84:(scr==='add'||scr==='dayEdit'||scr==='goal'||scr==='result')?96:20;
 
     return {
       th,phoneRef:this.phoneRef,chatRef:this.chatRef,
@@ -983,7 +1092,7 @@ class Component extends DCLogic {
       showNav:scr==='tab',
       navs:[['home','Сегодня',IC.today],['words','Слова',IC.book],['ask','Вопросы',IC.forum],['settings','Настройки',IC.settings]].map(([k,l,ic])=>{const on=tab===k;return {l,ic,go:()=>this.goTab(k),c:on?'var(--pr)':'var(--mu)',fw:on?600:500,bar:on?'var(--prs)':'transparent'};}),
       // home
-      streakL:s.streak+' '+pl(s.streak,['день','дня','дней'])+' подряд',hero,hasChips:hero.chips.length>0,heroBg:hero.done?'transparent':'var(--pr)',heroFg:hero.done?'var(--ink)':'var(--onpr)',heroBd:hero.done?'var(--ln)':'var(--pr)',
+      streakL:(()=>{const k=this.streakNow();return k?k+' '+pl(k,['день','дня','дней'])+' подряд':(s.lastActive?'новая серия':'первый день');})(),hero,hasChips:hero.chips.length>0,heroBg:hero.done?'transparent':'var(--pr)',heroFg:hero.done?'var(--ink)':'var(--onpr)',heroBd:hero.done?'var(--ln)':'var(--pr)',
       steps,tiles,week,recent,hasRecent:recent.length>0,goWords:()=>this.goTab('words'),known:knownN,goalN,knownPct:Math.min(100,knownN/Math.max(1,goalN)*100),goalL,
       openTopics:()=>this.setState({sheet:'topic'}),openGoal:()=>this.setState({screen:'goal',gd:this.goalDraft(),calM:null}),
       // words
@@ -996,7 +1105,8 @@ class Component extends DCLogic {
       back:()=>this.setState({screen:s.addFrom==='dayEdit'&&s.de?'dayEdit':'tab'}),
       addModeOpts:seg([['one','Одно слово'],['list','Списком']],s.addMode||'one',k=>this.setState({addMode:k})),addOne:(s.addMode||'one')==='one',addList:s.addMode==='list',
       addDayL:(s.lessons.some(l=>l.n===addDay)?lessonL(addDay):'урок '+addDay+' · новый').replace(/^У/,'у'),
-      cycleAddDay:()=>{const ns=[...s.lessons.map(l=>l.n)];const nw=(ns.length?Math.max(...ns):0)+1;ns.push(nw);const i=ns.indexOf(addDay);this.setState({addDay:ns[(i+1)%ns.length]});},
+      cycleAddDay:()=>this.setState({sheet:'pickDay'}),sheetPickDay:s.sheet==='pickDay',
+      pickDays:[...[...s.lessons].reverse().map(l=>({l:'Урок '+l.n+' · '+l.t,sub:this.dw(l.n).length+' '+pl(this.dw(l.n).length,WF),on:l.n===addDay,go:()=>this.setState({addDay:l.n,sheet:null})})),{l:'Новый урок',sub:'тема «'+topic+'»',on:!s.lessons.some(l=>l.n===addDay),go:()=>this.setState({addDay:(s.lessons.reduce((a,l)=>Math.max(a,l.n),0))+1,sheet:null})}].map(x=>({...x,bd:x.on?'var(--pr)':'var(--ln)',bg:x.on?'var(--prs)':'transparent'})),
       aq:s.aq||'',onAq:e=>this.setState({aq:e.target.value}),dictRes,hasDictRes:dictRes.length>0,dictEmpty:!!aq&&!dictRes.length,dictEmptyL:E?'Ничего не нашлось. Попробуйте пиньинь без тонов: jiejie':'Загружаю словарь…',addHelp:!aq,
       bulkT:s.bulkT,onBulk:e=>this.setState({bulkT:e.target.value}),bulkWait:!!s.bulkT.trim()&&!E,bulkRef:this.bulkRef,
       bulkRows:bulkR.map(r=>({h:r.kind==='miss'?'?':r.h,p:r.kind==='miss'?r.h:r.p,m:r.kind==='miss'?'не нашлось — проверьте':r.kind==='have'?shortM(r.m)+' · уже есть':r.kind==='nodict'&&!r.m?'нет в словаре — впишите перевод потом':shortM(r.m||r.en||''),
@@ -1006,9 +1116,9 @@ class Component extends DCLogic {
       onBulkFile:e=>{const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(t=>this.setState({bulkT:t}));},
       // day editor
       ...(()=>{const de=s.de;if(!de)return {deRows:[]};const Ld=s.lessons.find(l=>l.n===de.n)||{};const lw=this.dw(de.n);
-        return {deN:de.n,deT:Ld.t||'',onDeT:e=>this.deRename(de.n,e.target.value),deWarn:lw.some(w=>w.mSrc==='ai'),
-          deRows:lw.map(w=>({h:w.h,p:w.p||'',m:w.m||'',mbd:w.mSrc==='ai'?'var(--bad)':'var(--ln)',onP:e=>this.deWord(w.id,'p',e.target.value),onM:e=>this.deWord(w.id,'m',e.target.value),del:()=>this.deDel(w.id)})),
-          deBack:()=>this.setState({screen:'tab',tab:'words',de:null}),deAdd:()=>this.openAdd(de.n,'one',null,'dayEdit')};})(),
+        return {deN:de.n,deT:Ld.t||'',onDeT:e=>this.deRename(de.n,e.target.value),deWarn:lw.some(w=>!this.mOk(w)),
+          deRows:lw.map(w=>({h:w.h,p:w.p||'',m:w.m||'',mph:this.mOk(w)?'':'русского перевода в словаре нет — впишите',mbd:!this.mOk(w)?'var(--ac)':'var(--ln)',onP:e=>this.deWord(w.id,'p',e.target.value),onM:e=>this.deWord(w.id,'m',e.target.value),del:()=>this.deDel(w.id)})),
+          deBack:()=>{this.deCommit();this.setState({screen:'tab',tab:'words',de:null});},deNeed:lw.filter(w=>!this.mOk(w)).length,deAdd:()=>this.openAdd(de.n,'one',null,'dayEdit')};})(),
       // run
       runPct,runLabel,exitRun:()=>this.exit(),
       card,speakCard:()=>cw&&this.speak(cw.h),partsOpen:!!s.partsOpen,partsIc:s.partsOpen?IC.less:IC.more,tglParts:()=>this.setState({partsOpen:!s.partsOpen}),
@@ -1028,13 +1138,14 @@ class Component extends DCLogic {
       gLeftL:(()=>{const m=Math.round((gEnd-tod)/864e5/30.4);return gEnd>tod?(m>0?'через '+m+' '+pl(m,['месяц','месяца','месяцев']):'меньше месяца'):'выберите дату';})(),
       gQuick:[['3 мес',3],['6 мес',6],['1 год',12],['2 года',24]].map(([l,m])=>{const id=iso(addM(tod,m));return {l,go:()=>setG({date:id}),bd:gd.date===id?'var(--pr)':'var(--ln)',bg:gd.date===id?'var(--prs)':'transparent'};}),
       tglWk:()=>setG({offOn:!gd.offOn,off:[6,0]}),wkT:tg(!gd.offOn),wkD:gd.offOn?'Сб и Вс — отдых, норма в будни больше':'Каждый день',
-      gPer,gSub:gp.days?gp.days+' учебных '+pl(gp.days,DF)+' · осталось выучить '+gp.left+(gp.raw>20?'. Это много — лучше отодвинуть дату':''):'',
-      gBtn:firstRun?'Начать учиться':'Сохранить цель',gSave:()=>this.saveGoal(gd),
+      gPer:(+gd.n||0)<1?'Укажите число слов':(+gd.n<=knownN?'Цель уже достигнута':gPer),gSub:(+gd.n||0)<1?'':+gd.n<=knownN?'Вы уже знаете '+knownN+' '+pl(knownN,WF)+' — поставьте больше':gp.days?gp.days+' учебных '+pl(gp.days,DF)+' · осталось выучить '+gp.left+(gp.raw>20?'. Это много — лучше отодвинуть дату':''):'',
+      gBtn:(firstRun?'Начать':'Сохранить')+(gp.days&&+gd.n>knownN?' · '+gp.per+' '+pl(gp.per,WF)+' в день':''),gSave:()=>this.saveGoal(gd),
       sheetCal:s.sheet==='cal',calTitle:MNAME[cmo-1]+' '+cy,calPrev:()=>shiftM(-1),calNext:()=>shiftM(1),calPrevFg:new Date(cy,cmo-2,1)<new Date(tod.getFullYear(),tod.getMonth(),1)?'var(--ln)':'var(--ink)',
       calWd:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map((l,i)=>({l,c:i>4?'var(--ac)':'var(--mu)'})),calDays,
       // settings
       goalShort:g?(+g.n)+' '+pl(+g.n,WF):'не задана',
-      daily,dailyDn:()=>this.upd({dailyNew:Math.max(3,daily-1)}),dailyUp:()=>this.upd({dailyNew:Math.min(20,daily+1)}),
+      daily,dailyDn:()=>this.upd({dailyNew:Math.max(3,daily-1)}),dailyUp:()=>this.upd({dailyNew:Math.min(30,daily+1)}),
+      dailyWarn:!!(g&&GL.days&&GL.per>daily),dailyWarnL:g&&GL.days&&GL.per>daily?'Для цели к '+fmtD(pISO(g.date))+' нужно '+GL.per+' '+pl(GL.per,WF)+' в день. С нормой '+daily+' вы успеете примерно к '+fmtD(this.finishDate(g,knownN,daily)):'',
       more1:!!s.more1,more1Ic:s.more1?IC.less:IC.more,tglMore1:()=>this.setState({more1:!s.more1}),methodL:snow?'Снежный ком':'Быстрый урок',
       methodOpts:seg([['fast','Быстрый урок'],['snow','Снежный ком']],snow?'snow':'fast',k=>{this.upd({method:k});if(s.study)this.setState({study:null,mc:null,quiz:null});this.toast(k==='snow'?'Следующий урок — «Снежным комом»':'Следующий урок — быстрый');}),
       methodD:snow?'После каждого нового слова — проверка по всем выученным в уроке (последние 5 и ещё 2 из начала). В конце — письмо всех слов. Дольше, но крепче.':'Слова пачками по 5: карточка → обводка → выбор из 4. В конце — письмо всех слов по памяти. 15 слов ≈ 20 минут.',
@@ -1044,7 +1155,7 @@ class Component extends DCLogic {
       themeOpts:seg([['system','Как в системе'],['light','Светлая'],['dark','Тёмная']],s.th,k=>this.upd({th:k})),
       speedOpts:seg([['slow','Медленно'],['normal','Обычно']],s.rate<=0.65?'slow':'normal',k=>{this.upd({rate:k==='slow'?0.6:0.85});setTimeout(()=>this.speak('你好'),60);}),
       openBackup:()=>this.setState({sheet:'backup',resetAsk:false}),
-      exportJson:()=>{this.save();const name='mao-backup-'+iso(new Date())+'.json';const ok=window.EVINE?EVINE.saveFile(name,localStorage.getItem(KEY)||'{}'):false;this.setState({sheet:null});if(!(window.EVINE&&EVINE.native))this.toast(ok?'Копия сохранена: '+name:'Не удалось сохранить');},
+      exportJson:()=>{const name='mao-backup-'+iso(new Date())+'.json';const txt=this.backupText();let ok=false;if(window.EVINE&&EVINE.native)ok=EVINE.saveFile(name,txt);else{try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'application/json'}));a.download=name;a.click();ok=true;}catch(e){}}this.setState({sheet:null});if(!(window.EVINE&&EVINE.native))this.toast(ok?'Копия сохранена: '+name:'Не удалось сохранить');},
       pickJson:()=>{if(!(window.EVINE&&EVINE.openFile(t=>t!=null&&this.restoreText(t))))this.fileRef.current?.click();},fileRef:this.fileRef,
       onJson:e=>{const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(t=>this.restoreText(t));},
       resetL:s.resetAsk?'Точно стереть всё? Нажмите ещё раз':'Стереть все данные',
@@ -1056,7 +1167,7 @@ class Component extends DCLogic {
       needKey:!!prov.key,apiKey:(s.aiKeys||{})[s.aiProv||'free']||'',keyPh:'Ключ '+prov.n,keyHelp:prov.help||'',
       onKey:e=>this.upd({aiKeys:{...(s.aiKeys||{}),[s.aiProv||'free']:e.target.value.trim()}}),
       checkApi:()=>this.checkApi(),checkL:s.clBusy?'Проверяю…':'Проверить связь',hasApiMs:!!s.apiMs,apiMs:s.apiMs||'',apiMsC:s.apiOk?'var(--ok)':'var(--bad)',
-      footL:'Mao '+APPV+' · словарь CC-CEDICT, CC BY-SA 4.0',
+      footL:'Mao '+APPV+' · словарь '+((window.EDict&&EDict.version())||'')+'\nРусские значения и примеры: 大БКРС, bkrs.info · индекс и пиньинь: CC-CEDICT (MDBG), CC BY-SA 4.0 · черты: Make Me a Hanzi (Arphic Public License)',
       // chat
       aiL:aiReady?'нейросеть · '+prov.n:s.aiOn===true&&prov.key?'нет ключа · словарь':'без интернета · словарь',aiC:aiReady?'var(--ok)':'var(--mu)',
       clearChat:()=>{this.chatSeq=(this.chatSeq||0)+1;this.setState({chat:[],chatBusy:false,chatQ:''});},chatEmpty:!s.chat.length,chatFull:s.chat.length>0,thinking:!!s.chatBusy&&!(s.chat.length&&s.chat[s.chat.length-1].r==='ai'&&s.chat[s.chat.length-1].live),
@@ -1066,15 +1177,47 @@ class Component extends DCLogic {
       chatQ:s.chatQ,onChatQ:e=>this.setState({chatQ:e.target.value}),chatKey:e=>{if(e.key==='Enter')this.sendChat(this.state.chatQ);},sendChatB:()=>this.sendChat(s.chatQ),
       sendBg:s.chatQ.trim()?'var(--pr)':'var(--sf2)',sendFg:s.chatQ.trim()?'var(--onpr)':'var(--mu)',
       // sheets
-      hasSheet:!!s.sheet,closeSheet:()=>this.setState({sheet:null,resetAsk:false}),stop:e=>e.stopPropagation(),sheetTopic:s.sheet==='topic',sheetWord:s.sheet==='word',sheetBackup:s.sheet==='backup',
-      sw:(()=>{if(s.sheet!=='word')return {};const w=this.W(s.wid);if(!w)return {};const parts=w.mn?(w.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(w.mn.note?'\n'+w.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(w.h):'');
+      hasSheet:!!s.sheet,closeSheet:()=>this.setState({sheet:null,resetAsk:false,swEdit:null,animK:null}),stop:e=>e.stopPropagation(),sheetTopic:s.sheet==='topic',sheetWord:s.sheet==='word'||s.sheet==='dict',sheetBackup:s.sheet==='backup',
+      sw:(()=>{if(s.sheet==='dict'&&s.dictE){const e=s.dictE;const ex=ws.find(x=>x.h===e.h);const ad=s.addDay||this.bulkTarget();const r=this.ruFor(e);
+          return {...this.cardData(e.h,e.p,{m:r.m,mSrc:r.mSrc,full:true,tag:'dict'}),top:'Словарь'+(e.en&&!r.m?' · по-английски: '+e.en:''),isWord:false,isDict:true,
+            addL:ex?'Уже в уроке '+ex.d:'Добавить в урок '+ad,addBg:ex?'var(--sf2)':'var(--pr)',addFg:ex?'var(--mu)':'var(--onpr)',addIt:()=>{if(ex)return;this.addWord(e,ad);this.setState({sheet:null});}};}
+        if(s.sheet!=='word')return {};const w=this.W(s.wid);if(!w)return {};
         const stl=w.s==='new'?'новое':this.isDue(w)?'повторить сегодня':w.s==='hard'?'трудное':w.next?'повтор '+fmtD(pISO(w.next)).replace(/ \d{4}$/,''):'выучено';
-        return {h:w.h,p:w.p,m:w.m,fs:w.h.length>2?64:88,meta:lessonL(w.d)+' · '+stl,hasParts:!!parts,parts,say:()=>this.speak(w.h),
-          ask:()=>{this.setState({sheet:null,screen:'tab',tab:'ask'});this.sendChat('Разбери '+w.h);},edit:()=>this.setState({sheet:null,screen:'dayEdit',de:{n:w.d}})};})(),
+        const de=this.dictFor(w);const dictM=de&&de.m&&de.m!==w.m?de.m:'';
+        return {...this.cardData(w.h,w.p,{m:w.m,mSrc:w.mSrc,mn:w.mn,full:true,tag:'word'}),top:lessonL(w.d)+' · '+stl,isWord:true,isDict:false,
+          write:()=>this.practiceWrite(w.id),ask:()=>{this.setState({sheet:null,screen:'tab',tab:'ask'});this.sendChat('Разбери '+w.h);},edit:()=>this.setState({sheet:null,screen:'dayEdit',de:{n:w.d,t0:(s.lessons.find(l=>l.n===w.d)||{}).t}}),
+          editing:s.swEdit!=null,editV:s.swEdit||'',onEdit:e=>this.setState({swEdit:e.target.value}),editCancel:()=>this.setState({swEdit:null}),editOpen:()=>this.setState({swEdit:w.m||''}),editL:w.m?'Изменить перевод':'Вписать перевод',
+          editSave:()=>{const v=String(s.swEdit||'').trim();if(!v)return this.toast('Пустой перевод не сохраняется');if(!/[а-яё]/i.test(v))return this.toast('Напишите перевод по-русски');this.upd({words:this.state.words.map(x=>x.id===w.id?{...x,m:v,mSrc:'user',mEdited:true}:x),myRu:{...(this.state.myRu||{}),[w.k||w.h]:v},swEdit:null});this.toast('Перевод сохранён — словарь не изменён');},
+          canRestore:!!dictM&&w.mSrc==='user',dictM:shortM(dictM),restore:()=>{const my={...(this.state.myRu||{})};delete my[w.k||w.h];this.upd({words:this.state.words.map(x=>x.id===w.id?{...x,m:de.m,mSrc:de.src||'m',mEdited:false}:x),myRu:my});}};})(),
       // toast
-      hasToast:!!s.toast,toastMsg:s.toast?.msg,toastAct:!!s.toast?.act,toastActL:s.toast?.actL||'Вернуть',toastBottom,toastGo:()=>{const a=s.toast?.act;this.setState({toast:null});clearTimeout(this.tt);a&&a();}
+      hasToast:toastOn,toastPos:toastUp?'top:64px':'bottom:'+toastBottom+'px',toastMsg:s.toast?.msg,toastAct:!!s.toast?.act,toastActL:s.toast?.actL||'Вернуть',toastBottom,toastGo:()=>{const a=s.toast?.act;this.setState({toast:null});clearTimeout(this.tt);a&&a();}
     };
   }
+  // ---- the word card: everything the dictionary knows about this word and reading ----
+  cardData(h,p,o){const E=window.EDict&&EDict.ready()?EDict:null;o=o||{};const nz=x=>String(x||'').replace(/[\s'’]/g,'').toLowerCase();
+    const e=E?(E.best(h).filter(x=>x.h===h||x.t===h).find(x=>nz(x.p)===nz(p))||E.find(h)):null;const ch=[...h];const syl=e&&e.syl&&nz(e.p)===nz(p)?e.syl:null;
+    const n=ch.length,fs=n>4?44:n>3?54:n>2?64:n>1?84:110;
+    let d=E?E.detailsNow(h):null;if(d===undefined){E.details(h).then(()=>this.forceUpdate());}
+    let sen=[],pos='';if(d&&d.b){const all=[];d.b.forEach(b=>b.s.forEach(x=>all.push({...x,y:x.y||b.y||[],pos:b.pos||''})));const anyY=all.some(x=>x.y.length);
+      sen=anyY?all.filter(x=>x.y.some(y=>EDict.sameReading(y,p))):all;if(!sen.length&&!anyY)sen=all;pos=(sen[0]&&sen[0].pos)||'';}
+    const nS=o.full?8:3,nX=o.full?2:1;const senV=sen.filter(x=>x.t).slice(0,nS).map((x,i)=>({n:i+1+'.',t:x.t,xs:(x.x||[]).slice(0,nX).map(q=>({zh:q[0],py:q[1]||'',ru:q[2]}))}));
+    const src=o.mSrc;const meta=[e&&e.lv?'HSK '+e.lv:'',pos,e&&e.cl?'сч. слово '+e.cl.split(',')[0]:'',src==='b'?'перевод: БКРС':src==='user'?'свой перевод':src==='m'?'перевод: Mao':src==='ai'?'перевод нейросети — проверьте':''].filter(Boolean).join(' · ');
+    const rd=n===1&&E?E.readings(h).filter(r=>nz(r.p)!==nz(p)&&r.m).slice(0,4).map(r=>r.p+' — '+shortM(r.m)).join('; '):'';
+    const parts=o.mn?(o.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(o.mn.note?'\n'+o.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(h):'');
+    const key=(o.tag||'c')+'|'+h;const animOn=!!(this.state.animK===key);
+    return {cs:ch.map((c,i)=>({c,py:syl?syl[i]:''})),pyLine:!syl,p,gap:n>3?4:8,fs,pfs:n>3?15:18,m:o.m||'',noRu:!o.m,hasMeta:!!meta,meta,say:()=>this.speak(h),
+      canAnim:!!(window.WCheck&&WCheck.ready()&&ch.some(c=>WCheck.has(c))),anim:()=>this.setState({animK:animOn?null:key}),animOn,animRef:el=>{if(el&&el.dataset.k!==h){el.dataset.k=h;this.sAnim(el,h);}},
+      hasSen:senV.length>0,sen:senV,senL:'ЗНАЧЕНИЯ · БКРС',exNote:senV.some(x=>x.xs.length)?'Пиньинь в примерах подобран автоматически по словарю — возможны неточности в многозначных словах.':'',
+      loading:d===undefined&&!!E,hasRd:!!rd,rd,hasParts:!!parts,parts};}
+  // stroke order: strokes appear one by one in their outlines, character after character
+  sAnim(el,h){const c=[...h].filter(x=>window.WCheck&&WCheck.has(x));if(!c.length)return;const r=Math.min(3,window.devicePixelRatio||1);const W=Math.round(150*r);el.width=W;el.height=W;const g=el.getContext('2d');const tok={};this.saTok=tok;
+    const css=getComputedStyle(this.phoneRef.current||document.body);const ol=css.getPropertyValue('--ol').trim()||'#ddd',ink=getComputedStyle(el).color||'#222';let ci=0,si=0,t0=performance.now();
+    const step=now=>{if(this.saTok!==tok||!el.isConnected||el.dataset.k!==h)return;const ch=c[ci];const OP=WCheck.paths(ch,W,W),R=WCheck.ref(ch);if(!OP||!R){ci=(ci+1)%c.length;return requestAnimationFrame(step);}
+      g.clearRect(0,0,W,W);g.fillStyle=ol;OP.forEach(p=>g.fill(p));g.fillStyle=ink;g.strokeStyle=ink;for(let i=0;i<si;i++)g.fill(OP[i]);
+      const pr=Math.min(1,(now-t0)/480);if(si<OP.length)this.wInk(g,OP[si],R[si],W,W,pr);
+      if(pr>=1){si++;t0=now;if(si>OP.length){si=0;ci=(ci+1)%c.length;t0=now+500;}}requestAnimationFrame(step);};
+    requestAnimationFrame(step);}
+  practiceWrite(id){const qz=this.mkQuiz([id],'Прописи','test');qz.write=true;this.setState({screen:'quiz',quiz:qz,sheet:null,animK:null});}
   // ---- writing screen values (v8 layout, 2.9 stroke checking) ----
   writeVals(qv,wScr){const s=this.state,qz=s.quiz;if(!qz||s.screen!=='quiz')return {wTabs:[]};
     const n=[...(qv.h||'')].length,idx=s.wIdx||0,rev=!!qz.rev,trace=qz.kind==='trace';const D=s.wDone;
@@ -1083,13 +1226,14 @@ class Component extends DCLogic {
       return {l:show?c:String(i+1),fs:show?20:15,al:'Знак '+(i+1),go:()=>i!==idx&&this.wGo(i),bg:on?'var(--prs)':'var(--sf)',bd:on?'var(--pr)':done?'var(--ok)':'var(--ln)',fg:on?'var(--pr)':'var(--ink)'};}):[];
     const has=(s.wN||0)>0;const last=idx>=n-1;
     const R0=wScr&&!rev?this.wCurRef():null;
-    const wCount=!wScr||rev?'':R0?'черта '+Math.min((s.wN||0)+1,R0.length)+' из '+R0.length:'';
+    const okN=((this.wMeta||[]).filter(m=>m&&m.k>=0).length);
+    const wCount=!wScr||rev?'':s.wMsg?s.wMsg.t:R0?(trace?'черта '+Math.min(okN+1,R0.length)+' из '+R0.length:okN?'черт написано: '+okN:'начните с первой черты'):'';
     const hintL=trace?'Пропустить':ghost||this.wPeek||s.wPeekS?'Ответ':'Подсказка';
     return {wTabs:tabs,wTabsShow:n>1&&wScr,wScreen:wScr,wPaper:!wScr&&!rev,wPaperRev:!wScr&&rev,wGridOn:s.wGrid!==false,wGridMi:s.wGrid==='mi',
       wcRef:el=>{this.wcCanvas=el;},wDown:e=>this.wDown(e),wMove:e=>this.wMove(e),wUp:e=>this.wUp(e),
       wRevOn:wScr&&rev,wCurCh:[...(qv.h||'')][Math.min(idx,Math.max(0,n-1))]||'',
       wOkOn:!!D&&!rev&&(D.ok||trace),wOkL:trace?'Прописано':D&&D.mist?'Верно · ошибок: '+D.mist:'Верно',
-      wAskL:trace?'Обведите знак':wScr?'Напишите по памяти':'Напишите на бумаге',wCount,
+      wAskL:trace?'Обведите знак':wScr?'Напишите по памяти':'Напишите на бумаге',wCount,wCountC:s.wMsg&&s.wMsg.bad?'var(--bad)':'var(--mu)',wCountW:s.wMsg?600:400,
       wBtns:wScr&&!rev,undoFg:has||idx>0?'var(--ink)':'var(--mu)',wUndoB:()=>this.wUndo(),
       hintL,hintGo:()=>{if(trace)return this.answer(true);if(hintL==='Подсказка'){this.wPeek=true;this.wHint=true;this.setState({wPeekS:true});this.wRender();return;}this.wSave();this.setState({quiz:{...qz,rev:true}},()=>this.wRender());},
       doneL:last?'Готово':'Знак '+(idx+2),doneBg:has?'var(--pr)':'var(--sf2)',doneFg:has?'var(--onpr)':'var(--mu)',

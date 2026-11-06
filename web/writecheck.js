@@ -6,7 +6,7 @@
   function load() {
     if (map) return Promise.resolve(map);
     if (loading) return loading;
-    loading = fetch('strokes.txt').then(r => { if (!r.ok) throw 0; return r.text(); }).then(t => {
+    loading = (window.MaoText ? MaoText('strokes.txt') : fetch('strokes.txt').then(r => { if (!r.ok) throw 0; return r.text(); })).then(t => {
       const m = new Map();
       for (const l of t.split('\n')) {
         const i = l.indexOf('\t'); if (i < 1) continue;
@@ -118,7 +118,7 @@
   function loadOutlines() {
     if (omap) return Promise.resolve(omap);
     if (oload) return oload;
-    oload = fetch('outlines.txt').then(r => { if (!r.ok) throw 0; return r.text(); }).then(t => {
+    oload = (window.MaoText ? MaoText('outlines.txt') : fetch('outlines.txt').then(r => { if (!r.ok) throw 0; return r.text(); })).then(t => {
       const m = new Map(); let i = 0;
       while (i < t.length) { let j = t.indexOf('\n', i); if (j < 0) j = t.length; const k = t.indexOf('\t', i); if (k > i && k < j) m.set(t.slice(i, k), t.slice(k + 1, j)); i = j + 1; }
       omap = m; return m;
