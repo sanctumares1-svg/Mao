@@ -1,13 +1,13 @@
 {
  "web": {
-  "ver": 5,
-  "tag": "528d0cb7c12e7409061c7428a13e6943d2477505",
+  "ver": 6,
+  "tag": "deab20c18f151bc4a42c1d19a13f5bed7af89eb0",
   "minApp": 14,
-  "notes": "",
+  "notes": "Mao 3.2: рисование без подлагиваний, понятные шаги урока и объяснение метода («?» в уроке), нормальные варианты ответа",
   "files": {
    "ATTRIBUTION.txt": "8ddb3a4560a7202c4b9170a05e156114983e3e53dc9152d71d6cc614911d2db8",
    "decomp.txt": "80ead836fdb985a6af620bfa841acd319f6271dd0518d26889163ce8f6da70c4",
-   "dict.js": "1e34cf643d975ec8a65845fd96384ea77c6e8cab91792cf04eea7853cdcd9dce",
+   "dict.js": "63644308a0d899c83b7b31e60e53b1cbd6c6b22584b48a4a33c2f7eeb1738ccd",
    "dict.txt": "a6f26139956b323526059d9780fbb48e1bf4e36e2a6cb0fb86bccdbf9dfe0a3a",
    "dictver.txt": "4e02432456508861ea7358f1a6032e9d74726f1f5ce9209728cfc1f2ad9952d0",
    "explain.js": "b5278142dcb44970bfc755cb36da64f4418b7051db893f59925d2e0d543a9f21",
@@ -24,7 +24,7 @@
    "fonts/serif-500.woff": "bba3d333bffdc58ca5a8e61fa8920b02539bf649903fde788fc8782b76f1d1a3",
    "fonts/serif-600.woff": "f7a3cb750088d8287cec8dbd40ed124164593aa772479c59b1a8e4a0ddda949a",
    "fonts/serif-700.woff": "b6c9aad215b0eb89568671a034b67af93f3d76df0a6462cff355af467b45071f",
-   "index.html": "5f3570bbed96a309805f69a85d75d56f203f59bbcfaa883cb7eb3f3eef28cf36",
+   "index.html": "8bc084720d35f19a3089542fb10b0be0ab84f330a82cadcdbdd155b6e64fbf53",
    "loadtext-worker.js": "23e31f08051225da20e8cbdec0312716a3ff79abb0f54b90aff9ecc8171e7ab8",
    "loadtext.js": "864f152f31651633d7186656bde6c1caef21ec66dfe284dd79b48bb323840fd6",
    "native.js": "0acb2d26fad924e4339f7c09f58a520472ca3d3c59816450e067d7c070e2fea8",
@@ -289,7 +289,7 @@
    "strokes.txt": "b40344022813d9d7fa80488617b8215ed77e4192f7434829f61d19b9d711c360",
    "support.js": "8fe7df74405f3c55f49b7249c74ea1397e65d07dea2b1bd3b4a489bec2e28cbe",
    "topics.txt": "34454ad6c1a4c1b7bb0dec1d258c0d0f71417878bdefdec5dea280cc767eb779",
-   "writecheck.js": "44a6b7f414cdca76f834571c24e02cbc1194756ff0ec801eedaa8467dddd9132"
+   "writecheck.js": "a2f977715b383f8624ab16935793239e90c6ec8a52a80f8b33a0b79b0e0acbd2"
   }
  },
  "app": {
