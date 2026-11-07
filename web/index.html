@@ -261,7 +261,8 @@ button:active{filter:brightness(.92)}
 <!-- ============ ЗАНЯТИЕ: шапка ============ -->
 <sc-if value="{{ isRun }}" hint-placeholder-val="{{ false }}">
   <div style="flex:none;display:flex;flex-direction:column">
-    <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 4px"><button onClick="{{ exitRun }}" aria-label="Закрыть" style="width:40px;height:40px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5cd;</span></button><div style="flex:1;height:6px;border-radius:3px;background:var(--sf2);overflow:hidden"><div style="height:100%;width:{{ runPct }}%;background:var(--pr);border-radius:3px;transition:width .3s"></div></div><div style="width:12px"></div></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:10px 16px 4px"><button onClick="{{ exitRun }}" aria-label="Закрыть" style="width:40px;height:40px;border:0;background:none;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi">&#xe5cd;</span></button><div style="flex:1;height:6px;border-radius:3px;background:var(--sf2);overflow:hidden"><div style="height:100%;width:{{ runPct }}%;background:var(--pr);border-radius:3px;transition:width .3s"></div></div><sc-if value="{{ runStepsOn }}" hint-placeholder-val="{{ false }}"><button onClick="{{ howOpen }}" aria-label="Как проходит урок" style="width:32px;height:32px;border-radius:16px;border:1.5px solid var(--ln);background:none;color:var(--mu);font-size:15px;font-weight:700;cursor:pointer;flex:none">?</button></sc-if><sc-if value="{{ runStepsOff }}" hint-placeholder-val="{{ false }}"><div style="width:12px"></div></sc-if></div>
+    <sc-if value="{{ runStepsOn }}" hint-placeholder-val="{{ false }}"><div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2px;padding:2px 12px 2px"><sc-for list="{{ runSteps }}" as="r" hint-placeholder-count="4"><span style="font-size:12px;padding:3px 8px;white-space:nowrap;border-radius:10px;background:{{ r.bg }};color:{{ r.fg }};font-weight:{{ r.fw }}">{{ r.l }}</span></sc-for></div></sc-if>
     <span style="text-align:center;font-size:13px;color:var(--mu);padding-bottom:4px">{{ runLabel }}</span>
   </div>
 </sc-if>
@@ -312,10 +313,10 @@ button:active{filter:brightness(.92)}
     <div style="display:flex;flex-direction:column;align-items:center;gap:2px"><span style="font-size:13px;color:var(--mu)">{{ wAskL }}</span><span style="font-size:22px;font-weight:600;text-align:center;line-height:1.3">{{ qv.m }}</span></div>
     <sc-if value="{{ wTabsShow }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center"><sc-for list="{{ wTabs }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.go }}" aria-label="{{ t.al }}" style="width:40px;height:40px;border-radius:12px;border:1.5px solid {{ t.bd }};background:{{ t.bg }};color:{{ t.fg }};font:600 {{ t.fs }}px 'Noto Serif SC',serif;cursor:pointer;padding:0">{{ t.l }}</button></sc-for></div></sc-if>
     <sc-if value="{{ wScreen }}" hint-placeholder-val="{{ true }}">
-      <div style="position:relative;width:min(288px,calc(100vw - 48px),calc(100dvh - 330px));min-width:200px;aspect-ratio:1;flex:none;border-radius:14px;background:var(--sf);border:2px solid var(--ln);overflow:hidden">
+      <div style="position:relative;width:min(288px,calc(100vw - 48px),calc(100dvh - 356px));min-width:200px;aspect-ratio:1;flex:none;border-radius:14px;background:var(--sf);border:2px solid var(--ln);overflow:hidden">
         <sc-if value="{{ wGridOn }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;left:0;right:0;top:50%;border-top:1.5px dashed var(--gl)"></div><div style="position:absolute;top:0;bottom:0;left:50%;border-left:1.5px dashed var(--gl)"></div></sc-if>
         <sc-if value="{{ wGridMi }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(45deg)"></div><div style="position:absolute;left:-21%;width:142%;top:50%;border-top:1.5px dashed var(--gl);transform:rotate(-45deg)"></div></sc-if>
-        <canvas ref="{{ wcRef }}" width="576" height="576" onPointerDown="{{ wDown }}" onPointerMove="{{ wMove }}" onPointerUp="{{ wUp }}" onPointerCancel="{{ wUp }}" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;color:var(--ink)"></canvas>
+        <canvas ref="{{ wcRef }}" width="576" height="576" onPointerDown="{{ wDown }}" onPointerMove="{{ wMove }}" onPointerUp="{{ wUp }}" onPointerCancel="{{ wUp }}" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;color:var(--ink)"></canvas><canvas data-ov="1" width="576" height="576" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
         <sc-if value="{{ wRevOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 min(220px,calc((100vw - 48px) * .76))/1 'Noto Serif SC',serif;color:var(--pr);opacity:.28;pointer-events:none">{{ wCurCh }}</span></sc-if>
         <sc-if value="{{ wOkOn }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;right:10px;height:30px;padding:0 10px 0 6px;border-radius:999px;background:var(--oks);color:var(--ok);font-size:13.5px;font-weight:600;display:flex;align-items:center;gap:4px;animation:pop .2s"><span class="mi" style="font-size:18px">&#xe668;</span>{{ wOkL }}</span></sc-if>
       </div>
@@ -438,6 +439,15 @@ button:active{filter:brightness(.92)}
           <sc-for list="{{ pickDays }}" as="d" hint-placeholder-count="3"><button onClick="{{ d.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 16px;border-radius:14px;border:1.5px solid {{ d.bd }};background:{{ d.bg }};color:var(--ink);text-align:left;cursor:pointer"><span style="font-size:15px;font-weight:600">{{ d.l }}</span><span style="font-size:12.5px;color:var(--mu)">{{ d.sub }}</span></button></sc-for>
         </div>
       </sc-if>
+      <sc-if value="{{ sheetHow }}" hint-placeholder-val="{{ false }}">
+        <div class="scr" style="padding:8px 20px 22px;display:flex;flex-direction:column;gap:12px;overflow-y:auto">
+          <span style="font:700 20px 'Noto Serif',serif">{{ howT }}</span>
+          <span style="font-size:14px;color:var(--mu);line-height:1.45">{{ howSub }}</span>
+          <sc-for list="{{ howSteps }}" as="h" hint-placeholder-count="4"><div style="display:flex;gap:12px;align-items:flex-start"><span style="flex:none;width:28px;height:28px;border-radius:14px;background:var(--prs);color:var(--pr);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">{{ h.n }}</span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">{{ h.t }}</span><span style="font-size:13.5px;color:var(--mu);line-height:1.4">{{ h.d }}</span></div></div></sc-for>
+          <span style="font-size:13.5px;line-height:1.45;padding:10px 12px;border-radius:12px;background:var(--sf2)">{{ howAfter }}</span>
+          <button onClick="{{ closeSheet }}" style="width:100%;height:50px;border-radius:14px;border:0;background:var(--pr);color:var(--onpr);font-size:15px;font-weight:600;cursor:pointer">Понятно</button>
+        </div>
+      </sc-if>
       <sc-if value="{{ sheetBackup }}" hint-placeholder-val="{{ false }}">
         <div style="padding:8px 20px 22px;display:flex;flex-direction:column;gap:10px">
           <span style="font:700 20px 'Noto Serif',serif">Резервная копия</span>
@@ -532,7 +542,7 @@ const uniq=a=>[...new Set(a)];
 const dk=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 const ago=n=>new Date(Date.now()-n*864e5);
 // ---- Mao 3.0 (design v8) ----
-const APPV='3.1';
+const APPV='3.2';
 const MNAME=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 // Material Symbols Rounded, bundled offline as fonts/icons.woff (only these glyphs)
 const ICONS={check:'',today:'',book:'',forum:'',settings:'',more:'',less:'',cat:'',list:'',tr:'',help:''};
@@ -585,7 +595,7 @@ class Component extends DCLogic {
   bulkRef=React.createRef();
   importWords(e){const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(txt=>this.importText(txt));}
   importText(txt){{try{let d=JSON.parse(txt);if(!Array.isArray(d))d=d.words;if(!Array.isArray(d))throw 0;let s=this.state;let id=s.nextId;const have=new Set(s.words.map(w=>w.h));const add=d.filter(o=>o&&o.h&&!have.has(o.h)).map(o=>{const e=window.EDict&&EDict.find(String(o.h));const own=String(o.m||o.ru||'');const ok=/[а-яё]/i.test(own);return {id:id++,h:String(o.h),p:toMarks(String(o.p||''))||(e&&e.p)||'',m:ok?own:((e&&e.m)||''),mSrc:ok?'user':(e&&e.m?(e.src||'m'):'none'),k:e?e.key:'',d:+o.d||+o.lesson||s.cur||1,s:'new',due:false,hsk:o.hsk!=null?!!o.hsk:!!(e&&e.hsk),ex:o.ex||null,mn:null};});if(!s.cur&&add.length&&!s.lessons.length){s={...s,cur:1};}const ls=[...s.lessons];add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);this.upd({words:[...s.words,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0});this.toast('Загружено '+add.length+' '+pl(add.length,WF)+(d.length>add.length?' · '+(d.length-add.length)+' уже были':''));}catch(er){this.toast('Не удалось прочитать файл');}}}
-  PK=['m31','study','myRu','m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
+  PK=['howSeen','m31','study','myRu','m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
   defaults(){return {m31:1,m30:1,myRu:{},study:null,m28:1,lessonSize:20,dailyNew:10,aiProv:'free',aiKeys:{},topicSel:null,srs:'on',pal:'indigo',th:'system',perDay:10,method:'fast',chunk:5,quickN:15,hint:'ru',rate:0.85,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'first'};}
   load(){try{const d=JSON.parse(localStorage.getItem(KEY));return d&&d.words?d:null;}catch(e){return null;}}
   state={...this.defaults(),...(migrate(this.load())||{}),tab:'home',screen:(this.load()||{}).onboarded?'tab':'goal',obStep:0,gd:null,topicOwn:'',mN:null,wRes:null,wIdx:0,bulkT:'',bulkAlt:{},bulkSkip:{},bulkFrom:'tab',apiMs:'',apiOk:false,q:'',catI:0,catFlip:false,catSay:null,catWalking:false,chat:[],sheet:null,addMode:'one',aq:'',addDay:null,addFrom:'tab',partsOpen:false,calM:null,more1:false,upd:null,wPeekS:false,chatQ:'',chatBusy:false,wSeg:'lessons',filter:'all',view:null,quiz:null,result:null,ex:null,edit:null,toast:null,man:{h:'',p:'',m:''},manOpen:false,clBusy:false};
@@ -602,9 +612,12 @@ class Component extends DCLogic {
     // a second finger while drawing is ignored; a very wide touch (palm) too, but with a hint
     if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
     if(e.pointerType==='touch'&&((e.width||0)>90||(e.height||0)>90)){if(!this.wPalmT||Date.now()-this.wPalmT>4000){this.wPalmT=Date.now();this.wSay('Касание слишком широкое — ведите кончиком пальца');}return;}
-    this.wcCanvas=c;const k=this.wFit(c);this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;const [x,y]=this.wPt(e),g=c.getContext('2d');
-    this.wK=k;this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid']*k;this.wf=1;this.lt=performance.now();g.strokeStyle=this.wInkC||(this.wInkC=getComputedStyle(c).color);g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);if(this.state.wMsg)this.setState({wMsg:null});if(!this.state.wHas)this.setState({wHas:true});}
-  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const g=c.getContext('2d');
+    this.wcCanvas=c;const k=this.wFit(c);this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;window.__maoInk=true;const [x,y]=this.wPt(e),ov=this.wOv(),g=(ov||c).getContext('2d');if(ov)g.clearRect(0,0,ov.width,ov.height);
+    this.wK=k;this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid']*k;this.wf=1;this.lt=performance.now();g.strokeStyle=this.wInkC||(this.wInkC=getComputedStyle(c).color);g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);}
+  // the finger's line is drawn on a transparent layer above the cell: redraws of the cell (hints, animations) never touch it
+  wOv(){const c=this.wcEl();const o=c&&c.parentNode?c.parentNode.querySelector('canvas[data-ov]'):null;if(o&&(o.width!==c.width||o.height!==c.height)){o.width=c.width;o.height=c.height;}return o;}
+  wOvClear(){const o=this.wOv();if(o)o.getContext('2d').clearRect(0,0,o.width,o.height);}
+  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const ov=this.wOv(),g=(ov||c).getContext('2d');
     // Android sends one event per frame; the points in between are in getCoalescedEvents()
     const evs=(e.getCoalescedEvents&&e.getCoalescedEvents())||[];const list=evs.length?evs:[e];const S=this.wS&&this.wS[this.wS.length-1];
     for(const ev of list){const [x,y]=this.wPt(ev),[px,py]=this.lp0;
@@ -612,7 +625,7 @@ class Component extends DCLogic {
       if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
       const mx=(x+px)/2,my=(y+py)/2;g.lineWidth=this.wBase*this.wf;g.beginPath();g.moveTo(this.lm[0],this.lm[1]);g.quadraticCurveTo(px,py,mx,my);g.stroke();this.lm=[mx,my];this.lp0=[x,y];
       if(S)S.push([x/c.width,y/c.height,this.wf]);}}
-  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;this.wSnapLast();}
+  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;window.__maoInk=false;if(this.state.wMsg)this.setState({wMsg:null});this.wSnapLast();this.wOvClear();}
   // compound word, one cell per character: when the character has all its strokes and the finger rests 1 s, go to the next one
   wAuto(){const s=this.state,qz=s.quiz;clearTimeout(this.wAutoT);if(!qz||qz.rev)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const n=[...w.h].length,idx=s.wIdx||0;
     return;const R=this.wCurRef();if(!R||(this.wS||[]).length<R.length)return;
@@ -628,8 +641,8 @@ class Component extends DCLogic {
     const u=bb(U),f=bb(F);const su=Math.max(u[2]-u[0],u[3]-u[1]),sf=Math.max(f[2]-f[0],f[3]-f[1]);if(su<.05||sf<.05)return null;const k=Math.max(.45,Math.min(1.6,sf/su));
     return {k,ux:(u[0]+u[2])/2,uy:(u[1]+u[3])/2,fx:(f[0]+f[2])/2,fy:(f[1]+f[3])/2};}
   wSnapLast(){const s=this.state;this.wS=this.wS||[];this.wMeta=this.wMeta||[];this.wMiss=this.wMiss||{};this.wRaw=this.wRaw||[];const j=this.wS.length-1;const S=this.wS[j];if(!S)return;
-    const R=this.wCurRef();if(!R){this.wMeta[j]={k:-1};this.setState({wN:this.wS.length});return;}const thr={soft:.21,normal:.17,strict:.12}[s.wMatch||'normal'];
-    const used=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));if(exp==null)return;
+    const R=this.wCurRef();if(!R){this.wMeta[j]={k:-1};this.setState({wN:this.wS.length,wHas:true});this.wRender();return;}const thr={soft:.21,normal:.17,strict:.12}[s.wMatch||'normal'];
+    const used=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));if(exp==null){this.wS.pop();this.wRender();return;}
     const xf=this.wFitXf(R);const T=xf?S.map(p=>[(p[0]-xf.ux)*xf.k+xf.fx,(p[1]-xf.uy)*xf.k+xf.fy]):S;
     const nrm=a=>{let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;a.forEach(p=>{x0=Math.min(x0,p[0]);y0=Math.min(y0,p[1]);x1=Math.max(x1,p[0]);y1=Math.max(y1,p[1]);});const m=Math.max(x1-x0,y1-y0,.02);return {pts:a.map(p=>[(p[0]-(x0+x1)/2)/m,(p[1]-(y0+y1)/2)/m]),cx:(x0+x1)/2,cy:(y0+y1)/2,m};};
     const ang=st=>Math.atan2(st[st.length-1][1]-st[0][1],st[st.length-1][0]-st[0][0]);const dAng=(x,y)=>{let d=Math.abs(x-y);return d>Math.PI?2*Math.PI-d:d;};
@@ -649,7 +662,7 @@ class Component extends DCLogic {
     const done=new Set(this.wMeta.filter(m=>m&&m.k>=0).map(m=>m.k)).size;if(done>=R.length)this.wCharDone();}
   // all strokes of the character are right: next character, or the word is done and graded
   wCharDone(){const s=this.state,qz=s.quiz;if(!qz||qz.rev)return;const w=this.W(qz.ids[qz.i]);if(!w)return;const n=[...w.h].length,idx=s.wIdx||0;this.wSave();clearTimeout(this.wNextT);
-    if(idx<n-1){this.wSay('Знак '+(idx+1)+' готов');this.wGo(idx+1);return;}
+    if(idx<n-1){this.wSay('Иероглиф '+(idx+1)+' готов');this.wGo(idx+1);return;}
     const mist=this.wMist||0,help=(this.wHelped||0)+(this.wPeek?1:0);const ok=help===0&&mist<=({soft:3,normal:2,strict:1}[s.wMatch||'normal']);
     this.setState({wDone:{ok,mist,help}});try{this.speak(w.h);}catch(e){}
     if(qz.kind==='trace'||ok){this.wNextT=setTimeout(()=>{if(this.state.quiz===qz)this.answer(true);},qz.kind==='trace'?700:900);return;}
@@ -666,7 +679,7 @@ class Component extends DCLogic {
     const ol=css.getPropertyValue('--ol').trim()||'#D2D2DC';const gm=s.wGhost||'first';if(R&&!qz.rev&&(this.wPeek||gm==='on'||(gm==='first'&&qz.kind==='trace'))){if(OP){g.fillStyle=ol;g.globalAlpha=1;OP.forEach(p=>g.fill(p));g.globalAlpha=1;}else{g.strokeStyle=mu;g.globalAlpha=.22;R.forEach(st=>this.wBrush(g,st.map(P),lw*1.7));g.globalAlpha=1;}}
     const red=css.getPropertyValue('--seal').trim()||'#c8372d',prc=css.getPropertyValue('--pr').trim()||'#5b5bd6';
     const an=this.wSnapAn,now=performance.now();let anim=false;
-    (this.wS||[]).forEach((st,j)=>{const m=(this.wMeta||[])[j];const snapped=m&&m.k>=0;
+    (this.wS||[]).forEach((st,j)=>{if(this.drw&&j===this.wS.length-1)return;const m=(this.wMeta||[])[j];const snapped=m&&m.k>=0;
       if(snapped&&OP&&OP[m.k]){g.fillStyle=ink;g.strokeStyle=ink;const pr=an&&an.j===j?Math.min(1,(now-an.t0)/240):1;if(pr<1){anim=true;const raw=(this.wRaw||[])[j];if(raw&&raw.length>1){g.save();g.globalAlpha=.55*(1-pr);g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();raw.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();g.strokeStyle=ink;}this.wInk(g,OP[m.k],R[m.k],W,H,pr);}else g.fill(OP[m.k]);return;}
       g.globalAlpha=snapped?1:.6;g.strokeStyle=snapped?ink:(j===this.wFlash?red:mu);if(snapped)this.wBrush(g,st.map(P),lw*1.25);else{g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();st.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();}g.globalAlpha=1;});
     const bd=this.wBad;if(bd){const pr=(now-bd.t0)/450;if(pr<1){anim=true;g.save();g.globalAlpha=.85*(1-pr);g.strokeStyle=red;g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();bd.pts.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();}else this.wBad=null;}
@@ -677,9 +690,9 @@ class Component extends DCLogic {
         const a=P(st[0]);g.fillStyle=prc;g.beginPath();g.arc(a[0],a[1],11*KZ,0,7);g.fill();g.fillStyle='#fff';g.font='600 '+Math.round(13*KZ)+'px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText(String(exp+1),a[0],a[1]+.5);
         if(st.length>1){const e=P(st[st.length-1]),f=P(st[Math.max(0,st.length-3)]);const an=Math.atan2(e[1]-f[1],e[0]-f[0]),A=14*KZ;g.fillStyle=prc;g.beginPath();g.moveTo(e[0]+Math.cos(an)*A,e[1]+Math.sin(an)*A);g.lineTo(e[0]+Math.cos(an+2.5)*A,e[1]+Math.sin(an+2.5)*A);g.lineTo(e[0]+Math.cos(an-2.5)*A,e[1]+Math.sin(an-2.5)*A);g.closePath();g.fill();}
         g.globalAlpha=1;}}}
-  wClear(){clearInterval(this.wAnimT);const c=this.wcEl();if(c)c.getContext('2d').clearRect(0,0,c.width,c.height);this.wS=[];this.wMeta=[];this.wMiss={};this.wHint=false;if(this.state.wHas||this.state.wN)this.setState({wHas:false,wN:0});setTimeout(()=>this.wRender(),30);}
+  wClear(){clearInterval(this.wAnimT);const c=this.wcEl();if(c)c.getContext('2d').clearRect(0,0,c.width,c.height);this.wOvClear();this.wS=[];this.wMeta=[];this.wMiss={};this.wHint=false;if(this.state.wHas||this.state.wN)this.setState({wHas:false,wN:0});setTimeout(()=>this.wRender(),30);}
   wSave(){const i=this.state.wIdx||0;this.wCells=this.wCells||[];this.wCells[i]={S:(this.wS||[]).slice(),M:(this.wMeta||[]).slice(),W:(this.wRaw||[]).slice()};}
-  wGo(k){clearTimeout(this.wAutoT);clearInterval(this.wAnimT);if(!(this.state.quiz&&this.state.quiz.rev))this.wSave();const c=(this.wCells||[])[k]||{S:[],M:[],W:[]};this.wS=c.S.slice();this.wMeta=c.M.slice();this.wRaw=(c.W||[]).slice();this.wMiss={};this.wHint=false;this.wBad=null;this.wSnapAn=null;this.drw=false;this.setState({wIdx:k,wHas:this.wS.length>0,wN:this.wS.length},()=>this.wRender());}
+  wGo(k){clearTimeout(this.wAutoT);clearInterval(this.wAnimT);if(!(this.state.quiz&&this.state.quiz.rev))this.wSave();const c=(this.wCells||[])[k]||{S:[],M:[],W:[]};this.wS=c.S.slice();this.wMeta=c.M.slice();this.wRaw=(c.W||[]).slice();this.wMiss={};this.wHint=false;this.wBad=null;this.wSnapAn=null;this.drw=false;window.__maoInk=false;this.wOvClear();this.setState({wIdx:k,wHas:this.wS.length>0,wN:this.wS.length},()=>this.wRender());}
   wReset(){clearTimeout(this.wAutoT);clearTimeout(this.wNextT);if(this.state.wPeekS)this.setState({wPeekS:false});this.wCells=[];this.wRaw=[];this.wBad=null;this.wSnapAn=null;this.wRect=null;this.wHelped=0;this.wMist=0;this.wPeek=false;if(this.state.wMsg)this.setState({wMsg:null});if(this.state.wDone)this.setState({wDone:null});this.wWarned=false;this.wHint=false;this.wS=[];this.wClear();if(this.state.wWarn)this.setState({wWarn:null});if(this.state.wRes||this.state.wIdx)this.setState({wRes:null,wIdx:0});}
   wNext(){this.wGo((this.state.wIdx||0)+1);}
   wLayout(n){const fs=n<=1?186:n===2?114:n===3?80:62;const W=288;const tot=Math.min(W,fs*n);return {x0:(W-tot)/2/W,w:tot/W};}
@@ -742,7 +755,7 @@ class Component extends DCLogic {
     try{const full=await this.aiChat(msgs,t=>put({r:'ai',t:clean(t),live:true}));put({r:'ai',t:clean(full)||'…'});}
     catch(e){put({r:'ai',t:this.offlineMao(txt),note:aiErr(e)+' — ответ из словаря'});}
     if((this.chatSeq||0)===seq)this.setState({chatBusy:false});}
-  componentDidMount(){window.__app=this;setTimeout(()=>{if(window.WCheck&&WCheck.loadOutlines)WCheck.loadOutlines().then(()=>this.wRender());},1500);if(window.Explain)Explain.load().then(()=>this.forceUpdate());if(window.__updQ){window.__updQ.forEach(u=>this.onUpdate(u));window.__updQ=null;}setTimeout(()=>this.fixRu(),2500);window.EDict&&EDict.onReady(()=>setTimeout(()=>this.fixRu(),800));window.EDict&&EDict.onReady(()=>this.forceUpdate());window.WCheck&&setTimeout(()=>WCheck.load(),1500);this.mq=window.matchMedia('(prefers-color-scheme: dark)');this.mqh=()=>this.forceUpdate();this.mq.addEventListener?.('change',this.mqh);}
+  componentDidMount(){window.__app=this;setTimeout(()=>{if(window.WCheck&&WCheck.loadOutlines)WCheck.loadOutlines().then(()=>this.idle(()=>this.wRender()));},300);if(window.Explain)Explain.load().then(()=>this.idle(()=>this.forceUpdate()));if(window.__updQ){window.__updQ.forEach(u=>this.onUpdate(u));window.__updQ=null;}setTimeout(()=>this.fixRu(),2500);window.EDict&&EDict.onReady(()=>setTimeout(()=>this.fixRu(),800));window.EDict&&EDict.onReady(()=>this.idle(()=>this.forceUpdate()));window.WCheck&&setTimeout(()=>WCheck.load(),1500);this.mq=window.matchMedia('(prefers-color-scheme: dark)');this.mqh=()=>this.forceUpdate();this.mq.addEventListener?.('change',this.mqh);}
   componentWillUnmount(){this.mq?.removeEventListener?.('change',this.mqh);clearInterval(this.si);clearTimeout(this.tt);}
   thId(){const t=this.state.th;return t==='system'?(this.mq?.matches?'d':'l'):t==='dark'?'d':'l';}
   dw(n,w=this.state.words){return w.filter(x=>x.d===n);}
@@ -802,7 +815,7 @@ class Component extends DCLogic {
       const L=s.lessons.find(l=>l.n===st.day)||{};const w2=words.map(w=>hard.includes(w.id)?{...w,due:true,s:'hard',box:0,next:iso(new Date(Date.now()+864e5))}:w);
       return this.upd({words:w2,quiz:null,study:null,screen:'result',result:{...r,title:'Урок '+st.day+' · '+(L.t||''),sub:'Новые слова выучены',hard},...this.touch({min:this.mins(st.t0)})});}
     this.upd({words,quiz:null,screen:'result',result:{...r,title:q.title==='Прописи'?'Прописи готовы':q.title+' — готово',sub:'',hard:nq.ever},...this.touch({min:this.mins(q.t0),rv:nq.total})});}
-  startStudy(day){const s=this.state;day=day??s.cur;
+  startStudy(day){const s=this.state;day=day??s.cur;if(!s.howSeen)setTimeout(()=>{if(this.state.study)this.upd({howSeen:1,sheet:'howto'});},300);
     if(s.study&&s.study.day===day){const st=s.study;const go=p=>this.setState({q:'',ex:null,sheet:null,...p});
       if(st.phase==='mc'){const mc=st.mcSave||(s.mc&&s.mc.kind!=='test'?s.mc:null)||this.mkMc((st.batch&&st.batch.length?st.batch:(st.done||[]).slice(-5)),(s.method||'fast')==='snow'?'alt':'both');return go({screen:'mc',mc,study:{...st,mcSave:null}});}
       if(st.phase==='trace'){const id=(st.batch||[])[st.batch.length-1];if(id)return go({screen:'quiz',quiz:this.mkQuiz([id],'Обведите знак','trace')});return this.fastAfter(st,{quiz:null});}
@@ -822,7 +835,7 @@ class Component extends DCLogic {
     this.upd({...extra,study:{...st,phase:'quiz'},quiz:this.mkQuiz(learned,'Письмо по памяти','check'),screen:'quiz'});}
   // both = every word asked twice (character → meaning, meaning → character); alt = once, direction alternates
   mkMc(ids,mode){const sh=shuffle(ids);const items=mode==='alt'?sh.map((id,i)=>({id,dir:i%2?'m2h':'h2m'})):[...sh.map(id=>({id,dir:'h2m'})),...shuffle(ids).map(id=>({id,dir:'m2h'}))];return {kind:'lesson',items,i:0,pick:null,ever:[],total:items.length,opts:this.mcOpts(items[0])};}
-  mcOpts(it){const w=this.W(it.id);if(!w)return [];const sh=m=>String(m||'').split(/[;(]/)[0].trim().slice(0,30);const key=it.dir==='h2m'?(x=>sh(x.m)):(x=>x.h);
+  mcOpts(it){const w=this.W(it.id);if(!w)return [];const sh=m=>{let t=String(m||'').split(/[;(]/)[0].trim();if(t.length>28){const ps=t.split(/,\s*/);t=ps[0];for(const x of ps.slice(1)){if(t.length+x.length>24)break;t+=', '+x;}if(t.length>28)t=t.slice(0,28).replace(/\s+\S*$/,'')+'…';}return t.replace(/[\s,.:]+$/,'');};const key=it.dir==='h2m'?(x=>sh(x.m)):(x=>x.h);
     const right=key(w),pool=[],len=[...w.h].length;const add=x=>{const k=key(x);if(k&&k!==right&&!pool.includes(k)&&x.h!==w.h&&(it.dir==='h2m'||/[㐀-鿿]/.test(k)))pool.push(k);};
     shuffle(this.state.words.filter(x=>x.id!==it.id&&this.mOk(x))).slice(0,6).forEach(add);
     (window.EDict&&EDict.ready()?EDict.sample(10,len):[]).forEach(add);
@@ -924,7 +937,9 @@ class Component extends DCLogic {
     return (w.k&&L.find(e=>e.key===w.k))||L.find(e=>nz(e.p)===nz(w.p)&&e.m)||L.find(e=>nz(e.p)===nz(w.p))||L.find(e=>e.m)||L[0];}
   // meaning for a new word: the user's own translation of this word, else the dictionary, else none (shown honestly)
   ruFor(e){const my=(this.state.myRu||{})[e.key||e.h];if(my)return {m:my,mSrc:'user'};if(e.m&&/[а-яё]/i.test(e.m))return {m:e.m,mSrc:e.src||'m'};return {m:'',mSrc:'none'};}
-  fixRu(){const s=this.state;if(!window.EDict||!EDict.ready())return;
+  // run f when the finger is not on the writing cell (a full re-render mid-stroke makes the line jerk)
+  idle(f){if(this.drw)return setTimeout(()=>this.idle(f),200);f();}
+  fixRu(){const s=this.state;if(!window.EDict||!EDict.ready())return;if(this.drw)return setTimeout(()=>this.fixRu(),300);
     if(!s.m29fix){let fixed=0,flag=0;const t0=new Date();const words=s.words.map(w=>{let x=w;const e=EDict.find(w.h);
         if(!w.mEdited&&e&&e.m&&/[а-яё]/i.test(e.m)&&w.m!==e.m&&!this.ruNeed(w.m)){x={...x,m:e.m,mSrc:null};fixed++;}
         else if(!w.mEdited&&(!e||!e.m||!/[а-яё]/i.test(e.m))&&w.m&&!this.ruNeed(w.m)&&!/^нет перевода/.test(w.m)){x={...x,mSrc:'ai'};flag++;}
@@ -1013,13 +1028,14 @@ class Component extends DCLogic {
     else hero={t:'На сегодня всё',sub:'Завтра — урок '+(cur+1)+' · '+topic+'. Хочется ещё — можно начать сейчас.',btn:s.clBusy?'Подбираю слова…':'Ещё урок: '+topic,go:()=>!s.clBusy&&this.moreLesson(),chips:[],done:true,link:true,linkL:'Другая тема для следующего урока'};
     const stp=(st,l,r)=>({l,r,mk:st==='done'?IC.check:'',dot:st==='now'?'block':'none',bg:st==='done'?'var(--oks)':st==='now'?'var(--pr)':'transparent',fg:'var(--ok)',bd:st==='done'?'var(--oks)':st==='now'?'var(--pr)':'var(--ln)',fw:st==='now'?600:500,tc:st==='later'?'var(--mu)':'var(--ink)'});
     const lessonState=!hasCur?'later':newW.length?(dueN&&!stIn?'later':'now'):nextDay?(dueN?'later':'now'):curW.length?'done':'now';
-    const steps=[stp(dueN?(stIn?'later':'now'):'done','Повторение',dueN?dueN+' '+pl(dueN,WF):'готово'),
+
+    const steps=[knownN||dueN?stp(dueN?(stIn?'later':'now'):'done','Повторение',dueN?dueN+' '+pl(dueN,WF):'на сегодня всё'):stp('later','Повторение','начнётся после урока'),
       nextDay?stp(lessonState,'Урок '+(cur+1)+' · '+topic,daily+' '+pl(daily,['новое','новых','новых'])):
       stp(lessonState,hasCur?lessonL(cur):'Урок 1 · '+topic,hasCur?(newW.length?newW.length+' '+pl(newW.length,['новое','новых','новых']):curW.length?'выучен':'пуст'):daily+' '+pl(daily,['новое','новых','новых']))];
     const hardW=ws.filter(w=>w.s==='hard');
     const tiles=[{zh:'难',c:'var(--bad)',l:'Трудные',sub:hardW.length?hardW.length+' '+pl(hardW.length,WF):'нет',go:()=>hardW.length?this.startTest('hard'):this.toast('Трудных слов нет — так держать')},
-      {zh:'考',c:'var(--pr)',l:'Тест',sub:'10 слов',go:()=>this.startTest('quick')},
-      {zh:'写',c:'var(--ac)',l:'Прописи',sub:'5 слов от руки',go:()=>this.startTest('write')}];
+      {zh:'考',c:'var(--pr)',l:'Тест',sub:knownN?'10 слов':'после урока',go:()=>this.startTest('quick')},
+      {zh:'写',c:'var(--ac)',l:'Прописи',sub:knownN?'5 слов от руки':'после урока',go:()=>this.startTest('write')}];
     const mon=(()=>{const d=day0(new Date());d.setDate(d.getDate()-((d.getDay()+6)%7));return d;})();const t0=day0(new Date());
     const week=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map((l,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);const e=s.log[dk(d)]||{};const done=(e.min||0)+(e.nw||0)+(e.rv||0)>0&&!e.fz;const now=+d===+t0;return {l,mk:done?IC.check:'',bg:done?'var(--prs)':'transparent',bd:now?'var(--pr)':done?'var(--prs)':'var(--ln)'};});
     const recent=[...known].sort((a,b)=>(b.lt||b.id)-(a.lt||a.id)).slice(0,10).map(w=>({h:w.h,p:w.p,m:shortM(w.m),open:openW(w.id)}));
@@ -1045,12 +1061,12 @@ class Component extends DCLogic {
     // ---------- run: card / mc / quiz ----------
     const st=s.study,les=!!st,snow=(s.method||'fast')==='snow';let runPct=0,runLabel='';
     let card={};const cw=scr==='learn'&&st?this.W(st.ids[st.li]):null;
-    if(cw){const n=st.ids.length;runPct=Math.max(4,st.li/n*33);runLabel=(snow?'Снежный ком · слово ':'Знакомство · ')+(st.li+1)+' из '+n;
+    if(cw){const n=st.ids.length;runPct=Math.max(4,st.li/n*33);runLabel='слово '+(st.li+1)+' из '+n;
       const parts=cw.mn?(cw.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(cw.mn.note?'\n'+cw.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(cw.h):'');
       card={...this.cardData(cw.h,cw.p,{m:cw.m,mSrc:cw.mSrc,mn:cw.mn,tag:'learn'}),h:cw.h};}
     const mc=s.mc;let mcv={opts:[]};
     if(scr==='mc'&&mc&&mc.items[mc.i]){const it=mc.items[mc.i],w=this.W(it.id)||{h:'',p:'',m:''},pk=mc.pick,h2m=it.dir==='h2m';const left=mc.items.length-mc.i;const p=mc.i/mc.items.length;
-      runPct=Math.max(4,les?33+p*33:p*100);runLabel=(snow&&les?'Снежный ком · проверка · осталось ':'Выбор · осталось ')+left;
+      runPct=Math.max(4,les?33+p*33:p*100);runLabel=les?'вопросов осталось: '+left:'Выбор · осталось '+left;
       const wrong=pk!=null&&!mc.opts[pk].ok;
       mcv={ask:h2m?'Что значит?':'Какой иероглиф?',prompt:h2m?w.h:shortM(w.m),fs:h2m?(w.h.length>2?64:84):26,ff:h2m?"'Noto Serif SC',serif":"'Noto Sans',sans-serif",p:w.p,pOp:pk!=null?1:0,back:wrong,
         opts:mc.opts.map((o,k)=>{const isOk=o.ok,isPick=k===pk;let bg='var(--sf)',bd='var(--ln)',fg='var(--ink)';if(pk!=null){if(isOk){bg='var(--oks)';bd='var(--ok)';fg='var(--ok)';}else if(isPick){bg='var(--bads)';bd='var(--bad)';fg='var(--bad)';}else fg='var(--mu)';}
@@ -1059,8 +1075,8 @@ class Component extends DCLogic {
     const wScr=!!qz&&(qz.write||wm==='screen')&&!!window.WCheck;
     if(scr==='quiz'&&qz){const w=this.W(qz.ids[Math.min(qz.i,qz.ids.length-1)])||{h:'',p:'',m:''};const n=qz.ids.length;
       qv={h:w.h,p:w.p,m:shortM(w.m),fs:w.h.length>2?72:w.h.length>1?96:130};
-      if(qz.kind==='trace'){const b=st&&st.batch?st.batch.length:0;runPct=Math.max(4,(st?st.li/st.ids.length:0)*33);runLabel='Обводка · '+(st?st.li:1)+' из '+(st?st.ids.length:1);}
-      else if(qz.kind==='check'){runPct=66+qz.i/n*34;runLabel='Письмо · '+Math.min(qz.i+1,n)+' из '+n+(qz.round>1?' · круг '+qz.round:'');}
+      if(qz.kind==='trace'){const b=st&&st.batch?st.batch.length:0;runPct=Math.max(4,(st?st.li/st.ids.length:0)*33);runLabel='слово '+(st?st.li:1)+' из '+(st?st.ids.length:1);}
+      else if(qz.kind==='check'){runPct=66+qz.i/n*34;runLabel=(st?'':'Письмо · ')+'слово '+Math.min(qz.i+1,n)+' из '+n+(qz.round>1?' · круг '+qz.round:'');}
       else{runPct=Math.max(4,qz.i/n*100);runLabel=qz.title+' · '+Math.min(qz.i+1,n)+' из '+n+(qz.round>1?' · круг '+qz.round:'');}}
     const runOn=(scr==='learn'&&!!cw)||(scr==='mc'&&!!mc)||(scr==='quiz'&&!!qz);
 
@@ -1120,7 +1136,7 @@ class Component extends DCLogic {
           deRows:lw.map(w=>({h:w.h,p:w.p||'',m:w.m||'',mph:this.mOk(w)?'':'русского перевода в словаре нет — впишите',mbd:!this.mOk(w)?'var(--ac)':'var(--ln)',onP:e=>this.deWord(w.id,'p',e.target.value),onM:e=>this.deWord(w.id,'m',e.target.value),del:()=>this.deDel(w.id)})),
           deBack:()=>{this.deCommit();this.setState({screen:'tab',tab:'words',de:null});},deNeed:lw.filter(w=>!this.mOk(w)).length,deAdd:()=>this.openAdd(de.n,'one',null,'dayEdit')};})(),
       // run
-      runPct,runLabel,exitRun:()=>this.exit(),
+      runPct,runLabel,exitRun:()=>this.exit(),...this.howVals(),
       card,speakCard:()=>cw&&this.speak(cw.h),partsOpen:!!s.partsOpen,partsIc:s.partsOpen?IC.less:IC.more,tglParts:()=>this.setState({partsOpen:!s.partsOpen}),
       learnNextB:()=>this.learnNext(false),learnKnownB:()=>this.learnNext(true),
       mcv,
@@ -1200,14 +1216,16 @@ class Component extends DCLogic {
     let d=E?E.detailsNow(h):null;if(d===undefined){E.details(h).then(()=>this.forceUpdate());}
     let sen=[],pos='';if(d&&d.b){const all=[];d.b.forEach(b=>b.s.forEach(x=>all.push({...x,y:x.y||b.y||[],pos:b.pos||''})));const anyY=all.some(x=>x.y.length);
       sen=anyY?all.filter(x=>x.y.some(y=>EDict.sameReading(y,p))):all;if(!sen.length&&!anyY)sen=all;pos=(sen[0]&&sen[0].pos)||'';}
-    const nS=o.full?8:3,nX=o.full?2:1;const senV=sen.filter(x=>x.t).slice(0,nS).map((x,i)=>({n:i+1+'.',t:x.t,xs:(x.x||[]).slice(0,nX).map(q=>({zh:q[0],py:q[1]||'',ru:q[2]}))}));
-    const src=o.mSrc;const meta=[e&&e.lv?'HSK '+e.lv:'',pos,e&&e.cl?'сч. слово '+e.cl.split(',')[0]:'',src==='b'?'перевод: БКРС':src==='user'?'свой перевод':src==='m'?'перевод: Mao':src==='ai'?'перевод нейросети — проверьте':''].filter(Boolean).join(' · ');
+    const nS=o.full?8:3,nX=o.full?2:1;const nzR=t=>String(t||'').toLowerCase().replace(/ё/g,'е').replace(/[^а-яa-z]+/g,' ').trim();const mainR=nzR(o.m);
+    if(o.tag==='learn'&&sen.length&&mainR&&nzR(String(sen[0].t).replace(/\(.*?\)/g,'')).split(' ').filter(x=>x.length>2).every(x=>mainR.includes(x)))sen=sen.slice(1);
+    const senV=sen.filter(x=>x.t).slice(0,nS).map((x,i)=>({n:i+1+'.',t:x.t,xs:(x.x||[]).slice(0,nX).map(q=>({zh:q[0],py:q[1]||'',ru:q[2]}))}));
+    const src=o.mSrc,lrn=o.tag==='learn';const meta=[e&&e.lv?'HSK '+e.lv:'',pos,e&&e.cl?'сч. слово '+e.cl.split(',')[0]:'',src==='b'&&!lrn?'перевод: БКРС':src==='user'?'свой перевод':src==='m'&&!lrn?'перевод: Mao':src==='ai'?'перевод нейросети — проверьте':''].filter(Boolean).join(' · ');
     const rd=n===1&&E?E.readings(h).filter(r=>nz(r.p)!==nz(p)&&r.m).slice(0,4).map(r=>r.p+' — '+shortM(r.m)).join('; '):'';
     const parts=o.mn?(o.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(o.mn.note?'\n'+o.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(h):'');
     const key=(o.tag||'c')+'|'+h;const animOn=!!(this.state.animK===key);
     return {cs:ch.map((c,i)=>({c,py:syl?syl[i]:''})),pyLine:!syl,p,gap:n>3?4:8,fs,pfs:n>3?15:18,m:o.m||'',noRu:!o.m,hasMeta:!!meta,meta,say:()=>this.speak(h),
       canAnim:!!(window.WCheck&&WCheck.ready()&&ch.some(c=>WCheck.has(c))),anim:()=>this.setState({animK:animOn?null:key}),animOn,animRef:el=>{if(el&&el.dataset.k!==h){el.dataset.k=h;this.sAnim(el,h);}},
-      hasSen:senV.length>0,sen:senV,senL:'ЗНАЧЕНИЯ · БКРС',exNote:senV.some(x=>x.xs.length)?'Пиньинь в примерах подобран автоматически по словарю — возможны неточности в многозначных словах.':'',
+      hasSen:senV.length>0,sen:senV,senL:lrn?'ЗНАЧЕНИЯ':'ЗНАЧЕНИЯ · БКРС',exNote:!lrn&&senV.some(x=>x.xs.length)?'Пиньинь в примерах подобран автоматически по словарю — возможны неточности в многозначных словах.':'',
       loading:d===undefined&&!!E,hasRd:!!rd,rd,hasParts:!!parts,parts};}
   // stroke order: strokes appear one by one in their outlines, character after character
   sAnim(el,h){const c=[...h].filter(x=>window.WCheck&&WCheck.has(x));if(!c.length)return;const r=Math.min(3,window.devicePixelRatio||1);const W=Math.round(150*r);el.width=W;el.height=W;const g=el.getContext('2d');const tok={};this.saTok=tok;
@@ -1218,12 +1236,30 @@ class Component extends DCLogic {
       if(pr>=1){si++;t0=now;if(si>OP.length){si=0;ci=(ci+1)%c.length;t0=now+500;}}requestAnimationFrame(step);};
     requestAnimationFrame(step);}
   practiceWrite(id){const qz=this.mkQuiz([id],'Прописи','test');qz.write=true;this.setState({screen:'quiz',quiz:qz,sheet:null,animK:null});}
+  // ---- where the learner is in the lesson, and how the lesson works (text only; the flow itself is unchanged) ----
+  howVals(){const s=this.state,st=s.study,snow=(s.method||'fast')==='snow',scr=s.screen,qz=s.quiz;const inLesson=!!st&&['learn','mc','quiz'].includes(scr);
+    const names=snow?['Новое слово','Проверка','Письмо']:['Знакомство','Обводка','Выбор','Письмо'];
+    let cur=-1;const lessonQ=!!st&&(scr==='learn'||(scr==='mc'&&s.mc&&s.mc.kind==='lesson')||(scr==='quiz'&&qz&&(qz.kind==='trace'||qz.kind==='check')));if(inLesson){if(scr==='learn')cur=0;else if(scr==='mc')cur=snow?1:2;else if(qz&&qz.kind==='trace')cur=1;else if(qz&&qz.kind==='check')cur=snow?2:3;}
+    const runSteps=names.map((l,i)=>({l,bg:i===cur?'var(--prs)':'transparent',fg:i===cur?'var(--pr)':'var(--mu)',fw:i===cur?600:400}));
+    const B=s.chunk||5,iv='1, 3, 7, 14, 30, 60 и 120 дней';
+    const howSteps=snow?[
+      {n:1,t:'Новое слово',d:'Иероглиф, пиньинь, перевод и звук. «Порядок черт» покажет, как он пишется.'},
+      {n:2,t:'Проверка — «снежный ком»',d:'Со второго слова после каждого нового — короткая проверка: перевод ↔ иероглиф. В неё входят слова этого урока, поэтому ком растёт с каждым словом. Ошиблись — вопрос повторится.'},
+      {n:3,t:'Письмо по памяти',d:'В конце урока напишите каждое слово сами. Забыли — «Подсказка» покажет контур.'}]:[
+      {n:1,t:'Знакомство',d:'Иероглиф, пиньинь, перевод и звук. «Порядок черт» покажет, как он пишется.'},
+      {n:2,t:'Обводка',d:'Сразу после знакомства обведите иероглиф по серому контуру. Цифра — где начать черту, стрелка — куда вести.'},
+      {n:3,t:'Выбор',d:'После каждых '+B+' слов — быстрая проверка: выберите перевод или иероглиф. Ошиблись — вопрос повторится в конце проверки.'},
+      {n:4,t:'Письмо по памяти',d:'В конце урока напишите каждое слово сами. Забыли — «Подсказка» покажет контур.'}];
+    return {runSteps,runStepsOn:lessonQ,runStepsOff:!lessonQ,howOpen:()=>this.setState({sheet:'howto'}),sheetHow:s.sheet==='howto',
+      howT:snow?'Как проходит урок: «Снежный ком»':'Как проходит урок',
+      howSub:'Каждое новое слово проходит '+(snow?'три':'четыре')+' шага — так оно запоминается и на вид, и по смыслу, и рукой.',howSteps,
+      howAfter:'Потом Mao сам напомнит повторить слова — через '+iv+'. Ошибка — слово вернётся завтра.'};}
   // ---- writing screen values (v8 layout, 2.9 stroke checking) ----
   writeVals(qv,wScr){const s=this.state,qz=s.quiz;if(!qz||s.screen!=='quiz')return {wTabs:[]};
     const n=[...(qv.h||'')].length,idx=s.wIdx||0,rev=!!qz.rev,trace=qz.kind==='trace';const D=s.wDone;
     const ghost=(s.wGhost||'first')!=='off'&&trace;
     const tabs=n>1?[...qv.h].map((c,i)=>{const done=i===idx?(s.wN||0)>0:!!((this.wCells||[])[i]&&this.wCells[i].S.length);const on=i===idx;const show=rev||trace;
-      return {l:show?c:String(i+1),fs:show?20:15,al:'Знак '+(i+1),go:()=>i!==idx&&this.wGo(i),bg:on?'var(--prs)':'var(--sf)',bd:on?'var(--pr)':done?'var(--ok)':'var(--ln)',fg:on?'var(--pr)':'var(--ink)'};}):[];
+      return {l:show?c:String(i+1),fs:show?20:15,al:'Иероглиф '+(i+1),go:()=>i!==idx&&this.wGo(i),bg:on?'var(--prs)':'var(--sf)',bd:on?'var(--pr)':done?'var(--ok)':'var(--ln)',fg:on?'var(--pr)':'var(--ink)'};}):[];
     const has=(s.wN||0)>0;const last=idx>=n-1;
     const R0=wScr&&!rev?this.wCurRef():null;
     const okN=((this.wMeta||[]).filter(m=>m&&m.k>=0).length);
@@ -1233,11 +1269,11 @@ class Component extends DCLogic {
       wcRef:el=>{this.wcCanvas=el;},wDown:e=>this.wDown(e),wMove:e=>this.wMove(e),wUp:e=>this.wUp(e),
       wRevOn:wScr&&rev,wCurCh:[...(qv.h||'')][Math.min(idx,Math.max(0,n-1))]||'',
       wOkOn:!!D&&!rev&&(D.ok||trace),wOkL:trace?'Прописано':D&&D.mist?'Верно · ошибок: '+D.mist:'Верно',
-      wAskL:trace?'Обведите знак':wScr?'Напишите по памяти':'Напишите на бумаге',wCount,wCountC:s.wMsg&&s.wMsg.bad?'var(--bad)':'var(--mu)',wCountW:s.wMsg?600:400,
+      wAskL:trace?'Обведите по контуру: от цифры, по стрелке':wScr?'Напишите по памяти':'Напишите на бумаге',wCount,wCountC:s.wMsg&&s.wMsg.bad?'var(--bad)':'var(--mu)',wCountW:s.wMsg?600:400,
       wBtns:wScr&&!rev,undoFg:has||idx>0?'var(--ink)':'var(--mu)',wUndoB:()=>this.wUndo(),
       hintL,hintGo:()=>{if(trace)return this.answer(true);if(hintL==='Подсказка'){this.wPeek=true;this.wHint=true;this.setState({wPeekS:true});this.wRender();return;}this.wSave();this.setState({quiz:{...qz,rev:true}},()=>this.wRender());},
-      doneL:last?'Готово':'Знак '+(idx+2),doneBg:has?'var(--pr)':'var(--sf2)',doneFg:has?'var(--onpr)':'var(--mu)',
-      wDoneB:()=>{if(!(this.wS||[]).length)return this.toast('Сначала напишите знак в клетке');if(!last)return this.wGo(idx+1);if(trace)return this.answer(true);this.wSave();this.setState({quiz:{...qz,rev:true}},()=>this.wRender());},
+      doneL:last?'Готово':'Следующий',doneBg:has?'var(--pr)':'var(--sf2)',doneFg:has?'var(--onpr)':'var(--mu)',
+      wDoneB:()=>{if(!(this.wS||[]).length)return this.toast('Сначала напишите иероглиф в клетке');if(!last)return this.wGo(idx+1);if(trace)return this.answer(true);this.wSave();this.setState({quiz:{...qz,rev:true}},()=>this.wRender());},
       qRev:rev,wHasRes:rev&&!!D,wResL:D?(D.ok?'Черты верные'+(D.mist?' · ошибок: '+D.mist:''):'Ошибок в чертах: '+D.mist+(D.help?' · с подсказкой':'')+' — слово вернётся на повторение'):'',wResC:D&&D.ok?'var(--ok)':'var(--bad)'};}
 
 }

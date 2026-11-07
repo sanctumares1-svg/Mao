@@ -118,7 +118,8 @@
   function loadOutlines() {
     if (omap) return Promise.resolve(omap);
     if (oload) return oload;
-    oload = (window.MaoText ? MaoText('outlines.txt') : fetch('outlines.txt').then(r => { if (!r.ok) throw 0; return r.text(); })).then(t => {
+    const idle = () => new Promise(r => { const f = () => window.__maoInk ? setTimeout(f, 150) : r(); f(); });
+    oload = (window.MaoText ? MaoText('outlines.txt') : fetch('outlines.txt').then(r => { if (!r.ok) throw 0; return r.text(); })).then(t => idle().then(() => t)).then(t => {
       const m = new Map(); let i = 0;
       while (i < t.length) { let j = t.indexOf('\n', i); if (j < 0) j = t.length; const k = t.indexOf('\t', i); if (k > i && k < j) m.set(t.slice(i, k), t.slice(k + 1, j)); i = j + 1; }
       omap = m; return m;

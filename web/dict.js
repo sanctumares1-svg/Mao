@@ -58,9 +58,11 @@
   // parse in slices of ~25 ms so touches and drawing are never blocked while the dictionary loads
   function parseAsync(txt, done) {
     const out = [], freq = new Map(); let pos = 0;
+    // short slices (12 ms leave room for a 60 Hz frame); paused entirely while the finger draws
     const step = () => {
+      if (window.__maoInk) return setTimeout(step, 150);
       const t0 = performance.now();
-      while (pos < txt.length && performance.now() - t0 < 25) {
+      while (pos < txt.length && performance.now() - t0 < 12) {
         for (let k = 0; k < 400 && pos < txt.length; k++) {
           let j = txt.indexOf('\n', pos); if (j < 0) j = txt.length;
           const l = txt.slice(pos, j); pos = j + 1;
@@ -71,7 +73,7 @@
       }
       if (pos < txt.length) return setTimeout(step, 0);
       let k = 0;
-      const fin = () => { const t1 = performance.now(); for (; k < out.length && performance.now() - t1 < 25; k++) { const e = out[k]; let m = 1e9; for (const ch of e.h) m = Math.min(m, freq.get(ch) || 0); e.f = m; } if (k < out.length) return setTimeout(fin, 0); done(out); };
+      const fin = () => { if (window.__maoInk) return setTimeout(fin, 150); const t1 = performance.now(); for (; k < out.length && performance.now() - t1 < 12; k++) { const e = out[k]; let m = 1e9; for (const ch of e.h) m = Math.min(m, freq.get(ch) || 0); e.f = m; } if (k < out.length) return setTimeout(fin, 0); done(out); };
       fin();
     };
     step();
@@ -246,7 +248,7 @@
       const out = [...pass(full), ...pass(stems)];
       const seen = new Set(); return out.filter(e => !seen.has(e.h) && seen.add(e.h)).slice(0, n || 20).map(outE); },
     // random HSK words of a given length (for answer choices)
-    sample: (n, len) => { if (state !== 'ready') return []; if (!hskPool) hskPool = rows.filter(e => e.lv > 0 && ruOf(e)); let p = hskPool.filter(e => !len || e.len === len); if (p.length < n) p = hskPool; const out = []; for (let i = 0; i < n * 3 && out.length < n; i++) { const e = p[Math.floor(Math.random() * p.length)]; if (!out.includes(e)) out.push(e); } return out.map(outE); },
+    sample: (n, len) => { if (state !== 'ready') return []; if (!hskPool) { hskPool = rows.filter(e => e.lv > 0 && e.src === 'm' && ruOf(e)); if (hskPool.length < 50) hskPool = rows.filter(e => e.lv > 0 && ruOf(e)); } let p = hskPool.filter(e => !len || e.len === len); if (p.length < n) p = hskPool; const out = []; for (let i = 0; i < n * 3 && out.length < n; i++) { const e = p[Math.floor(Math.random() * p.length)]; if (!out.includes(e)) out.push(e); } return out.map(outE); },
     isHsk: h => { index(); return (byH.get(h) || []).some(x => x.lv > 0); },
     version: () => VER,
     details, detailsNow,
