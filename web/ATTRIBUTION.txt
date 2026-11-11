@@ -14,6 +14,8 @@ Mao — источники данных
    Лицензия Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0).
 
 3. Переводы слов HSK 1–3, проверенные вручную для Mao (отмечены «перевод: Mao»).
+   Туда же входит разговорник Mao (tools/src/phrases.txt): около 100 частых фраз
+   («как дела?», «сколько стоит?»), составленных для проекта.
 
 4. Make Me a Hanzi — https://github.com/skishore/makemeahanzi
    Порядок и контуры черт (strokes.txt, outlines.txt), разбор иероглифов (decomp.txt).
@@ -21,4 +23,4 @@ Mao — источники данных
 
 5. Списки слов HSK 2.0 и HSK 3.0 (уровни 1–6) — для отметки уровня.
 
-Сборка словаря: tools/build_dict.py. Версия словаря — в файле dictver.txt.
+Сборка словаря: tools/build_dict.py, затем доводка tools/refine_dict.py. Версия словаря — в файле dictver.txt.

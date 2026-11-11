@@ -1,7 +1,7 @@
 /* Mao dictionary.
    Index: CC-CEDICT (CC BY-SA 4.0, MDBG) — characters, readings, English.
-   Russian: Mao's checked translations of HSK 1–3 (src m) and 大БКРС, bkrs.info (src b):
-   «Базы можно использовать свободно в любых целях». Built by tools/build_dict.py.
+   Russian: Mao's checked translations of HSK words and phrases (src m) and 大БКРС, bkrs.info (src b):
+   «Базы можно использовать свободно в любых целях». Built by tools/build_dict.py, then tools/refine_dict.py.
    dict.txt columns: h, trad, pinyin, en, ru-short, hsk level, src, measure words.
    ru/NNN.json: БКРС senses and examples for the word card, loaded when a card opens. */
 (function () {
@@ -109,19 +109,41 @@
   const shortEn = en => { let t = en.split(';').map(x => x.trim()).filter(x => !/[\u3400-\u9fff]/.test(x)).slice(0, 3).join('; '); if (t.length > 90) t = t.slice(0, 88).replace(/[ ,;]+[^ ,;]*$/, '') + '…'; return t; };
   // only the dictionary's own Russian: old neural-network translations were sometimes attached to the wrong word
   const ruOf = e => e.ru || '';
-  const rank = (exact) => (a, b) => (exact(b) - exact(a)) || ((b.lv ? 1 : 0) - (a.lv ? 1 : 0)) || ((ruOf(b) ? 1 : 0) - (ruOf(a) ? 1 : 0)) || (a.len - b.len) || (b.f - a.f);
+  // a checked Mao translation marks the reading that is taught first (的 de before 的 dī «такси»)
+  const main = e => (e.lv > 0 && e.src === 'm' ? 1 : 0);
+  // how common the characters are (in how many dictionary words they occur): rare single characters go last
+  const fb = e => (e.f >= 60 ? 3 : e.f >= 20 ? 2 : e.f >= 6 ? 1 : 0);
+  // an HSK word's other reading (行 háng next to 行 xíng, 雨 yù next to 雨 yǔ) ranks as an ordinary word
+  const hsk = e => (e.lv > 0 && !e.sec ? 1 : 0);
+  const lvOf = e => (hsk(e) ? e.lv : 9);
+  // words a learner meets first: HSK words and Mao's own checked words and phrases (你好, 你好吗)
+  const study = e => (hsk(e) || e.src === 'm' ? 1 : 0);
+  const lvS = e => (hsk(e) ? e.lv : e.src === 'm' ? 1 : 9);
+  const rare = e => (e.len === 1 && !e.lv && e.f < 6 ? 1 : 0);
+  const rank = (exact) => (a, b) => (exact(b) - exact(a)) || (hsk(b) - hsk(a)) || (lvOf(a) - lvOf(b)) || ((ruOf(b) ? 1 : 0) - (ruOf(a) ? 1 : 0)) || (rare(a) - rare(b)) || (a.len - b.len) || (b.f - a.f);
+  const ruNorm = s => s.toLowerCase().replace(/ё/g, 'е');
 
   function search(q, limit) {
     limit = limit || 30; q = (q || '').trim(); if (!q || !rows.length) return [];
+    index();
     const lq = q.toLowerCase(); let res = [];
     if (/[\u3400-\u9fff]/.test(q)) {
       res = rows.filter(e => e.h.includes(q) || (e.t && e.t.includes(q)));
       res.sort(rank(e => e.h === q || e.t === q ? 2 : e.h.startsWith(q) ? 1 : 0));
     } else if (/[а-яё]/i.test(q)) {
-      const hit = e => { const r = ruOf(e); if (!r) return 0; const low = r.toLowerCase(); const parts = low.split(/[;,()]\s*/).map(s => s.trim()); return parts.includes(lq) ? 3 : parts.some(p => p.startsWith(lq)) ? 2 : low.includes(lq) ? 1 : 0; };
-      res = rows.filter(e => hit(e) > 0);
-      // rare characters (low frequency in words) after common ones
-      res.sort((a, b) => hit(b) - hit(a) || (b.lv ? 1 : 0) - (a.lv ? 1 : 0) || ((b.f > 20) - (a.f > 20)) || a.len - b.len || b.f - a.f);
+      // 5 = the query is the first meaning, 4 = one of the meanings, 3 = a meaning starts with it, 2 = a whole word inside, 1 = part of a word
+      const nq = ruNorm(lq).replace(/[?!.…]+$/, '').trim(); if (!nq) return [];
+      const wordRe = new RegExp('(^|[^а-я])' + nq.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '([^а-я]|$)');
+      const hit = e => { if (!e.ru) return 0; const low = e.rl || (e.rl = ruNorm(e.ru)); if (low.indexOf(nq) < 0) return 0; const parts = low.split(/[;,()]\s*/).map(s => s.replace(/[?!.…]+$/, '').trim()); const i = parts.indexOf(nq); return i === 0 ? 5 : i > 0 ? 4 : parts.some(p => p.startsWith(nq)) ? 3 : wordRe.test(low) ? 2 : 1; };
+      // a long entry where the word is one remark among many («…; спасибо, Господи, что…») goes after short direct ones
+      const long = e => ((e.rl || '').length > 40 ? 1 : 0);
+      const sc = new Map();
+      for (const e of rows) { const v = hit(e); if (v) sc.set(e, v); }
+      res = [...sc.keys()];
+      // exact meaning first; then HSK words (lower level first), common characters before rare ones, short before long
+      // rare single characters (㹴, 峱 «собака») never stand above ordinary words, even when their only meaning matches exactly
+      const tier = e => Math.min(4, sc.get(e)) - (rare(e) ? 2 : 0) - (sc.get(e) === 4 && long(e) ? 1 : 0);
+      res.sort((a, b) => (tier(b) - tier(a)) || (study(b) - study(a)) || (lvS(a) - lvS(b)) || ((b.src === 'm') - (a.src === 'm')) || (sc.get(b) - sc.get(a)) || (rare(a) - rare(b)) || (long(a) - long(b)) || (fb(b) - fb(a)) || (a.len - b.len) || (b.f - a.f));
     } else {
       const raw = lq.replace(/[\s'’]/g, '');
       if (/\d/.test(raw)) {
@@ -155,6 +177,7 @@
     byH = new Map(); byP = new Map();
     const add = (m, k, e) => { const a = m.get(k); if (a) a.push(e); else m.set(k, [e]); };
     for (const e of rows) { add(byH, e.h, e); if (e.t && e.t !== e.h) add(byH, e.t, e); add(byP, e.plain, e); }
+    for (const e of rows) { if (e.lv > 0 && e.src !== 'm') { const L = byH.get(e.h); if (L.length > 1 && L.some(x => x.h === e.h && x.src === 'm' && x.lv > 0)) e.sec = 1; } }
   }
   let hskPool = null;
   const STOP = new Set(['про', 'для', 'тему', 'теме', 'тема', 'слова', 'слов', 'слово', 'подбери', 'подбор', 'дай', 'мне', 'как', 'что', 'это', 'по', 'на', 'или', 'все', 'весь']);
@@ -185,7 +208,7 @@
     index();
     if (/[\u3400-\u9fff]/.test(q)) {
       const c = (byH.get(q) || []).slice();
-      c.sort((a, b) => (lvR(a) - lvR(b)) || ((ruOf(b) ? 1 : 0) - (ruOf(a) ? 1 : 0)) || (low(a) - low(b)) || ((a.h === q ? 0 : 1) - (b.h === q ? 0 : 1)));
+      c.sort((a, b) => (lvR(a) - lvR(b)) || (main(b) - main(a)) || ((ruOf(b) ? 1 : 0) - (ruOf(a) ? 1 : 0)) || (low(a) - low(b)) || ((a.h === q ? 0 : 1) - (b.h === q ? 0 : 1)));
       return c;
     }
     let tones = null, plain;
@@ -224,7 +247,10 @@
   let TOP = null;
   fetch('topics.txt').then(r => r.ok ? r.text() : '').then(t => { TOP = {}; t.split('\n').forEach(l => { const i = l.indexOf('='); if (i > 0) TOP[l.slice(0, i).trim().toLowerCase()] = l.slice(i + 1).trim().split(/\s+/).filter(Boolean); }); }).catch(() => { TOP = {}; });
   window.EDict = {
-    topic: name => (TOP && TOP[(name || '').trim().toLowerCase()]) || [],
+    // a built-in topic by its name in any case form: «про еду» -> Еда, «о семье» -> Семья
+    topic: name => { const q = (name || '').trim().toLowerCase().replace(/ё/g, 'е'); if (!TOP || !q) return []; if (TOP[q]) return TOP[q];
+      for (const k in TOP) { const a = k.replace(/ё/g, 'е'); let i = 0; while (i < a.length && i < q.length && a[i] === q[i]) i++; if (i >= 2 && i >= Math.min(a.length, q.length) - 1 && Math.abs(a.length - q.length) <= 2) return TOP[k]; }
+      return []; },
     failed: key => failed.has(key),
     retry: () => { tried.clear(); failed.clear(); },
     load, search, translate, numToMarks,
@@ -244,11 +270,13 @@
       const full = String(q || '').toLowerCase().replace(/ё/g, 'е').split(/[^а-я]+/).filter(t => t.length >= 3 && !STOP.has(t));
       // first the whole words ("семья"), then shorter stems ("работ" for «работать, работа»)
       const whole = new RegExp('(^|[^а-я])(' + full.join('|') + ')([^а-я]|$)', 'i');
-      const pass = list => { const re = new RegExp('(^|[^а-я])(' + list.join('|') + ')', 'i'); const o = []; for (const e of rows) { const r = ruOf(e); if (r && re.test(r.toLowerCase().replace(/ё/g, 'е'))) o.push(e); } const w = e => whole.test(ruOf(e).toLowerCase().replace(/ё/g, 'е')) ? 0 : 1; o.sort((a, b) => (w(a) - w(b)) || (lvR(a) - lvR(b)) || (a.len - b.len) || (b.f - a.f)); return o; };
+      const pass = list => { const re = new RegExp('(^|[^а-я])(' + list.join('|') + ')', 'i'); const o = []; for (const e of rows) { const r = ruOf(e); if (r && re.test(r.toLowerCase().replace(/ё/g, 'е'))) o.push(e); } const w = e => whole.test(ruOf(e).toLowerCase().replace(/ё/g, 'е')) ? 0 : 1; o.sort((a, b) => (w(a) - w(b)) || (hsk(b) - hsk(a)) || (lvOf(a) - lvOf(b)) || ((b.src === 'm') - (a.src === 'm')) || (rare(a) - rare(b)) || (fb(b) - fb(a)) || (a.len - b.len) || (b.f - a.f)); return o; };
       const out = [...pass(full), ...pass(stems)];
       const seen = new Set(); return out.filter(e => !seen.has(e.h) && seen.add(e.h)).slice(0, n || 20).map(outE); },
     // random HSK words of a given length (for answer choices)
     sample: (n, len) => { if (state !== 'ready') return []; if (!hskPool) { hskPool = rows.filter(e => e.lv > 0 && e.src === 'm' && ruOf(e)); if (hskPool.length < 50) hskPool = rows.filter(e => e.lv > 0 && ruOf(e)); } let p = hskPool.filter(e => !len || e.len === len); if (p.length < n) p = hskPool; const out = []; for (let i = 0; i < n * 3 && out.length < n; i++) { const e = p[Math.floor(Math.random() * p.length)]; if (!out.includes(e)) out.push(e); } return out.map(outE); },
+    // the next HSK words the learner does not have yet, easiest level first (when a topic has run out of words)
+    hskNext: (n, have) => { if (state !== 'ready') return []; index(); const pool = rows.filter(e => e.lv > 0 && !e.sec && ruOf(e)); pool.sort((a, b) => (a.lv - b.lv) || (main(b) - main(a)) || (a.len - b.len)); const out = [], seen = new Set(); for (const e of pool) { if (out.length >= n) break; if (seen.has(e.h) || (have && have.has(e.h))) continue; seen.add(e.h); out.push(e); } return out.map(outE); },
     isHsk: h => { index(); return (byH.get(h) || []).some(x => x.lv > 0); },
     version: () => VER,
     details, detailsNow,
