@@ -151,8 +151,8 @@ button:active{filter:brightness(.92)}
       <span style="font-size:12.5px;font-weight:600;color:var(--mu);padding-left:4px">УЧЁБА</span>
       <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
         <div style="display:flex;align-items:center;gap:12px;padding:14px 16px"><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Новых слов в день</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Это один урок. Хочется больше — «Ещё урок» на главной</span><sc-if value="{{ dailyWarn }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--ac);line-height:1.4">{{ dailyWarnL }}</span></sc-if></div><div style="display:flex;align-items:center;gap:4px"><button onClick="{{ dailyDn }}" aria-label="Меньше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe15b;</span></button><span style="min-width:28px;text-align:center;font-size:16px;font-weight:600">{{ daily }}</span><button onClick="{{ dailyUp }}" aria-label="Больше" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--ln);background:none;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe145;</span></button></div></div>
-        <button onClick="{{ tglMore1 }}" style="display:flex;justify-content:space-between;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;align-items:center;text-align:left"><span>Задания на слух</span><span style="font-size:13.5px;font-weight:400;color:var(--mu);display:flex;align-items:center;gap:2px">{{ methodL }}<span class="mi" style="font-size:20px">{{ more1Ic }}</span></span></button>
-        <sc-if value="{{ more1 }}" hint-placeholder-val="{{ false }}"><div style="padding:0 16px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ methodOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ methodD }}</span></div></sc-if>
+        <button onClick="{{ tglMore1 }}" style="display:flex;justify-content:space-between;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;align-items:center;text-align:left"><span>Вопросы в уроке</span><span style="font-size:13.5px;font-weight:400;color:var(--mu);display:flex;align-items:center;gap:2px">{{ methodL }}<span class="mi" style="font-size:20px">{{ more1Ic }}</span></span></button>
+        <sc-if value="{{ more1 }}" hint-placeholder-val="{{ false }}"><div style="padding:0 16px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ qOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13px;cursor:pointer;padding:0 2px">{{ o.l }}</button></sc-for></div><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ qD }}</span><span style="font-size:13px;font-weight:600;margin-top:6px">Задания на слух</span><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ methodOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ methodD }}</span></div></sc-if>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px">
@@ -160,6 +160,8 @@ button:active{filter:brightness(.92)}
       <div style="border-radius:18px;background:var(--sf);border:1px solid var(--ln);display:flex;flex-direction:column">
         <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Где писать иероглифы</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ writeD }}</span></div><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ writeOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
         <button onClick="{{ tglOutline }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Обводить новые слова</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Бледный контур знака, когда пишете слово впервые</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ outlineT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ outlineT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
+        <button onClick="{{ tglFast }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Быстрая линия</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Линия идёт за пальцем с меньшим отставанием. Если линия мерцает или рвётся — выключите</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ fastT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ fastT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
+        <button onClick="{{ tglDiag }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Показывать скорость рисования</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">После каждой черты под клеткой: кадров в секунду и сколько касаний получает приложение</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ diagT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ diagT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
         <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--ln)"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Сетка клетки</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Пунктир помогает держать пропорции</span></span><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ gridOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="width:48px;height:40px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font:600 17px 'Noto Serif SC',serif;box-shadow:{{ o.sh }};cursor:pointer">{{ o.l }}</button></sc-for></div></div>
       </div>
     </div>
@@ -286,7 +288,7 @@ button:active{filter:brightness(.92)}
     <sc-if value="{{ card.animOn }}" hint-placeholder-val="{{ false }}"><canvas ref="{{ card.animRef }}" style="width:150px;height:150px;border-radius:12px;background:var(--sf);border:1.5px solid var(--ln);flex:none;color:var(--ink)"></canvas></sc-if>
     <sc-if value="{{ card.hasSen }}" hint-placeholder-val="{{ false }}"><div style="width:100%;display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:14px;background:var(--sf2);text-align:left">
       <span style="font-size:12px;font-weight:600;color:var(--mu)">{{ card.senL }}</span>
-      <sc-for list="{{ card.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;line-height:1.45"><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
+      <sc-for list="{{ card.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span onClick="{{ z.pick }}" style="font-size:14.5px;line-height:1.45;display:flex;gap:8px;align-items:flex-start;cursor:pointer"><sc-if value="{{ z.pickable }}" hint-placeholder-val="{{ false }}"><span style="flex:none;width:20px;height:20px;margin-top:1px;border-radius:6px;border:1.5px solid {{ z.bd }};background:{{ z.bg }};color:var(--onpr);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ z.mk }}</span></sc-if><span><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span></span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
       <span style="font-size:11.5px;color:var(--mu);line-height:1.4">{{ card.exNote }}</span>
     </div></sc-if>
     <sc-if value="{{ card.loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:var(--mu)">Открываю статью словаря…</span></sc-if>
@@ -305,7 +307,13 @@ button:active{filter:brightness(.92)}
       <sc-if value="{{ mcv.listen }}" hint-placeholder-val="{{ false }}"><button onClick="{{ mcv.play }}" aria-label="Послушать ещё раз" style="width:88px;height:88px;border-radius:44px;border:0;background:var(--prs);color:var(--pr);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:40px">&#xe050;</span></button><button onClick="{{ mcv.noSound }}" style="height:44px;padding:0 20px;border:0;background:none;color:var(--mu);font-size:13px;text-decoration:underline;cursor:pointer">Нет звука</button></sc-if>
       <span style="font-size:18px;color:var(--ac);font-weight:500;opacity:{{ mcv.pOp }};min-height:24px">{{ mcv.p }}</span>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><sc-for list="{{ mcv.opts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.go }}" style="min-height:76px;padding:8px;border-radius:16px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.fg }};font-size:{{ o.fs }}px;font-family:{{ o.ff }};font-weight:500;line-height:1.3;cursor:pointer;transition:background .15s">{{ o.t }}</button></sc-for></div>
+    <sc-if value="{{ mcv.choice }}" hint-placeholder-val="{{ true }}"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><sc-for list="{{ mcv.opts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.go }}" style="min-height:76px;padding:8px;border-radius:16px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};color:{{ o.fg }};font-size:{{ o.fs }}px;font-family:{{ o.ff }};font-weight:500;line-height:1.3;cursor:pointer;transition:background .15s">{{ o.t }}</button></sc-for></div></sc-if>
+    <sc-if value="{{ mcv.flashQ }}" hint-placeholder-val="{{ false }}"><div style="flex:1;min-height:12px"></div><button onClick="{{ mcv.fRev }}" style="width:100%;height:56px;border-radius:16px;border:0;background:var(--pr);color:var(--onpr);font-size:16px;font-weight:600;cursor:pointer">Показать ответ</button></sc-if>
+    <sc-if value="{{ mcv.flashA }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 12px;border-radius:18px;background:var(--sf);border:1px solid var(--ln)"><span style="font:600 {{ mcv.afs }}px/1.15 'Noto Serif SC',serif;text-align:center">{{ mcv.ah }}</span><span style="font-size:18px;color:var(--ac);font-weight:500;text-align:center">{{ mcv.ap }}</span><span style="font-size:17px;text-align:center;line-height:1.35">{{ mcv.am }}</span><button onClick="{{ mcv.aSay }}" aria-label="Послушать" style="width:44px;height:44px;border-radius:22px;border:1px solid var(--ln);background:var(--bg);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center"><span class="mi" style="font-size:20px">&#xe050;</span></button></div>
+      <div style="flex:1;min-height:8px"></div>
+      <div style="display:flex;gap:8px"><button onClick="{{ mcv.fNo }}" style="flex:1;height:56px;border-radius:16px;border:0;background:var(--bads);color:var(--bad);font-size:14.5px;font-weight:600;cursor:pointer;padding:0 4px">Не помню</button><button onClick="{{ mcv.fHard }}" style="flex:1;height:56px;border-radius:16px;border:1.5px solid var(--ln);background:none;color:var(--ink);font-size:14.5px;font-weight:600;cursor:pointer;padding:0 4px">С трудом</button><button onClick="{{ mcv.fYes }}" style="flex:1;height:56px;border-radius:16px;border:0;background:var(--oks);color:var(--ok);font-size:14.5px;font-weight:600;cursor:pointer;padding:0 4px">Помню</button></div>
+    </sc-if>
     <sc-if value="{{ mcv.back }}" hint-placeholder-val="{{ false }}"><span style="text-align:center;font-size:13.5px;color:var(--bad)">Это слово скоро вернётся</span></sc-if>
   </div>
 </sc-if>
@@ -421,7 +429,9 @@ button:active{filter:brightness(.92)}
     <sc-if value="{{ sw.animOn }}" hint-placeholder-val="{{ false }}"><canvas ref="{{ sw.animRef }}" style="width:150px;height:150px;border-radius:12px;background:var(--sf);border:1.5px solid var(--ln);flex:none;color:var(--ink)"></canvas></sc-if>
     <sc-if value="{{ sw.hasSen }}" hint-placeholder-val="{{ false }}"><div style="width:100%;display:flex;flex-direction:column;gap:8px;padding:12px 14px;border-radius:14px;background:var(--sf2);text-align:left">
       <span style="font-size:12px;font-weight:600;color:var(--mu)">{{ sw.senL }}</span>
-      <sc-for list="{{ sw.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span style="font-size:14.5px;line-height:1.45"><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
+      <sc-for list="{{ sw.sen }}" as="z" hint-placeholder-count="2"><div style="display:flex;flex-direction:column;gap:3px"><span onClick="{{ z.pick }}" style="font-size:14.5px;line-height:1.45;display:flex;gap:8px;align-items:flex-start;cursor:pointer"><sc-if value="{{ z.pickable }}" hint-placeholder-val="{{ false }}"><span style="flex:none;width:20px;height:20px;margin-top:1px;border-radius:6px;border:1.5px solid {{ z.bd }};background:{{ z.bg }};color:var(--onpr);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ z.mk }}</span></sc-if><span><span style="color:var(--mu)">{{ z.n }} </span>{{ z.t }}</span></span><sc-for list="{{ z.xs }}" as="x" hint-placeholder-count="1"><span style="padding-left:16px;font-size:13.5px;line-height:1.45;display:flex;flex-direction:column"><span><span style="font-family:'Noto Serif SC',serif;font-weight:600">{{ x.zh }}</span> <span style="color:var(--ac)">{{ x.py }}</span></span><span style="color:var(--mu)">{{ x.ru }}</span></span></sc-for></div></sc-for>
+      <sc-if value="{{ sw.canPick }}" hint-placeholder-val="{{ false }}"><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Отметьте значения, которые хотите учить, — они станут переводом этого слова в уроках и повторении.</span></sc-if>
+      <sc-if value="{{ sw.hasPick }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:8px;padding:10px 12px;border-radius:12px;background:var(--sf);border:1px solid var(--ln)"><span style="font-size:14px;line-height:1.4"><span style="color:var(--mu)">Перевод будет: </span>{{ sw.pickM }}</span><button onClick="{{ sw.pickSave }}" style="height:44px;border-radius:12px;border:0;background:var(--pr);color:var(--onpr);font-size:14.5px;font-weight:600;cursor:pointer">{{ sw.pickBtn }}</button></div></sc-if>
       <span style="font-size:11.5px;color:var(--mu);line-height:1.4">{{ sw.exNote }}</span>
     </div></sc-if>
     <sc-if value="{{ sw.loading }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:var(--mu)">Открываю статью словаря…</span></sc-if>
@@ -549,7 +559,7 @@ const RCAP=30;   // words in one review session
 const dk=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 const ago=n=>new Date(Date.now()-n*864e5);
 // ---- Mao 3.0 (design v8) ----
-const APPV='3.4';
+const APPV='3.5';
 const MNAME=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 // Material Symbols Rounded, bundled offline as fonts/icons.woff (only these glyphs)
 const ICONS={check:'',today:'',book:'',forum:'',settings:'',more:'',less:'',cat:'',list:'',tr:'',help:''};
@@ -602,8 +612,8 @@ class Component extends DCLogic {
   bulkRef=React.createRef();
   importWords(e){const f=e.target.files[0];if(!f)return;e.target.value='';f.text().then(txt=>this.importText(txt));}
   importText(txt){{try{let d=JSON.parse(txt);if(!Array.isArray(d))d=d.words;if(!Array.isArray(d))throw 0;let s=this.state;let id=s.nextId;const have=new Set(s.words.map(w=>w.h));const add=d.filter(o=>o&&o.h&&!have.has(o.h)).map(o=>{const e=window.EDict&&EDict.find(String(o.h));const own=String(o.m||o.ru||'');const ok=/[а-яё]/i.test(own);return {id:id++,h:String(o.h),p:toMarks(String(o.p||''))||(e&&e.p)||'',m:ok?own:((e&&e.m)||''),mSrc:ok?'user':(e&&e.m?(e.src||'m'):'none'),k:e?e.key:'',d:+o.d||+o.lesson||s.cur||1,s:'new',due:false,hsk:o.hsk!=null?!!o.hsk:!!(e&&e.hsk),ex:o.ex||null,mn:null};});if(!s.cur&&add.length&&!s.lessons.length){s={...s,cur:1};}const ls=[...s.lessons];add.forEach(w=>{if(!ls.some(l=>l.n===w.d))ls.push({n:w.d,zh:'新',py:'xīn',t:'Импорт',date:iso(new Date())});});ls.sort((a,b)=>a.n-b.n);this.upd({words:[...s.words,...add],nextId:id,lessons:ls,cur:s.cur||(ls[ls.length-1]||{}).n||0});this.toast('Загружено '+add.length+' '+pl(add.length,WF)+(d.length>add.length?' · '+(d.length-add.length)+' уже были':''));}catch(er){this.toast('Не удалось прочитать файл');}}}
-  PK=['howSeen','m31','study','myRu','m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','listen','m34','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
-  defaults(){return {m31:1,m30:1,myRu:{},study:null,m28:1,lessonSize:20,dailyNew:10,aiProv:'free',aiKeys:{},topicSel:null,srs:'on',pal:'indigo',th:'system',perDay:10,method:'fast',listen:'on',m34:1,chunk:5,quickN:15,hint:'ru',rate:0.85,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'first'};}
+  PK=['howSeen','m31','study','myRu','m30','aiProv','aiKeys','topicSel','m29fix','srs','m28','aiOn','wMatch','wOrderHint','lessonSize','dailyNew','pal','wSnap','wGhost','goal','onboarded','wCheck','wMulti','writeMode','wWidth','wGrid','catMode','catSound','catMet','th','perDay','method','listen','m34','qForm','wFast','wDiag','chunk','quickN','hint','rate','words','lessons','cur','streak','freezes','pauseTomorrow','log','lastActive','nextId'];
+  defaults(){return {m31:1,m30:1,myRu:{},study:null,m28:1,lessonSize:20,dailyNew:10,aiProv:'free',aiKeys:{},topicSel:null,srs:'on',pal:'indigo',th:'system',perDay:10,method:'fast',listen:'on',m34:1,qForm:'mix',wFast:'on',wDiag:'off',chunk:5,quickN:15,hint:'ru',rate:0.85,words:[],lessons:[],cur:0,streak:0,freezes:2,pauseTomorrow:false,log:{},lastActive:null,nextId:1,goal:null,onboarded:false,catMet:false,writeMode:'screen',wCheck:'strict',wMulti:'one',wSnap:'on',wGhost:'first'};}
   // saved data that cannot be read is never overwritten silently: it is set aside under another key first
   load(){let raw=null;try{raw=localStorage.getItem(KEY);const d=JSON.parse(raw);if(d&&d.words)return d;}catch(e){}
     try{if(raw&&raw.length>20&&!localStorage.getItem(KEY+'-broken'))localStorage.setItem(KEY+'-broken',raw);}catch(e){}return null;}
@@ -624,26 +634,29 @@ class Component extends DCLogic {
   wcEl(){return this.wcCanvas||this.phoneRef.current?.querySelector('canvas')||null;}
   wPt(e){const c=this.wcEl();if(!this.wRect||this.wRectC!==c||performance.now()-this.wRectT>500){this.wRect=c.getBoundingClientRect();this.wRectC=c;this.wRectT=performance.now();}const r=this.wRect,k=c.width/r.width;return [(e.clientX-r.left)*k,(e.clientY-r.top)*k];}
   // canvas size follows the screen's pixel density (sharp lines on 2.75–3× screens); points are kept in 0..1
-  wFit(c){c=c||this.wcEl();if(!c)return 1;const r=Math.min(3,window.devicePixelRatio||1),w=Math.round((c.clientWidth||288)*r);if(w>0&&c.width!==w){c.width=w;c.height=w;}return c.width/576;}
+  wFit(c){c=c||this.wcEl();if(!c)return 1;const r=Math.min(2,window.devicePixelRatio||1),w=Math.round((c.clientWidth||288)*r);if(w>0&&c.width!==w){c.width=w;c.height=w;}return c.width/576;}
   wDown(e){const c=e.currentTarget||this.wcEl();if(!c)return;e.preventDefault();
     if(this.state.wDone||(this.state.quiz&&this.state.quiz.rev))return;
     // a second finger while drawing is ignored; a very wide touch (palm) too, but with a hint
     if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
     if(e.pointerType==='touch'&&((e.width||0)>90||(e.height||0)>90)){if(!this.wPalmT||Date.now()-this.wPalmT>4000){this.wPalmT=Date.now();this.wSay('Касание слишком широкое — ведите кончиком пальца');}return;}
-    this.wcCanvas=c;const k=this.wFit(c);this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;window.__maoInk=true;const [x,y]=this.wPt(e),ov=this.wOv(),g=(ov||c).getContext('2d');if(ov)g.clearRect(0,0,ov.width,ov.height);
+    this.wcCanvas=c;const k=this.wFit(c);this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;window.__maoInk=true;const [x,y]=this.wPt(e),ov=this.wOv(),g=this.wG(ov||c);if(ov)g.clearRect(0,0,ov.width,ov.height);this.wRawOn=false;this.wDg={t0:performance.now(),ev:0,pt:0,fr:0,raw:0};const dg=this.wDg;const tick=()=>{if(this.wDg===dg&&this.drw){dg.fr++;requestAnimationFrame(tick);}};requestAnimationFrame(tick);
     this.wK=k;this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid']*k;this.wf=1;this.lt=performance.now();g.strokeStyle=this.wInkC||(this.wInkC=getComputedStyle(c).color);g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);}
   // the finger's line is drawn on a transparent layer above the cell: redraws of the cell (hints, animations) never touch it
   wOv(){const c=this.wcEl();const o=c&&c.parentNode?c.parentNode.querySelector('canvas[data-ov]'):null;if(o&&(o.width!==c.width||o.height!==c.height)){o.width=c.width;o.height=c.height;}return o;}
-  wOvClear(){const o=this.wOv();if(o)o.getContext('2d').clearRect(0,0,o.width,o.height);}
-  wMove(e){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;const c=this.wcEl();if(!c)return;const ov=this.wOv(),g=(ov||c).getContext('2d');
+  // desynchronized = the line is put on the screen without waiting for the page compositor (less lag behind the finger on Android)
+  wG(el){if(!el)return null;if(!el.__g){let g=null;if(this.state.wFast!=='off'&&el.hasAttribute&&el.hasAttribute('data-ov')){try{g=el.getContext('2d',{desynchronized:true});}catch(e){}}el.__g=g||el.getContext('2d');}return el.__g;}
+  wOvClear(){const o=this.wOv();if(o)this.wG(o).clearRect(0,0,o.width,o.height);}
+  // raw=true: «pointerrawupdate» — the browser hands the point over at once, not once per frame; then «pointermove» is skipped
+  wMove(e,raw){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;if(raw)this.wRawOn=true;else if(this.wRawOn)return;const c=this.wcEl();if(!c)return;const ov=this.wOv(),g=this.wG(ov||c);
     // Android sends one event per frame; the points in between are in getCoalescedEvents()
-    const evs=(e.getCoalescedEvents&&e.getCoalescedEvents())||[];const list=evs.length?evs:[e];const S=this.wS&&this.wS[this.wS.length-1];
+    const evs=(e.getCoalescedEvents&&e.getCoalescedEvents())||[];const list=evs.length?evs:[e];const S=this.wS&&this.wS[this.wS.length-1];if(this.wDg){this.wDg.ev++;this.wDg.pt+=list.length;if(raw)this.wDg.raw++;}
     for(const ev of list){const [x,y]=this.wPt(ev),[px,py]=this.lp0;
       const now=ev.timeStamp||performance.now(),dt=Math.max(1,now-this.lt),v=Math.hypot(x-px,y-py)/dt/(this.wK||1);this.lt=now;
       if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
       const mx=(x+px)/2,my=(y+py)/2;g.lineWidth=this.wBase*this.wf;g.beginPath();g.moveTo(this.lm[0],this.lm[1]);g.quadraticCurveTo(px,py,mx,my);g.stroke();this.lm=[mx,my];this.lp0=[x,y];
       if(S)S.push([x/c.width,y/c.height,this.wf]);}}
-  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;window.__maoInk=false;if(this.state.wMsg)this.setState({wMsg:null});this.wSnapLast();this.wOvClear();}
+  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;if(this.wDg){const d=this.wDg,sec=Math.max(.05,(performance.now()-d.t0)/1000);this.wDgText=sec<.15?'':'экран '+Math.round(d.fr/sec)+' к/с · касаний '+Math.round(d.ev/sec)+'/с · точек '+Math.round(d.pt/sec)+'/с'+(d.raw?' · raw':'')+(this.wOv()&&this.wG(this.wOv()).getContextAttributes&&(this.wG(this.wOv()).getContextAttributes()||{}).desynchronized?' · быстрая линия':'');}this.drw=false;this.pid=null;window.__maoInk=false;if(this.state.wMsg)this.setState({wMsg:null});this.wSnapLast();this.wOvClear();}
   // the system took the touch away (a gesture, a call, the notification shade): the unfinished line is dropped, it is not a mistake
   wCancel(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;window.__maoInk=false;if(this.wS&&this.wS.length>(this.wMeta||[]).length)this.wS.pop();this.wOvClear();this.wRender();}
   // compound word, one cell per character: when the character has all its strokes and the finger rests 1 s, go to the next one
@@ -868,7 +881,10 @@ class Component extends DCLogic {
   //   a2h — listen: sound → character (l)      wr  — write from memory (w)
   // Later types (tones 't', speaking 's', listening to sentences) are added here: a row in exSk, a branch in engShow,
   // and engType starts scheduling them — the session engine and the memory model do not change.
-  exSk(t){return {h2m:'r',m2h:'c',a2h:'l',wr:'w',known:'c'}[t]||'r';}
+  //   fh / fm / fa — the same three as flashcards: recall, look at the answer, say how it went (no options to pick from)
+  exSk(t){return {h2m:'r',m2h:'c',a2h:'l',wr:'w',known:'c',fh:'r',fm:'c',fa:'l'}[t]||'r';}
+  // setting «Вопросы»: mix — the first question about a new word is a choice, the rest are flashcards; cards — flashcards only; choice — options only
+  qf(t,r,e){const f=this.state.qForm||'mix';if(t==='wr'||f==='choice')return t;if(f==='mix'&&r.kind==='lesson'&&(e.step||0)<=0)return t;return {h2m:'fh',m2h:'fm',a2h:'fa'}[t]||t;}
   skUp(w,type,ok){const sk={...(w.sk||{})},k=this.exSk(type),a=(sk[k]||[0,0]).slice();a[ok?0:1]++;sk[k]=a;return sk;}
   canWrite(w){const s=this.state;if(!w||s.hint==='hz')return false;if(s.writeMode==='paper')return true;return !!window.WCheck&&WCheck.ready()&&[...w.h].every(ch=>WCheck.has(ch));}
   canListen(){return this.state.listen!=='off';}
@@ -892,12 +908,12 @@ class Component extends DCLogic {
     this.setState({[key]:run,run:key,q:'',ex:null,edit:null,sheet:null,quiz:null,mc:null,partsOpen:false,result:null},()=>this.engNext(key));}
   // which task the word gets now
   engType(r,w){const e=r.ws[w.id]||{step:0};const lis=this.canListen();
-    if(r.kind==='lesson'){if(e.step<=0)return 'h2m';const s1=lis&&((w.id+(r.day||0))%2===0)?'a2h':'m2h';if(e.step===1)return s1;return this.canWrite(w)?'wr':(s1==='a2h'?'m2h':lis?'a2h':'h2m');}
+    if(r.kind==='lesson'){if(e.step<=0)return this.qf('h2m',r,e);const s1=lis&&((w.id+(r.day||0))%2===0)?'a2h':'m2h';if(e.step===1)return this.qf(s1,r,e);return this.canWrite(w)?'wr':this.qf(s1==='a2h'?'m2h':lis?'a2h':'h2m',r,e);}
     if(e.type)return e.type;   // a missed word is asked the same way again
     // review: the skill that is weakest for this word; writing — not for brand-new memories and at most a third of the session
     const c=['h2m','m2h'];if(lis)c.push('a2h');if(this.canWrite(w)&&(+w.st||1)>=2&&r.wrN<Math.ceil(r.ids.length/3))c.push('wr');
     const k=(w.rp||0)%c.length,rot=[...c.slice(k),...c.slice(0,k)];const sc=t=>{const a=(w.sk||{})[this.exSk(t)]||[0,0];return a[0]-2*a[1];};
-    return rot.reduce((b,t)=>sc(t)<sc(b)?t:b,rot[0]);}
+    return this.qf(rot.reduce((b,t)=>sc(t)<sc(b)?t:b,rot[0]),r,e);}
   // the next thing on the screen: a new card when nothing is waiting, otherwise the word whose turn has come
   engNext(key,patch){patch=patch||{};const s=this.state;const r0=patch[key]||s[key];if(!r0||!r0.ids)return;const r={...r0};const words=patch.words||s.words;const W=id=>words.find(w=>w.id===id);
     const les=r.kind==='lesson';
@@ -916,9 +932,10 @@ class Component extends DCLogic {
     if(cur.type==='card')return this.upd({...base,screen:'learn',quiz:null,mc:null});
     if(cur.type==='trace')return this.upd({...base,screen:'quiz',mc:null,quiz:this.mkQuiz([cur.id],'Обведите знак','trace')});
     if(cur.type==='wr')return this.upd({...base,screen:'quiz',mc:null,quiz:this.mkQuiz([cur.id],'Письмо по памяти','eng')});
-    const it={id:cur.id,dir:cur.type==='known'?'m2h':cur.type};
-    this.upd({...base,screen:'mc',quiz:null,mc:{kind:'eng',items:[it],i:0,pick:null,ever:[],total:1,opts:this.mcOpts(it)}});
-    if(cur.type==='a2h'&&w)setTimeout(()=>{try{this.speak(w.h);}catch(e){}},350);}
+    const fl={fh:'h2m',fm:'m2h',fa:'a2h'}[cur.type];const it={id:cur.id,dir:fl||(cur.type==='known'?'m2h':cur.type)};
+    this.upd({...base,screen:'mc',quiz:null,mc:{kind:'eng',flash:!!fl,rev:false,items:[it],i:0,pick:null,ever:[],total:1,opts:fl?[]:this.mcOpts(it)}});
+    if(it.dir==='a2h'&&w)setTimeout(()=>{try{this.speak(w.h);}catch(e){}},350);}
+  flashRev(){const s=this.state,mc=s.mc;if(!mc||!mc.flash||mc.rev)return;this.setState({mc:{...mc,rev:true}});const w=this.W(mc.items[0].id);if(w&&mc.items[0].dir!=='a2h'){try{this.speak(w.h);}catch(e){}}}
   // card → «Дальше»: trace the new character, then the word joins the queue. «Уже знаю» = one control question, not taken on trust.
   learnNext(known){const s=this.state,key=s.run||'study',r=s[key];if(!r||!r.cur)return;const id=r.cur.id,w=this.W(id);if(!w)return this.engNext(key);
     if(known)return this.engShow(key,r,{id,type:'known'},{});
@@ -952,7 +969,7 @@ class Component extends DCLogic {
     const res=les?{title:'Урок '+r.day+' · '+(L.t||''),sub:done.length?'Новые слова выучены':'Все слова урока уже знакомы'}:{title:r.title+' — готово',sub:r.more?'В очереди ещё '+r.more+' — можно продолжить сейчас или завтра':''};
     this.upd({...patch,words,[key]:null,run:null,mc:null,quiz:null,screen:'result',result:{...res,first:done.length-hard.length,total:done.length,rounds:1,ids:done,hard},...this.touch({min:this.mins(r.t0),rv:les?0:done.length})});}
   // no Chinese voice on this phone: the task turns into «meaning → character» and listening tasks are switched off
-  noSound(){const s=this.state,key=s.run,r=key&&s[key];this.upd({listen:'off'});if(r&&r.cur&&r.cur.type==='a2h'){const e={...(r.ws[r.cur.id]||{}),type:r.kind==='lesson'?undefined:'m2h'};this.engShow(key,{...r,ws:{...r.ws,[r.cur.id]:e}},{id:r.cur.id,type:'m2h'},{});}
+  noSound(){const s=this.state,key=s.run,r=key&&s[key];this.upd({listen:'off'});if(r&&r.cur&&(r.cur.type==='a2h'||r.cur.type==='fa')){const t2=r.cur.type==='fa'?'fm':'m2h';const e={...(r.ws[r.cur.id]||{}),type:r.kind==='lesson'?undefined:t2};this.engShow(key,{...r,ws:{...r.ws,[r.cur.id]:e}},{id:r.cur.id,type:t2},{});}
     this.toast('Задания на слух выключены. Включить снова — в Настройках');}
   mcOpts(it){const w=this.W(it.id);if(!w)return [];const sh=m=>{let t=String(m||'').split(/[;(]/)[0].trim();if(t.length>28){const ps=t.split(/,\s*/);t=ps[0];for(const x of ps.slice(1)){if(t.length+x.length>24)break;t+=', '+x;}if(t.length>28)t=t.slice(0,28).replace(/\s+\S*$/,'')+'…';}return t.replace(/[\s,.:]+$/,'');};const key=it.dir==='h2m'?(x=>sh(x.m)):(x=>x.h);
     const right=key(w),pool=[],len=[...w.h].length;
@@ -1099,9 +1116,9 @@ class Component extends DCLogic {
     this.upd({words:[...this.state.words,...add],nextId:id},()=>{this.fixRu();this.startStudy(this.state.cur);});
     if(add.length<N)this.toast('Подобрано '+add.length+' '+pl(add.length,WF)+' — больше на эту тему не нашлось');
     else if(filled&&topic!=='Слова HSK')this.toast('В теме «'+topic+'» осталось мало слов — добавила '+filled+' '+pl(filled,WF)+' HSK по порядку');}
-  addWord(e,day){let s=this.state;const n=day||s.cur;if(!n||!s.lessons.some(l=>l.n===n)){return this.startLesson(this.topicName(),()=>{this.setState({addDay:this.state.cur});this.addWord(e,this.state.cur);});}const prev=s.words;const r=this.ruFor(e);
-    const w={id:s.nextId,h:e.h,t:e.t,p:e.p,m:r.m,mSrc:r.mSrc,k:e.key||'',en:e.en||'',d:n,s:'new',due:false,hsk:e.hsk!=null?!!e.hsk:!!(window.EDict&&EDict.isHsk(e.h))};
-    this.upd({words:[...prev,w],nextId:s.nextId+1},()=>this.fixRu());
+  addWord(e,day,myM){let s=this.state;const n=day||s.cur;if(!n||!s.lessons.some(l=>l.n===n)){return this.startLesson(this.topicName(),()=>{this.setState({addDay:this.state.cur});this.addWord(e,this.state.cur,myM);});}const prev=s.words;const r=myM?{m:myM,mSrc:'user'}:this.ruFor(e);
+    const w={id:s.nextId,h:e.h,t:e.t,p:e.p,m:r.m,mSrc:r.mSrc,...(myM?{mEdited:true}:{}),k:e.key||'',en:e.en||'',d:n,s:'new',due:false,hsk:e.hsk!=null?!!e.hsk:!!(window.EDict&&EDict.isHsk(e.h))};
+    this.upd({words:[...prev,w],nextId:s.nextId+1,...(myM?{myRu:{...(s.myRu||{}),[e.key||e.h]:myM}}:{})},()=>this.fixRu());
     this.toast(r.m?e.h+' → урок '+n:e.h+' → урок '+n+' · русского перевода нет — впишите его в «Править урок»',()=>this.upd({words:prev}));}
   async explain(w){clearInterval(this.si);if(!this.aiOn()){const full=window.Explain&&Explain.ready()?Explain.text(w):w.h+' '+(w.p||'')+' — «'+(w.m||'')+'»';this.setState({ex:{id:w.id,loading:false,text:full,full}});return;}this.setState({ex:{id:w.id,loading:true,text:'',full:''}});let full;
     try{full=String(await this.ask('Ты преподаватель китайского. Объясни по-русски для взрослого ученика HSK 1–3 слово '+w.h+' ('+w.p+', «'+w.m+'»): употребление, конструкции, отличия от похожих слов. Примеры — с пиньинем с тоновыми знаками и переводом. Без markdown. До 90 слов.')).replace(/[*#]/g,'').trim();}
@@ -1187,7 +1204,8 @@ class Component extends DCLogic {
     if(scr==='mc'&&mc&&mc.items[mc.i]){const it=mc.items[mc.i],w=this.W(it.id)||{h:'',p:'',m:''},pk=mc.pick,h2m=it.dir==='h2m',lis=it.dir==='a2h';const left=mc.items.length-mc.i;const p=mc.i/mc.items.length;
       runPct=Math.max(4,p*100);runLabel='Выбор · осталось '+left;runP();
       const wrong=pk!=null&&!mc.opts[pk].ok;
-      mcv={ask:RUN&&RUN.cur&&RUN.cur.type==='known'?'Проверим: какой иероглиф?':h2m?'Что значит?':lis?'Какое слово прозвучало?':'Какой иероглиф?',listen:lis,text:!lis,play:()=>this.speak(w.h),noSound:()=>this.noSound(),prompt:h2m?w.h:shortM(w.m),fs:h2m?Math.max(30,Math.min(w.h.length>2?64:84,Math.floor((Math.min(window.innerWidth||360,480)-48)/Math.max(1,[...w.h].length)))):26,ff:h2m?"'Noto Serif SC',serif":"'Noto Sans',sans-serif",p:lis?w.p+' · '+shortM(w.m):w.p,pOp:pk!=null?1:0,back:wrong,
+      const fl=!!mc.flash,frev=fl&&!!mc.rev;
+      mcv={ask:RUN&&RUN.cur&&RUN.cur.type==='known'?'Проверим: какой иероглиф?':fl?(h2m?'Вспомните перевод и чтение':lis?'Вспомните слово и перевод':'Вспомните иероглиф и чтение'):h2m?'Что значит?':lis?'Какое слово прозвучало?':'Какой иероглиф?',listen:lis,text:!lis,choice:!fl,flashQ:fl&&!frev,flashA:frev,fRev:()=>this.flashRev(),fNo:()=>this.engAnswer(false),fHard:()=>this.engAnswer(true,true),fYes:()=>this.engAnswer(true),ah:w.h,ap:w.p,am:shortM(w.m),afs:[...w.h].length>4?30:[...w.h].length>2?40:52,aSay:()=>this.speak(w.h),play:()=>this.speak(w.h),noSound:()=>this.noSound(),prompt:h2m?w.h:shortM(w.m),fs:h2m?Math.max(30,Math.min(w.h.length>2?64:84,Math.floor((Math.min(window.innerWidth||360,480)-48)/Math.max(1,[...w.h].length)))):26,ff:h2m?"'Noto Serif SC',serif":"'Noto Sans',sans-serif",p:fl?'':lis?w.p+' · '+shortM(w.m):w.p,pOp:pk!=null?1:0,back:wrong,
         opts:mc.opts.map((o,k)=>{const isOk=o.ok,isPick=k===pk;let bg='var(--sf)',bd='var(--ln)',fg='var(--ink)';if(pk!=null){if(isOk){bg='var(--oks)';bd='var(--ok)';fg='var(--ok)';}else if(isPick){bg='var(--bads)';bd='var(--bad)';fg='var(--bad)';}else fg='var(--mu)';}
           return {t:o.t,go:()=>this.mcPick(k),bg,bd,fg,fs:h2m?15:30,ff:h2m?"'Noto Sans',sans-serif":"'Noto Serif SC',serif"};})};}
     const qz=s.quiz;let qv={};const wm=s.writeMode==='paper'?'paper':'screen';
@@ -1280,11 +1298,13 @@ class Component extends DCLogic {
       goalShort:g?(+g.n)+' '+pl(+g.n,WF):'не задана',
       daily,dailyDn:()=>this.upd({dailyNew:Math.max(3,daily-1)}),dailyUp:()=>this.upd({dailyNew:Math.min(30,daily+1)}),
       dailyWarn:!!(g&&GL.days&&GL.per>daily),dailyWarnL:g&&GL.days&&GL.per>daily?'Для цели к '+fmtD(pISO(g.date))+' нужно '+GL.per+' '+pl(GL.per,WF)+' в день. С нормой '+daily+' вы успеете примерно к '+fmtD(this.finishDate(g,knownN,daily)):'',
-      more1:!!s.more1,more1Ic:s.more1?IC.less:IC.more,tglMore1:()=>this.setState({more1:!s.more1}),methodL:s.listen!=='off'?'включены':'выключены',
+      more1:!!s.more1,more1Ic:s.more1?IC.less:IC.more,tglMore1:()=>this.setState({more1:!s.more1}),methodL:({mix:'вперемешку',cards:'карточки',choice:'варианты'})[s.qForm||'mix'],
+      qOpts:seg([['mix','Вперемешку'],['cards','Карточки'],['choice','Варианты']],s.qForm||'mix',k=>this.upd({qForm:k})),
+      qD:({mix:'Первый вопрос о новом слове — выбор из четырёх. Дальше карточки: вспомните ответ, откройте его и отметьте, получилось ли.',cards:'Только карточки: вспомнили — открыли ответ — отметили «помню», «с трудом» или «не помню». Вариантов для выбора нет.',choice:'Всегда выбор из четырёх вариантов. Быстрее, но угадать проще, чем вспомнить.'})[s.qForm||'mix'],
       methodOpts:seg([['on','Включены'],['off','Выключены']],s.listen!=='off'?'on':'off',k=>this.upd({listen:k})),
       methodD:'В уроке и в повторении часть вопросов задаётся голосом: слово звучит, вы выбираете иероглиф. Нужен китайский голос в телефоне; если звука нет — выключите.',
       writeOpts:seg([['screen','На экране'],['paper','На бумаге']],wm,k=>this.upd({writeMode:k})),writeD:wm==='screen'?'Пишете пальцем черту за чертой: верная встаёт на место, неверная исчезает':'Пишете в тетради, потом сверяетесь с ответом и отмечаете сами',
-      outlineT:tg((s.wGhost||'first')!=='off'),tglOutline:()=>this.upd({wGhost:(s.wGhost||'first')==='off'?'first':'off'}),
+      outlineT:tg((s.wGhost||'first')!=='off'),fastT:tg(s.wFast!=='off'),tglFast:()=>{this.upd({wFast:s.wFast==='off'?'on':'off'});this.toast('Изменится со следующего задания на письмо');},diagT:tg(s.wDiag==='on'),tglDiag:()=>this.upd({wDiag:s.wDiag==='on'?'off':'on'}),tglOutline:()=>this.upd({wGhost:(s.wGhost||'first')==='off'?'first':'off'}),
       gridOpts:seg([['on','田'],['mi','米']],s.wGrid==='mi'?'mi':'on',k=>this.upd({wGrid:k})),
       themeOpts:seg([['system','Как в системе'],['light','Светлая'],['dark','Тёмная']],s.th,k=>this.upd({th:k})),
       speedOpts:seg([['slow','Медленно'],['normal','Обычно']],s.rate<=0.65?'slow':'normal',k=>{this.upd({rate:k==='slow'?0.6:0.85});setTimeout(()=>this.speak('你好'),60);}),
@@ -1314,12 +1334,15 @@ class Component extends DCLogic {
       // sheets
       hasSheet:!!s.sheet,closeSheet:()=>this.setState({sheet:null,resetAsk:false,swEdit:null,animK:null}),stop:e=>e.stopPropagation(),sheetTopic:s.sheet==='topic',sheetWord:s.sheet==='word'||s.sheet==='dict',sheetBackup:s.sheet==='backup',
       sw:(()=>{if(s.sheet==='dict'&&s.dictE){const e=s.dictE;const ex=ws.find(x=>x.h===e.h);const ad=s.addDay||this.bulkTarget();const r=this.ruFor(e);
-          return {...this.cardData(e.h,e.p,{m:r.m,mSrc:r.mSrc,full:true,tag:'dict'}),top:'Словарь'+(e.en&&!r.m?' · по-английски: '+e.en:''),isWord:false,isDict:true,
+          const cdD=this.cardData(e.h,e.p,{m:r.m,mSrc:r.mSrc,full:true,tag:'dict'});
+          const addPicked=()=>{if(ex){this.upd({words:this.state.words.map(x=>x.id===ex.id?{...x,m:cdD.pickM,mSrc:'user',mEdited:true}:x),myRu:{...(this.state.myRu||{}),[ex.k||ex.h]:cdD.pickM},pk:null});return this.toast('Перевод сохранён: '+cdD.pickM);}this.addWord(e,ad,cdD.pickM);this.setState({sheet:null,pk:null});};
+          return {...cdD,pickSave:addPicked,pickBtn:ex?'Сохранить как перевод':'Добавить в урок '+ad+' с этим переводом',top:'Словарь'+(e.en&&!r.m?' · по-английски: '+e.en:''),isWord:false,isDict:true,
             addL:ex?'Уже в уроке '+ex.d:'Добавить в урок '+ad,addBg:ex?'var(--sf2)':'var(--pr)',addFg:ex?'var(--mu)':'var(--onpr)',addIt:()=>{if(ex)return;this.addWord(e,ad);this.setState({sheet:null});}};}
         if(s.sheet!=='word')return {};const w=this.W(s.wid);if(!w)return {};
         const stl=w.s==='new'?'новое':this.isDue(w)?'повторить сегодня':w.s==='hard'?'трудное':w.next?'повтор '+fmtD(pISO(w.next)).replace(/ \d{4}$/,''):'выучено';
         const de=this.dictFor(w);const dictM=de&&de.m&&de.m!==w.m?de.m:'';
-        return {...this.cardData(w.h,w.p,{m:w.m,mSrc:w.mSrc,mn:w.mn,full:true,tag:'word'}),top:lessonL(w.d)+' · '+stl,isWord:true,isDict:false,
+        const cdW=this.cardData(w.h,w.p,{m:w.m,mSrc:w.mSrc,mn:w.mn,full:true,tag:'word'});
+        return {...cdW,pickBtn:'Сохранить как перевод',pickSave:()=>{this.upd({words:this.state.words.map(x=>x.id===w.id?{...x,m:cdW.pickM,mSrc:'user',mEdited:true}:x),myRu:{...(this.state.myRu||{}),[w.k||w.h]:cdW.pickM},pk:null});this.toast('Перевод сохранён: '+cdW.pickM);},top:lessonL(w.d)+' · '+stl,isWord:true,isDict:false,
           write:()=>this.practiceWrite(w.id),ask:()=>{this.setState({sheet:null,screen:'tab',tab:'ask'});this.sendChat('Разбери '+w.h);},edit:()=>this.setState({sheet:null,screen:'dayEdit',de:{n:w.d,t0:(s.lessons.find(l=>l.n===w.d)||{}).t}}),
           editing:s.swEdit!=null,editV:s.swEdit||'',onEdit:e=>this.setState({swEdit:e.target.value}),editCancel:()=>this.setState({swEdit:null}),editOpen:()=>this.setState({swEdit:w.m||''}),editL:w.m?'Изменить перевод':'Вписать перевод',
           editSave:()=>{const v=String(s.swEdit||'').trim();if(!v)return this.toast('Пустой перевод не сохраняется');if(!/[а-яё]/i.test(v))return this.toast('Напишите перевод по-русски');this.upd({words:this.state.words.map(x=>x.id===w.id?{...x,m:v,mSrc:'user',mEdited:true}:x),myRu:{...(this.state.myRu||{}),[w.k||w.h]:v},swEdit:null});this.toast('Перевод сохранён — словарь не изменён');},
@@ -1339,14 +1362,19 @@ class Component extends DCLogic {
       if(!/^(сущ|гл\.|гл$|глаг|прил|нареч|местоим|союз|частиц|числ|междом|межд\.|послелог|предлог|сч[её]тн|модальн|служебн|вспом|отрицание)/i.test(pos))pos='';}
     const nS=o.full?8:3,nX=o.full?2:1;const nzR=t=>String(t||'').toLowerCase().replace(/ё/g,'е').replace(/[^а-яa-z]+/g,' ').trim();const mainR=nzR(o.m);
     if(o.tag==='learn'&&sen.length&&mainR&&nzR(String(sen[0].t).replace(/\(.*?\)/g,'')).split(' ').filter(x=>x.length>2).every(x=>mainR.includes(x)))sen=sen.slice(1);
-    const senV=sen.filter(x=>x.t).slice(0,nS).map((x,i)=>({n:i+1+'.',t:x.t,xs:(x.x||[]).slice(0,nX).map(q=>({zh:q[0],py:q[1]||'',ru:q[2]}))}));
+    // a sense as a short translation: no remarks in brackets, up to three words or phrases
+    const senShort=t=>{const x=String(t||'').replace(/\([^)]*\)/g,' ').replace(/[\[\]]/g,'').replace(/\s+/g,' ').trim();let o2='',k=0;for(const q of x.split(/[;,]\s*/).filter(Boolean)){if(o2&&o2.length+q.length>38)break;o2+=(o2?', ':'')+q;if(++k>=3)break;}o2=o2.replace(/[\s,.:]+$/,'');return /[а-яё]/i.test(o2)?o2:'';};
+    const canPick=!!o.full,pk=canPick&&this.state.pk&&this.state.pk.h===h?this.state.pk.sel:[];
+    const senAll=sen.filter(x=>x.t).slice(0,nS);
+    const senV=senAll.map((x,i)=>{const on=pk.includes(i),ok=canPick&&!!senShort(x.t);return {n:i+1+'.',t:x.t,xs:(x.x||[]).slice(0,nX).map(q=>({zh:q[0],py:q[1]||'',ru:q[2]})),pickable:ok,bd:on?'var(--pr)':'var(--mu)',bg:on?'var(--pr)':'var(--sf)',mk:on?'✓':'',pick:()=>{if(!ok)return;const cur=this.state.pk&&this.state.pk.h===h?this.state.pk.sel:[];this.setState({pk:{h,sel:cur.includes(i)?cur.filter(q=>q!==i):[...cur,i].sort((a,b)=>a-b)}});}};});
+    const pickM=pk.map(i=>senAll[i]&&senShort(senAll[i].t)).filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i).join('; ');
     const src=o.mSrc,lrn=o.tag==='learn';const meta=[e&&e.lv?'HSK '+e.lv:'',pos,e&&e.cl?'сч. слово '+e.cl.split(',')[0]:'',src==='b'&&!lrn?'перевод: БКРС':src==='user'?'свой перевод':src==='m'&&!lrn?'перевод: Mao':src==='ai'?'перевод нейросети — проверьте':''].filter(Boolean).join(' · ');
     const rd=n===1&&E?E.readings(h).filter(r=>nz(r.p)!==nz(p)&&r.m).slice(0,4).map(r=>r.p+' — '+shortM(r.m)).join('; '):'';
     const parts=o.mn?(o.mn.parts.map(x=>x[0]+' '+x[1]).join(' + ')+(o.mn.note?'\n'+o.mn.note:'')):(window.Explain&&Explain.ready()?Explain.partsShort(h):'');
     const key=(o.tag||'c')+'|'+h;const animOn=!!(this.state.animK===key);
     return {cs:ch.map((c,i)=>({c,py:syl?syl[i]:''})),pyLine:!syl,p,gap:gapC,fs,pfs:fs<40?11:n>3?15:18,m:o.m||'',noRu:!o.m,hasMeta:!!meta,meta,say:()=>this.speak(h),
       canAnim:!!(window.WCheck&&WCheck.ready()&&ch.some(c=>WCheck.has(c))),anim:()=>this.setState({animK:animOn?null:key}),animOn,animRef:el=>{if(el&&el.dataset.k!==h){el.dataset.k=h;this.sAnim(el,h);}},
-      hasSen:senV.length>0,sen:senV,senL:lrn?'ЗНАЧЕНИЯ':'ЗНАЧЕНИЯ · БКРС',exNote:!lrn&&senV.some(x=>x.xs.length)?'Пиньинь в примерах подобран автоматически по словарю — возможны неточности в многозначных словах.':'',
+      hasSen:senV.length>0,sen:senV,canPick:canPick&&senV.some(x=>x.pickable),hasPick:!!pickM,pickM,senL:lrn?'ЗНАЧЕНИЯ':'ЗНАЧЕНИЯ · БКРС',exNote:!lrn&&senV.some(x=>x.xs.length)?'Пиньинь в примерах подобран автоматически по словарю — возможны неточности в многозначных словах.':'',
       loading:d===undefined&&!!E,hasRd:!!rd,rd,hasParts:!!parts,parts};}
   // stroke order: strokes appear one by one in their outlines, character after character
   sAnim(el,h){const c=[...h].filter(x=>window.WCheck&&WCheck.has(x));if(!c.length)return;const r=Math.min(3,window.devicePixelRatio||1);const W=Math.round(150*r);el.width=W;el.height=W;const g=el.getContext('2d');const tok={};this.saTok=tok;
@@ -1365,7 +1393,7 @@ class Component extends DCLogic {
     const howSteps=[
       {n:1,t:'Новое слово',d:'Иероглиф, пиньинь, перевод и звук. Знаете слово — нажмите «Уже знаю»: один контрольный вопрос, и оно не будет отнимать время.'},
       {n:2,t:'Обводка',d:'Обведите иероглиф по серому контуру. Цифра — где начать черту, стрелка — куда вести.'},
-      {n:3,t:'Вопросы вперемешку',d:'Слово вернётся дважды: сначала узнать перевод, потом вспомнить иероглиф — по переводу или на слух. Между ними идут другие слова: вспоминать с паузой труднее, но так запоминается надолго.'},
+      {n:3,t:'Вопросы вперемешку',d:'Слово вернётся дважды: сначала узнать перевод, потом вспомнить иероглиф — по переводу или на слух. Чаще всего это карточка: вспомните, откройте ответ и честно отметьте, получилось ли. Между вопросами идут другие слова — так запоминается надолго.'},
       {n:4,t:'Письмо по памяти',d:'Последний шаг для слова. Забыли — «Подсказка» покажет контур, но тогда слово вернётся ещё раз.'}];
     const iv='';
     return {runSteps,runStepsOn:lessonQ,runStepsOff:!lessonQ,howOpen:()=>this.setState({sheet:'howto'}),sheetHow:s.sheet==='howto',
@@ -1381,12 +1409,12 @@ class Component extends DCLogic {
     const has=(s.wN||0)>0;const last=idx>=n-1;
     const R0=wScr&&!rev?this.wCurRef():null;
     const okN=((this.wMeta||[]).filter(m=>m&&m.k>=0).length);
-    const wCount=!wScr||rev?'':s.wMsg?s.wMsg.t:R0?(trace?'черта '+Math.min(okN+1,R0.length)+' из '+R0.length:okN?'черт написано: '+okN:'начните с первой черты'):'';
+    const wCount=!wScr||rev?'':s.wDiag==='on'&&this.wDgText&&!s.wMsg?this.wDgText:s.wMsg?s.wMsg.t:R0?(trace?'черта '+Math.min(okN+1,R0.length)+' из '+R0.length:okN?'черт написано: '+okN:'начните с первой черты'):'';
     const hintL=trace?'Пропустить':ghost||this.wPeek||s.wPeekS?'Ответ':'Подсказка';
     const vw=Math.min(window.innerWidth||360,480),tabRows=n>1&&wScr?Math.ceil(n/Math.max(1,Math.floor((vw-32)/48))):0;
     const wCellW='min(288px,calc(100vw - 48px),calc(100dvh - '+((rev?452:356)+Math.max(0,tabRows-1)*48+(tabRows?0:-48))+'px))';
     return {wCellW,wTabs:tabs,wTabsShow:n>1&&wScr,wScreen:wScr,wPaper:!wScr&&!rev,wPaperRev:!wScr&&rev,wGridOn:s.wGrid!==false,wGridMi:s.wGrid==='mi',
-      wcRef:el=>{this.wcCanvas=el;},wDown:e=>this.wDown(e),wMove:e=>this.wMove(e),wUp:e=>this.wUp(e),wCancel:e=>this.wCancel(e),
+      wcRef:el=>{this.wcCanvas=el;if(el&&!el.__raw){el.__raw=1;try{el.addEventListener('pointerrawupdate',ev=>this.wMove(ev,true));}catch(e){}}},wDown:e=>this.wDown(e),wMove:e=>this.wMove(e),wUp:e=>this.wUp(e),wCancel:e=>this.wCancel(e),
       wRevOn:wScr&&rev&&!D,wCurCh:[...(qv.h||'')][Math.min(idx,Math.max(0,n-1))]||'',
       wOkOn:!!D&&!rev&&(D.ok||trace),wOkL:trace?'Прописано':D&&D.mist?'Верно · ошибок: '+D.mist:'Верно',
       wAskL:trace?'Обведите по контуру: от цифры, по стрелке':wScr?'Напишите по памяти':'Напишите на бумаге',wCount,wCountC:s.wMsg&&s.wMsg.bad?'var(--bad)':'var(--mu)',wCountW:s.wMsg?600:400,
