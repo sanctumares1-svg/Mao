@@ -1,4 +1,4 @@
-#mao-dict	2026.11.11-bkrs261102-r4
+#mao-dict	2026.11.12-bkrs261102-r5
 车上		=chēshang		в машине, в транспорте	1	m	
 看到		=kàndào		увидеть	1	m	
 请坐		=qǐng zuò		садитесь, пожалуйста	1	m	
@@ -2986,7 +2986,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 一鼓作气	一鼓作氣	yi1 gu3 zuo4 qi4	in a spurt of energy	первый удар барабана поднимает дух, обр. одним духом, одним махом…		b	
 一鼻孔出气	一鼻孔出氣	yi1 bi2 kong3 chu1 qi4	lit. to breathe through the same nostril (idiom); fig. two people say exactly the same thing (usually derog.); to sing from the same hymn sheet	выдыхать в одну ноздрю; дудеть в одну дуду, подпевать друг другу…		b	
 一齐	一齊	yi1 qi2	at the same time; simultaneously	вместе, разом, дружно, одновременно; все [как один]	6	b	
-丁		ding1	surname Ding; fourth of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; fourth in order; letter "D" or Roman "IV" in list "A, B, C", or "I, II, III" etc; ancient Chinese compass	взрослый работник; совершеннолетний мужчина	6	b	
+丁		ding1	surname Ding; fourth of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; fourth in order; letter "D" or Roman "IV" in list "A, B, C", or "I, II, III" etc; ancient Chinese compass	четвёртый (знак цикла); кубик (о нарезке); взрослый мужчина	6	m	
 丁丁		Ding1 ding1	Tintin, cartoon character	Тинтин; мужской половой орган		b	
 丁丁		zheng1 zheng1	sound of chopping wood, chess pieces hitting the board etc	хряп!		b	
 丁丁炒面	丁丁炒麵	ding1 ding1 chao3 mian4	chopped fried noodles	лапша Дин Дин		b	
@@ -3755,7 +3755,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 上钩儿	上鉤兒	shang4 gou1 r5	erhua variant of 上鉤|上钩[shang4 gou1]				
 上镜	上鏡	shang4 jing4	photogenic; to appear on film or in the media	фотогеничный; также см		b	
 上钟	上鐘	shang4 zhong1	to clock in for work	заводить [настенные] часы		b	
-上门	上門	shang4 men2	to drop in; to visit; to lock a door; (of a shop) to close; to go and live with one's wife's family, in effect becoming a member of her family	входить в ворота; входить в семью, жить в доме тестя	4	b	
+上门	上門	shang4 men2	to drop in; to visit; to lock a door; (of a shop) to close; to go and live with one's wife's family, in effect becoming a member of her family	приходить на дом; запирать дверь	4	m	
 上门费	上門費	shang4 men2 fei4	house call fee; callout fee				
 上限		shang4 xian4	upper bound	верхний предел, максимальный размер, максимум		b	
 上阵	上陣	shang4 zhen4	to go into battle	прибывать в распоряжение армии		b	
@@ -4946,7 +4946,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 丘逢甲		Qiu1 Feng2 jia3	Qiu Fengjia or Ch'iu Feng-chia (1864-1912), Taiwanese Hakkanese poet				
 丘陵		qiu1 ling2	hills	холм, бугор; пригорок; сопка	6	b	
 丘鹬	丘鷸	qiu1 yu4	(bird species of China) Eurasian woodcock (Scolopax rusticola)	вальдшнеп		b	
-丙		bing3	third of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; third in order; letter "C" or Roman "III" in list "A, B, C", or "I, II, III" etc; ancient Chinese compass 	бин γ; третий сектор неба, SSO	6	b	
+丙		bing3	third of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; third in order; letter "C" or Roman "III" in list "A, B, C", or "I, II, III" etc; ancient Chinese compass 	третий (знак цикла), «В»	6	m	
 丙三醇		bing3 san1 chun2	glycerine; same as 甘油	глицерин, глицерол		b	
 丙二醇		bing3 er4 chun2	propylene glycol; propane-1,2-diol C3H6(OH)2	пропиленгликоль		b	
 丙午		bing3 wu3	forty-third year C7 of the 60 year cycle, e.g. 1966 or 2026	43-й год 60-летнего цикла, год красной Лошади		b	
@@ -5812,7 +5812,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 主体思想	主體思想	Zhu3 ti3 Si1 xiang3	Juche Idea (North Korean ideology of political, economic and military independence)	идеи Чучхе		b	
 主麻		zhu3 ma2	jummah or Friday, when Muslims gather to attend prayers (loanword from Arabic)	джума-намаз, пятничная молитва		b	
 丼		dong4	(Tw) bowl of boiled rice with other food on top (loanword from Japanese "donburi")				
-丿		pie3	radical in Chinese characters (Kangxi radical 4); see 撇[pie3]	вм		b	
+丿		pie3	radical in Chinese characters (Kangxi radical 4); see 撇[pie3]				
 乀		fu2	stretch	течь		b	
 乂		yi4	to regulate; to govern; to control; to mow	регулировать; править, управлять. приводить в порядок		b	
 乃		nai3	to be; thus; so; therefore; then; only; thereupon	именно и есть, является [не чем иным, как...]		b	
@@ -5861,7 +5861,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 幺麽小丑	么麼小醜	yao1 mo2 xiao3 chou3	insignificant wretch				
 幺点	么點	yao1 dian3	ace				
 乊		xx5	one of the characters used in kwukyel (phonetic "ho"), an ancient Korean writing system	"хо"		b	
-之		zhi1	(possessive particle, literary equivalent of 的[de5]); him; her; it	направляться	4	b	
+之		zhi1	(possessive particle, literary equivalent of 的[de5]); him; her; it	(книжн.) частица определения, как 的; его, её, это	4	m	
 之一		zhi1 yi1	one of (sth); one out of a multitude; one (third, quarter, percent etc)	один из	4	b	
 之上		zhi1 shang4	above	на, над, сверху		b	
 之下		zhi1 xia4	under; beneath; less than	под; менее чем	5	b	
@@ -5917,7 +5917,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 乖迕		guai1 wu3	stubborn; contrary; disobedient				
 乖顺	乖順	guai1 shun4	obedient (colloquial)	послушание, быть послушным		b	
 乗		cheng2	Japanese variant of 乘[cheng2]				
-乘		cheng2	surname Cheng; to ride; to mount; to make use of; to avail oneself of; to take advantage of; to multiply (math.); Buddhist sect or creed	садиться в..., на...; грузиться на...; ехать на...; на, в	5	b	
+乘		cheng2	surname Cheng; to ride; to mount; to make use of; to avail oneself of; to take advantage of; to multiply (math.); Buddhist sect or creed	ехать (на транспорте); умножать	5	m	
 乘		sheng4	four horse military chariot (archaic); four (archaic); generic term for history books	четвёрка; четыре; пара; парами	5	b	
 乘人不备	乘人不備	cheng2 ren2 bu4 bei4	to take advantage of sb in an unguarded moment (idiom); to take sb by surprise	воспользоваться чужой неподготовленностью; застать врасплох		b	
 乘人之危		cheng2 ren2 zhi1 wei1	to take advantage of sb's precarious position	воспользоваться чужой бедой, использовать затруднительным положением		b	
@@ -5957,7 +5957,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 乘鹤	乘鶴	cheng2 he4	to fly on a crane; to die				
 乘龙	乘龍	cheng2 long2	to ride the dragon; to die (of emperors and kings)	взмывать к небесам верхом на драконе		b	
 乘龙快婿	乘龍快婿	cheng2 long2 kuai4 xu4	ideal son-in-law	хороший зять, преуспевающий зять		b	
-乙		yi3	second of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; second in order; letter "B" or Roman "II" in list "A, B, C", or "I, II, III" etc; second party (in legal 	II, 2, Б, б, В, бета	5	b	
+乙		yi3	second of the ten Heavenly Stems 十天干[shi2 tian1 gan1]; second in order; letter "B" or Roman "II" in list "A, B, C", or "I, II, III" etc; second party (in legal 	второй (знак цикла), «Б»	5	m	
 乙		zhe2	turning stroke (in Chinese characters); see also 折[zhe2]	II, 2, Б, б, В, бета	5	b	
 乙丑		yi3 chou3	second year B2 of the 60 year cycle, e.g. 1985 or 2045	2-й год 60-летнего цикла, год синего Быка		b	
 乙二醇		yi3 er4 chun2	glycol; ethylene glycol C2H4(OH)2 (antifreeze)	этиленгликоль		b	
@@ -6097,7 +6097,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 也有今天		ye3 you3 jin1 tian1	(coll.) to get one's just deserts; to serve sb right; to get one's share of (good or bad things); every dog has its day				
 也罢	也罷	ye3 ba4	(reduplicated) whether... or...; never mind; fine (indicating acceptance or resignation)	на том и покончить; так и будет		b	
 也门	也門	Ye3 men2	Yemen	Йемен		b	
-乢		gai4	ancient variant of 蓋|盖[gai4]; ancient variant of 丐[gai4]	вм		b	
+乢		gai4	ancient variant of 蓋|盖[gai4]; ancient variant of 丐[gai4]				
 乣		jiu3	archaic variant of 糺[jiu3]				
 乤		xx5	first character in place name 乤浦 "Halpho" (Korean gugja)	"халь"		b	
 乥		xx5	one of the characters used in kwukyel (phonetic "hol"), an ancient Korean writing system	"холь"		b	
@@ -6172,7 +6172,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 乷		xx5	phonetic "sal" (Korean gugja)	"саль"		b	
 乸		na3	feminine suffix (Cantonese); postfix indicating feminine	самка		b	
 乺		xx5	phonetic "sol" used in place names (Korean gugja)	"соль"		b	
-乼		xx5	rope (Korean gugja)	вм		b	
+乼		xx5	rope (Korean gugja)				
 乾		qian2	surname Qian; one of the Eight Trigrams 八卦[ba1 gua4], symbolizing heaven; male principle; ☰; ancient Chinese compass point: 315° (northwest)	неустанно напрягать все силы в работе, неутомимо трудиться		b	
 干	乾	gan1	surname Gan; dry; clean; in vain; dried food; foster; adoptive; to ignore; to concern; to interfere; shield; stem	сухой; сушёный; впустую	1	m	
 干俸	乾俸	gan1 feng4	sinecure				
@@ -6598,13 +6598,13 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 二鬼子		er4 gui3 zi5	traitor; collaborator with the enemy	предатель		b	
 二黄	二黃	er4 huang2	one of the two chief types of music in Chinese opera; Peking opera; also written 二簧[er4 huang2]; see also 西皮[xi1 pi2]	эрхуан		b	
 亍		chu4	step with the right foot; see 彳亍[chi4 chu4]	медленно шагать		b	
-于		yu2	surname Yu; to go; to take; sentence-final interrogative particle; variant of 於|于[yu2]; in; at; to; from; by; than; out of	так, таким образом; там	6	b	
+于		yu2	surname Yu; to go; to take; sentence-final interrogative particle; variant of 於|于[yu2]; in; at; to; from; by; than; out of	в, на, к; чем (книжный предлог)	6	m	
 于丹		Yu2 Dan1	Yu Dan (1965-), female scholar, writer, educator and TV presenter	Юй Дань		b	
 于归	于歸	yu2 gui1	(literary) (of a girl) to marry	выйти замуж, переехать в дом мужа		b	
 于归之喜	于歸之喜	yu2 gui1 zhi1 xi3	the joy of matrimony (polite phrase referring to a young woman)				
 于洪		Yu2 hong2	Yuhong district of Shenyang city 瀋陽市|沈阳市, Liaoning				
 于洪区	于洪區	Yu2 hong2 Qu1	Yuhong District of Shenyang city 瀋陽市|沈阳市[Shen3 yang2 shi4], Liaoning	район Юйхун		b	
-亐		yu2	archaic variant of 于[Yu2]	вм		b	
+亐		yu2	archaic variant of 于[Yu2]				
 云云		yun2 yun2	and so on; so and so; many and confused	и так далее; и тому подобное; так-то; то-то и то-то		b	
 云城		Yun2 cheng2	Yuncheng district of Yunfu city 雲浮市|云浮市[Yun2 fu2 shi4], Guangdong				
 云城区	云城區	Yun2 cheng2 qu1	Yuncheng district of Yunfu city 雲浮市|云浮市[Yun2 fu2 shi4], Guangdong				
@@ -6859,7 +6859,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 些		xie1	classifier indicating a small amount or small number greater than 1: some, a few, several	несколько, немного; сколько-нибудь	1	b	
 些许	些許	xie1 xu3	a few; a little; a bit	немного, в незначительной степени		b	
 亜		ya4	Japanese variant of 亞|亚				
-亚	亞	ya4	Asia; Asian; Taiwan pr. [Ya3]; second; next to; inferior; sub-; Taiwan pr. [ya3]	разг. и тайв. yǎ		b	
+亚	亞	ya4	Asia; Asian; Taiwan pr. [Ya3]; second; next to; inferior; sub-; Taiwan pr. [ya3]	второй, уступающий; Азия (亚洲)		m	
 亚丁	亞丁	Ya4 ding1	Aden	Аден; Ядин		b	
 亚丁湾	亞丁灣	Ya4 ding1 Wan1	Gulf of Aden	Аденский залив		b	
 亚伯	亞伯	Ya4 bo2	Abe (short form for Abraham); Abel, a figure of Jewish, Christian and Muslim mythologies	Авель		b	
@@ -7180,7 +7180,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 亥		hai4	12th earthly branch: 9-11 p.m., 10th solar month (7th November-6th December), year of the Boar; ancient Chinese compass point: 330°	хай; знак Свиньи; год Свиньи		b	
 亥时	亥時	hai4 shi2	9-11 pm (in the system of two-hour subdivisions used in former times)	время от 9 до 11 часов вечера		b	
 亥猪	亥豬	hai4 zhu1	Year 12, year of the Boar (e.g. 2007)	астрол. знак Свиньи		b	
-亦		yi4	also	В частности; тоже, также, а также, и	6	b	
+亦		yi4	also	также, тоже (книжн.)	6	m	
 亦且		yi4 qie3	variant of 抑且[yi4 qie3]	к тому же; кроме того		b	
 亦作		yi4 zuo4	also written as	также пишется как		b	
 亦即		yi4 ji2	namely; that is	то есть		b	
@@ -7362,8 +7362,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 人字洞		Ren2 zi4 dong4	Renzidong palaeolithic archaeological site at Fanchang 繁昌[Fan2 chang1], Anhui				
 人定		ren2 ding4	middle of the night; the dead of night	время общего отдыха		b	
 人定胜天	人定勝天	ren2 ding4 sheng4 tian1	man can conquer nature (idiom); human wisdom can prevail over nature	решимость человека преодолевает даже небо		b	
-人家		ren2 jia1	household; dwelling; family; sb else's house; household business; house of woman's husband-to-be	дом, двор; семейный очаг; жилище	4	b	戶,家
-人家		ren2 jia5	other people; sb else; he, she or they; I, me (referring to oneself as "one" or "people")	дом, двор; семейный очаг; жилище	4	b	
+人家		ren2 jia1	household; dwelling; family; sb else's house; household business; house of woman's husband-to-be	жилой дом, двор; семья	4	m	戶,家
+人家		ren2 jia5	other people; sb else; he, she or they; I, me (referring to oneself as "one" or "people")	другие люди; он, она (о ком-то); я (кокетливо)	4	m	
 人寰		ren2 huan2	world; earthly world	мир людей; в кругу людей		b	
 人尖儿	人尖兒	ren2 jian1 r5	outstanding individual; person of great ability	выделяющийся человек, выдающаяся личность, звезда		b	
 人居		ren2 ju1	human habitat	жилище, жильё; место обитания человека; жилая среда; окружающая…		b	
@@ -7664,7 +7664,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 仁言利博		ren2 yan2 li4 bo2	Words of benevolence apply universally (idiom). Humanitarian expressions benefit all.				
 仂		le4	surplus; tithe	одна десятая часть		b	
 仂语	仂語	le4 yu3	phrase (linguistics)	лексическая синтагма; словосочетание		b	
-仃		ding1	alone	см; dǐng вм		b	
+仃		ding1	alone				
 仄		ze4	to tilt; narrow; uneasy; oblique tones (in Chinese poetry)	косой, склонённый, наклонённый; покосившийся; боковой; боком		b	
 仄径	仄徑	ze4 jing4	narrow path				
 仄声	仄聲	ze4 sheng1	oblique tone; nonlevel tone; uneven tone (the third tone of Classical Chinese)	ломаные тоны		b	
@@ -7853,7 +7853,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 仙游县	仙遊縣	Xian1 you2 xian4	Xianyou county in Putian 莆田[Pu2 tian2], Fujian	уезд Сянью; уезд Тьензу		b	
 仙乡	仙鄉	xian1 xiang1	fairyland; honorific: your homeland	райская обитель, райские кущи		b	
 仙鹤	仙鶴	xian1 he4	red-crowned crane (Grus japonensis)	уссурийский журавль		b	
-同	仝	tong2	(used in given names); variant of 同[tong2]; like; same; similar; together; alike; with	одинаковый, равный, тождественный; тот же самый, один и тот же…	6	b	
+同	仝	tong2	(used in given names); variant of 同[tong2]; like; same; similar; together; alike; with	одинаковый; вместе; с (кем-л.)	6	m	
 仞		ren4	(measure)	жэнь; глубокий		b	
 仟		qian1	thousand (banker's anti-fraud numeral)	тысяча, вм; тысяцкий		b	
 仟悔		qian1 hui3	repentance (in Christianity)	раскаяние, христ. покаяние		b	
@@ -7949,7 +7949,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 代驾	代駕	dai4 jia4	to drive a vehicle for its owner (often as a paid service for sb who has consumed alcohol) (abbr. for 代理駕駛|代理驾驶[dai4 li3 jia4 shi3]); substitute driver (abbr. f	водитель на замену		b	
 令		Ling2	see 令狐[Ling2 hu2]; see 脊令[ji2 ling2]	Лин	5	b	
 令		ling3	classifier for a ream of paper	стопа бумаги	5	b	
-令		ling4	to order; to command; an order; warrant; writ; to cause; to make sth happen; virtuous; honorific title; season; government position (old); type of short song or	приказ, предписание, указание; указ, декрет, закон; директива…	5	b	
+令		ling4	to order; to command; an order; warrant; writ; to cause; to make sth happen; virtuous; honorific title; season; government position (old); type of short song or	приказ; заставлять, вызывать (чувство)	5	m	
 令人		ling4 ren2	to cause one (to do sth); to make one (angry, delighted etc)	побуждать, заставлять людей, вызывать, навеивать		b	
 令人不快		ling4 ren2 bu4 kuai4	unpleasant; objectionable	неприятный, досадный		b	
 令人吃惊	令人吃驚	ling4 ren2 chi1 jing1	to shock; to amaze				
@@ -7985,7 +7985,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 令誉	令譽	ling4 yu4	honorable reputation	доброе имя, хорошая репутация, добрая слава; знаменитый человек…		b	
 令郎		ling4 lang2	your esteemed son (honorific)	Ваш сын		b	
 令阃	令閫	ling4 kun3	your wife (honorific)				
-以		yi3	abbr. for Israel 以色列[Yi3 se4 lie4]; to use; by means of; according to; in order to; because of; at (a certain date or place)	считать, полагать; говорить, мотивировать	4	b	
+以		yi3	abbr. for Israel 以色列[Yi3 se4 lie4]; to use; by means of; according to; in order to; because of; at (a certain date or place)	с помощью, посредством; чтобы; на основании	4	m	
 以一驭万	以一馭萬	yi3 yi1 yu4 wan4	to control a key point is to be master of the situation (idiom)				
 以下犯上		yi3 xia4 fan4 shang4	to disrespect one's superiors; to offend one's elders				
 以人名命名		yi3 ren2 ming2 ming4 ming2	to name sth after a person; named after; eponymous				
@@ -8358,7 +8358,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 伍德豪斯		Wu3 de2 hao2 si1	Woodhouse or Wodehouse (name)				
 伎		ji4	artistry; talent; skill; (in ancient times) female entertainer	талант, способности, уменье; искусство, мастерство		b	
 伎俩	伎倆	ji4 liang3	trick; scheme; ploy; tactic; stratagem; gimmick; ruse; trickery; skill; also written 技倆|技俩	способности, искусство, умение, ловкость, сноровка		b	
-伏		Fu2	surname Fu; to lean over; to fall (go down); to hide (in ambush); to conceal oneself; to lie low; hottest days of summer; to submit; to concede defeat; to overcome; to subd	А.; лежать ничком; падать лицом вниз; лежачий; ничком		b	
+伏		fu2	surname Fu; to lean over; to fall (go down); to hide (in ambush); to conceal oneself; to lie low; hottest days of summer; to submit; to concede defeat; to overcome; to subd	лежать ничком; падать лицом вниз; лежачий; ничком		b	
 伏侍		fu2 shi5	variant of 服侍[fu2 shi5]	обслуживать; прислуживать; ухаживать за; заботиться о		b	
 伏兵		fu2 bing1	hidden troops; ambush	войска в засаде; засада		b	
 伏地		fu2 di4	to lie prostrate	прижиматься к земле		b	
@@ -8799,7 +8799,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 占线	佔線	zhan4 xian4	busy (telephone line)	занято, линия занята	4	b	
 占领	佔領	zhan4 ling3	to occupy (a territory); to hold	захватить, оккупировать, занять, оккупация; оккупационный	5	b	
 占领者	佔領者	zhan4 ling3 zhe3	occupant	захватчик, оккупант		b	
-何		He2	surname He; what; how; why; which; carry	А; что?; что такое?; кто?		b	
+何		he2	surname He; what; how; why; which; carry	что?; что такое?; кто?		b	
 何不		he2 bu4	why not?; why not do (sth)?	почему бы не...; следовало бы; можно		b	
 何不食肉糜		he2 bu4 shi2 rou4 mi2	lit. "Why don't they eat meat?" (said by Emperor Hui of Jin 晉惠帝|晋惠帝[Jin4 Hui4 di4] when told that his people didn't have enough rice to eat); fig. (of people fr				
 何人		he2 ren2	who	кто?; что за человек?		b	
@@ -8902,7 +8902,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 佛骨塔		fo2 gu3 ta3	stupa (Buddhist shrine)	ступа, чортен		b	
 佛龛	佛龕	fo2 kan1	niche for statue (esp. Buddhist, Christian etc)	ниша для статуи Будды; буддийский киот, киот с изображением Будды		b	
 作		zuo1	worker; workshop; (slang) troublesome; high-maintenance (person)	мастерская; мастер, ремесленник	6	b	
-作		zuo4	to do; to grow; to write or compose; to pretend; to regard as; to feel; writings or works	являться, быть; становиться, оказываться; выступать в качестве	6	b	
+作		zuo4	to do; to grow; to write or compose; to pretend; to regard as; to feel; writings or works	делать, создавать; быть в роли; произведение	6	m	
 作下		zuo4 xia4	to do; to make (usually bad connotation)				
 作主		zuo4 zhu3	to decide; to make decisions; to take responsibility (for deciding); to be in charge; to give sb justice	быть хозяином, распоряжаться, решать; брать на себя инициативу…		b	
 作乱	作亂	zuo4 luan4	to start a rebellion; to rise in revolt	поднимать мятеж; учинять смуту; производить беспорядок		b	
@@ -8985,8 +8985,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 作风正派	作風正派	zuo4 feng1 zheng4 pai4	to be honest and upright; to have moral integrity	нравственный, честный; иметь моральные принципы, обладать…		b	
 作马	作馬	zuo4 ma3	trestle; carpenter's frame				
 作鸟兽散	作鳥獸散	zuo4 niao3 shou4 san4	lit. scatter like birds and beasts (idiom); fig. to head off in various directions; to flee helter-skelter	[как] рассеивается стая птиц или зверей		b	
-佝		gou1	see 佝僂|佝偻[gou1 lou2]	см; gōu см		b	
-佝		kou4	see 佝瞀[kou4 mao4]	см; gōu см		b	
+佝		gou1	see 佝僂|佝偻[gou1 lou2]				
+佝		kou4	see 佝瞀[kou4 mao4]				
 佝偻	佝僂	gou1 lou2	stooped; crooked	горбатый, сгорбленный		b	
 佝偻病	佝僂病	gou1 lou2 bing4	rickets (medicine)	рахит		b	
 佝瞀		kou4 mao4	rickets (medicine)	тёмный, невежественный		b	
@@ -9073,7 +9073,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 并购	併購	bing4 gou4	merger and acquisition (M and A); acquisition; to take over	поглощение, слияние, объединение		b	
 并集	併集	bing4 ji2	union (symbol ∪) (set theory)	объединение; сумма множеств		b	
 佶		ji2	difficult to pronounce	крепкий, дюжий, здоровый		b	
-佷		hen3	to act contrary to	вм		b	
+佷		hen3	to act contrary to				
 佸		huo2	meet	встреча, свидание; приезд		b	
 佹		gui3	almost succeed; crafty; suddenly	противоречить; расходиться		b	
 佺		quan2	immortal				
@@ -9399,7 +9399,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 局促	侷促	ju2 cu4	cramped; ill at ease; narrow (surrounding); short (of time)	тесный, узкий; ограниченный, малоспособный		b	
 局限	侷限	ju2 xian4	variant of 局限[ju2 xian4]; to limit; to confine; to restrict sth within set boundaries	ограничиваться; ограниченный; ограничения; локализация	6	b	
 局麻药	侷麻藥	ju2 ma2 yao4	local anesthetic				
-便		bian4	plain; informal; suitable; convenient; opportune; to urinate or defecate; equivalent to 就[jiu4]: then; in that case; even if; soon afterwards	удобный, комфортабельный; подходящий, целесообразный	5	b	
+便		bian4	plain; informal; suitable; convenient; opportune; to urinate or defecate; equivalent to 就[jiu4]: then; in that case; even if; soon afterwards	удобный; тогда, сразу же (книжн., как 就)	5	m	
 便		pian2	see 便宜|便宜[pian2 yi5]	дешёвый (в слове 便宜)	5	m	
 便中		bian4 zhong1	at one's convenience; when it's convenient	в удобное время, при удобном случае		b	
 便人		bian4 ren2	sb who happens to be on hand for an errand	человек, которому можно дать попутное поручение; случайный…		b	
@@ -10005,7 +10005,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 个体户	個體戶	ge4 ti3 hu4	self-employed; a private firm (PRC usage)	индивидуальный предприниматель, частный предприниматель, малый…		b	
 个体经济学	個體經濟學	ge4 ti3 jing1 ji4 xue2	microeconomics				
 倌		guan1	keeper of domestic animals; herdsman; (old) hired hand in certain trade	челядинец, работник, слуга		b	
-倍		bei4	(two, three etc) -fold; times (multiplier); double; to increase or multiply	удваиваться, увеличиваться в несколько раз, удвоенный, кратный	4	b	
+倍		bei4	(two, three etc) -fold; times (multiplier); double; to increase or multiply	раз, -кратный; удваивать	4	m	
 倍儿	倍兒	bei4 r5	very; much (Beijing dialect)	очень, чрезвычайно		b	
 倍儿棒	倍兒棒	bei4 r5 bang4	(dialect) awesome; excellent	классный, крутой, потрясающий		b	
 倍塔		bei4 ta3	beta (loanword)	бета		b	
@@ -10310,12 +10310,12 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 值班		zhi2 ban1	to work a shift; on duty	дежурить; нести дежурство	5	b	
 值遇		zhi2 yu4	to meet with; to bump into	встречать[ся]; встреча		b	
 值钱	值錢	zhi2 qian2	valuable; costly; expensive	стоить денег; быть дорогим; ценный, стоящий		b	
-偃		Yan3	surname Yan; to lie supine; to stop; to fall down	А; валиться навзничь; переворачиваться		b	
+偃		yan3	surname Yan; to lie supine; to stop; to fall down	валиться навзничь; переворачиваться		b	
 偃师	偃師	Yan3 shi1	Yanshi county level city in Luoyang 洛陽|洛阳[Luo4 yang2], Henan	Яньши		b	
 偃师市	偃師市	Yan3 shi1 shi4	Yanshi county level city in Luoyang 洛陽|洛阳, Henan				
 偃旗息鼓		yan3 qi2 xi1 gu3	lit. lay down the flag and still the drums (idiom); fig. to cease; to give in	свернуть знамёна и перестать бить в барабаны а б		b	
 假		gei1	see 假掰[gei1 bai1]				
-假		jia3	fake; false; artificial; to borrow; if; suppose; variant of 假[jia3]; to borrow	ложный; поддельный, искусственный; подложный, фальшивый, фиктивный…	2	b	
+假		jia3	fake; false; artificial; to borrow; if; suppose; variant of 假[jia3]; to borrow	ложный, поддельный; если (假如)	2	m	
 假一赔十	假一賠十	jia3 yi1 pei2 shi2	lit. if one is fake, I shall compensate you for ten of them; fig. (of goods) 100% genuine				
 假人		jia3 ren2	dummy (for crash testing, displaying clothes etc)	чучело, кукла, манекен		b	
 假人像		jia3 ren2 xiang4	an effigy				
@@ -10426,7 +10426,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 偌大		ruo4 da4	so big; such a big	такой большой		b	
 偎		wei1	to cuddle	прижиматься, льнуть; прислоняться		b	
 偎傍		wei1 bang4	to snuggle up to	прижиматься, обниматься, льнуть		b	
-偏		pian1	to lean; to slant; oblique; prejudiced; to deviate from average; to stray from the intended line; stubbornly; contrary to expectations	однобокий, перекошенный; неровный, косой; на сторону, набок	6	b	
+偏		pian1	to lean; to slant; oblique; prejudiced; to deviate from average; to stray from the intended line; stubbornly; contrary to expectations	наклонный; пристрастный; как назло, наперекор	6	m	
 偏三轮	偏三輪	pian1 san1 lun2	old-style cycle with lateral third wheel and passenger seat				
 偏三轮摩托车	偏三輪摩托車	pian1 san1 lun2 mo2 tuo1 che1	motorbike with sidecar				
 偏低		pian1 di1	to be on the low side; to be inadequate (e.g. of a salary)	занижать; заниженный; занижение		b	
@@ -11440,7 +11440,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 俦	儔	chou2	comrades; friends; companions	компания, сотоварищи; чета, пара		b	
 侪	儕	chai2	a class; a company; companion	сверстники; коллеги, товарищи		b	
 拟	儗	ni3	doubtful; suspicious; variant of 擬|拟[ni3]; to emulate; to imitate; to plan to; to draft (a plan); to imitate; to assess; to compare; pseudo-	предполагать, намечать, иметь в виду, собираться, намереваться		b	
-尽	儘	jin3	to the greatest extent; (when used before a noun of location) furthest or extreme; to be within the limits of; to give priority to	до конца, без остатка, полностью	6	b	
+尽	儘	jin3	to the greatest extent; (when used before a noun of location) furthest or extreme; to be within the limits of; to give priority to	в первую очередь, по возможности (尽量)	6	m	
 尽先	儘先	jin3 xian1	in the first instance; as a first priority	прежде всего, в первую очередь		b	
 尽可能	儘可能	jin3 ke3 neng2	as far as possible; to do one's utmost	как только можно, насколько возможно, по возможности, насколько…	5	b	
 尽快	儘快	jin3 kuai4	as quickly as possible; as soon as possible; with all speed	максимально быстро, во весь опор, изо всей мочи, на предельной…	4	b	
@@ -12140,7 +12140,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 兖州市	兗州市	Yan3 zhou1 Shi4	Yanzhou county level city in Jining 濟寧|济宁[Ji3 ning2], Shandong				
 兙		shi2 ke4	decagram (old); single-character equivalent of 十克[shi2 ke4]	декаграмм		b	
 兛		qian1 ke4	kilogram (old); single-character equivalent of 千克[qian1 ke4]	килограмм; кило		b	
-兜		dou1	pocket; bag; to wrap up or hold in a bag; to move in a circle; to canvas or solicit; to take responsibility for; to disclose in detail; combat armor (old)	каска, шлем; чалма; головная повязка, платок; клобук	6	b	
+兜		dou1	pocket; bag; to wrap up or hold in a bag; to move in a circle; to canvas or solicit; to take responsibility for; to disclose in detail; combat armor (old)	карман; обходить кругом	6	m	
 兜儿	兜兒	dou1 r5	erhua variant of 兜[dou1]	карман; кулёк, пакет		b	
 兜兜		dou1 dou5	an undergarment covering chest and abdomen	детский лифчик; нагрудник передник		b	
 兜售		dou1 shou4	to hawk; to peddle	продавать с рук; сбывать [из-под полы]; впаривать		b	
@@ -12164,7 +12164,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 兢		jing1	to be fearful; apprehensive	дрожать; трястись; дёргаться		b	
 兢兢业业	兢兢業業	jing1 jing1 ye4 ye4	cautious and conscientious	добросовестно, не покладая рук; старательно, с особой тщательностью	6	b	
 兣		li2 ke4	centigram (old); single-character equivalent of 釐克|厘克[li2 ke4]	сантиграмм		b	
-入		ru4	to enter; to go into; to join; to become a member of; to confirm or agree with; abbr. for 入聲|入声[ru4 sheng1]	входить [в, на]; въезжать [в, на]; влезать, проникать; выходить	6	b	
+入		ru4	to enter; to go into; to join; to become a member of; to confirm or agree with; abbr. for 入聲|入声[ru4 sheng1]	входить, вступать	6	m	
 入不敷出		ru4 bu4 fu1 chu1	income does not cover expenditure; unable to make ends meet	доходы не покрывают расходов, дефицит бюджета		b	
 入世		ru4 shi4	to engage with secular society; to involve oneself in human affairs; to join the WTO (abbr. for 加入世界貿易組織|加入世界贸易组织[jia1 ru4 Shi4 jie4 Mao4 yi4 Zu3 zhi1])	включаться в общественную жизнь; становиться членом общества		b	
 入伍		ru4 wu3	to enter the army; to enlist	поступать на военную службу, вступать в армию, вступать в строй…		b	
@@ -12813,7 +12813,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 八音盒		ba1 yin1 he2	musical box	музыкальная шкатулка		b	
 八风	八風	ba1 feng1	see 八風穴|八风穴[ba1 feng1 xue2]	ветры с восьми направлений, ветры всех румбов; роза ветров		b	
 八风穴	八風穴	ba1 feng1 xue2	"eight wind points", name of a set of acupuncture points (EX-LE-10), four on each foot				
-公		gong1	public; collectively owned; common; international (e.g. high seas, metric system, calendar); make public; fair; just; Duke, highest of five orders of nobility 五	бескорыстный; справедливый; правдивый; бескорыстие; бескорыстно	6	b	
+公		gong1	public; collectively owned; common; international (e.g. high seas, metric system, calendar); make public; fair; just; Duke, highest of five orders of nobility 五	общественный, государственный; самец	6	m	
 公丈		gong1 zhang4	decameter	декаметр		b	
 公主		gong1 zhu3	princess	дочь императора, принцесса; королевна; царевна; принцесса крови…	5	b	
 公主岭	公主嶺	Gong1 zhu3 ling3	Gongzhuling county level city in Siping 四平, Jilin	Гунчжулин		b	
@@ -13150,7 +13150,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 六龟乡	六龜鄉	Liu4 gui1 xiang1	Liugui or Liukuei township in Kaohsiung county 高雄縣|高雄县[Gao1 xiong2 xian4], southwest Taiwan				
 兮		xi1	(particle in old Chinese similar to 啊)	о!; ах!; же		b	
 兮兮		xi1 xi1	(particle used to exaggerate certain adjectives, in particular 神經兮兮|神经兮兮, 髒兮兮|脏兮兮, 可憐兮兮|可怜兮兮, and 慘兮兮|惨兮兮)				
-共		gong4	common; general; to share; together; total; altogether; abbr. for 共產黨|共产党[Gong4 chan3 dang3], Communist party	совместно, вместе, сообща; общими силами; совместный; общий…	4	b	
+共		gong4	common; general; to share; together; total; altogether; abbr. for 共產黨|共产党[Gong4 chan3 dang3], Communist party	вместе, сообща; всего, итого	4	m	
 共乘		gong4 cheng2	to ride together; to carpool	ехать вместе; карпулинг, райдшеринг		b	
 共事		gong4 shi4	to work together	делать общее дело; иметь дело		b	
 共享		gong4 xiang3	to share; to enjoy together	совместно наслаждаться, разделять удовольствие; делиться…	5	b	
@@ -13284,7 +13284,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 兵马	兵馬	bing1 ma3	troops and horses; military forces	людской и конский состав войск		b	
 兵马俑	兵馬俑	bing1 ma3 yong3	figurines of warriors and horses buried with the dead; Terracotta Army (historic site)	терракотовые статуи воинов и боевых коней в гробницах Цинь Шихуана		b	
 兵马未动，粮草先行	兵馬未動，糧草先行	bing1 ma3 wei4 dong4 , liang2 cao3 xian1 xing2	before the troops move, fodder and provisions go first (idiom); logistics comes before military maneuvers; an army marches on its stomach				
-其		qi2	his; her; its; their; that; such; it (refers to sth preceding it)	свой; его, её, их; того, той, тех; этого, этой, этих; из них, из их…	5	b	
+其		qi2	his; her; its; their; that; such; it (refers to sth preceding it)	его, её, их; тот, этот (книжн.)	5	m	
 其一		qi2 yi1	one of the given (options etc); the first; firstly	один [из них]; одно		b	
 其三		qi2 san1	thirdly; the third	третий, в-третьих		b	
 其二		qi2 er4	secondly; the other (usu. of two); the second	во-вторых, к тому же, вдобавок		b	
@@ -13445,7 +13445,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 冏寺		jiong3 si4	same as 太僕寺|太仆寺[Tai4 pu2 si4], Court of imperial stud, office originally charged with horse breeding				
 冏彻	冏徹	jiong3 che4	bright and easily understood; clear; transparent				
 冏牧		jiong3 mu4	Minister of imperial stud, originally charged with horse breeding; same as 太僕寺卿|太仆寺卿[Tai4 pu2 si4 qing1]				
-冒		mao4	surname Mao; to emit; to give off; to send out (or up, forth); to brave; to face; reckless; to falsely adopt (sb's identity etc); to feign; (literary) to cover	выступать, вырываться, испускать, издавать, идти	5	b	
+冒		mao4	surname Mao; to emit; to give off; to send out (or up, forth); to brave; to face; reckless; to falsely adopt (sb's identity etc); to feign; (literary) to cover	рисковать; выдавать себя за; подниматься (о дыме, поте)	5	m	
 冒充		mao4 chong1	to feign; to pretend to be; to pass oneself off as	принимать вид; под видом; выдавать себя; подделываться под.	6	b	
 冒冒失失		mao4 mao4 shi1 shi1	bold; forthright	крайне бесцеремонно		b	
 冒名		mao4 ming2	an impostor; to impersonate	прикрываться чужим именем присваивать чужое имя		b	
@@ -13901,7 +13901,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 冻龄	凍齡	dong4 ling2	to maintain a youthful appearance	нестареющий, вечно молодой		b	
 凓		li4	cold; frigid	холод, стужа; мороз		b	
 凔		cang1	cold				
-凛	凜	lin3	cold; to shiver with cold; to tremble with fear; afraid; apprehensive; strict; stern; severe; austere; awe-inspiring; imposing; majestic	Iприл; холодный, студёный; суровый		b	
+凛	凜	lin3	cold; to shiver with cold; to tremble with fear; afraid; apprehensive; strict; stern; severe; austere; awe-inspiring; imposing; majestic	холодный, студёный; суровый		b	
 凛冽	凜冽	lin3 lie4	biting cold	сильный; пронизывающий; пронизывать, пробирать до костей		b	
 凛遵	凜遵	lin3 zun1	to strictly abide by	с трепетом повиноваться		b	
 凝		ning2	to congeal; to concentrate attention; to stare	сгущаться, застывать, затвердевать; замерзать; густой…		b	
@@ -13937,7 +13937,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 凝集		ning2 ji2	to concentrate; to gather; (biology) to agglutinate	сцепляться; сцепление		b	
 凝集素		ning2 ji2 su4	(biochemistry) agglutinin; lectin	агглютинин		b	
 凞		xi1	bright; splendid; glorious				
-几		ji1	small table; almost	мелкий, незначительный; немного, едва-едва; почти, около; ещё бы…	1	b	
+几		ji1	small table; almost	почти (几乎); столик	1	m	
 凡		fan2	ordinary; commonplace; mundane; temporal; of the material world (as opposed to supernatural or immortal levels); every; all; whatever; altogether; gist; outline	обычный, обыкновенный; рядовой, заурядный		b	
 凡世通		Fan2 shi4 tong1	Firestone (Tire and Rubber Company)				
 凡事		fan2 shi4	everything	все дела; каждое дело		b	
@@ -14360,7 +14360,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 刂		dao1	"knife" radical in Chinese characters (Kangxi radical 18); see also 立刀旁[li4 dao1 pang2]; see also 側刀旁|侧刀旁[ce4 dao1 pang2]				
 刃		ren4	edge of blade	остриё, лезвие; нож; ножевые изделия; клинок, меч		b	
 刃具		ren4 ju4	cutting tool	режущий инструмент, резец		b	
-分		fen4	part; share; ingredient; component	быть довольным своей участью, довольствоваться [своим уделом]…	1	b	
+分		fen4	part; share; ingredient; component	доля, часть; составная часть (成分)	1	m	
 分久必合，合久必分		fen1 jiu3 bi4 he2 , he2 jiu3 bi4 fen1	lit. that which is long divided must unify, and that which is long unified must divide (idiom, from 三國演義|三国演义[San1 guo2 Yan3 yi4]); fig. things are constantly c				
 分之		fen1 zhi1	(indicating a fraction)	(в дробях: 三分之一 — одна треть)	4	m	
 分享		fen1 xiang3	to share (let others have some of sth good)	поделиться, разделять	5	b	
@@ -14583,7 +14583,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 分馏	分餾	fen1 liu2	fractional distillation	фракционированная дистилляция; фракционирование; фракционировать…		b	
 分点	分點	fen1 dian3	point of division	точка с запятой		b	
 切		qie1	to cut; to slice; tangent (math)	резать, нарезать; разрезать, рассекать	4	b	
-切		qie4	definitely; absolutely (not); (scoffing or dismissive interjection) Yeah, right.; Tut!; to grind; close to; eager; to correspond to; see also 反切[fan3 qie4]	сближаться; касаться; соприкасаться с	4	b	
+切		qie4	definitely; absolutely (not); (scoffing or dismissive interjection) Yeah, right.; Tut!; to grind; close to; eager; to correspond to; see also 反切[fan3 qie4]	близкий, тесный; непременно (切记)	4	m	
 切中		qie4 zhong4	to hit the target (esp. in argument); to strike home	попасть в самую точку, не в бровь а в глаз; в точку		b	
 切中时弊	切中時弊	qie4 zhong4 shi2 bi4	to hit home on the evils of the day (idiom); fig. to hit a current political target; to hit the nub of the matter	бьет в самую точку, не в бровь, а в глаз, по существу…		b	
 切中时病	切中時病	qie4 zhong4 shi2 bing4	to hit the target where it hurts (idiom); fig. to hit home; to hit the nail on the head (in an argument)				
@@ -14715,7 +14715,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 刑警		xing2 jing3	abbr. for 刑事警察[xing2 shi4 jing3 cha2]; criminal police				
 刑辱		xing2 ru3	to humiliate and torture; to suffer mutilation and humiliation				
 刑部		xing2 bu4	Ministry of Justice (in imperial China)	министерство наказаний		b	
-划		hua2	to row; to paddle; profitable; worth (the effort); it pays (to do sth); to cut; to slash; to scratch (cut into the surface of sth); to strike (a match)	проводить царапину, делать надрез; царапать	4	b	
+划		hua2	to row; to paddle; profitable; worth (the effort); it pays (to do sth); to cut; to slash; to scratch (cut into the surface of sth); to strike (a match)	грести; царапать, резать; выгодно (划算)	4	m	
 划不来	划不來	hua2 bu5 lai2	not worth it	нет расчёта, нет смысла; невыгодно		b	
 划子		hua2 zi5	small row-boat	челнок, лодочка, сампан; шлюпка		b	
 划得来	划得來	hua2 de5 lai2	worth it; it pays to	есть расчёт; выгодно		b	
@@ -14726,7 +14726,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 划艇		hua2 ting3	rowing boat; racing row-boat	каноэ, байдарка		b	
 刓		wan2	to trim	срезать углы; закруглять; округлый, со срезанными углами		b	
 刖		yue4	to amputate one or both feet (punishment in imperial China); see also 五刑[wu3 xing2]	отрезать, отрубать [ступни]		b	
-列		lie4	to arrange; to line up; file; series; (in data tables) column; (Tw) row	столбцы; ряд; шеренга -; цепь; состав	4	b	
+列		lie4	to arrange; to line up; file; series; (in data tables) column; (Tw) row	ряд, колонна; перечислять; (сч. слово для поездов)	4	m	
 列位		lie4 wei4	ladies and gentlemen; all of you present	господа!, милостивые государи!		b	
 列侯		lie4 hou2	duke (old); nobleman; gentry	лехоу; возвести в ранг хоу, сделать владетельным князем		b	
 列传	列傳	lie4 zhuan4	historical biography	биографии знаменитых людей		b	
@@ -14820,7 +14820,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 初露锋芒	初露鋒芒	chu1 lu4 feng1 mang2	first sign of budding talent; to display one's ability for the first time	впервые обнажить остриё		b	
 初露头角	初露頭角	chu1 lu4 tou2 jiao3	lit. to first show one's horns (idiom); fig. a first show of emerging talent; first sign of emerging talent; budding genius				
 刡		min3	to scrape; to pare	срезать; остругать; соскоблить		b	
-判		pan4	to judge; to sentence; to discriminate; to discern; obviously (different)	решать, определять, выносить решение, приговор	6	b	
+判		pan4	to judge; to sentence; to discriminate; to discern; obviously (different)	судить, выносить решение; различать	6	m	
 判令		pan4 ling4	decree; (of a court) to order	судебное решение; приговор		b	
 判例		pan4 li4	judicial precedent	прецедент		b	
 判例法		pan4 li4 fa3	case law	прецедентное право; право, созданное на основе судебной практики		b	
@@ -14903,7 +14903,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 刨花		bao4 hua1	wood shavings	стружка		b	
 刨花板		bao4 hua1 ban3	particle board; chipboard	древесно-стружечная плита, ДСтП, ДСП		b	
 刨齿	刨齒	bao4 chi3	gear-shaping				
-利		li4	surname Li; sharp; favorable; advantage; benefit; profit; interest; to do good to; to benefit	польза, выгода; барыш, прибыль; нажива; интерес, проценты	6	b	
+利		li4	surname Li; sharp; favorable; advantage; benefit; profit; interest; to do good to; to benefit	польза, выгода; острый	6	m	
 利事		li4 shi4	(Cantonese) same as 紅包|红包[hong2 bao1]	прибыльное занятие		b	
 利什曼病		li4 shi2 man4 bing4	leishmaniasis (medicine)	лейшманиоз		b	
 利他		li4 ta1	to benefit others; altruism	быть полезным другим; приносить пользу людям; альтруистический		b	
@@ -15188,7 +15188,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 剃须刀	剃鬚刀	ti4 xu1 dao1	shaver; razor	бритва		b	
 剃须膏	剃鬚膏	ti4 xu1 gao1	shaving cream	крем для бритья		b	
 刭	剄	jing3	cut the throat	перерезать горло; обезглавить		b	
-则	則	ze2	(conjunction used to express contrast with a previous clause) but; then; standard; norm; principle; to imitate; to follow; classifier for written items	пример, образец; стандарт	5	b	
+则	則	ze2	(conjunction used to express contrast with a previous clause) but; then; standard; norm; principle; to imitate; to follow; classifier for written items	то, тогда; правило, норма	5	m	
 则个	則個	ze2 ge4	(old sentence-final expression used for emphasis)	конечная частица предложения, подчёркивающая а категоричность…		b	
 则步隆	則步隆	Ze2 bu4 long2	Zabulon or Zebulun, biblical land between Jordan and Galilee (Matthew 4:15)				
 则辣黑	則辣黑	Ze2 la4 hei1	Zerah (name)				
@@ -15211,7 +15211,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 削铅笔机	削鉛筆機	xiao1 qian1 bi3 ji1	pencil sharpener (mechanical or electric)				
 削除		xue1 chu2	to remove; to eliminate; to delete	устранять, уничтожать; сметать		b	
 削发	削髮	xue1 fa4	to shave one's head; fig. to become a monk or nun; to take the tonsure	сбрить волосы, обрить голову		b	
-克	剋	kei1	to scold; to beat	справиться; суметь; быть сильным выдерживать	2	b	
+克	剋	kei1	to scold; to beat	(разг.) ругать, отчитывать; бить	2	m	
 克扣	剋扣	ke4 kou4	to dock; to deduct; to embezzle	удерживать, урезать, высчитывать, недоплачивать		b	
 克星	剋星	ke4 xing1	nemesis; bane; fated to be ill-matched	заклятый враг, враг		b	
 克架	剋架	kei1 jia4	to scuffle; to come to blows	вступить в драку, дойти до рукопашной, схватиться, участвовать в…		b	
@@ -15520,7 +15520,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 剪除		jian3 chu2	to eradicate; to exterminate	срезать, отрезать, удалить		b	
 剪头发	剪頭髮	jian3 tou2 fa5	(to get a) haircut	подстригать волосы, подстригаться		b	
 剐	剮	gua3	cut off the flesh as punishment	порезаться, наколоться		b	
-副		fu4	secondary; auxiliary; deputy; assistant; vice-; abbr. for 副詞|副词 adverb; classifier for pairs, sets of things & facial expressions	заместитель, помощник начальника; второй по значимости, приданный в…	6	b	
+副		fu4	secondary; auxiliary; deputy; assistant; vice-; abbr. for 副詞|副词 adverb; classifier for pairs, sets of things & facial expressions	заместитель; вспомогательный; (сч. слово: пара, комплект)	6	m	
 副主任		fu4 zhu3 ren4	deputy director; assistant head	заместитель директора, начальника		b	
 副主席		fu4 zhu3 xi2	vice-chairperson	заместитель председателя, вице-председатель		b	
 副作用		fu4 zuo4 yong4	side effect	отрицательное влияние; дурные последствия		b	
@@ -15672,7 +15672,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 剿说	剿說	chao1 shuo1	to plagiarize	говорить чужими словами; выдавать чужие мысли за свои		b	
 劁		qiao1	to neuter livestock				
 劂		jue2	chisel; engrave				
-划	劃	hua4	to delimit; to transfer; to assign; to plan; to draw (a line); stroke of a Chinese character	проводить черту, расчерчивать, разлиновывать	4	b	
+划	劃	hua4	to delimit; to transfer; to assign; to plan; to draw (a line); stroke of a Chinese character	проводить черту; планировать; разграничивать	4	m	
 划一	劃一	hua4 yi1	uniform; to standardize	унифицировать, стандартизовать; единообразный, унифицированный…		b	
 划一不二	劃一不二	hua4 yi1 bu4 er4	fixed; unalterable	твёрдый, без запроса		b	
 划下	劃下	hua4 xia4	to underline; to mark	подчеркивать, помечать		b	
@@ -17128,8 +17128,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 匮缺	匱缺	kui4 que1	to be deficient in sth; to be short of sth (supplies, money etc)	не хватать, недоставать; нехватка, дефицит		b	
 匴		suan3	ancient utensil for washing rice (or being used as a plate); ancient bamboo container for hats	плетёный сосуд; короб для головных уборов		b	
 匸		xi4	"cover" or "conceal" radical in Chinese characters (Kangxi radical 23); see also 匚[fang1]	прятать; содержать, таить в себе		b	
-匹		pi1	mate; one of a pair	голова, штука; штука, отрез, кусок	5	b	
-匹		pi3	classifier for horses, mules etc; Taiwan pr. [pi1]; ordinary person; classifier for cloth: bolt; horsepower; variant of 匹[pi3]; classifier for cloth: bolt	голова, штука; штука, отрез, кусок	5	b	
+匹		pi1	mate; one of a pair	(сч. слово для лошадей и рулонов ткани); быть под стать	5	m	
+匹		pi3	classifier for horses, mules etc; Taiwan pr. [pi1]; ordinary person; classifier for cloth: bolt; horsepower; variant of 匹[pi3]; classifier for cloth: bolt	(сч. слово для лошадей и рулонов ткани); быть под стать	5	m	
 匹偶		pi3 ou3	a married couple	пара, чета		b	
 匹夫		pi3 fu1	ordinary man; ignorant person; coarse fellow	рядовой человек, простолюдин; мужик, мужлан		b	
 匹夫匹妇	匹夫匹婦	pi3 fu1 pi3 fu4	ordinary people; commoners	простолюдины и простолюдинки, мужики и бабы; простые люди		b	
@@ -18013,7 +18013,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 占星术	占星術	zhan1 xing1 shu4	astrology	астрология		b	
 占满	占滿	zhan4 man3	to fill; to occupy completely	заполнять, полностью занимать		b	
 占着茅坑不拉屎	占著茅坑不拉屎	zhan4 zhe5 mao2 keng1 bu4 la1 shi3	lit. to occupy a latrine but not shit (proverb); fig. to be a dog in the manger	занял выгребную яму, но не срёт; как собака на сене, ни себе ни…		b	
-卡		qia3	to block; to be stuck; to be wedged; customs station; a clip; a fastener; a checkpost; Taiwan pr. [ka3]	застревать; останавливаться; заклиниваться	2	b	
+卡		qia3	to block; to be stuck; to be wedged; customs station; a clip; a fastener; a checkpost; Taiwan pr. [ka3]	застревать; зажим, заколка	2	m	
 卡丁车	卡丁車	ka3 ding1 che1	kart racing	карт		b	
 卡介苗		ka3 jie4 miao2	BCG vaccine; bacillus Calmette-Guérin vaccine	противотуберкулёзная вакцина Кальмета – Герена, вакцина БЦЖ, BCG		b	
 卡仙尼		Ka3 xian1 ni2	Cassini space probe				
@@ -18342,8 +18342,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 卵黄囊	卵黃囊	luan3 huang2 nang2	yolk sac (ectodermal cells attaching fetus to uterus before the development of the placenta)	желточный мешок		b	
 卵黄管	卵黃管	luan3 huang2 guan3	vitelline duct	желточный проток		b	
 卵黄腺	卵黃腺	luan3 huang2 xian4	vitelline glands; vitellaria (in biology)				
-卷		juan3	to roll up; roll; classifier for small rolled things (wad of paper money, movie reel etc); to roll (up); to sweep up; to carry on; roll	свёртывать, скручивать; скатывать; сворачивать, закручивать…	4	b	
-卷		juan4	scroll; book; volume; chapter; examination paper; classifier for books, paintings: volume, scroll	книга, тетрадь; том; глава; свиток	4	b	
+卷		juan3	to roll up; roll; classifier for small rolled things (wad of paper money, movie reel etc); to roll (up); to sweep up; to carry on; roll	свёртывать, закатывать; рулон	4	m	
+卷		juan4	scroll; book; volume; chapter; examination paper; classifier for books, paintings: volume, scroll	том, свиток; экзаменационная работа	4	m	
 卷刃		juan3 ren4	curved blade	заусенец; сбивка; изгиб лезвия		b	
 卷土重来	卷土重來	juan3 tu3 chong2 lai2	lit. to return in a swirl of dust (idiom); fig. to regroup and come back even stronger; to make a comeback	вернуться, вздымая пыль; появиться вновь; взять реванш		b	
 卷地皮		juan3 di4 pi2	to plunder the land and extort from the peasant; corrupt practice	«сдирать кожу с земли»		b	
@@ -18383,7 +18383,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 卸载	卸載	xie4 zai4	to disembark; to off-load cargo; to uninstall (software)	выгружать и грузить; выгрузка и погрузка; погрузочно-разгрузочный		b	
 卸头	卸頭	xie4 tou2	(of a woman) to take off one's head ornaments and jewels	снимать головные украшения		b	
 恤	卹	xu4	anxiety; sympathy; to sympathize; to give relief; to compensate; anxiety; sympathy; to sympathize; to give relief; to compensate	жалеть, бережно относиться к...; считаться с...; дорожить		b	
-却	卻	que4	but; yet; however; while; to go back; to decline; to retreat; nevertheless; even though	отступать, отходить; пятиться	4	b	
+却	卻	que4	but; yet; however; while; to go back; to decline; to retreat; nevertheless; even though	однако, но, всё же	4	m	
 却之不恭	卻之不恭	que4 zhi1 bu4 gong1	to refuse would be impolite	отвергать дар − непочтительно; пренебрегать − неудобно; не хочется…		b	
 却倒	卻倒	que4 dao4	but on the contrary; but unexpectedly	более того; наоборот		b	
 却才	卻才	que4 cai2	just now	только тогда, только в этом случае		b	
@@ -18453,7 +18453,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 厝		cuo4	to lay in place; to put; to place a coffin in a temporary location pending burial	дом, жилище; ставить, класть; пристраивать		b	
 厝火积薪	厝火積薪	cuo4 huo3 ji1 xin1	lit. to put a fire under a pile of firewood (idiom); fig. hidden danger; imminent danger	находиться в опасном положении; как на вулкане		b	
 厞		fei4	to hide; hideout	тёмный угол		b	
-原		yuan2	Hara (Japanese surname); former; original; primary; raw; level; cause; source	ключ, источник, родник; исток	6	b	
+原		yuan2	Hara (Japanese surname); former; original; primary; raw; level; cause; source	первоначальный, исходный; равнина	6	m	
 原人		yuan2 ren2	prehistoric man; primitive man	первобытный человек; питекантроп		b	
 原件		yuan2 jian4	the original; original document; master copy	оригинал, оригинальный документ		b	
 原位		yuan2 wei4	original position; (in) the same place; normal position; the place where one currently is; in situ	прежнее место; первоначальное положение, исходная точка		b	
@@ -18771,7 +18771,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 友军	友軍	you3 jun1	friendly forces; allies	дружественная армия; свои войска; сосед		b	
 友邦		you3 bang1	friendly state; ally	дружественная держава		b	
 友邦保险公司	友邦保險公司	You3 bang1 bao3 xian3 gong1 si1	American International Group (AIG), insurance company				
-反		fan3	contrary; in reverse; inside out or upside down; to reverse; to return; to oppose; opposite; against; anti-; to rebel; to use analogy; instead; abbr. for 反切[fan	опрокидываться, перевёртываться; клониться назад; перевёрнутый…	4	b	
+反		fan3	contrary; in reverse; inside out or upside down; to reverse; to return; to oppose; opposite; against; anti-; to rebel; to use analogy; instead; abbr. for 反切[fan	обратный, наоборот; выступать против	4	m	
 反串		fan3 chuan4	(Chinese opera) to play a role outside of one's specialty; (modern) to play a transvestite role; to masquerade as an opponent	играть не свою роль, выступать в чужом амплуа		b	
 反之		fan3 zhi1	on the other hand...; conversely...	напротив, наоборот; с другой стороны	6	b	
 反之亦然		fan3 zhi1 yi4 ran2	vice versa	обратное тоже верно; и наоборот		b	
@@ -19460,7 +19460,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 句首		ju4 shou3	start of phrase or sentence	начало фразы или предложения		b	
 句骊河	句驪河	Ju4 li2 He2	pre-Han name of Liao River 遼河|辽河[Liao2 He2]				
 句点	句點	ju4 dian3	period (punctuation); (fig.) endpoint; finish	точка		b	
-另		ling4	other; another; separate; separately	другой, иной; не тот; особо; иначе	6	b	
+另		ling4	other; another; separate; separately	другой, отдельный; кроме того	6	m	
 另一		ling4 yi1	another; the other	другой, иной, прочий, ещё один; отдельный; особый		b	
 另一半		ling4 yi1 ban4	other half; fig. spouse; one's better half	вторая половинка		b	
 另册	另冊	ling4 ce4	the Other List (Qing dynasty register of outlaws); a blacklist of undesirables	чёрный список		b	
@@ -19571,7 +19571,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 叮咛	叮嚀	ding1 ning2	to warn; to urge; to exhort; to give instructions carefully and insistently	давать наставления, наставлять, наставление, читать нотации…		b	
 叮嘱	叮囑	ding1 zhu3	to warn repeatedly; to urge; to exhort again and again	настойчиво просить; велеть, давать наказ; наставлять	6	b	
 叮铃	叮鈴	ding1 ling2	jingle	звенеть, звякать		b	
-可		ke3	can; may; able to; to approve; to permit; to suit; (particle used for emphasis) certainly; very	можно, возможно; допустимо, позволительно; разрешается; мочь	5	b	
+可		ke3	can; may; able to; to approve; to permit; to suit; (particle used for emphasis) certainly; very	можно; но, однако; (усилительное слово)	5	m	
 可		ke4	see 可汗[ke4 han2]	можно, возможно; допустимо, позволительно; разрешается; мочь	5	b	
 可一而不可再		ke3 yi1 er2 bu4 ke3 zai4	may be done once and once only; just this once				
 可不		ke3 bu5	see 可不是[ke3 bu5 shi4]	разве не..?, не... ли [будет]?		b	
@@ -20387,7 +20387,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 吊颈	吊頸	diao4 jing3	to hang oneself	повеситься		b	
 吊盐水	吊鹽水	diao4 yan2 shui3	(dialect) to put sb on an intravenous drip				
 吊点滴	吊點滴	diao4 dian3 di1	to put sb on an intravenous drip (Tw)				
-吋		cun4	inch (English)	см; cùn см		b	
+吋		cun4	inch (English)				
 同一		tong2 yi1	identical; the same	одинаковый, тождественный, идентичный; тот же самый, один и тот же…	6	b	
 同一个世界，同一个梦想	同一個世界，同一個夢想	tong2 yi1 ge4 shi4 jie4 , tong2 yi1 ge4 meng4 xiang3	One world - one dream, motto of 2008 Beijing Olympic games				
 同一挂	同一掛	tong2 yi1 gua4	(coll.) to have a lot in common (with sb); to get along well with each other				
@@ -20849,7 +20849,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 否决	否決	fou3 jue2	to veto; to overrule	отвергать, отклонять; проголосовать против, забаллотировать	6	b	
 否决权	否決權	fou3 jue2 quan2	veto power	право вето		b	
 否决票	否決票	fou3 jue2 piao4	veto				
-吧		ba1	bar (loanword) (serving drinks, or providing Internet access etc); to puff (on a pipe etc); (onom.) bang; abbr. for 貼吧|贴吧[tie1 ba1]	хлоп!, шлёп!; бар	1	b	
+吧		ba1	bar (loanword) (serving drinks, or providing Internet access etc); to puff (on a pipe etc); (onom.) bang; abbr. for 貼吧|贴吧[tie1 ba1]	бар; хлоп! (звукоподражание)	1	m	
 吧		bia1	(onom.) smack!				
 吧主		ba1 zhu3	message board moderator or administrator				
 吧务	吧務	ba1 wu4	forum manager				
@@ -20866,7 +20866,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 吩咐		fen1 fu4	to tell; to instruct; to command	инструктировать, распоряжаться, приказание	6	b	
 吩嗪		fen1 qin2	phenazine (loanword)	феназин		b	
 吪		e2	move	двигаться; перевоспитывать		b	
-含		han2	to keep; to contain; to suck (keep in your mouth without chewing)	держать во рту; класть в рот; жарг. делать минет	4	b	
+含		han2	to keep; to contain; to suck (keep in your mouth without chewing)	держать во рту; содержать, заключать в себе	4	m	
 含冤		han2 yuan1	wronged; to suffer false accusations	терпеть несправедливость, глотать обиду		b	
 含含糊糊		han2 han2 hu2 hu2	(of speech) obscure; unclear; (of actions) vague; ineffectual				
 含味隽永	含味雋永	han2 wei4 juan4 yong3	fine, lasting flavor (of literature)				
@@ -21001,7 +21001,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 呐	吶	na4	battle cry	na вм		b	
 呐	吶	na5	sentence-final particle (abbr. for 呢啊[ne5 a5] or variant of 哪[na5])	na вм		b	
 呐喊	吶喊	na4 han3	shout; rallying cry; cheering; to shout	громко кричать; подавать боевой клич		b	
-吸		xi1	to breathe; to suck in; to absorb; to inhale	вдыхать, втягивать; затягиваться курить; всасывать, впитывать…	4	b	
+吸		xi1	to breathe; to suck in; to absorb; to inhale	вдыхать, всасывать; притягивать	4	m	
 吸住		xi1 zhu4	to draw (towards); to be drawn to; to be sucked in	присосаться, всосаться		b	
 吸入		xi1 ru4	to breathe in; to suck in; to inhale	всасывать; всасывание		b	
 吸入剂	吸入劑	xi1 ru4 ji4	inhalant	средство для ингаляции		b	
@@ -21109,7 +21109,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 吹风机	吹風機	chui1 feng1 ji1	hair dryer	воздуходувная машина, воздуходувка, вентилятор		b	
 吹胡子瞪眼	吹鬍子瞪眼	chui1 hu2 zi5 deng4 yan3	to get angry; to fume	встопорщить усы и выпучить глаза; обр. вылупить глаза от злости…		b	
 吹鼓手		chui1 gu3 shou3	(old) musicians at a wedding cortege or funeral procession; (fig.) trumpeter of sb's praises; booster	музыканты; трубачи и барабанщики		b	
-吻		wen3	kiss; to kiss; mouth	губы, уста; хобот[ок]; рыло	5	b	
+吻		wen3	kiss; to kiss; mouth	целовать; губы	5	m	
 吻别	吻別	wen3 bie2	to kiss goodbye	прощальный поцелуй; целоваться на прощанье		b	
 吻合		wen3 he2	to be a good fit; to be identical with; to adjust oneself to; to fit in	совпадать; подходить; соответствовать; сходиться		b	
 吻技		wen3 ji4	kissing technique	техника поцелуев, мастерство поцелуев		b	
@@ -21218,7 +21218,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 呏		sheng1	gallon; quart	галлон		b	
 呔		tai1	tie; necktie; tire (Cantonese)				
 呠		pen1	to spurt; to blow out; to puff out; to snort	продувать; bonj кормить, содержать		b	
-呡		wen3	the corners of the mouth; the lips	вм		b	
+呡		wen3	the corners of the mouth; the lips				
 呢		ni2	woolen material	шерстяная ткань; сукно, драп	1	b	
 呢呢		ni2 ni2	garrulous; talkative				
 呢呢痴痴	呢呢癡癡	ni2 ni2 chi1 chi1	docile				
@@ -21230,7 +21230,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 呤		ling2	purine (chemistry); to whisper				
 呦		you1	Oh! (exclamation of dismay etc); see 呦呦[you1 you1]	ой, ох, ах, эх		b	
 呦呦		you1 you1	(literary) (onom.) bleating of a deer	рёв оленя		b	
-呧		di3	vex	вм		b	
+呧		di3	vex				
 周一岳	周一嶽	Zhou1 Yi1 yue4	York Chow or Chow Yat-ngok (1947-), Hong Kong doctor and politician, Secretary for Health, Welfare and Food since 2004				
 周三径一	周三徑一	zhou1 san1 jing4 yi1	circumference of a circle is proverbially three times its radius				
 周中		zhou1 zhong1	weekday; midweek	середина недели		b	
@@ -21480,9 +21480,9 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 咆哮如雷		pao2 xiao4 ru2 lei2	to be in a thundering rage (idiom)	оглушительно реветь; громоподобный рёв		b	
 咇		bi4	fragrant				
 咈		fu2	oppose	нет; противиться; не повиноваться; сопротивляться		b	
-咋		za3	dialectal equivalent of 怎麼|怎么[zen3 me5]	вм	6	b	
+咋		za3	dialectal equivalent of 怎麼|怎么[zen3 me5]	(разг.) как? почему?		m	
 咋		ze2	gnaw	кусать, грызть, прикусить	6	b	
-咋		zha4	loud noise; shout; suddenly	см; внезапно, невзначай, неожиданно	6	b	
+咋		zha4	loud noise; shout; suddenly	(в 咋呼) кричать, шуметь		m	
 咋呼		zha1 hu5	bluster; ruckus; to boast loudly	шуметь; кричать; надрываться		b	
 咋舌		zha4 she2	to be speechless; also pr. [ze2 she2]	онеметь, оцепенеть, обалдеть; быть ошеломлённым		b	
 和		he4	to compose a poem in reply (to sb's poem) using the same rhyme sequence; to join in the singing; to chime in with others	вторить, подпевать; подтягивать; отзываться в тон; резонировать…	1	b	
@@ -21777,7 +21777,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 哀辞	哀辭	ai1 ci2	dirge; lament	надгробное слово в стихах; скорбные строфы		b	
 哀鸣	哀鳴	ai1 ming2	(of animals, the wind etc) to make a mournful sound; whine; moan; wail	вопль; издавать горестные вопли		b	
 哀鸿遍野	哀鴻遍野	ai1 hong2 bian4 ye3	lit. plaintive whine of geese (idiom); fig. land swarming with disaster victims; starving people fill the land	отовсюду слышны стоны и жалобы, раздаются вопли отчаяния		b	
-品		pin3	article; commodity; product; goods; kind; grade; rank; character; disposition; nature; temperament; variety; to taste sth; to sample; to criticize; to comment; 	вещь, предмет; изделие, продукт	5	b	
+品		pin3	article; commodity; product; goods; kind; grade; rank; character; disposition; nature; temperament; variety; to taste sth; to sample; to criticize; to comment; 	товар, изделие; сорт; пробовать на вкус	5	m	
 品位		pin3 wei4	rank; grade; quality; (aesthetic) taste	ранг, класс, статус		b	
 品保		pin3 bao3	quality assurance (QA)	обеспечение качества, контроль качества		b	
 品名		pin3 ming2	name of product; brand name	наименование [товара], номенклатура; название товара		b	
@@ -21829,8 +21829,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 哂		shen3	(literary) to smile; to sneer	улыбаться; высмеивать; насмехаться над		b	
 哂笑		shen3 xiao4	(literary) to sneer; to laugh at	насмехаться [над]; высмеивать		b	
 哂纳	哂納	shen3 na4	(literary) please kindly accept	принять с улыбкой		b	
-哄		hong1	roar of laughter (onom.); hubbub; to roar (as a crowd)	шуметь, галдеть, реветь, поднимать шум	6	b	
-哄		hong3	to deceive; to coax; to amuse (a child)	надувать, одурачивать, вводить в заблуждение, обманывать; морочить…	6	b	
+哄		hong1	roar of laughter (onom.); hubbub; to roar (as a crowd)	шуметь толпой; гул, гомон	6	m	
+哄		hong3	to deceive; to coax; to amuse (a child)	обманывать; уговаривать, успокаивать (ребёнка)	6	m	
 哄动	哄動	hong1 dong4	variant of 轟動|轰动[hong1 dong4]	шуметь, поднимать шум; потрясать; вызывать сенсацию		b	
 哄动一时	哄動一時	hong1 dong4 yi1 shi2	variant of 轟動一時|轰动一时[hong1 dong4 yi1 shi2]				
 哄劝	哄勸	hong3 quan4	to coax				
@@ -21847,7 +21847,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 哆嗦		duo1 suo5	to tremble; to shiver; uncontrolled shaking of the body	дрожать, трястись; дрожь	6	b	
 哆啰美远	哆囉美遠	Duo1 luo1 mei3 yuan3	Torobiawan, one of the indigenous peoples of Taiwan				
 哆啰美远族	哆囉美遠族	Duo1 luo1 mei3 yuan3 zu2	Torobiawan, one of the indigenous peoples of Taiwan				
-哇		wa1	Wow!; sound of child's crying; sound of vomiting	бойко говорить; лопотать	6	b	
+哇		wa1	Wow!; sound of child's crying; sound of vomiting	ух ты! ого!; (звук плача)	6	m	
 哇		wa5	replaces 啊[a5] when following the vowel "u" or "ao"	частица: вариант 啊 после u, ao	6	m	
 哇哇		wa1 wa1	sound of crying	уа-уа рыдать рыдание		b	
 哇噻		wa1 sai1	see 哇塞[wa1 sai1]				
@@ -21855,7 +21855,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 哇沙比		wa1 sha1 bi3	wasabi (loanword) (Tw)				
 哇沙米		wa1 sha1 mi3	wasabi (loanword) (Tw)				
 哇靠		wa1 kao4	(lit.) I cry!; Oh, bosh!; Shoot!; (from Taiwanese 我哭, Tai-lo pr. [goá khàu])				
-哈		ha1	abbr. for 哈薩克斯坦|哈萨克斯坦[Ha1 sa4 ke4 si1 tan3], Kazakhstan; abbr. for 哈爾濱|哈尔滨[Ha1 er3 bin1], Harbin; (interj.) ha!; (onom. for laughter); (slang) to be infatuated with; to adore; abbr. for 哈士奇[ha1 shi4 q	ха!; хохотать; кха!, кхэ!	5	b	
+哈		ha1	abbr. for 哈薩克斯坦|哈萨克斯坦[Ha1 sa4 ke4 si1 tan3], Kazakhstan; abbr. for 哈爾濱|哈尔滨[Ha1 er3 bin1], Harbin; (interj.) ha!; (onom. for laughter); (slang) to be infatuated with; to adore; abbr. for 哈士奇[ha1 shi4 q	ха! (смех); выдыхать	5	m	
 哈		ha3	a Pekinese; a pug; (dialect) to scold	порицать, ругать	5	b	
 哈伯		Ha1 bo2	Edwin Hubble (1889-1953), US astronomer; Fritz Haber (1868-1934), German chemist	Габер, Хаббл, Харбор		b	
 哈伯太空望远镜	哈伯太空望遠鏡	Ha1 bo2 Tai4 kong1 Wang4 yuan3 jing4	Hubble Space Telescope				
@@ -22024,8 +22024,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 哥老会	哥老會	Ge1 lao3 hui4	late-Qing underground resistance movement against the Qing dynasty	Гэлаохуэй, Общество Старших братьев		b	
 哥萨克	哥薩克	ge1 sa4 ke4	Cossack (people)	казак; казацкий		b	
 哦		e2	to chant	читать [стихи] нараспев; декламировать, скандировать	6	b	
-哦		o2	oh (interjection indicating doubt or surprise)	э?, ах!	6	b	
-哦		o4	oh (interjection indicating that one has just learned sth)	а-а!, м-м!	6	b	
+哦		o2	oh (interjection indicating doubt or surprise)	а? что? (удивление)	6	m	
+哦		o4	oh (interjection indicating that one has just learned sth)	а-а! (понял)	6	m	
 哦		o5	sentence-final particle that conveys informality, warmth, friendliness or intimacy; may also indicate that one is stating a fact that the other person is not aw	частица в конце фразы: дружеский тон, напоминание	6	m	
 哧		chi1	(onom.) giggling; breathing; tearing of paper, ripping of fabric etc	хи-хи		b	
 哧溜		chi1 liu1	(onom.) slithering; sliding; slipping	с шипением, со свистом		b	
@@ -22559,8 +22559,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 啤酒花		pi2 jiu3 hua1	hops	хмель		b	
 啥		sha2	dialectal equivalent of 什麼|什么[shen2 me5]; also pr. [sha4]	что? (разг., то же, что 什么)	6	m	
 啥子		sha2 zi5	(dialect) what	что?; какой?; как?		b	
-啦		la1	(onom.) sound of singing, cheering etc; (phonetic); (dialect) to chat	а б в	6	b	
-啦		la5	sentence-final particle, contraction of 了啊, indicating exclamation; particle placed after each item in a list of examples	а б в	6	b	
+啦		la1	(onom.) sound of singing, cheering etc; (phonetic); (dialect) to chat	частица (了 + 啊): радость, завершённость	6	m	
+啦		la5	sentence-final particle, contraction of 了啊, indicating exclamation; particle placed after each item in a list of examples	частица (了 + 啊): радость, завершённость	6	m	
 啦呱		la1 gua5	variant of 拉呱[la1 gua5]	болтать, беседовать; отводить душу		b	
 啦啦队	啦啦隊	la1 la1 dui4	cheerleading squad	болельщики, группа поддержки, черлидеры, чирлидеры		b	
 啦啦队长	啦啦隊長	la1 la1 dui4 zhang3	cheerleader	капитан команды чирлидеров		b	
@@ -22620,7 +22620,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 喀麦隆	喀麥隆	Ka1 mai4 long2	Cameroon	Камерун		b	
 喁		yong2	breathing (of fish)	выставлять голову из воды и разевать рот		b	
 喁喁		yong2 yong2	looking up expectantly; speaking softly (Taiwan pr. for this sense is [yu2 yu2])	[тянуться] как рыба к корму		b	
-喂		wei2	hello (when answering the phone)	Алло	1	b	
+喂		wei2	hello (when answering the phone)	алло!	1	m	
 喂奶		wei4 nai3	to breast-feed	кормить грудью, вскармливать молоком		b	
 喃		nan2	mumble in repetition	бормотать, невнятно произносить		b	
 喃喃		nan2 nan2	(onom.) to mutter; to mumble; to murmur	бормотать; бурчать		b	
@@ -22918,7 +22918,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 乔迁之喜	喬遷之喜	qiao2 qian1 zhi1 xi3	congratulations on house-moving or promotion (idiom); Best wishes for your new home!	радость новоселья		b	
 喭		yan4	condole with	грубый, неотёсанный; низкий, подлый		b	
 单	單	Shan4	surname Shan	Шань	4	b	
-单	單	dan1	bill; list; form; single; only; sole; odd number	нечетный; непарный	4	b	個
+单	單	dan1	bill; list; form; single; only; sole; odd number	одиночный, единичный; только; список, квитанция	4	m	個
 单一	單一	dan1 yi1	single; only; sole	единственный; единый; отдельно взятый, сингулярный	5	b	
 单一合体字	單一合體字	dan1 yi1 he2 ti3 zi4	unique compound				
 单一码	單一碼	dan1 yi1 ma3	Unicode; also written 統一碼|统一码				
@@ -23287,7 +23287,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 嘉鱼县	嘉魚縣	Jia1 yu2 xian4	Jiayu county in Xianning 咸寧|咸宁[Xian2 ning2], Hubei	уезд Цзяюй		b	
 嘉黎		Jia1 li2	Lhari county, Tibetan: Lha ri rdzong, in Nagchu prefecture 那曲地區|那曲地区[Na4 qu3 di4 qu1], central Tibet	Лхаруго		b	
 嘉黎县	嘉黎縣	Jia1 li2 xian4	Lhari county, Tibetan: Lha ri rdzong, in Nagchu prefecture 那曲地區|那曲地区[Na4 qu3 di4 qu1], central Tibet				
-啀	嘊	ai2	to growl (of dog); to bare fangs	IIгл; вм		b	
+啀	嘊	ai2	to growl (of dog); to bare fangs				
 嘌		piao1	fast; speedy	* мчаться, нестись, трясясь на ухабах		b	
 嘌		piao4	purine; see 嘌呤[piao4 ling4]	* мчаться, нестись, трясясь на ухабах		b	
 嘌呤		piao4 ling4	purine (loanword)	пурин; пуриновый		b	
@@ -23325,7 +23325,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 嘚		de1	(onom.) for the sound of horsehoofs				
 嘚啵		de1 bo5	(coll.) to run off at the mouth; to jabber on	недовольно ворчать; пилить, не отставать нудными разговорами		b	
 嘚瑟		de4 se5	variant of 得瑟[de4 se5]	выпендриваться, хвалиться, важничать, кичиться		b	
-嘛		ma5	modal particle indicating that sth is obvious; particle indicating a pause for emphasis	же, ведь; в середине предложения обозначает паузу, подчёркивает…	6	b	
+嘛		ma5	modal particle indicating that sth is obvious; particle indicating a pause for emphasis	частица «ведь, же» (очевидность)	6	m	
 唛	嘜	mai4	mark (loanword); also pr. [ma4]	метка, маркировка		b	
 唛头	嘜頭	mai4 tou2	trademark; shipping mark	метка, маркировка		b	
 嘞		lei5	sentence-final particle similar to 了[le5], but carrying a tone of approval				
@@ -23373,7 +23373,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 叽里咕噜	嘰里咕嚕	ji1 li5 gu1 lu1	see 嘰哩咕嚕|叽哩咕噜[ji1 li5 gu1 lu1]	бормотать, бубнить		b	
 嘲		chao2	to ridicule; to mock	шутить; насмехаться, вышучивать, высмеивать		b	
 嘲		zhao1	see 嘲哳, (onom.) twitter; twittering sound	шутить; насмехаться, вышучивать, высмеивать		b	
-嘲哳		zhao1 zha1	(onom.) twitter; twittering sound	а б в		b	
+嘲哳		zhao1 zha1	(onom.) twitter; twittering sound				
 嘲弄		chao2 nong4	to tease; to poke fun at; to make fun of	вышучивать, высмеивать; глумиться; издёвка, насмешка; насмешливо		b	
 嘲笑		chao2 xiao4	to jeer at; to deride; to ridicule; mockery; derision	высмеивать, насмехаться, издеваться, насмешки, глумления	6	b	
 嘲讽	嘲諷	chao2 feng3	to sneer at; to ridicule; to taunt	язвить; высмеивать; насмехаться; язвительная насмешка, сарказм		b	
@@ -23599,7 +23599,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 吨级	噸級	dun1 ji2	tonnage; class in tons (of a passenger ship)	тоннаж, водоизмещение		b	
 当当	噹噹	dang1 dang1	(onom.) ding dong; Dangdang (online retailer)	а б; та-дам!		b	
 当当车	噹噹車	dang1 dang1 che1	(coll.) tram, especially Beijing trams during period of operation 1924-1956; also written 鐺鐺車|铛铛车[dang1 dang1 che1]	трамвай Дандан		b	
-噻		sai1	used in transliteration	вм		b	
+噻		sai1	used in transliteration				
 噻吩		sai1 fen1	thiophene (chemistry) (loanword)	тиофен, тиофуран		b	
 噻唑		sai1 zuo4	thiazole (chemistry)	тиазол		b	
 噻嗪		sai1 qin2	thiazine (chemistry) (loanword)	тиазин, тиазиновые		b	
@@ -24101,7 +24101,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 囟		xin4	fontanel (gap between the bones of an infant's skull)	родничок		b	
 囟脑门	囟腦門	xin4 nao3 men2	fontanel (gap between the bones of an infant's skull)	темечко, родничок		b	
 囟门	囟門	xin4 men2	fontanel (gap between the bones of an infant's skull)	родничок		b	
-因		yin1	cause; reason; because	причина; повод; основание, опора; условие, предпосылка	6	b	
+因		yin1	cause; reason; because	причина; из-за, потому что	6	m	
 因之		yin1 zhi1	for this reason	поэтому, из-за этого, а потому, отсюда следует		b	
 因人成事		yin1 ren2 cheng2 shi4	to get things done relying on others (idiom); with a little help from his friends	[действовать, ] полагаясь на чужую помощь; заручиться помощью…		b	
 因人而异	因人而異	yin1 ren2 er2 yi4	varying from person to person (idiom); different for each individual	разниться от человека к человеку; индивидуально, у всех по-разному		b	
@@ -24951,7 +24951,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 圭亚那	圭亞那	Gui1 ya4 na4	Guyana	Гайана		b	
 圮		pi3	destroyed; injure	разрушать; уничтожать, губить		b	
 圯		yi2	bridge, bank	мост		b	
-地		di4	earth; ground; field; place; land	Земля земной шар	1	b	片
+地		di4	earth; ground; field; place; land	земля; место; пол	1	m	片
 地三鲜	地三鮮	di4 san1 xian1	dish consisting of stir-fried potato, eggplant and green pepper	дисаньсянь, «три земные свежести»		b	
 地下		di4 xia4	underground; subterranean; covert	под землёй; подземный; почвенный	4	b	
 地下室		di4 xia4 shi4	basement; cellar	подвал, бейсмент	6	b	
@@ -25415,7 +25415,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 垃圾电邮	垃圾電郵	la1 ji1 dian4 you2	see 垃圾郵件|垃圾邮件[la1 ji1 you2 jian4]				
 垃圾食品		la1 ji1 shi2 pin3	junk food	вредные для здоровья продукты; фастфуд		b	
 垈		dai4	used in place names; Japanese -nuta; Korean -dae	нута, кор. тэ; участок под		b	
-型		xing2	mold; type; style; model	шаблон, трафарет; сделанный по шаблону	4	b	
+型		xing2	mold; type; style; model	тип, модель, образец	4	m	
 型式		xing2 shi4	type; pattern; version; style	тип, образец, модель		b	
 型态	型態	xing2 tai4	form; shape; type; style; pattern	тип, вид, модель		b	
 型材		xing2 cai2	extruded profile	профиль		b	
@@ -25528,7 +25528,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 埇		yong3	raised path				
 埇桥	埇橋	Yong3 qiao2	Yongqiao district of Suzhou city 宿州市[Su4 zhou1 shi4], Anhui				
 埇桥区	埇橋區	Yong3 qiao2 qu1	Yongqiao district of Suzhou city 宿州市[Su4 zhou1 shi4], Anhui	район Юнцяо		b	
-埋		mai2	to bury	быть закопанным в землю; таиться в земле; быть похороненным	6	b	
+埋		mai2	to bury	закапывать, хоронить	6	m	
 埋		man2	to blame				
 埋伏		mai2 fu2	to ambush; to lie in wait for; to lie low; ambush	устраивать засаду; засада	6	b	
 埋名		mai2 ming2	to conceal one's identity; to live incognito	скрывать своё имя		b	
@@ -26037,7 +26037,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 报馆	報館	bao4 guan3	newspaper office	редакция газеты		b	
 堲		ji2	hate	обкладывать кирпичом; замуровывать; хоронить без гроба		b	
 堳		mei2	low wall				
-场	場	chang2	threshing floor; classifier for events and happenings: spell, episode, bout	ток, гумно; рынок	2	b	
+场	場	chang2	threshing floor; classifier for events and happenings: spell, episode, bout	ток, гумно; (сч. слово для событий: дождь, болезнь)	2	m	
 场儿	場兒	chang3 r5	see 場子|场子[chang3 zi5]				
 场区	場區	chang3 qu1	(sports) section of a court or playing field; (computer chip manufacture) field area	соляной район, округ соляных промыслов		b	
 场区应急	場區應急	chang3 qu1 ying4 ji2	site area emergency (nuclear facility emergency classification)				
@@ -26360,7 +26360,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 墓志铭	墓誌銘	mu4 zhi4 ming2	epitaph	могильная доска с надписью		b	
 墓道		mu4 dao4	path leading to a grave; tomb passage; aisle leading to the coffin chamber of an ancient tomb	дорога к могиле		b	
 増		zeng1	Japanese variant of 增[zeng1]				
-坠	墜	zhui4	to fall; to drop; to weigh down	А; падать, валиться; рушиться; выпавший, падающий, падучий	6	b	
+坠	墜	zhui4	to fall; to drop; to weigh down	падать, валиться; рушиться; выпавший, падающий, падучий	6	b	
 坠亡	墜亡	zhui4 wang2	to fall to one's death	упасть насмерть		b	
 坠入	墜入	zhui4 ru4	to drop into; to fall into	упасть в		b	
 坠入情网	墜入情網	zhui4 ru4 qing2 wang3	to fall in love	попасть в любовь		b	
@@ -26527,7 +26527,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 壁虎		bi4 hu3	gecko; house lizard	геккон; дюбель		b	
 壁虱		bi4 shi1	tick; bedbug	клоп; клещ собачий		b	
 壁龛	壁龕	bi4 kan1	niche (in a wall)	ниша, альков, михраб		b	
-野	壄	ye3	erroneous variant of 野[ye3]; field; plain; open space; limit; boundary; rude; feral	провинция, деревня; окрестность; глушь, захолустье; провинциальный…	6	b	
+野	壄	ye3	erroneous variant of 野[ye3]; field; plain; open space; limit; boundary; rude; feral	дикий; поле, степь	6	m	
 壅		yong1	to obstruct; to stop up; to heap soil around the roots of a plant	заваливать, засыпать; затыкать; запруживать; затягивать		b	
 壅塞		yong1 se4	variant of 擁塞|拥塞[yong1 se4]	закрывать, заваливать, засыпать; закупоривать; перегораживать…		b	
 壅蔽		yong1 bi4	(literary) to cover; to conceal; to hide from view	преграждать дорогу, отгораживаться, держаться недоступно…		b	
@@ -28965,7 +28965,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 夸		kua1	see 夸克[kua1 ke4]; to boast; to exaggerate; to praise	хвалить, одобрять, превозносить, выставлять в лучшем свете, высоко…	5	b	
 夸克		kua1 ke4	quark (particle physics) (loanword)	кварк		b	
 夼		kuang3	low ground; hollow; depression (used in Shandong place names)	низменность		b	
-夹	夾	jia1	to press from either side; to place in between; to sandwich; to carry sth under armpit; wedged between; between; to intersperse; to mix; to mingle; clip; folder	сжимать, сдавливать, стискивать, зажимать	5	b	
+夹	夾	jia1	to press from either side; to place in between; to sandwich; to carry sth under armpit; wedged between; between; to intersperse; to mix; to mingle; clip; folder	зажимать, держать (палочками); папка, зажим	5	m	
 夹	夾	jia2	double-layered; lined (garment)	двойной, на подкладке; двусторонний; с двух сторон	5	b	
 夹	夾	jia4	Taiwan pr. used in 夾生|夹生[jia1 sheng1] and 夾竹桃|夹竹桃[jia1 zhu2 tao2]				
 夹七夹八	夾七夾八	jia1 qi1 jia1 ba1	completely mixed up; in a muddle	путаный, сбивчивый; бестолковый, кое-как		b	
@@ -29707,7 +29707,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 好斗	好鬥	hao4 dou4	to be warlike; to be belligerent	драчливый, задиристый		b	
 好鸟	好鳥	hao3 niao3	person of good character; nice person; bird with a melodious voice or beautiful plumage				
 妁		Shuo4	surname Suo; matchmaker; see 媒妁[mei2 shuo4]				
-如		ru2	as; as if; such as	походить на...; быть схожим с..., уподобляться; быть таким же, как	6	b	
+如		ru2	as; as if; such as	как, подобно; если; например	6	m	
 如下		ru2 xia4	as follows	как ниже следует; нижеследующий, следующий	5	b	
 如人饮水，冷暖自知	如人飲水，冷暖自知	ru2 ren2 yin3 shui3 , leng3 nuan3 zi4 zhi1	the person who drinks it knows best whether the water is hot or cold (Zen proverb); self-awareness comes from within; to know best by personal experience				
 如今		ru2 jin1	nowadays; now	ныне, теперь, сейчас, в настоящее время; нынешний, теперешний	4	b	
@@ -29845,7 +29845,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 妖魔鬼怪		yao1 mo2 gui3 guai4	demons and ghosts; ghouls and bogies	оборотни и бесы; нечистая сила, злые силы		b	
 妗		jin4	wife of mother's brother				
 妗子		jin4 zi5	(informal) mother's brother's wife; maternal uncle's wife	жена шурина; жена брата жены		b	
-妙		miao4	clever; wonderful	красивый, прекрасный; прелестный; очаровательный; превосходный…	6	b	
+妙		miao4	clever; wonderful	прекрасный, чудесный; тонкий, искусный	6	m	
 妙不可言		miao4 bu4 ke3 yan2	too wonderful for words	невыразимо прекрасный; превосходный; великолепный; восхитительный		b	
 妙品		miao4 pin3	a fine work of art	прекрасная вещь		b	
 妙在不言中		miao4 zai4 bu4 yan2 zhong1	the charm lies in what is left unsaid (idiom)				
@@ -29925,7 +29925,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 妽		shen1	(used in female names)				
 妾		qie4	concubine; I, your servant (deprecatory self-reference for women)	младшая жена, наложница		b	
 妾侍		qie4 shi4	maids and concubines	наложница, любовница		b	
-姁		xu3	chatter like old woman; cheerful	см; xū см		b	
+姁		xu3	chatter like old woman; cheerful				
 姄		min2	(used in female given names) (old)				
 姅		ban4	menstruation	менструация, месячные		b	
 姆		mu3	woman who looks after small children; (old) female tutor	воспитательница; кормилица		b	
@@ -30398,7 +30398,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 媛		yuan4	a beauty	красавица		b	
 媞		ti2	used as phonetic; female name	плод		b	
 媟		xie4	to lust for	держаться несерьёзно		b	
-媠		tuo2	beautiful	вм		b	
+媠		tuo2	beautiful				
 媢		mao4	envious	ревновать; завидовать		b	
 娲	媧	Wa1	surname Wa; sister of legendary emperor Fu Xi 伏羲				
 媩		hu2	(used in female names) (old)				
@@ -30606,7 +30606,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 娈童	孌童	luan2 tong2	catamite (boy as homosexual partner); kept man; gigolo	красивый мальчик		b	
 娈童恋	孌童戀	luan2 tong2 lian4	pederasty				
 娈童者	孌童者	luan2 tong2 zhe3	child molester; sex tourist				
-子		zi5	(noun suffix)	zǐ- производный, вторичный, подчинённый, под-; меньший, малый…	1	b	
+子		zi5	(noun suffix)	(суффикс существительных)	1	m	
 子不嫌母丑，狗不嫌家贫	子不嫌母醜，狗不嫌家貧	zi3 bu4 xian2 mu3 chou3 , gou3 bu4 xian2 jia1 pin2	see 兒不嫌母醜，狗不嫌家貧|儿不嫌母丑，狗不嫌家贫[er2 bu4 xian2 mu3 chou3 , gou3 bu4 xian2 jia1 pin2]				
 子丑		zi3 chou3	first two of the twelve earthly branches 十二地支; by ext., the earthly branches				
 子京		zi3 jing1	see 紫荊|紫荆[zi3 jing1]				
@@ -30688,7 +30688,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 孑遗	孑遺	jie2 yi2	survivors; remnants; relict (species etc)	остатки рода; осиротевшие; пережившие; оставшиеся в живых		b	
 孑遗生物	孑遺生物	jie2 yi2 sheng1 wu4	living fossil				
 孓		jue2	see 孑孓[jie2 jue2]				
-孔		kong3	surname Kong; hole; classifier for cave dwellings	щель, нора, дыра, отверстие; пора; пустота; полость; пролёт	6	b	個
+孔		kong3	surname Kong; hole; classifier for cave dwellings	отверстие, дыра	6	m	個
 孔丘		Kong3 Qiu1	Confucius	Кун Цю		b	
 孔乙己		Kong3 Yi3 ji3	Kong Yiji, protagonist of short story by Lu Xun 魯迅|鲁迅[Lu3 Xun4]	Кун, И, Цзи; «Кун И-цзи»		b	
 孔丛子	孔叢子	Kong3 cong2 zi3	the K'ung family Masters' anthology, collection of dialogues between Confucius and his disciples, possibly forged in third century by Wang Su 王肅|王肃[Wang2 Su4]				
@@ -31179,7 +31179,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 宇航员	宇航員	yu3 hang2 yuan2	astronaut	космонавт; астронавт	6	b	
 宇航局		yu3 hang2 ju2	space agency				
 宇航服		yu3 hang2 fu2	spacesuit	космический скафандр		b	
-守		shou3	to guard; to defend; to keep watch; to abide by the law; to observe (rules or ritual); nearby; adjoining	безупречная чистота, высокие моральные качества	4	b	
+守		shou3	to guard; to defend; to keep watch; to abide by the law; to observe (rules or ritual); nearby; adjoining	охранять, стеречь; соблюдать	4	m	
 守一而终	守一而終	shou3 yi1 er2 zhong1	to be faithful to one's mate all one's life				
 守住		shou3 zhu5	to hold on to; to defend; to keep; to guard	отстаивать, защищать, оборонять, удерживать		b	
 守信		shou3 xin4	to keep promises	оставаться верным своему слову, оправдывать доверие к себе		b	
@@ -31622,7 +31622,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 宗筋		zong1 jin1	penis (Chinese medicine)	лобковые мышцы мужчины; половой член; яички; мужские гениталии		b	
 宗圣侯	宗聖侯	Zong1 sheng4 hou2	hereditary title bestowed on Confucius' descendants				
 宗圣公	宗聖公	Zong1 Sheng4 gong1	hereditary title bestowed on Confucius' descendants				
-官		guan1	surname Guan; government official; governmental; official; public; organ of the body	чиновник, официальное лицо; офицер; служащий; мандарин, чин	4	b	個
+官		guan1	surname Guan; government official; governmental; official; public; organ of the body	чиновник; казённый, официальный	4	m	個
 官二代		guan1 er4 dai4	children of officials; word created by analogy with 富二代[fu4 er4 dai4]	чиновник во втором поколении; дети чиновников		b	
 官位		guan1 wei4	official post	чиновничье место		b	
 官俸		guan1 feng4	salaries of government officials	жалованье, оклад		b	
@@ -31691,7 +31691,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 宙		zhou4	eternity; (geology) eon	время; бесконечность, вечность; вечный; издревле, с давних времён…		b	
 宙斯		Zhou4 si1	Zeus	Зевс		b	
 宙斯盾战斗系统	宙斯盾戰鬥系統	Zhou4 si1 dun4 Zhan4 dou4 Xi4 tong3	Aegis Combat System (weapons system developed for the US Navy)				
-定		ding4	to set; to fix; to determine; to decide; to order	приходить в порядок; стабилизироваться; утверждаться в…	4	b	
+定		ding4	to set; to fix; to determine; to decide; to order	устанавливать, определять; твёрдо, непременно	4	m	
 定位		ding4 wei4	to orientate; to position; to categorize (as); to characterize (as); positioning; position; niche	определить место, определить местонахождение, позиционировать…	6	b	
 定作		ding4 zuo4	to have sth made to order	делать заказ; заказной		b	
 定例		ding4 li4	usual practice; routine	установленное правило, установление		b	
@@ -32021,7 +32021,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 宫调	宮調	gong1 diao4	modes of ancient Chinese music	[ладо]тональность		b	
 宫阙	宮闕	gong1 que4	palace	дворец, дворцовый город		b	
 宫颈	宮頸	gong1 jing3	cervix; neck of the uterus				
-宰		zai3	to slaughter livestock; to govern or rule; to cheat customers; imperial official in dynastic China	канцлер, министр; правитель, глава; начальник	6	b	
+宰		zai3	to slaughter livestock; to govern or rule; to cheat customers; imperial official in dynastic China	резать (скот); обдирать (покупателя)	6	m	
 宰予		Zai3 Yu3	Zai Yu (522-458 BC), disciple of Confucius	Цзай Юй		b	
 宰予昼寝	宰予晝寢	zai3 Yu3 zhou4 qin3	Zai Yu sleeps by day (idiom); refers to story in Analects of Confucius remonstrating bitterly with his student for sleeping during lectures	бить баклуши, увиливать от обязанностей, бездельничать в рабочее…		b	
 宰人		zai3 ren2	to overcharge; to rip sb off	чиновник; компетентное официальное лицо		b	
@@ -32279,7 +32279,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 寂灭	寂滅	ji4 mie4	to die out; to fade away; nirvana (Buddhism)	исчезать, пропадать		b	
 寂然		ji4 ran2	silent; quiet	безмолвно, тихо; быть беззвучным		b	
 寂静	寂靜	ji4 jing4	quiet	полная тишина, спокойствие; молчание; молчаливый; спокойный, тихий…	6	b	
-寄		ji4	to send; to mail; to entrust; to depend on; to attach oneself to; to live (in a house); to lodge; foster (son etc)	жить, квартировать; временно пребывать [в]; останавливаться [в]…	4	b	
+寄		ji4	to send; to mail; to entrust; to depend on; to attach oneself to; to live (in a house); to lodge; foster (son etc)	посылать (по почте); доверять, поручать	4	m	
 寄主		ji4 zhu3	host (of a parasite)	хозяин		b	
 寄予		ji4 yu3	to place (hope, importance etc) on; to express; to show; to give	поручать, вверять; возлагать		b	
 寄予厚望		ji4 yu3 hou4 wang4	to place high hopes	возлагать большие надежды		b	
@@ -32327,7 +32327,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 寅支卯粮	寅支卯糧	yin2 zhi1 mao3 liang2	see 寅吃卯糧|寅吃卯粮[yin2 chi1 mao3 liang2]	зерно следующего года израсходовать в этом году		b	
 寅时	寅時	yin2 shi2	3-5 am (in the system of two-hour subdivisions used in former times)				
 寅虎		yin2 hu3	Year 3, year of the Tiger (e.g. 2010)	астрол. знак Тигра		b	
-密		mi4	surname Mi; name of an ancient state; secret; confidential; close; thick; dense	тайный, конфиденциальный; секретный; [за]шифрованный; шифровальный…	4	b	
+密		mi4	surname Mi; name of an ancient state; secret; confidential; close; thick; dense	густой, плотный; тайный, секретный	4	m	
 密不可分		mi4 bu4 ke3 fen1	inextricably linked (idiom); inseparable	неотделимый, неразрывный; неразрывно связано		b	
 密不透风	密不透風	mi4 bu4 tou4 feng1	sealed off; impenetrable	непроницаемый для воздуха, наглухо закрытый, герметичный		b	
 密令		mi4 ling4	secret instruction; secret order	тайно приказывать		b	
@@ -33114,7 +33114,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 射频调谐器	射頻調諧器	she4 pin2 tiao2 xie2 qi4	RF tuner				
 射频识别	射頻識別	she4 pin2 shi2 bie2	radio-frequency identification (RFID)	RFID, радиочастотная идентификация		b	
 射雕英雄传	射鵰英雄傳	She4 Diao1 Ying1 xiong2 Zhuan4	Legend of the Condor Heroes, wuxia (武侠, martial arts chivalry) novel by Jin Yong 金庸 and its screen adaptations	«Предания о героях, стреляющих в орлов»		b	
-将	將	jiang1	will; shall; to use; to take; to checkmate; just a short while ago; (introduces object of main verb, used in the same way as 把[ba3])	брать в руки; держать в руке, нести на руках	5	b	
+将	將	jiang1	will; shall; to use; to take; to checkmate; just a short while ago; (introduces object of main verb, used in the same way as 把[ba3])	скоро, вот-вот (будущее время); (книжн.) то же, что 把	5	m	
 将	將	jiang4	general; commander-in-chief (military); king (chess piece); to command; to lead	полководец; воевода; генерал	5	b	
 将	將	qiang1	to desire; to invite; to request				
 将今论古	將今論古	jiang1 jin1 lun4 gu3	to observe the present to study the past				
@@ -34398,7 +34398,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 居高临下	居高臨下	ju1 gao1 lin2 xia4	to live high and look down (idiom); to overlook; to tower above; to occupy the high ground; fig. arrogance based on one's social position	сверху вниз; занимать командную высоту		b	
 居鲁士	居魯士	Ju1 lu3 shi4	Cyrus (name)	Кир		b	
 居鲁士大帝	居魯士大帝	Ju1 lu3 shi4 Da4 di4	Cyrus the Great (ca. 600-530 BC), the founder of the Persian Empire and the conqueror of Babylon				
-届	屆	jie4	to arrive at (place or time); period; to become due; classifier for events, meetings, elections, sporting fixtures, years (of graduation)	подходить, наступать; точно в	5	b	
+届	屆	jie4	to arrive at (place or time); period; to become due; classifier for events, meetings, elections, sporting fixtures, years (of graduation)	(сч. слово: созыв, выпуск, сессия)	5	m	
 届时	屆時	jie4 shi2	when the time comes; at the scheduled time	в установленное время; к тому времени, когда настанет время, и тогда		b	
 届满	屆滿	jie4 man3	the end of fixed period in office; expiration of a term	срок истёк; по истечении срока		b	
 屇		tian2	cave; hole				
@@ -34661,7 +34661,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 山城区	山城區	Shan1 cheng2 qu1	Shancheng district of Hebi city 鶴壁市|鹤壁市[He4 bi4 shi4], Henan				
 山壑		shan1 he4	gullies; valleys				
 山外有山，天外有天		shan1 wai4 you3 shan1 , tian1 wai4 you3 tian1	(idiom) however good sth is, there is always sth better; in the wider world there are people more talented than oneself				
-山奈		shan1 nai4	Thai ginger; lesser galangale (Kaempferia galanga); cyanide (loanword); same as 氰化	вм		b	
+山奈		shan1 nai4	Thai ginger; lesser galangale (Kaempferia galanga); cyanide (loanword); same as 氰化				
 山奈钾	山奈鉀	shan1 nai4 jia3	potassium cyanide KCN; same as 氰化鉀|氰化钾				
 山子		shan1 zi5	rock garden; rockery	искусственная горка		b	
 山寨		shan1 zhai4	fortified hill village; mountain stronghold (esp. of bandits); (fig.) knockoff (goods); counterfeit; imitation	укреплённый пункт в горах		b	
@@ -35098,7 +35098,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 崤		Xiao2	name of a mountain in Henan; also pr. [Yao2]				
 崦		yan1	name of a mountain in Gansu				
 崦嵫		Yan1 zi1	(old) name of a mountain in Gansu, where the setting sun was supposed to enter the earth	Яньцзы		b	
-崩		beng1	to collapse; to fall into ruins; death of king or emperor; demise	А; обрушиться, обвалиться; рассесться; развалиться; сломаться		b	
+崩		beng1	to collapse; to fall into ruins; death of king or emperor; demise	обрушиться, обвалиться; рассесться; развалиться; сломаться		b	
 崩倒		beng1 dao3	to collapse; to crash down; to fall down in a heap				
 崩坍		beng1 tan1	landslide; collapse (of mountain side); talus slide	обрушиться; развалиться		b	
 崩塌		beng1 ta1	talus slide; to crumble (of scree slope); to collapse; landslide	рушиться, обваливаться, обрушиваться		b	
@@ -36205,7 +36205,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 帡		ping2	to cover; screen; awning				
 帡幪		ping2 meng2	(literary) tent; to shelter	покрывать; покровительствовать, защищать; покровительство, религ.…		b	
 帣		juan4	a bag which holds 30 pecks (i.e. approx 3 kg dry measure)	juàn * мешок; guǎn * подвязки для рукавов		b	
-帅	帥	shuai4	surname Shuai; handsome; graceful; smart; commander in chief; (coll.) cool!; sweet!	руководить; управлять	4	b	
+帅	帥	shuai4	surname Shuai; handsome; graceful; smart; commander in chief; (coll.) cool!; sweet!	красивый (о мужчине), классный; главнокомандующий	4	m	
 帅呆了	帥呆了	shuai4 dai1 le5	awesome; brilliant; magnificent	здорово, классно, круто, отлично; восхитительный, замечательный…		b	
 帅哥	帥哥	shuai4 ge1	handsome guy; lady-killer; handsome (form of address)	красавчик, красавец, симпатичный парень, симпатяга	4	b	
 帅气	帥氣	shuai4 qi5	handsome; smart; dashing; elegant	красивый, привлекательный		b	
@@ -36398,7 +36398,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 帏	幃	wei2	curtain; women's apartment; tent	мешочек с ароматическими веществами, душистая подушечка		b	
 帏幕	幃幕	wei2 mu4	screen; backdrop	занавес, ширма		b	
 幄		wo4	tent	шатёр, палатка		b	
-幅		fu2	width; roll; classifier for textiles or pictures	полотнище; ординарная полоса [материи, бумаги]; свиток	5	b	
+幅		fu2	width; roll; classifier for textiles or pictures	(сч. слово для картин и тканей); ширина	5	m	
 幅员	幅員	fu2 yuan2	size (i.e. area) of a country, geographical region or school campus etc; (fig.) scope; extent	поверхность, площадь, территория; пространство, протяжение; размер		b	
 幅射		fu2 she4	variant of 輻射|辐射[fu2 she4]				
 幅度		fu2 du4	width; extent; range; scope	амплитуда [колебаний]; колебания	5	b	
@@ -36429,7 +36429,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 幡然		fan1 ran2	suddenly and completely (realize, change one's strategy etc)	круто, резко, решительно, кардинально; вдруг, сразу		b	
 幡然改图	幡然改圖	fan1 ran2 gai3 tu2	to change one's plan all of a sudden (idiom)				
 幢		chuang2	banner	стяг; знамя; бунчук	6	b	
-幢		zhuang4	classifier for buildings; carriage curtain (old)	тент; шторка, занавеска	6	b	
+幢		zhuang4	classifier for buildings; carriage curtain (old)	(сч. слово для зданий)	6	m	
 幢幢		chuang2 chuang2	(shadows) flickering; dancing	колебаться, дрожать; колыхаться		b	
 币	幣	bi4	money; coins; currency; silk	деньги; валюта; монета		b	
 币值	幣值	bi4 zhi2	value of a currency	стоимость денег; покупательная сила денег		b	
@@ -37075,7 +37075,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 庠		xiang2	asylum for the aged; school	школа; сельская школа		b	
 庤		zhi4	to prepare	запасать, накоплять; снабжать, обеспечивать		b	
 庥		xiu1	protection; shade	тень, сень; защита, покровительство		b	
-度		duo2	to estimate; Taiwan pr. [duo4]	поселяться [в], пребывать [в], оставаться [на, в]	2	b	
+度		duo2	to estimate; Taiwan pr. [duo4]	обдумывать, оценивать (книжн.)	2	m	
 度估		du4 gu1	(Tw) to doze off (from Taiwanese 盹龜, Tai-lo pr. [tuh-ku])	дремать		b	
 度假		du4 jia4	to go on holidays; to spend one's vacation	проводить каникулы, проводить отпуск; курортный		b	
 度假区	度假區	du4 jia4 qu1	(vacation) resort	курортный район		b	
@@ -37497,7 +37497,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 庐阳	廬陽	Lu2 yang2	Luyang district of Hefei city 合肥市[He2 fei2 shi4], Anhui				
 庐阳区	廬陽區	Lu2 yang2 qu1	Luyang district of Hefei city 合肥市[He2 fei2 shi4], Anhui	район Луян		b	
 廱		yong1	harmonious	гармония; вм		b	
-厅	廳	ting1	(reception) hall; living room; office; provincial government department	казённое учреждение, ямынь; управление, служба	5	b	
+厅	廳	ting1	(reception) hall; living room; office; provincial government department	зал, гостиная; управление	5	m	
 厅堂	廳堂	ting1 tang2	hall	главный присутственный зал; конференц-зал; актовый зал		b	
 厅长	廳長	ting1 zhang3	head of provincial PRC government department	начальник управления, начальник учреждения, начальник комиссариата		b	
 廴		yin3	"long stride" radical in Chinese characters (Kangxi radical 54), occurring in 建, 延, 廷 etc				
@@ -37634,7 +37634,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 廿八躔		nian4 ba1 chan2	the twenty-eight constellations; also written 二十八宿[er4 shi2 ba1 xiu4]				
 廿四史		nian4 si4 shi3	twenty four dynastic histories (or 25 or 26 in modern editions); same as 二十四史[Er4 shi2 si4 Shi3]				
 弁		bian4	(old) cap (garment); military officer of low rank (in former times); preceding	церемониальный головной убор; шапка		b	
-弄		long4	lane; alley	находить удовольствие в; увлекаться, наслаждаться; любить	2	b	
+弄		long4	lane; alley	переулок (弄堂)	2	m	
 弄不懂		nong4 bu5 dong3	unable to make sense of (sth)	не понять, непонятный, неясный		b	
 弄不清		nong4 bu5 qing1	unable to figure out	неясно, непонятно		b	
 弄丢	弄丟	nong4 diu1	to lose	потерять		b	
@@ -37721,7 +37721,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 吊祭	弔祭	diao4 ji4	a worship ceremony for the dead; to offer sacrifice (to ancestors); a libation				
 吊诡	弔詭	diao4 gui3	bizarre; paradoxical; a paradox (from Daoist classic Zhuangzi 莊子|庄子)	парадокс, парадоксальный, странный, удивительный		b	
 吊诡矜奇	弔詭矜奇	diao4 gui3 jin1 qi2	strange and paradoxical	невероятный, парадоксальный, фантастический; чудовищный, странный…		b	
-引		yin3	to draw (e.g. a bow); to pull; to stretch sth; to extend; to lengthen; to involve or implicate in; to attract; to lead; to guide; to leave; to provide evidence 	натягивать [лук]	4	b	
+引		yin3	to draw (e.g. a bow); to pull; to stretch sth; to extend; to lengthen; to involve or implicate in; to attract; to lead; to guide; to leave; to provide evidence 	вести, тянуть; вызывать; цитировать	4	m	
 引人入胜	引人入勝	yin3 ren2 ru4 sheng4	to enchant; fascinating	увлекать, очаровывать; увлекательно; увлекательный, занятный…		b	
 引人注意		yin3 ren2 zhu4 yi4	to attract attention; eye-catching; conspicuous	привлекать внимание		b	
 引人注目		yin3 ren2 zhu4 mu4	to attract attention; eye-catching; conspicuous	привлекать внимание; быть в центре внимания; поразительный		b	
@@ -38028,7 +38028,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 张高丽	張高麗	Zhang1 Gao1 li4	Zhang Gaoli (1946-), PRC politician	Чжан Гаоли		b	
 弶		jiang4	snare; to snare	силки для ловли мелких птичек		b	
 强	強	jiang4	stubborn; unyielding	упорный, настойчивый, упрямый	3	b	
-强	強	qiang3	to force; to compel; to strive; to make an effort	насильственный; насильно, с нажимом, по принуждению	3	b	
+强	強	qiang3	to force; to compel; to strive; to make an effort	через силу, с трудом (勉强)	3	m	
 强中更有强中手	強中更有強中手	qiang2 zhong1 geng4 you3 qiang2 zhong1 shou3	see 強中自有強中手|强中自有强中手[qiang2 zhong1 zi4 you3 qiang2 zhong1 shou3]				
 强中自有强中手	強中自有強中手	qiang2 zhong1 zi4 you3 qiang2 zhong1 shou3	however strong you are, there is always someone stronger (idiom); there is always sth more to learn; never be satisfied to rest on your laurels; there is no roo				
 强人	強人	qiang2 ren2	(politics) strongman; (in the workplace, esp. of a woman) a highly capable person; (old) robber	воины, посылавшиеся на чужую территорию для диверсий и грабежа		b	
@@ -38473,7 +38473,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 彼此彼此		bi3 ci3 bi3 ci3	no better (or worse) than each other; both in the same boat	равны, одинаковы, один не уступает другому; один другого стоит…		b	
 彼尔姆	彼爾姆	Bi3 er3 mu3	Perm, Russian city in the Urals	Пермь		b	
 彽		chi2	go to and fro				
-佛	彿	fu2	seemingly; (female) head ornament; variant of 彿|佛[fu2]	мирный человек; святой, не от мира сего	6	b	
+佛	彿	fu2	seemingly; (female) head ornament; variant of 彿|佛[fu2]	(в слове 仿佛 — как будто)	6	m	
 佛雷泽尔	彿雷澤爾	Fu2 lei2 ze2 er3	Frazer (name)				
 往事		wang3 shi4	past events; former happenings	прошлые дела; былое; прошлое	6	b	
 往事如风	往事如風	wang3 shi4 ru2 feng1	the past is vanished like the wind; gone beyond recall				
@@ -39524,7 +39524,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 心惊胆颤	心驚膽顫	xin1 jing1 dan3 chan4	see 心驚膽戰|心惊胆战[xin1 jing1 dan3 zhan4]				
 心高气傲	心高氣傲	xin1 gao1 qi4 ao4	proud and arrogant	честолюбивый; заносчивый, надменный		b	
 忄		xin1	Kangxi radical 61 (心) as a vertical side element				
-必		bi4	certainly; must; will; necessarily	решительно, обязательно, непременно; несомненно; не иначе, как...…	5	b	
+必		bi4	certainly; must; will; necessarily	обязательно, непременно	5	m	
 必不可少		bi4 bu4 ke3 shao3	absolutely necessary; indispensable; essential	крайне необходимый		b	
 必不可少组成	必不可少組成	bi4 bu4 ke3 shao3 zu3 cheng2	absolute necessity; sine qua non				
 必不可缺		bi4 bu4 ke3 que1	see 必不可少[bi4 bu4 ke3 shao3]				
@@ -39648,7 +39648,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 忙着	忙著	mang2 zhe5	to be occupied with (doing sth)	заняться, быть занятым		b	
 忙进忙出	忙進忙出	mang2 jin4 mang2 chu1	very busy	быть очень занятым, суетиться		b	
 忙音		mang2 yin1	busy signal (telephony)	короткие гудки по телефону		b	
-忛		fan1	erroneous variant of 帆[fan1]	вм		b	
+忛		fan1	erroneous variant of 帆[fan1]				
 応		ying4	Japanese variant of 應|应				
 忝		tian3	to shame	позорить, унижать		b	
 忞		min2	to encourage oneself				
@@ -40086,7 +40086,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 怨艾		yuan4 yi4	to resent; to regret; grudge	ненавидеть; ненависть		b	
 怨言		yuan4 yan2	complaint	жалобы; ропот		b	
 怩		ni2	shy; timid; bashful; to look ashamed				
-怪		guai4	bewildering; odd; strange; uncanny; devil; monster; to wonder at; to blame; quite; rather	чудной, странный, необычный; причудливый, удивительный…	4	b	
+怪		guai4	bewildering; odd; strange; uncanny; devil; monster; to wonder at; to blame; quite; rather	странный; винить, упрекать; чудовище	4	m	
 怪不得		guai4 bu5 de5	no wonder!; so that's why!	нечего удивляться, неудивительно	5	b	
 怪事		guai4 shi4	strange thing; curious occurrence	удивительное событие, чудесный случай		b	
 怪人		guai4 ren2	strange person; eccentric	чудак, сумасброд; фантазёр; оригинал		b	
@@ -40456,7 +40456,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 悝		kui1	to laugh at	lǐ* горевать, печалиться		b	
 悝		li3	worried; afflicted	lǐ* горевать, печалиться		b	
 悮	悞	wu4	to impede; to delay; variant of 誤|误[wu4]				
-悟		wu4	to comprehend; to apprehend; to become aware	А; постигнуть, понять; осознать; уразуметь		b	
+悟		wu4	to comprehend; to apprehend; to become aware	постигнуть, понять; осознать; уразуметь		b	
 悟入		wu4 ru4	to understand; to comprehend the ultimate essence of things (Buddhism)				
 悟性		wu4 xing4	perception; wits; power of understanding; comprehension	понятливость, сообразительность, восприимчивость; понимание; интеллект		b	
 悟净	悟淨	Wu4 jing4	Sha Wujing, character from the Journey to the West				
@@ -41216,7 +41216,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 感质	感質	gan3 zhi4	qualia (philosophy)	квалиа		b	
 感遇		gan3 yu4	gratitude for good treatment; to sigh; to lament				
 感遇诗	感遇詩	gan3 yu4 shi1	a lament (poem)				
-愣		leng4	to look distracted; to stare blankly; distracted; blank; (coll.) unexpectedly; rash; rashly	остолбенеть, обомлеть, оцепенеть	6	b	
+愣		leng4	to look distracted; to stare blankly; distracted; blank; (coll.) unexpectedly; rash; rashly	остолбенеть, застыть; опрометчивый	6	m	
 愣劲儿	愣勁兒	leng4 jin4 r5	dash; pep; vigor				
 愣干		leng4 gan4	to do things recklessly; to persist in doing sth in one's own way				
 愣神儿	愣神兒	leng4 shen2 r5	to stare blankly; to be in a daze				
@@ -41243,7 +41243,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 恺悌	愷悌	kai3 ti4	happy and easygoing; friendly	добрый и вежливый; мягкий, доброжелательный		b	
 恺撒	愷撒	Kai3 sa3	Caesar (name); Gaius Julius Caesar 100-42 BC; by extension, emperor, Kaiser, Tsar	Цезарь		b	
 忾	愾	kai4	anger	гневаться, сердиться; раздражаться, возмущаться, негодовать…		b	
-愿		yuan4	honest; prudent; variant of 願|愿[yuan4]; to hope; to wish; to desire; hoped-for; ready; willing	хотеть, желать, чаять, мечтать	5	b	
+愿		yuan4	honest; prudent; variant of 願|愿[yuan4]; to hope; to wish; to desire; hoped-for; ready; willing	желать, хотеть; желание	5	m	
 慁		hun4	confused; dishonor	беспокоить, тревожить; доставлять хлопоты		b	
 栗	慄	li4	afraid; trembling; surname Li; chestnut	каштан Бунге; каштан		b	
 栗然	慄然	li4 ran2	(literary) shivering; shuddering	съёжиться от страха; боязливо, с трепетом		b	
@@ -41388,7 +41388,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 慢镜头	慢鏡頭	man4 jing4 tou2	slow motion	замедленная съёмка; режим slow-mo, слоу-мо		b	
 慢长	慢長	man4 chang2	extremely long; unending				
 慢腾腾	慢騰騰	man4 teng2 teng2	leisurely; unhurried; sluggish	медленный, медлительный; крайне медленно		b	
-惯	慣	guan4	accustomed to; used to; indulge; to spoil (a child)	А; привыкать; вводить в свой обиход; считать обычным		b	
+惯	慣	guan4	accustomed to; used to; indulge; to spoil (a child)	привыкать; вводить в свой обиход; считать обычным		b	
 惯例	慣例	guan4 li4	convention; usual practice	общепринятые правила, протокол; обычай, обыкновение; прецедент…	6	b	
 惯偷	慣偷	guan4 tou1	habitual thief	вор-рецидивист; профессиональный вор		b	
 惯坏	慣壞	guan4 huai4	to spoil (a child)	избалованный; избаловать		b	
@@ -41512,7 +41512,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 怜爱	憐愛	lian2 ai4	to have tender affection for; to love tenderly; to pamper sb	трепетно любить, жалеть; заботливо относиться, проникаться симпатией		b	
 怜悯	憐憫	lian2 min3	to take pity on; pity; mercy	сжалиться, пощадить, пожалеть, помиловать		b	
 怜香惜玉	憐香惜玉	lian2 xiang1 xi1 yu4	to have tender, protective feelings for the fairer sex (idiom)	бережно относиться к женщине		b	
-凭	憑	ping2	to lean against; to rely on; on the basis of; no matter (how, what etc); proof	полагаться на...; надеяться на...; доверяться	5	b	
+凭	憑	ping2	to lean against; to rely on; on the basis of; no matter (how, what etc); proof	опираться на; на основании, по	5	m	
 凭什么	憑什麼	ping2 shen2 me5	(spoken) why?; for which reason?	с какой стати? с чего вдруг? как так? на каком основании? с чего это?		b	
 凭仗	憑仗	ping2 zhang4	to rely on; to depend on	опираться, полагаться		b	
 凭依	憑依	ping2 yi1	to rely on; to base oneself on	основываться на..., полагаться на...; на основании...; основание		b	
@@ -41621,8 +41621,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 懈怠		xie4 dai4	slack; lazy; remiss	быть ленивым, лениться, разболтаться, разболтанный, расхлябанный…		b	
 懈惰		xie4 duo4	slack; idle	лениться, быть ленивым; инертность, лень		b	
 懈气	懈氣	xie4 qi4	to slacken off; to take it easy				
-应	應	ying4	surname Ying; to answer; to respond; to comply with; to deal or cope with	отвечать, откликаться, отзываться	4	b	
-应	應	ying1	to agree (to do sth); should; ought to; must; (legal) shall	соответствовать, годиться; подходить [к]; согласоваться [с]	4	b	
+应	應	ying4	surname Ying; to answer; to respond; to comply with; to deal or cope with	отвечать, откликаться; справляться	4	m	
+应	應	ying1	to agree (to do sth); should; ought to; must; (legal) shall	должен, следует	4	m	
 应仁之乱	應仁之亂	Ying1 ren2 zhi1 luan4	Ōnin war 1467-1477 between factions of Ashikaga shogunate	Война годов Онин, Смута годов Онин		b	
 应付	應付	ying4 fu5	to deal with; to cope	справиться; действовать в ответ, принимать ответные меры; встретить…	5	b	
 应付自如	應付自如	ying4 fu5 zi4 ru2	to handle matters with ease (idiom); to hold one's own	делать без труда, работа сама спорится		b	
@@ -41759,7 +41759,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 懵懂		meng3 dong3	confused; ignorant	глупый, бестолковый; тупой, невежественный		b	
 懵懵懂懂		meng3 meng3 dong3 dong3	confused; ignorant	бестолковый, невежественный, глупый		b	
 懵逼		meng3 bi1	(dialect) stupefied; dumbfounded	охренеть, остолбенеть, прийти в замешательство		b	
-懒	懶	lan3	lazy	лень, неохота; слабость; расслабленность	4	b	
+懒	懶	lan3	lazy	ленивый	4	m	
 懒人	懶人	lan3 ren2	lazy person	лодырь, лентяй		b	
 懒人包	懶人包	lan3 ren2 bao1	(Tw) (neologism c. 2007) information presented in easily assimilable form (digest, summary, infographic etc)	комплект средств для лентяев; объяснение простыми словами		b	
 懒人沙发	懶人沙發	lan3 ren2 sha1 fa1	beanbag				
@@ -42275,7 +42275,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 战斗者	戰鬥者	zhan4 dou4 zhe3	fighter	боец		b	
 战斗舰	戰鬥艦	zhan4 dou4 jian4	battleship	линейный корабль, линкор		b	
 戱		xi4	variant of 戲|戏[xi4]; play; drama				
-戏	戲	xi4	trick; drama; play; show	театр; театральный, бутафорский	5	b	齣,場,臺
+戏	戲	xi4	trick; drama; play; show	спектакль, пьеса; играть, шутить	5	m	齣,場,臺
 戏份	戲份	xi4 fen4	scene (in a movie etc); one's part in a movie or play; (archaic) actor's payment	сцена, эпизод; гонорар актёра		b	
 戏仿	戲仿	xi4 fang3	a parody; to parody	пародия		b	
 戏侮	戲侮	xi4 wu3	to insult	издеваться; насмехаться; высмеивать; выставлять в обидном свете…		b	
@@ -42348,7 +42348,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 戴表		dai4 biao3	to wear a watch; a homophone for 代表 used to avoid Internet censorship in the PRC				
 戴高帽子		dai4 gao1 mao4 zi5	(coll.) to be the object of flattery; to be placed on a pedestal	носить высокую шапку, обр. льстить кому-либо, делать комплименты…		b	
 戴高乐	戴高樂	Dai4 Gao1 le4	Charles De Gaulle (1890-1970), French general and politician, leader of the Free French during World War II and president of the Republic 1959-1969	де Голль		b	
-户	戶	hu4	a household; door; family	дверь; двор, хозяйство; домохозяйство; дворовый, подворный	4	b	
+户	戶	hu4	a household; door; family	двор, семья (сч. слово); дверь; счёт (в банке)	4	m	
 户主	戶主	hu4 zhu3	head of the household	хозяин дома, глава семьи, глава домохозяйства		b	
 户内	戶內	hu4 nei4	indoors; within the home	в доме, дома, домашний, в помещении, в закрытом помещении		b	
 户口	戶口	hu4 kou3	population (counted as number of households for census or taxation); registered residence; residence permit; (in Hong Kong and Macau) bank account	население; количество дворов и число жителей		b	
@@ -42375,7 +42375,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 戽		hu4	water bucket for irrigation	черпалка [для воды]		b	
 戽斗		hu4 dou3	bailing bucket (tool for irrigating fields); protruding lower jaw	водочерпалка; выпирающая нижняя челюсть		b	
 戽水		hu4 shui3	to draw water for irrigation (manually or with a water wheel)	черпать воду для орошения		b	
-戾		li4	to bend; to violate; to go against; ruthless and tyrannical	А; гнуться, сгибаться; скрючиваться		b	
+戾		li4	to bend; to violate; to go against; ruthless and tyrannical	гнуться, сгибаться; скрючиваться		b	
 戾气	戾氣	li4 qi4	evil tendencies; vicious currents; antisocial behavior	жестокий, жестокость, насилие		b	
 戾龙	戾龍	li4 long2	mythical evil serpent; evil dragon in Western mythology, cf Revelations 14:12				
 房		fang2	surname Fang; house; room; branch of an extended family; classifier for family members (or concubines)	дом, здание, строение; жилище		b	間
@@ -42676,7 +42676,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 才识过人	才識過人	cai2 shi2 guo4 ren2	an outstanding talent (idiom); surpassing insight and acumen	таланты и знания превосходят других людей, выдающийся, талантливый		b	
 才貌双全	才貌雙全	cai2 mao4 shuang1 quan2	talented and good-looking (idiom)	талантлив и красив		b	
 才高八斗		cai2 gao1 ba1 dou3	of great talent (idiom)	отличаться выдающимися способностями и эрудицией; обладать…		b	
-扎		zha1	to prick; to run or stick (a needle etc) into; jug (a classifier for liquids such as beer)	уколоться, получить укол; занозиться, колоть; поражать, ранить…	6	b	
+扎		zha1	to prick; to run or stick (a needle etc) into; jug (a classifier for liquids such as beer)	колоть, втыкать; (zā) завязывать	6	m	
 扎		zha2	penetrating (as of cold); struggle	держаться через силу, еле держаться	6	b	
 扎伊尔	扎伊爾	Zha1 yi1 er3	Zaire	Заир		b	
 扎住		zha1 zhu4	to stop; Taiwan pr. [zha3 zhu4]	остановиться; остановить, удержать; стой!		b	
@@ -42709,8 +42709,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 扎鲁特旗	扎魯特旗	Za1 lu3 te4 qi2	Jarud banner or Jarud khoshuu in Tongliao 通遼|通辽[Tong1 liao2], Inner Mongolia				
 扐		le4	divination by straw	остаток		b	
 扑责	扑責	pu1 ze2	to punish by flogging				
-扒		ba1	to peel; to skin; to tear; to pull down; to cling to (sth on which one is climbing); to dig	копать, рыть, выкапывать, вырывать	6	b	
-扒		pa2	to rake up; to steal; to braise; to crawl	ворошить; теребить, будоражить; сгребать, шевелить	6	b	
+扒		ba1	to peel; to skin; to tear; to pull down; to cling to (sth on which one is climbing); to dig	держаться за; сдирать, раскапывать	6	m	
+扒		pa2	to rake up; to steal; to braise; to crawl	сгребать; воровать (из карманов); тушить	6	m	
 扒屋牵牛	扒屋牽牛	ba1 wu1 qian1 niu2	to sack the home and lead off the cattle (proverb); to strip of everything				
 扒手		pa2 shou3	pickpocket	карманный вор, карманник		b	
 扒拉		ba1 la1	to push lightly; to flick to one side; to get rid of	передвигать, перебирать		b	
@@ -43024,7 +43024,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 扔弃	扔棄	reng1 qi4	to abandon; to discard; to throw away	бросить; отбросить; забросить		b	
 払		fan3	to take; to fetch	брать		b	
 払		fu2	Japanese variant of 拂[fu2]				
-托		tuo1	prop; support (for weight); rest (e.g. arm rest); thanks to; to hold in one's hand; to support in one's palm; to give; to base; to commit; to set; torr (unit of; to trust; to entrust; to be entrusted 	подносить, подавать	6	b	
+托		tuo1	prop; support (for weight); rest (e.g. arm rest); thanks to; to hold in one's hand; to support in one's palm; to give; to base; to commit; to set; torr (unit of; to trust; to entrust; to be entrusted 	держать на ладони; поручать, просить	6	m	
 托付		tuo1 fu4	to entrust	препоручить, доверить; вверить, передать на попечение, поручить		b	
 托克劳	托克勞	Tuo1 ke4 lao2	Tokelau (territory of New Zealand)	Токелау		b	
 托克托		Tuo1 ke4 tuo1	Togtoh county, Mongolian Togtox khoshuu, in Hohhot 呼和浩特[Hu1 he2 hao4 te4], Inner Mongolia; alternative spelling of 脫脫|脱脱[Tuo1 tuo1], Yuan dynasty politician Tok	Тогтох		b	
@@ -43081,7 +43081,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 扡		chi3	drag along	колоть, рубить вдоль волокон		b	
 扢		gu3	clean; to rub	чистить; протирать, вытирать		b	
 扢		xi4	sprightful	радоваться; радость, восторг		b	
-扣		kou4	to fasten; to button; button; buckle; knot; to arrest; to confiscate; to deduct (money); discount; to knock; to smash, spike or dunk (a ball); to cover (with a ; button	удерживать, сдерживать; задерживать, арестовывать	6	b	
+扣		kou4	to fasten; to button; button; buckle; knot; to arrest; to confiscate; to deduct (money); discount; to knock; to smash, spike or dunk (a ball); to cover (with a ; button	застёгивать; вычитать, удерживать; пуговица	6	m	
 扣上		kou4 shang4	to buckle up; to fasten	пристёгивать, застёгивать		b	
 扣人心弦		kou4 ren2 xin1 xian2	to excite; to thrill; exciting; thrilling; cliff-hanging	задевать струны сердца; глубоко западать в душу; волновать до…		b	
 扣住		kou4 zhu4	to detain; to hold back by force; to buckle; to hook	застегнуть		b	
@@ -43216,9 +43216,9 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 扶风	扶風	Fu2 feng1	Fufeng County in Baoji 寶雞|宝鸡[Bao3 ji1], Shaanxi	ураган, смерч; Фуфэн		b	
 扶风县	扶風縣	Fu2 feng1 Xian4	Fufeng County in Baoji 寶雞|宝鸡[Bao3 ji1], Shaanxi	уезд Фуфэн		b	
 扶养	扶養	fu2 yang3	to foster; to bring up; to raise	иметь на иждивении, содержать; растить		b	
-扶余	扶餘	Fu2 yu2	Fuyu county in Songyuan 松原, Jilin; Pu'yo, Korean Buyeo (c. 200 BC-494 AD), ancient kingdom in northeast frontier region of China	см; Пуё		b	
+扶余	扶餘	Fu2 yu2	Fuyu county in Songyuan 松原, Jilin; Pu'yo, Korean Buyeo (c. 200 BC-494 AD), ancient kingdom in northeast frontier region of China				
 扶馀	扶餘	Fu2 yu2	variant of 扶餘|扶余 Korean: Buyeo (c. 200 BC-494 AD), ancient kingdom in northeast frontier region of China				
-批		pi1	to ascertain; to act on; to criticize; to pass on; classifier for batches, lots, military flights; tier (for the ranking of universities and colleges)	Iгл; критиковать; рецензировать; выносить суждение, определять	4	b	
+批		pi1	to ascertain; to act on; to criticize; to pass on; classifier for batches, lots, military flights; tier (for the ranking of universities and colleges)	критиковать; утверждать; партия (товара), группа	4	m	
 批件		pi1 jian4	approved document; document with written instructions				
 批假		pi1 jia4	to approve vacation	отпустить на каникулы; представлять отпуск		b	
 批价	批價	pi1 jia4	wholesale price; to settle an account; to pay a bill	оптовая цена; рассчитать стоимость		b	
@@ -43399,7 +43399,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 抃		bian4	to applaud	хлопать в ладоши; аплодировать		b	
 抃悦	抃悅	bian4 yue4	to clap one's hands in joy	хлопать в ладоши		b	
 抃掌		bian4 zhang3	to clap; to applaud	хлопать в ладоши; аплодировать		b	
-抄		chao1	to make a copy; to plagiarize; to search and seize; to raid; to grab; to go off with; to take a shortcut; to make a turning move; to fold one's arms	грабить; отбирать; отнимать; похищать; конфисковать	4	b	
+抄		chao1	to make a copy; to plagiarize; to search and seize; to raid; to grab; to go off with; to take a shortcut; to make a turning move; to fold one's arms	переписывать, списывать	4	m	
 抄件		chao1 jian4	duplicate (copy)	копия; отпуск		b	
 抄家		chao1 jia1	to search a house and confiscate possessions	конфискация имущества		b	
 抄写	抄寫	chao1 xie3	to copy; to transcribe	снимать копию; переписывать	4	b	
@@ -43688,7 +43688,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 抗体	抗體	kang4 ti3	antibody	антитела		b	
 折		she2	to break (e.g. stick or bone); a loss	потерять; понести убыток; с потерей, в убыток	4	b	
 折		zhe1	to turn sth over; to turn upside down; to tip sth out (of a container)	вывернуть, перевернуть, опрокинуть; выложить, вылить	4	b	
-折		zhe2	to break; to fracture; to snap; to suffer loss; to bend; to twist; to turn; to change direction; convinced; to convert into (currency); discount; rebate; tenth ; variant of 折[zhe2]; to fold	ломать, обламывать	4	b	
+折		zhe2	to break; to fracture; to snap; to suffer loss; to bend; to twist; to turn; to change direction; convinced; to convert into (currency); discount; rebate; tenth ; variant of 折[zhe2]; to fold	ломать, сгибать; скидка	4	m	
 折中		zhe2 zhong1	to compromise; to take the middle road; a trade-off; eclectic	избирать среднее; идти на компромисс; компромисс; эклектика…		b	
 折光		zhe2 guang1	refraction; refraction	преломление света, преломление лучей, рефракция		b	
 折兑	折兌	zhe2 dui4	to cash; to change gold or silver into money	обменивать; обменивать из расчёта; производить обмен; разменивать…		b	
@@ -43782,7 +43782,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 抬头	抬頭	tai2 tou2	to raise one's head; to gain ground; account name, or space for writing the name on checks, bills etc	поднимать голову, кабрировать; кабрирование; воспрянуть	5	b	
 抬头不见低头见	抬頭不見低頭見	tai2 tou2 bu4 jian4 di1 tou2 jian4	(idiom) (of people in a small town etc) to cross paths regularly	поднимешь голову - не видишь; [но] опустишь голову - увидишь; обр.…		b	
 抬高		tai2 gao1	to raise (price etc)	повышать[ся], поднимать		b	
-抱		bao4	to hold; to carry (in one's arms); to hug; to embrace; to surround; to cherish	заключать в объятия, обнимать, охватывать, обхватывать; держать в…	4	b	
+抱		bao4	to hold; to carry (in one's arms); to hug; to embrace; to surround; to cherish	обнимать, держать на руках	4	m	
 抱不平		bao4 bu4 ping2	to be outraged by an injustice	заступаться, вмешиваться в защиту; выступать за правое дело…		b	
 抱佛脚	抱佛腳	bao4 fo2 jiao3	lit. to clasp the Buddha's feet (without ever having burned incense) (idiom); fig. to profess devotion only when in trouble; panic measures in place of timely p	обнимать ноги Будды		b	
 抱大腿		bao4 da4 tui3	(coll.) to cling to sb influential or famous	цепляться за влиятельных людей; льнуть к сильным мира сего		b	
@@ -43890,7 +43890,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 押金		ya1 jin1	deposit; down payment	денежный залог; депозит	5	b	
 押韵	押韻	ya1 yun4	to rhyme; sometimes written 壓韻|压韵	рифмоваться; рифмовать; рифмование		b	
 押题	押題	ya1 ti2	(in one's study) to focus on the topics one speculates will appear on the exam	определять вопросы эказамена		b	
-抽		chou1	to draw out; to pull out from in between; to remove part of the whole; (of certain plants) to sprout or bud; to whip or thrash	тащить на себя; к себе, на себя	4	b	
+抽		chou1	to draw out; to pull out from in between; to remove part of the whole; (of certain plants) to sprout or bud; to whip or thrash	вытягивать, вынимать; курить; выкраивать (время)	4	m	
 抽中		chou1 zhong4	to win (a prize in a lottery)	вытянуть выигрышный билет, выиграть		b	
 抽冷子		chou1 leng3 zi5	(coll.) unexpectedly	внезапно, вдруг; хлоп и		b	
 抽出		chou1 chu1	to take out; to extract	достать, извлечь; вытащить; разряжать		b	
@@ -43956,7 +43956,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 拂袖而去		fu2 xiu4 er2 qu4	to storm off in a huff (idiom)	удалиться, взмахнув рукавом		b	
 拂逆		fu2 ni4	to go against; to do sth contrary to (sb's wishes)	идти наперекор; непослушание; препятствовать, препятствие		b	
 拃		zha3	span (unit of length based on the width of the expanded human hand); to span (measure with one's hand)	измерять пядями		b	
-拄		zhu3	to lean on; to prop on	устанавливать; водружать, сооружать	6	b	
+拄		zhu3	to lean on; to prop on	опираться (на палку)	6	m	
 拆		chai1	to tear open; to tear down; to tear apart; to open	разбирать, разлагать; демонтировать; разряжать; разламывать…	5	b	
 拆下		chai1 xia4	to dismantle; to take apart	снимать; спарывать, срезать		b	
 拆借		chai1 jie4	short-term loan	краткосрочное кредитование; межбанковское кредитование		b	
@@ -44320,7 +44320,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 拔除		ba2 chu2	to pull out; to remove	удалять, устранять, уничтожать		b	
 拔顶	拔頂	ba2 ding3	topping (mining)	лысеть		b	
 拔高		ba2 gao1	to raise (one's voice); to overrate; to build up; to stand out; outstanding	выделяться из массы, выдающийся		b	
-拖		tuo1	to drag; to tow; to trail; to hang down; to mop (the floor); to delay; to drag on	тянуть, тащить; техн. тяга	6	b	
+拖		tuo1	to drag; to tow; to trail; to hang down; to mop (the floor); to delay; to drag on	тянуть, тащить; затягивать (время); мыть (пол)	6	m	
 拖下水		tuo1 xia4 shui3	lit. to pull sb into the water; to involve sb in a messy business; to get sb into trouble	утащить в воду, обр. втянуть в беду		b	
 拖人下水		tuo1 ren2 xia4 shui3	lit. to pull sb into the water; fig. to involve sb in a messy business; to get sb into trouble	тащить человека в воду, обр. вовлекать, впутывать, втягивать…		b	
 拖住		tuo1 zhu4	to hold up; to hinder; to stall	задерживать; подхватывать; подпирать; подхватывание		b	
@@ -44435,7 +44435,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 拚财	拚財	pan4 cai2	to make rash speculations	рисковать всем состоянием, ставить всё на карту		b	
 拚贴	拚貼	pin1 tie1	pastiche; collage; also written 拼貼|拼贴				
 拚除		pan4 chu2	to reject; to abandon	выметать; выкидывать		b	
-招		zhao1	to recruit; to provoke; to beckon; to incur; to infect; contagious; a move (chess); a maneuver; device; trick; to confess	манить [рукой] звать; подзывать; призывать; привлекать к себе…	6	b	
+招		zhao1	to recruit; to provoke; to beckon; to incur; to infect; contagious; a move (chess); a maneuver; device; trick; to confess	манить, махать рукой; набирать (людей); приём, уловка	6	m	
 招人		zhao1 ren2	to be infectious; to recruit	наём работника; вызывать, навлекать		b	
 招人喜欢	招人喜歡	zhao1 ren2 xi3 huan5	charming; attractive; delightful	чарующий, притягательный, восхитительный		b	
 招来	招來	zhao1 lai2	to attract; to incur	навлекать [на себя], вызывать		b	
@@ -44627,7 +44627,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 拷掠		kao3 lve4	to torture	пытать; подвергать телесному наказанию; сечь; избивать, истязать		b	
 拷花		kao3 hua1	to emboss	набивка		b	
 拷贝	拷貝	kao3 bei4	copy; to copy (loanword)	копия; копировальный; копировать		b	
-拼		pin1	to piece together; to join together; to stake all; adventurous; at the risk of one's life; to spell	составлять, складывать, соединять, решать; сколачивать; сшивать	5	b	
+拼		pin1	to piece together; to join together; to stake all; adventurous; at the risk of one's life; to spell	составлять, соединять; биться изо всех сил	5	m	
 拼到底		pin1 dao4 di3	to brave it out; to the bitter end	сражаться до конца, бороться до последнего		b	
 拼刺		pin1 ci4	bayonet charge	штыковой бой		b	
 拼刺刀		pin1 ci4 dao1	bayonet charge	идти в штыковую атаку; штыковой бой		b	
@@ -44678,7 +44678,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 拼音阶段	拼音階段	pin1 yin1 jie1 duan4	alphabetic stage				
 拼餐		pin1 can1	(of people with tight budget) to enjoy various dishes at the restaurant by ordering the food together and then sharing the costs				
 拼斗	拼鬥	pin1 dou4	to engage (in a fight)	привлекать, увлекать, занимать, заинтересовывать		b	
-拽		ye4	to drag; to haul	вм	6	b	
+拽		ye4	to drag; to haul				
 拽		zhuai1	to throw; to fling	бросить; метать	6	b	
 拽		zhuai3	alternate writing of 跩[zhuai3]	борзый, дерзкий	6	b	
 拽		zhuai4	to pull; to tug at (sth)	тянуть на себя, тащить; волочить	6	b	
@@ -44909,8 +44909,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 挎包		kua4 bao1	satchel; bag	сумка на плечо		b	
 挎斗		kua4 dou3	sidecar	коляска		b	
 挐		na2	to apprehend; to take				
-挑		tiao1	to carry on a shoulder pole; to choose; to pick; to nitpick	нести на коромысле, нести на плечах	4	b	
-挑		tiao3	to raise; to dig up; to poke; to prick; to incite; to stir up	возбуждать, вызывать; провоцировать, подстрекать	4	b	
+挑		tiao1	to carry on a shoulder pole; to choose; to pick; to nitpick	выбирать; придираться; нести на коромысле	4	m	
+挑		tiao3	to raise; to dig up; to poke; to prick; to incite; to stir up	поддевать; подстрекать, провоцировать	4	m	
 挑三拣四	挑三揀四	tiao1 san1 jian3 si4	to be picky; to be choosy	быть разборчивым, привередливым; тщательно выбирать		b	
 挑三窝四	挑三窩四	tiao3 san1 wo1 si4	to sow discord everywhere				
 挑刺		tiao1 ci4	to carp; nitpicking; petty criticism	вынуть, извлечь, выковырять		b	
@@ -44973,8 +44973,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 挖开	挖開	wa1 kai1	to dig into; to cut a mine into	раскапывать, выкапывать		b	
 挖鼻子		wa1 bi2 zi5	to pick one's nose	ковырять в носу		b	
 挙		ju3	Japanese variant of 舉|举				
-挨		ai1	in order; in sequence; close to; adjacent to	давить, тесниться, протискиваться, проталкиваться, пробиваться	6	b	
-挨		ai2	to suffer; to endure; to pull through (hard times); to delay; to stall; to play for time; to dawdle	подвергаться; испытывать, переносить, терпеть	6	b	
+挨		ai1	in order; in sequence; close to; adjacent to	по очереди; рядом, вплотную	6	m	
+挨		ai2	to suffer; to endure; to pull through (hard times); to delay; to stall; to play for time; to dawdle	терпеть, подвергаться (побоям, голоду)	6	m	
 挨不上		ai1 bu4 shang4	to be irrelevant; to be superfluous	не иметь отношения к ч-л; быть несоответствующим; быть посторонним…		b	
 挨个	挨個	ai1 ge4	one by one; in turn	один за одним, поочерёдно, по порядку		b	
 挨个儿	挨個兒	ai1 ge4 r5	erhua variant of 挨個|挨个[ai1 ge4]				
@@ -45092,7 +45092,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 捆		kun3	a bunch; to tie together; bundle	связывать, обвязывать		b	
 捆绑	捆綁	kun3 bang3	to bind	связывать, перевязывать, стропить, строповка	6	b	
 捆缚	捆縛	kun3 fu4	bondage	связывать; опутывать, привязывать		b	
-捉		zhuo1	to clutch; to grab; to capture	брать в руки, хватать; хвататься	6	b	
+捉		zhuo1	to clutch; to grab; to capture	ловить, хватать	6	m	
 捉住		zhuo1 zhu4	to catch; to grapple with; to hold onto	поймать; схватить; задержать		b	
 捉取		zhuo1 qu3	to capture	определить, снять, отобрать, извлечь; to capture		b	
 捉奸	捉姦	zhuo1 jian1	to catch a couple in the act (adultery, illicit sexual relations)	застукать, застать с любовником		b	
@@ -45116,10 +45116,10 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 捍		han4	to ward off (a blow); to withstand; to defend	защищать, отстаивать, оборонять		b	
 捍卫	捍衛	han4 wei4	to defend; to uphold; to safeguard	защищать, отстаивать, оборонять	6	b	
 捍卫者	捍衛者	han4 wei4 zhe3	proponent; supporter; upholder	защитник, поборник		b	
-捎		shao1	to bring sth to sb; to deliver	задеть, коснуться, зацепить, прихватить	6	b	
+捎		shao1	to bring sth to sb; to deliver	захватить попутно, передать	6	m	
 捎来	捎來	shao1 lai2	to bring sth to sb (news etc)	принести		b	
 捎信		shao1 xin4	to take a letter; to send word	передавать письмо		b	
-捏		nie1	to pinch (with one's fingers); to knead; to make up	брать в щепоть, собирать пальцами; щипать; сжимать, зажимать	6	b	
+捏		nie1	to pinch (with one's fingers); to knead; to make up	брать щепотью, сжимать пальцами; лепить	6	m	
 捏一把冷汗		nie1 yi1 ba3 leng3 han4	to break out into a cold sweat (idiom)				
 捏一把汗		nie1 yi1 ba3 han4	to break out into a cold sweat (idiom)	вспотеть от волнения, облиться холодным потом, перепугаться до…		b	
 捏估		nie1 gu5	to act as a go-between				
@@ -45128,7 +45128,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 捏脊		nie1 ji3	form of therapeutic massage, mainly for children, in which a roll of skin is squeezed, working from the base of the spine to the neck (TCM)				
 捏脊治疗	捏脊治療	nie1 ji3 zhi4 liao2	chiropractic (medicine)				
 捏造		nie1 zao4	to make up; to fabricate	вылепливать; фабриковать, подделывать; выдумывать; фальсификация…		b	
-捐		juan1	to contribute; to donate; contribution; tax; to abandon	отбрасывать, выбрасывать [как ненужное]; отказываться от...…	5	b	
+捐		juan1	to contribute; to donate; contribution; tax; to abandon	жертвовать, дарить; налог	5	m	
 捐助		juan1 zhu4	to donate; to offer (aid); contribution; donation	помогать материально; жертвовать по подписному листу; оказывать…	6	b	
 捐募		juan1 mu4	to solicit contributions; to collect donations	собирать деньги по подписке; жертвовать деньги		b	
 捐命		juan1 ming4	to lay down one's life	пожертвовать жизнью		b	
@@ -45179,7 +45179,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 捙		ye4	erroneous variant of 拽[ye4]				
 捜		sou1	Japanese variant of 搜[sou1]				
 捥		wan4	to bend the wrist				
-捧		peng3	to clasp; to cup the hands; to hold up with both hands; to offer (esp. in cupped hands); to praise; to flatter	принимать в обе руки; брать обеими руками; держать в руках	6	b	
+捧		peng3	to clasp; to cup the hands; to hold up with both hands; to offer (esp. in cupped hands); to praise; to flatter	держать в обеих руках; превозносить	6	m	
 捧上天		peng3 shang4 tian1	to praise to the skies	нахваливать, превозносить, возносить до небес		b	
 捧到天上		peng3 dao4 tian1 shang4	lit. to hold up to the skies; fig. to praise lavishly	возносить до небес; на седьмом небе		b	
 捧哏		peng3 gen2	straight man (supporting role in comic dialogue 對口相聲|对口相声[dui4 kou3 xiang4 sheng1]); to react with exasperation to the silliness of the funny man 逗哏[dou4 gen2]	подхватывать тему, комментировать		b	
@@ -45318,7 +45318,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 抡	掄	lun1	to swing (one's arms, a heavy object); to wave (a sword, one's fists); to fling (money)	выбирать, отбирать		b	
 抡	掄	lun2	to select	выбирать, отбирать		b	
 抡元	掄元	lun2 yuan2	to win the top award; to come first in the examination rankings	пройти на экзаменах первым		b	
-掇		duo1	to pick up; to collect; gather up	Iгл; подбирать, собирать; отбирать, подгонять; приводить в порядок…		b	
+掇		duo1	to pick up; to collect; gather up	подбирать, собирать; отбирать, подгонять; приводить в порядок…		b	
 掇刀		Duo1 dao1	Duodao district of Jingmen city 荊門市|荆门市[Jing1 men2 shi4], Hubei				
 掇刀区	掇刀區	Duo1 dao1 qu1	Duodao district of Jingmen city 荊門市|荆门市[Jing1 men2 shi4], Hubei	район Додао		b	
 掇臀捧屁		duo1 tun2 peng3 pi4	to hold up buttocks and praise a fart (idiom); to use flatter to get what one wants; to toady; boot-licking				
@@ -45410,7 +45410,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 掏心掏肺		tao1 xin1 tao1 fei4	to be totally devoted (to a person)				
 掏空		tao1 kong1	to hollow out; to empty out; to use up; (finance) tunneling	опустошить, ограбить до нитки, ободрать как липку		b	
 掏腰包		tao1 yao1 bao1	to dip into one's pocket; to pay out of pocket; to foot the bill	вытащить кошелёк, раскошелиться		b	
-掐		qia1	to pick (flowers); to pinch; to nip; to pinch off; to clutch; (slang) to fight	хватать [рукой]	6	b	
+掐		qia1	to pick (flowers); to pinch; to nip; to pinch off; to clutch; (slang) to fight	щипать, срывать ногтями; сжимать (горло)	6	m	
 掐断	掐斷	qia1 duan4	cut off; disconnect	отрезать, разъединить		b	
 掐死		qia1 si3	to throttle; to choke to death	задушить; задрать; раздавливать пальцами		b	
 掐算		qia1 suan4	to count with one's fingers; on the spot calculation	считать на пальцах; рассчитывать		b	
@@ -45519,8 +45519,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 掘墓工人		jue2 mu4 gong1 ren2	grave digger				
 掘墓鞭尸	掘墓鞭屍	jue2 mu4 bian1 shi1	to exhume a body for public flogging (idiom)	раскопать останки из могилы и надругаться над ними; обр. проявлять…		b	
 掘客		jue2 ke4	Digg (social news website)	дигг; особенность публикации новостей в интернете, важность которых…		b	
-挣	掙	zheng1	see 掙扎|挣扎[zheng1 zha2]	напрягать; натягивать; применять усилие	5	b	
-挣	掙	zheng4	to struggle to get free; to strive to acquire; to make (money)	напрягать; натягивать; применять усилие	5	b	
+挣	掙	zheng1	see 掙扎|挣扎[zheng1 zha2]	(в слове 挣扎 — барахтаться, бороться)	5	m	
+挣	掙	zheng4	to struggle to get free; to strive to acquire; to make (money)	зарабатывать; вырываться	5	m	
 挣得	掙得	zheng4 de2	to earn (income); to make (money)	заработать		b	
 挣扎	掙扎	zheng1 zha2	to struggle	бороться из последних сил; сопротивляться; напрягать [последние]…	6	b	
 挣脱	掙脫	zheng4 tuo1	to throw off; to struggle free of; Taiwan pr. [zheng1 tuo1]	вырвать, высвободить		b	
@@ -45933,7 +45933,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 措辞	措辭	cuo4 ci2	wording; way of expressing something; turn of phrase; diction				
 措辞强硬	措辭強硬	cuo4 ci2 qiang2 ying4	strongly-worded				
 掫		zou1	beat the night watches; grasp	конопляная солома; хворостина		b	
-掬		ju1	to hold in one's hands; classifier for a double handful; Taiwan pr. [ju2]	Iгл; брать пригоршней; схватывать в пригоршню; черпать пригоршнями		b	
+掬		ju1	to hold in one's hands; classifier for a double handful; Taiwan pr. [ju2]	брать пригоршней; схватывать в пригоршню; черпать пригоршнями		b	
 掬水		ju1 shui3	to scoop up water				
 掬诚	掬誠	ju1 cheng2	wholeheartedly; sincerely				
 掬饮	掬飲	ju1 yin3	to drink water by scooping it up with both hands				
@@ -45964,7 +45964,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 揄袂		yu2 mei4	to walk with the hands in one's sleeves	идти, взмахивая рукавами одежды		b	
 揅		yan2	grind fine; study; research	прощупывать; исследовать, изучать		b	
 揆		kui2	consider; estimate	рассчитывать, прикидывать; вымерять		b	
-揉		rou2	to knead; to massage; to rub	тереть, массировать; растирать, гладить, поглаживать	6	b	
+揉		rou2	to knead; to massage; to rub	тереть, мять, массировать	6	m	
 揉制		rou2 zhi4	to knead (leather)				
 揉合		rou2 he2	to blend	смешивать, сочетать		b	
 揉和		rou2 he2	to knead (clay)				
@@ -46211,7 +46211,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 揞		an3	to apply (medicinal powder to a wound); to cover up; to conceal	накрыть рукой, придавить, прижать		b	
 揠		ya4	to eradicate; to pull up	тянуть кверху; выдёргивать, вытаскивать		b	
 揠苗助长	揠苗助長	ya4 miao2 zhu4 zhang3	see 拔苗助長|拔苗助长[ba2 miao2 zhu4 zhang3]				
-握		wo4	to hold; to grasp; to clench (one's fist); to master; classifier: a handful	держать; носить; с в руках	5	b	
+握		wo4	to hold; to grasp; to clench (one's fist); to master; classifier: a handful	держать в руке, сжимать; владеть	5	m	
 握住		wo4 zhu4	to grip; to hold	крепко хватать прочно брать в руки; овладевать		b	
 握别	握別	wo4 bie2	to shake hands	пожимать руку, прощаться, расставаться		b	
 握力		wo4 li4	(strength of one's) grip	сила сжатия, сила захвата		b	
@@ -46500,7 +46500,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 搬迁	搬遷	ban1 qian1	to move; to relocate; removal	переселяться, переезжать, перебираться		b	
 搬迁户	搬遷戶	ban1 qian1 hu4	relocated household; unit that has moved	переселяющаяся семья		b	
 搬铺	搬鋪	ban1 pu4	to arrange (for the dying)				
-搭		da1	to put up; to build (scaffolding); to hang (clothes on a pole); to connect; to join; to arrange in pairs; to match; to add; to throw in (resources); to take (bo	строить, возводить, сооружать; складывать	6	b	
+搭		da1	to put up; to build (scaffolding); to hang (clothes on a pole); to connect; to join; to arrange in pairs; to match; to add; to throw in (resources); to take (bo	строить, ставить; ехать (на попутном); сочетать	6	m	
 搭乘		da1 cheng2	to ride as a passenger; to travel by (car, plane etc)	садиться на...; ехать на...; лететь на		b	
 搭伙		da1 huo3	to join up with sb; to become partner; to take meals regularly in cafeteria	столоваться; вместе, за компанию		b	
 搭伴		da1 ban4	travel with another; accompany another	присоединиться; составить компанию; в компании; вместе		b	
@@ -46611,7 +46611,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 摒弃	摒棄	bing4 qi4	to abandon; to discard; to spurn; to forsake	отбросить; отказаться, отвергнуть, исключить из употребления; отказ		b	
 摒除		bing4 chu2	to get rid of; to dismiss	удалить, прогнать, исключить		b	
 摓		feng2	wide; to sew	держать, поддерживать		b	
-摔		shuai1	to throw down; to fall; to drop and break	бросать; кидать, швырять; опрокидывать, ронять; разбивать оземь	5	b	
+摔		shuai1	to throw down; to fall; to drop and break	упасть; бросить, разбить	5	m	
 摔交		shuai1 jiao1	variant of 摔跤[shuai1 jiao1]	упасть, опрокинуться		b	
 摔倒		shuai1 dao3	to fall down; to slip and fall; to throw sb to the ground	упасть, опрокинуться	5	b	
 摔伤	摔傷	shuai1 shang1	to injure oneself in a fall	упасть и получить травму, получить травму при падении; разбиться…		b	
@@ -46624,7 +46624,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 摔跌		shuai1 die1	to take a fall	упасть		b	
 摔跟头	摔跟頭	shuai1 gen1 tou5	to fall; fig. to suffer a setback	свалиться, полететь вверх тормашками, перевернуться, кувыркнуться		b	
 摔跤		shuai1 jiao1	to trip and fall; to wrestle; wrestling (sports)	упасть, опрокинуться		b	
-摘		zhai1	to take; to borrow; to pick (flowers, fruit etc); to pluck; to select; to remove; to take off (glasses, hat etc)	собирать, срывать, снимать; выщипывать	5	b	
+摘		zhai1	to take; to borrow; to pick (flowers, fruit etc); to pluck; to select; to remove; to take off (glasses, hat etc)	срывать, снимать (очки, шапку); выбирать	5	m	
 摘下		zhai1 xia4	to take off; to remove (one's hat, a door from its hinges etc); to pick (a piece of fruit from a tree etc); (sports) to pick off (a rebound etc)	снимать; срывать; собирать		b	
 摘借		zhai1 jie4	to borrow money	занимать, одалживать, брать взаймы, брать в долг		b	
 摘取		zhai1 qu3	to pluck; to take	выбирать, отбирать, сорвать		b	
@@ -46959,7 +46959,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 撤销	撤銷	che4 xiao1	to repeal; to revoke; (computing) to undo	отменять, аннулировать, упразднять	6	b	
 撤除		che4 chu2	to remove; to dismantle	убрать, вывести; отменить; исключить; ликвидировать		b	
 撤离	撤離	che4 li2	to withdraw from; to evacuate	вывести, эвакуировать; покинуть, оставить, свертывать; снять осаду	6	b	
-拨	撥	bo1	to push aside with the hand, foot, a stick etc; to dial; to allocate; to set aside (money); to poke (the fire); to pluck (a string instrument); to turn round; c	плектр, медиатор	6	b	
+拨	撥	bo1	to push aside with the hand, foot, a stick etc; to dial; to allocate; to set aside (money); to poke (the fire); to pluck (a string instrument); to turn round; c	двигать пальцем, набирать (номер); выделять (средства)	6	m	
 拨乱反正	撥亂反正	bo1 luan4 fan3 zheng4	bring order out of chaos; set to rights things which have been thrown into disorder	подавить мятеж и восстановить порядок; усмирить мятежников и…		b	
 拨付	撥付	bo1 fu4	appropriate sum of money	перевести; ассигновать, отпустить		b	
 拨冗	撥冗	bo1 rong3	to find time to do sth in the midst of pressing affairs	урвать минутку, выкроить время		b	
@@ -47063,7 +47063,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 撰述		zhuan4 shu4	to compose (a piece of writing); to write; (written) work; writer	писать, сочинять; письменно излагать; составлять; создавать		b	
 撰录	撰錄	zhuan4 lu4	to compile and record	писать, описывать; составлять записи; записывать		b	
 撱		tuo3	clip; shorten; throw away				
-扑	撲	pu1	to throw oneself at; to pounce on; to devote one's energies; to flap; to flutter; to dab; to pat; to bend over	бить, ударить, побить	6	b	
+扑	撲	pu1	to throw oneself at; to pounce on; to devote one's energies; to flap; to flutter; to dab; to pat; to bend over	бросаться на, набрасываться; хлопать	6	m	
 扑倒	撲倒	pu1 dao3	to fall down	упасть; свалить		b	
 扑克	撲克	pu1 ke4	poker (game) (loanword); playing cards	покер; карточная игра		b	
 扑克牌	撲克牌	pu1 ke4 pai2	poker (card game); playing card	игральные карты		b	副
@@ -47263,7 +47263,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 擘划	擘劃	bo4 hua4	to plan; to arrange				
 擘画	擘畫	bo4 hua4	variant of 擘劃|擘划[bo4 hua4]	давать [общее] направление, направлять, планировать, определять…		b	
 擘开	擘開	bo4 kai1	to break open	раздвигать		b	
-据	據	ju4	according to; to act in accordance with; to depend on; to seize; to occupy	опираться на, облокачиваться на; базироваться на	6	b	
+据	據	ju4	according to; to act in accordance with; to depend on; to seize; to occupy	согласно, по (данным); опираться на; свидетельство	6	m	
 据估计	據估計	ju4 gu1 ji4	according to estimates	по предварительному подсчету, по предварительной оценке		b	
 据信	據信	ju4 xin4	according to belief; it is believed that	по имеющейся информации, предположительно		b	
 据传	據傳	ju4 chuan2	it is rumored that ...; it is reported that ...	сообщается, что; по слухам; по легенде; как передают		b	
@@ -47380,12 +47380,12 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 摈斥	擯斥	bin4 chi4	to reject; to dismiss	изгнать; отвергнуть; игнорировать		b	
 摈弃	擯棄	bin4 qi4	to abandon; to discard; to cast away	выбросить, отбросить; отвергнуть; порвать; отмежеваться; выгнать		b	
 摈除	擯除	bin4 chu2	to discard; to get rid of; to dispense with	изгнать; выгнать; исключить		b	
-拧	擰	ning2	to pinch; wring	выжимать, отжимать	6	b	
-拧	擰	ning3	mistake; to twist	поворачивать, вертеть, крутить; завёртывать, закручивать…	6	b	
+拧	擰	ning2	to pinch; wring	выжимать, скручивать; щипать	6	m	
+拧	擰	ning3	mistake; to twist	крутить, отвинчивать, завинчивать	6	m	
 拧	擰	ning4	stubborn	упрямый, упорный несговорчивый	6	b	
 拧成一股绳	擰成一股繩	ning2 cheng2 yi1 gu3 sheng2	to twist together to form a rope; (fig.) to unite; to work together	сплестись [как нити] в одну веревку; обр. сплотиться воедино…		b	
 拧开	擰開	ning3 kai1	to unscrew; to twist off (a lid); to turn on (a faucet); to switch on (by turning a knob); to turn (a door handle); to wrench apart	открывать; отвёртывать, отвинчивать		b	
-搁	擱	ge1	to place; to put aside; to shelve	класть, ставить, помещать; составлять, складывать; помещаться…	6	b	
+搁	擱	ge1	to place; to put aside; to shelve	класть, ставить; откладывать	6	m	
 搁	擱	ge2	to bear; to stand; to endure	лежать, сохраняться; выдерживать	6	b	
 搁板	擱板	ge1 ban3	shelf	полка		b	
 搁浅	擱淺	ge1 qian3	to be stranded (of ship); to run aground; fig. to run into difficulties and stop	сесть на мель; застрять, застопориться		b	
@@ -47426,7 +47426,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 撷	擷	xie2	to collect; Taiwan pr. [jie2]	собирать, подбирать, рвать		b	
 撷取	擷取	xie2 qu3	to pick; to select; to take; to capture (data); to acquire; to pick up (a signal)	сбор, собирание		b	
 擸		lie4	to hold, to grasp; to hold the hair; to pull at	приглаживать, причёсывать, приводить в порядок		b	
-摆	擺	bai3	to arrange; to exhibit; to move to and fro; a pendulum	расставлять, располагать; выставлять	4	b	
+摆	擺	bai3	to arrange; to exhibit; to move to and fro; a pendulum	расставлять, ставить; махать, качать	4	m	
 摆了一道	擺了一道	bai3 le5 yi1 dao4	to play tricks on; to make a fool of	разыграть кого-либо, подшутить над кем-либо		b	
 摆事实讲道理	擺事實講道理	bai3 shi4 shi2 jiang3 dao4 li3	present the facts and reason things out				
 摆出	擺出	bai3 chu1	to assume; to adopt (a look, pose, manner etc); to bring out for display	выставить; скорчить мину, показать, сделать		b	
@@ -47588,12 +47588,12 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 摄护腺肿大	攝護腺腫大	she4 hu4 xian4 zhong3 da4	benign prostate hypertrophy; enlargement of prostate				
 摄食	攝食	she4 shi2	to consume	приём пищи, усвоение пищи, потребление пищи		b	
 攒	攢	cuan2	to bring together	собираться, скапливаться, сходиться вместе, сосредотачиваться	6	b	
-攒	攢	zan3	to collect; to hoard; to accumulate; to save	собирать, копить, запасать, составлять; складываться, собираться…	6	b	
+攒	攢	zan3	to collect; to hoard; to accumulate; to save	копить, накапливать	6	m	
 攒簇	攢簇	cuan2 cu4	to gather closely together	скапливаться, собираться		b	
 攒聚	攢聚	cuan2 ju4	to gather; to assemble	собираться, скапливаться; группироваться		b	
 攒集	攢集	cuan2 ji2	to gather; to assemble				
 挛	攣	luan2	twisted; bent; crooked; cramped	скрючить, свести судорогой; судорога, корча, спазм		b	
-摊	攤	tan1	to spread out; vendor's stand	раскладывать; расставлять, расстилать, развёртывать	6	b	
+摊	攤	tan1	to spread out; vendor's stand	раскладывать; лоток, ларёк	6	m	
 摊事儿	攤事兒	tan1 shi4 r5	(coll.) to get into trouble				
 摊位	攤位	tan1 wei4	vendor's booth	торговое место, ларёк, лавочка, павильон		b	
 摊儿	攤兒	tan1 r5	erhua variant of 攤|摊[tan1]				
@@ -47885,7 +47885,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 改革进程	改革進程	gai3 ge2 jin4 cheng2	reform process				
 改革开放	改革開放	gai3 ge2 kai1 fang4	to reform and open to the outside world; refers to Deng Xiaoping's policies from around 1980	политика реформ и открытости		b	
 改头换面	改頭換面	gai3 tou2 huan4 mian4	to adjust one's head and turn one's face (idiom); cosmetic changes; Despite superficially new policies, the substance remains unchanged.	менять голову, изменять лицо		b	
-攺		yi3	a kind of metal or jade ornament worn in ancient times to ward off evil spirits	вм		b	
+攺		yi3	a kind of metal or jade ornament worn in ancient times to ward off evil spirits				
 攻		gong1	to attack; to accuse; to study	нападать, штурмовать, наступать на..., делать выпады против		b	
 攻伐		gong1 fa2	to attack; to raid; (of medicine) potent	пойти войной, напасть		b	
 攻克		gong1 ke4	to capture; to take; to overcome; to solve	овладеть, взять, захватить; взятие	6	b	
@@ -48313,7 +48313,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 叙谈	敘談	xu4 tan2	to chat	собираться для беседы; беседовать, разговаривать побеседовать…		b	
 叙述	敘述	xu4 shu4	to relate (a story or information); to tell or talk about; to recount; narration; telling; narrative; account	рассказывать, излагать, повествовать, описывать; пересказывать…	5	b	
 叙述性	敘述性	xu4 shu4 xing4	narrative	нарративность, повествовательность		b	
-教		jiao4	surname Jiao; religion; teaching; to make; to cause; to tell	учить, обучать; преподавать	1	b	
+教		jiao4	surname Jiao; religion; teaching; to make; to cause; to tell	учение, религия; обучать, наставлять	1	m	
 教主		jiao4 zhu3	founder or leader of a religion or sect; (fig.) revered figure	основатель религии		b	
 教仪	教儀	jiao4 yi2	ordinance	религиозная церемония, религиозный ритуал, обряд		b	
 教具		jiao4 ju4	teaching aids; educational materials	учебные пособия		b	
@@ -48423,8 +48423,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 敢为	敢為	gan3 wei2	to dare to do				
 敢为人先	敢為人先	gan3 wei2 ren2 xian1	to dare to be first; to pioneer (idiom)	дерзать стать первым среди людей обр. не бояться испытывать…		b	
 敢达	敢達	Gan3 da2	Gundam, Japanese animation franchise				
-散		san3	scattered; loose; to come loose; to fall apart; leisurely; powdered medicine	рассыпаться, разваливаться; распадаться; расформировываться	4	b	
-散		san4	to scatter; to break up (a meeting etc); to disperse; to disseminate; to dispel; (coll.) to sack	разгонять, рассеивать	4	b	
+散		san3	scattered; loose; to come loose; to fall apart; leisurely; powdered medicine	рассыпаться; разрозненный, рассыпной	4	m	
+散		san4	to scatter; to break up (a meeting etc); to disperse; to disseminate; to dispel; (coll.) to sack	расходиться, рассеиваться; распространять	4	m	
 散乱	散亂	san4 luan4	in disorder; messy	разбегаться во все стороны; врассыпную, панически		b	
 散亡		san4 wang2	dispersed and lost				
 散件		san3 jian4	spare parts; odds and ends	запасные, вспомогательные детали и части		b	
@@ -48674,7 +48674,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 敷贴	敷貼	fu1 tie1	to smear; to apply glue or ointment to a surface	наложить, приложить, наклеить		b	
 敷陈	敷陳	fu1 chen2	to give an orderly account; a thorough narrative	излагать, формулировать; докладывать		b	
 数	數	shu4	number; figure; several	число, количество; цифра	2	b	個
-数	數	shuo4	frequently; repeatedly	быстрый, поспешный, торопливый; спешить, ускорять	2	b	
+数	數	shuo4	frequently; repeatedly	неоднократно, часто (книжн.)	2	m	
 数一数二	數一數二	shu3 yi1 shu3 er4	reckoned to be first or second best (idiom); one of the very best; to list one by one	не первый, так второй; выдающийся; один из лучших; один из первых		b	
 数不上	數不上	shu3 bu4 shang4	not to deserve to be mentioned; not to qualify; below par	не считаться, не заслуживать внимания; недостоин, не тянет		b	
 数不胜数	數不勝數	shu3 bu4 sheng4 shu3	too many to count (idiom); innumerable	многочисленный, множественный, множество, бесчисленное количество…		b	
@@ -49076,7 +49076,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 斗酒只鸡	斗酒隻雞	dou3 jiu3 zhi1 ji1	lit. a chicken and a bottle of wine (idiom); fig. ready to make an offering to the deceased, or to entertain guests	кубок вина и курица		b	
 斗门	斗門	dou3 men2	Doumen district of Zhuhai city 珠海市[Zhu1 hai3 shi4], Guangdong	водоспуск, шлюз		b	
 斗门区	斗門區	Dou3 men2 qu1	Doumen district of Zhuhai city 珠海市[Zhu1 hai3 shi4], Guangdong				
-料		liao4	material; stuff; grain; feed; to expect; to anticipate; to guess	материал, сырьё; материя; дополнительный материал, приклад	6	b	
+料		liao4	material; stuff; grain; feed; to expect; to anticipate; to guess	материал, сырьё; предполагать, ожидать	6	m	
 料事如神		liao4 shi4 ru2 shen2	to prophesy with supernatural accuracy (idiom); to have an incredible foresight	прекрасно справляться с работой; проявлять смекалку		b	
 料件		liao4 jian4	materials and parts; components	сырье и запчасти		b	
 料件子		liao4 jian4 zi5	see 料件子活[liao4 jian4 zi5 huo2]	штучная работа		b	
@@ -49649,7 +49649,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 断食	斷食	duan4 shi2	to fast; hunger strike	отказываться от пищи, голодание		b	
 断魂椒	斷魂椒	duan4 hun2 jiao1	king cobra or ghost chili (Naga jolokia)	«перец – привидение"		b	
 斸		zhu3	cut				
-方		fang1	surname Fang; square; power or involution (math.); upright; honest; fair and square; direction; side; party (to a contract, dispute etc); place; method; prescription (medicin	квадрат; квадратный; прямоугольный; кубический	4	b	
+方		fang1	surname Fang; square; power or involution (math.); upright; honest; fair and square; direction; side; party (to a contract, dispute etc); place; method; prescription (medicin	сторона; квадрат; способ; только что	4	m	
 方丈		fang1 zhang5	one of three fabled islands in Eastern sea, abode of immortals; square zhang (i.e. unit of area 10 feet square); monastic room 10 feet square; Buddhist or Daoist abbot; abbot's chamber	квадратный чжан, квадратная сажень		b	
 方位		fang1 wei4	direction; points of the compass; bearing; position; azimuth	стороны света; местоположение; относительное положение…	6	b	
 方位角		fang1 wei4 jiao3	azimuth	азимут; азимутальный угол; азимутальный		b	
@@ -49792,7 +49792,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 斾		pei4	variant of 旆, pennant; banner				
 斿		you2	scallops along lower edge of flag	кисть; фестон		b	
 旀		mie5	phonetic "myeo" used in place names (Korean gugja)	"мё"		b	
-旁		pang2	one side; other; different; lateral component of a Chinese character (such as 刂[dao1], 亻[ren2] etc)	бок, боковина, обочина; край, сторона; находящийся сбоку, соседний…	5	b	
+旁		pang2	one side; other; different; lateral component of a Chinese character (such as 刂[dao1], 亻[ren2] etc)	сторона, бок; другой, посторонний	5	m	
 旁人		pang2 ren2	other people; bystanders; onlookers; outsiders	посторонний, третье лицо		b	
 旁敲侧击	旁敲側擊	pang2 qiao1 ce4 ji1	to make insinuations; to take an indirect approach (in making inquiries) (idiom)	стучать сбоку и бить со стороны		b	
 旁氏		Pang2 shi4	Pond's (brand of skin care products)				
@@ -49954,7 +49954,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 旝		kuai4	(old) banner; signal flag	[сигнальный] флаг		b	
 旟		yu2	banner with falcons; mussed up hair	[походное] знамя с соколами		b	
 旡		ji4	choke on something eaten	подавиться, поперхнуться; задыхаться		b	
-既		ji4	already; since; both... (and...)	уже; издавна, с самого начала, исконно; всегда	4	b	
+既		ji4	already; since; both... (and...)	раз уж, поскольку; и… и… (既…又…)	4	m	
 既来之，则安之	既來之，則安之	ji4 lai2 zhi1 , ze2 an1 zhi1	Since they have come, we should make them comfortable (idiom). Since we're here, take it easy.; Since this is so, we should accept it.; Now we have come, let's 				
 既定		ji4 ding4	already fixed; set; established	заранее утверждённый, установленный, принятый, намеченный		b	
 既已		ji4 yi3	already	уже, ранее		b	
@@ -50847,8 +50847,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 时显时隐	時顯時隱	shi2 xian3 shi2 yin3	appearing and disappearing; intermittently visible				
 时髦	時髦	shi2 mao2	in vogue; fashionable	мода; модный, новейший; модельный	5	b	
 时点	時點	shi2 dian3	point of time (in time-based systems)	момент времени		b	
-晃		huang3	to dazzle; to flash past	сиять, сверкать, искриться; ослепительный, сияющий, яркий, светлый	6	b	
-晃		huang4	to sway; to shake; to wander about	качаться, колыхаться, колебаться	6	b	
+晃		huang3	to dazzle; to flash past	мелькнуть; слепить (о свете)	6	m	
+晃		huang4	to sway; to shake; to wander about	качаться, шататься	6	m	
 晃动	晃動	huang4 dong4	to sway; to rock	шататься, колыхаться, раскачиваться; встряхивать		b	
 晃悠		huang4 you5	to swing; to sway; to wobble; to hang around; to hover around	шататься, колебаться, быть неустойчивым; трястись		b	
 晃晃悠悠		huang4 huang5 you1 you1	swaying; wobbling	шатающийся, неустойчивый, колеблющийся		b	
@@ -51187,8 +51187,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 暄腾	暄騰	xuan1 teng5	soft and warm (of bread)	пышный и мягкий		b	
 暆		yi2	(of the sun) declining				
 暇		xia2	leisure	досуг, свободное время, отдых		b	
-晕	暈	yun1	confused; dizzy; giddy; to faint; to swoon; to lose consciousness; to pass out	терять сознание, падать в обморок	5	b	
-晕	暈	yun4	dizzy; halo; ring around moon or sun	ореол, венец, гало, сияние	5	b	
+晕	暈	yun1	confused; dizzy; giddy; to faint; to swoon; to lose consciousness; to pass out	кружится голова; терять сознание	5	m	
+晕	暈	yun4	dizzy; halo; ring around moon or sun	укачивать; ореол	5	m	
 晕乎	暈乎	yun1 hu5	dizzy; giddy				
 晕倒	暈倒	yun1 dao3	to faint; to swoon; to black out; to become unconscious	упасть в обморок, потерять сознание		b	
 晕厥	暈厥	yun1 jue2	to faint	падать в обморок; обморок; синкопе		b	
@@ -51763,7 +51763,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 曼陀罗	曼陀羅	man4 tuo2 luo2	flower of north India (Datura stramonium, Sanskrit: mandara), considered sacred and grown in temples, similar to belladonna	дурман обыкновенный, дурман вонючий		b	
 曽		ceng2	Japanese variant of 曾[ceng2]				
 曾		Zeng1	surname Zeng; great- (grandfather, grandchild etc)	Цзэн; пра-	4	b	
-曾		ceng2	once; already; ever (in the past); former; previously; (past tense marker used before verb or clause)	уже некогда; как-то раз; в своё время	4	b	
+曾		ceng2	once; already; ever (in the past); former; previously; (past tense marker used before verb or clause)	когда-то, некогда, в прошлом	4	m	
 曾参	曾參	Zeng1 Shen1	Zeng Shen (505-435 BC), a.k.a. 曾子[Zeng1 zi3], student of Confucius, presumed editor or author of Confucian classic the Great Learning 大學|大学[Da4 xue2]	Цзэн Шэнь		b	
 曾国藩	曾國藩	Zeng1 Guo2 fan1	Zeng Guofan (1811-1872), Qing dynasty politician and military man	Цзэн Гофань		b	
 曾外祖母		zeng1 wai4 zu3 mu3	great-grandmother (mother's grandmother)	прабабка		b	
@@ -51788,7 +51788,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 曾都区	曾都區	Zeng1 du1 qu1	Zengdu district of Suizhou city 隨州市|随州市[Sui2 zhou1 shi4], Hubei	район Цзэнду		b	
 曾金燕		Zeng1 Jin1 yan4	Zeng Jinyan (1983-), Chinese blogger and human rights activist, wife of dissident activist Hu Jia 胡佳[Hu2 Jia1]				
 曾巩	曾鞏	Zeng1 Gong3	Zeng Gong (1019-1083), Song dynasty writer, one of the Eight Giants 唐宋八大家	Цзэн Гун		b	
-替		ti4	to substitute for; to take the place of; to replace; for; on behalf of; to stand in for	отменять, упразднять, аннулировать; сбрасывать со счетов, списывать	4	b	
+替		ti4	to substitute for; to take the place of; to replace; for; on behalf of; to stand in for	заменять; вместо, за (кого-л.)	4	m	
 替代		ti4 dai4	to substitute for; to replace; to supersede	заменять, замещать; замена, альтернатива	4	b	
 替代品		ti4 dai4 pin3	substitute; alternative	товар-заменитель, товар-субститут, субститут, аналог		b	
 替代燃料		ti4 dai4 ran2 liao4	alternative fuel	альтернативное топливо, альтернативный вид топлива		b	
@@ -52362,7 +52362,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 朋比为奸	朋比為奸	peng2 bi3 wei2 jian1	to conspire; to gang up	спеться, снюхаться, стакнуться, вступить в сговор		b	
 朋驰	朋馳	Peng2 chi2	same as 奔馳|奔驰[Ben1 chi2]				
 朋党	朋黨	peng2 dang3	clique	содружество; сообщество; единомышленники; личная партия; камарилья…		b	
-服		fu2	clothes; dress; garment; to serve (in the military, a prison sentence etc); to obey; to be convinced (by an argument); to convince; to admire; to acclimatize; t	платье, одежда; форма; наряд, убор	6	b	
+服		fu2	clothes; dress; garment; to serve (in the military, a prison sentence etc); to obey; to be convinced (by an argument); to convince; to admire; to acclimatize; t	одежда; подчиняться; принимать (лекарство)	6	m	
 服		fu4	classifier for medicine: dose; Taiwan pr. [fu2]	доза, приём, порция	6	b	
 服事		fu2 shi5	variant of 服侍[fu2 shi5]	выполнять приказы, служить, быть на службе		b	
 服他灵	服他靈	fu2 ta1 ling2	voltaren, a trade name for diclofenac sodium, a non-steroidal anti-inflammatory drug used to reduce swelling and as painkiller; also called 扶他林				
@@ -55469,7 +55469,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 枫叶	楓葉	feng1 ye4	maple leaf	кленовый лист		b	
 枫香木	楓香木	feng1 xiang1 mu4	Chinese sweetgum (Liquidambar formosana)				
 枫香树	楓香樹	feng1 xiang1 shu4	Chinese sweetgum (Liquidambar formosana)				
-楔		xie1	to wedge; wedge	Iсущ; клин, распор; тех. дюбель		b	
+楔		xie1	to wedge; wedge	клин, распор; тех. дюбель		b	
 楔嘴鹩鹛	楔嘴鷯鶥	xie1 zui3 liao2 mei2	(bird species of China) Cachar wedge-billed babbler (Sphenocichla roberti)	остроклювая крапивниковая тимелия		b	
 楔子		xie1 zi5	wedge; peg; stopper; prologue (in some modern novels); prologue or interlude in Yuan dynasty drama	клин; штырь; дюбель		b	
 楔尾伯劳	楔尾伯勞	xie1 wei3 bo2 lao2	(bird species of China) Chinese grey shrike (Lanius sphenocercus)				
@@ -56622,7 +56622,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 检察院	檢察院	jian3 cha2 yuan4	prosecutor's office; procuratorate	прокуратура		b	
 检尸	檢屍	jian3 shi1	autopsy; necropsy; postmortem examination	освидетельствовать труп		b	
 检控	檢控	jian3 kong4	to prosecute (criminal); the prosecution	государственное обвинение; предъявлять обвинение		b	
-检控官	檢控官	jian3 kong4 guan1	prosecutor; procurator	вм		b	
+检控官	檢控官	jian3 kong4 guan1	prosecutor; procurator				
 检控方	檢控方	jian3 kong4 fang1	the prosecuting side (in a trial); the prosecution	сторона государственного обвинения, государственный обвинитель…		b	
 检方	檢方	jian3 fang1	the prosecution; prosecutors	сторона обвинения		b	
 检束	檢束	jian3 shu4	to regulate; to check and restrict	быть сдержанным; сдержанность		b	
@@ -57851,7 +57851,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 殖民者		zhi2 min2 zhe3	colonizer; colonist; settler	колонизатор; колонист, поселенец		b	
 殗		ye4	sickness; repeated				
 殗殜		ye4 die2	somewhat ill, but still able to sit up	недомогание; лёгкая хворь; нездоровится		b	
-残	殘	can2	to destroy; to spoil; to ruin; to injure; cruel; oppressive; savage; brutal; incomplete; disabled; to remain; to survive; remnant; surplus	Iприл; испорченный, дефектный; истрёпанный; разбитый		b	
+残	殘	can2	to destroy; to spoil; to ruin; to injure; cruel; oppressive; savage; brutal; incomplete; disabled; to remain; to survive; remnant; surplus	испорченный, дефектный; истрёпанный; разбитый		b	
 残兵败将	殘兵敗將	can2 bing1 bai4 jiang4	ruined army, defeated general (idiom); scattered remnants	разбитые войска и побеждённый полководец		b	
 残冬腊月	殘冬臘月	can2 dong1 la4 yue4	final days of the lunar year				
 残卷	殘卷	can2 juan4	surviving section of a classic work; remaining chapters (while reading a book)	непрочитанная часть книги		b	
@@ -61108,7 +61108,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 津		jin1	saliva; sweat; a ferry crossing; a ford (river crossing); abbr. for Tianjin 天津	переправа, перевоз; брод		b	
 津南		Jin1 nan2	Jinnan suburban district of Tianjin municipality 天津市[Tian1 jin1 shi4]	Цзиньнань		b	
 津南区	津南區	Jin1 nan2 qu1	Jinnan suburban district of Tianjin municipality 天津市[Tian1 jin1 shi4]				
-津塔		Jin1 ta3	Jin Tower; abbr. for 天津環球金融中心|天津环球金融中心[Tian1 jin1 Huan2 qiu2 Jin1 rong2 Zhong1 xin1] Tianjin World Financial Center, skyscraper a.k.a. the Tianjin Tower	см; Зента		b	
+津塔		Jin1 ta3	Jin Tower; abbr. for 天津環球金融中心|天津环球金融中心[Tian1 jin1 Huan2 qiu2 Jin1 rong2 Zhong1 xin1] Tianjin World Financial Center, skyscraper a.k.a. the Tianjin Tower				
 津岛	津島	Jin1 dao3	Tsushima, a city in Aichi prefecture, Japan	Цусима		b	
 津巴布韦	津巴布韋	Jin1 ba1 bu4 wei2	Zimbabwe	Зимбабве		b	
 津市		Jin1 shi4	Jinshi county level city in Changde 常德[Chang2 de2], Hunan	Цзиньши; город Цу		b	
@@ -61884,7 +61884,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 海螺		hai3 luo2	sea snail; whelk; conch	тубинелла, трубач		b	
 海蛎	海蠣	hai3 li4	oyster	устрица		b	
 海蛎子	海蠣子	hai3 li4 zi5	oyster				
-海西		hai3 xi1	Haixi Mongol and Tibetan autonomous prefecture (Tibetan: Mtsho-nub Sog-rigs dang Bod-rigs rang-skyong-khul) in Qinghai	см; западные земли, западные территории		b	
+海西		hai3 xi1	Haixi Mongol and Tibetan autonomous prefecture (Tibetan: Mtsho-nub Sog-rigs dang Bod-rigs rang-skyong-khul) in Qinghai				
 海西州		Hai3 xi1 zhou1	Haixi Mongol and Tibetan autonomous prefecture (Tibetan: Mtsho-nub Sog-rigs dang Bod-rigs rang-skyong-khul) in Qinghai				
 海西蒙古族藏族自治州		Hai3 xi1 Meng3 gu3 zu2 Zang4 zu2 zi4 zhi4 zhou1	Haixi Mongol and Tibetan autonomous prefecture (Tibetan: Mtsho-nub Sog-rigs dang Bod-rigs rang-skyong-khul) in Qinghai				
 海角		hai3 jiao3	cape; promontory	мыс		b	
@@ -61998,7 +61998,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 泾县	涇縣	Jing1 xian4	Jing county in Xuancheng 宣城[Xuan1 cheng2], Anhui	Цзинсянь, уезд Цзин		b	
 泾阳	涇陽	Jing1 yang2	Jingyang County in Xianyang 咸陽|咸阳[Xian2 yang2], Shaanxi	Цзинъян		b	
 泾阳县	涇陽縣	Jing1 yang2 Xian4	Jingyang County in Xianyang 咸陽|咸阳[Xian2 yang2], Shaanxi				
-消		xiao1	to disappear; to vanish; to eliminate; to spend (time); have to; need	А; растворяться, размягчаться; рассеиваться; теряться; сходить на нет		b	
+消		xiao1	to disappear; to vanish; to eliminate; to spend (time); have to; need	растворяться, размягчаться; рассеиваться; теряться; сходить на нет		b	
 消亡		xiao1 wang2	to die out; to wither away	отмирать, вымереть, прекратить свое существование, погибнуть…		b	
 消保官		xiao1 bao3 guan1	consumer protection officer (Tw)				
 消停		xiao1 ting2	to calm down; to stop; to pause; calmly; peaceful; restful	спокойный, тихий; держаться тихо, успокоиться, стихнуть, утихомириться		b	
@@ -63181,7 +63181,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 湅		lian4	to boil raw silk (to soften and clean it)	вываривать [шёлк]		b	
 湉		tian2	(literary) smoothly flowing, placid (water)				
 湉湉		tian2 tian2	(literary) smoothly flowing, placid (water)	гладкий, зеркальный		b	
-凑	湊	cou4	to gather together, pool or collect; to happen by chance; to move close to; to exploit an opportunity	А; собираться, сходиться, стекаться [вместе]		b	
+凑	湊	cou4	to gather together, pool or collect; to happen by chance; to move close to; to exploit an opportunity	собираться, сходиться, стекаться [вместе]		b	
 凑付	湊付	cou4 fu5	to put together hastily; to make do with	обойтись, вывернуться; найти выход, приспособиться		b	
 凑份子	湊份子	cou4 fen4 zi5	to pool resources (for a gift, project etc)	в складчину		b	
 凑合	湊合	cou4 he5	to bring together; to make do in a bad situation; to just get by; to improvise; passable; not too bad	собираться, сходиться	6	b	
@@ -65251,7 +65251,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 灰背椋鸟	灰背椋鳥	hui1 bei4 liang2 niao3	(bird species of China) white-shouldered starling (Sturnia sinensis)	китайский скворец		b	
 灰背燕尾		hui1 bei4 yan4 wei3	(bird species of China) slaty-backed forktail (Enicurus schistaceus)				
 灰背隼		hui1 bei4 sun3	(bird species of China) merlin (Falco columbarius)	дербник		b	
-灰背鸫	灰背鶇	hui1 bei4 dong1	(bird species of China) grey-backed thrush (Turdus hortulorum)	вм		b	
+灰背鸫	灰背鶇	hui1 bei4 dong1	(bird species of China) grey-backed thrush (Turdus hortulorum)				
 灰背鸥	灰背鷗	hui1 bei4 ou1	(bird species of China) slaty-backed gull (Larus schistisagus)	тихоокеанская морская чайка, тихоокеанская чайка		b	
 灰胸竹鸡	灰胸竹雞	hui1 xiong1 zhu2 ji1	(bird species of China) Chinese bamboo partridge (Bambusicola thoracicus)	тайваньская бамбуковая куропатка, китайская бамбуковая куропатка		b	
 灰胸薮鹛	灰胸藪鶥	hui1 xiong1 sou3 mei2	(bird species of China) Emei Shan liocichla (Liocichla omeiensis)	омейская лиоцихла		b	
@@ -65757,7 +65757,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 烽燧		feng1 sui4	fire beacon tower (used in frontier regions in former times to relay information about the enemy, using smoke by day and fire at night)	огневые и дымные маяки		b	
 焃		he4	fiery; bright				
 焄		xun1	fumes from sacrifice	вздыматься, возноситься, подниматься		b	
-焉		yan1	where; how	А; этом месте; здесь; там; сюда; туда; отсюда; оттуда		b	
+焉		yan1	where; how	этом месте; здесь; там; сюда; туда; отсюда; оттуда		b	
 焉知		yan1 zhi1	(literary) how is one to know?	откуда знаешь, почём знаешь		b	
 焉耆		Yan1 qi2	Yanqi county in Xinjiang	Яньци; Карашар, Яньци		b	
 焉耆回族自治县	焉耆回族自治縣	Yan1 qi2 Hui2 zu2 Zi4 zhi4 xian4	Yanqi Hui Autonomous County in Bayingolin Mongol Autonomous Prefecture, Xinjiang 巴音郭楞蒙古自治州[Ba1 yin1 guo1 leng2 Meng3 gu3 Zi4 zhi4 zhou1], Xinjiang				
@@ -65791,7 +65791,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 焙粉		bei4 fen3	baking powder	жарить; сушить на огне		b	
 焚		fen2	to burn	сжигать, предавать огню; уничтожать огнём		b	
 焚化		fen2 hua4	to cremate	сжигать, предавать кремации; сожжение, кремация		b	
-焚尸	焚屍	fen2 shi1	to cremate	вм		b	
+焚尸	焚屍	fen2 shi1	to cremate				
 焚尸炉	焚屍爐	fen2 shi1 lu2	crematorium; crematory oven	крематорий, печь для кремации		b	
 焚书坑儒	焚書坑儒	fen2 shu1 keng1 ru2	to burn the Confucian classics and bury alive the Confucian scholars (acts supposedly committed by the first emperor 秦始皇[Qin2 Shi3 huang2])	сжигать книги и закапывать живьём в землю конфуцианцев; сожжение…		b	
 焚毁	焚毀	fen2 hui3	to burn down; to destroy with fire; to burn down; to destroy with fire; trad. also written 焚毀	сжечь дотла, испепелить, спалить		b	
@@ -66419,7 +66419,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 焕	煥	huan4	brilliant; lustrous	пылающий, ослепительный; сверкающий, сияющий, блестящий; ясный…		b	
 焕然一新	煥然一新	huan4 ran2 yi1 xin1	to look completely new (idiom); brand new; changed beyond recognition	обновляться, преобразиться; засверкать новыми красками; совершенно…		b	
 焕发	煥發	huan4 fa1	to shine; to glow; to irradiate; to flash	лучиться; пламенеть; излучать свет, сиять		b	
-煦		xu4	balmy; nicely warm; cozy; Taiwan pr. [xu3]	Iгл; греть, согревать; разогревать		b	
+煦		xu4	balmy; nicely warm; cozy; Taiwan pr. [xu3]	греть, согревать; разогревать		b	
 煦仁孑义	煦仁孑義	xu4 ren2 jie2 yi4	petty kindness	незначительные проявления гуманности и справедливости		b	
 煦暖		xu4 nuan3	to warm; warming	согревающий; теплый		b	
 煦煦		xu4 xu4	kind; gracious; benevolent; warm and fine; balmy	тёплый		b	
@@ -69396,7 +69396,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 瑞色		rui4 se4	lovely color				
 瑞芳		Rui4 fang1	Ruifang or Juifang town in New Taipei City 新北市[Xin1 bei3 shi4], Taiwan	Жуйфан		b	
 瑞芳镇	瑞芳鎮	Rui4 fang1 zhen4	Ruifang or Juifang town in New Taipei City 新北市[Xin1 bei3 shi4], Taiwan				
-瑞萨	瑞薩	rui4 sa4	Renesas Electronics (Japanese microchip company)	вм		b	
+瑞萨	瑞薩	rui4 sa4	Renesas Electronics (Japanese microchip company)				
 瑞金		Rui4 jin1	Ruijin county level city in Ganzhou 贛州|赣州, Jiangxi	Жуйцзинь		b	
 瑞金市		Rui4 jin1 shi4	Ruijin county level city in Ganzhou 贛州|赣州, Jiangxi				
 瑞雪		rui4 xue3	timely snow	благодатный снег		b	
@@ -69489,7 +69489,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 璀璨夺目	璀璨奪目	cui3 can4 duo2 mu4	dazzling (idiom)	ослепительно сверкающий		b	
 璀错	璀錯	cui3 cuo4	many and varied	переплетаться, сплетаться; причудливо сплетённый, переплетающийся		b	
 璁		cong1	stone similar to jade				
-璅		suo3	fragmentary; trifling	вм		b	
+璅		suo3	fragmentary; trifling				
 璆		qiu2	(gem); to tinkle	красивая яшма; нефритовый петрофон		b	
 璇		xuan2	(jade)	лучшая яшма; прекрасный самоцвет		b	
 璈		ao2	(mus. instr.)	* ао		b	
@@ -70483,7 +70483,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 申雪		shen1 xue3	to right a wrong; to redress an injustice	восстановить честное имя, реабилитировать, очистить от ложных…		b	
 申领	申領	shen1 ling3	to apply (for license, visa etc)	подать заявление на получение; ходатайствовать о получении		b	
 申饬	申飭	shen1 chi4	to warn; to blame; to rebuke; also written 申斥	порицать, укорять, ставить на вид		b	
-甴		zha2	see 曱甴[yue1 zha2]	см; yóu вм		b	
+甴		zha2	see 曱甴[yue1 zha2]				
 男丁		nan2 ding1	adult male				
 男中音		nan2 zhong1 yin1	baritone	баритон		b	
 男主外，女主内	男主外，女主內	nan2 zhu3 wai4 , nv3 zhu3 nei4	men go out to work and women stay at home (idiom)				
@@ -70683,7 +70683,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 畛		zhen3	border; boundary; field-path	межа; граница между полями		b	
 畛域		zhen3 yu4	(formal) boundary; scope	границы, пределы		b	
 畜		chu4	livestock; domesticated animal; domestic animal	домашнее животное; скот; живность		b	
-畜		xu4	to raise (animals)	А; выращивать, разводить; держать		b	
+畜		xu4	to raise (animals)	выращивать, разводить; держать		b	
 畜力		chu4 li4	animal power; animal-drawn (plow etc)	сила рабочего скота; живое тягло; тягловый, гужевой		b	
 畜栏	畜欄	chu4 lan2	pen for livestock	загон для скота		b	
 畜牧		xu4 mu4	to raise animals	заниматься скотоводством	6	b	
@@ -71375,7 +71375,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 痲		ma2	leprosy; numb				
 痲疹		ma2 zhen3	variant of 麻疹[ma2 zhen3]				
 痲痹	痲痺	ma2 bi4	variant of 麻痺|麻痹[ma2 bi4]				
-痳		lin2	hernia; urinary hesitancy; erroneous variant of 痲[ma2]	вм		b	
+痳		lin2	hernia; urinary hesitancy; erroneous variant of 痲[ma2]				
 痴		chi1	imbecile; sentimental; stupid; foolish; silly	глупый, тупой, тугой на соображение; неразумный; глупо, тупо		b	
 痴人痴福		chi1 ren2 chi1 fu2	a fool suffers foolish fortune (idiom)	глупцу — сумасшедшее счастье		b	
 痴人说梦	痴人說夢	chi1 ren2 shuo1 meng4	lunatic ravings; nonsense; pipe dream	морочить голову; дурить мозги; говорить так, что собеседник всё…		b	
@@ -72327,7 +72327,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 百利甜		Bai3 li4 tian2	Baileys Irish Cream (brand of alcoholic drink); see also 百利甜酒[Bai3 li4 Tian2 jiu3]				
 百利甜酒		Bai3 li4 Tian2 jiu3	Baileys Irish Cream (brand of alcoholic drink)	Бейлис, Baileys		b	
 百胜	百勝	Bai3 sheng4	BaiSheng, common name for Chinese company; PakSing, common Hong Kong company name	непобедимый; Байшэн		b	
-百胜餐饮	百勝餐飲	bai3 sheng4 Can1 yin3	Tricon Global Restaurants (incl. Pizza Hut and KFC)	вм		b	
+百胜餐饮	百勝餐飲	bai3 sheng4 Can1 yin3	Tricon Global Restaurants (incl. Pizza Hut and KFC)				
 百胜餐饮集团	百勝餐飲集團	Bai3 sheng4 Can1 yin3 Ji2 tuan2	Tricon Global Restaurants (incl. Pizza Hut and KFC)	Yum! Brands, Inc., «Ям Брэндс»		b	
 百汇	百匯	bai3 hui4	parfait (loanword)	аккупунктурная точка на макушке головы		b	
 百十		bai3 shi2	a hundred or so	сто с лишним, свыше ста, более сотни		b	
@@ -79500,7 +79500,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 纽几内亚	紐幾內亞	Niu3 Ji1 nei4 ya4	New Guinea; Papua-New Guinea				
 纽扣	紐扣	niu3 kou4	button	пуговица; защёлка		b	
 纽时	紐時	Niu3 Shi2	New York Times, abbr. for 紐約時報|纽约时报[Niu3 Yue1 Shi2 bao4]				
-纽泽西	紐澤西	niu3 ze2 xi1	New Jersey, USA (Tw)	вм		b	
+纽泽西	紐澤西	niu3 ze2 xi1	New Jersey, USA (Tw)				
 纽瓦克	紐瓦克	Niu3 wa3 ke4	Newark (place name)	Ньюарк		b	
 纽约	紐約	Niu3 yue1	New York	Нью-Йорк		b	
 纽约人	紐約人	Niu3 yue1 ren2	New Yorker	житель Нью-Йорка		b	
@@ -79828,7 +79828,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 累犯		lei3 fan4	to repeatedly commit an offense; repeat offender; habitual criminal; recidivist; recidivism	[совершать] рецидивы; быть рецидивистом		b	
 累积	累積	lei3 ji1	to accumulate	накапливать; собирать; нагромождать; накапливающийся; кумулятивный…		b	
 累积剂量	累積劑量	lei3 ji1 ji4 liang4	cumulative dose	кумулятивная доза, суммарная доза, аккумулированная доза		b	
-累累		lei2 lei2	(literary) (of fruit, achievements etc) clusters of; piles of; heaps of; gaunt; haggard; wretched; Taiwan pr. [lei3 lei3]; variant of 累累[lei2 lei2]	см; нагромождённый; нагромождаться		b	
+累累		lei2 lei2	(literary) (of fruit, achievements etc) clusters of; piles of; heaps of; gaunt; haggard; wretched; Taiwan pr. [lei3 lei3]; variant of 累累[lei2 lei2]				
 累累		lei3 lei3	again and again; innumerable; repeated; riddled with; accumulated	многократный; неоднократно, постоянно		b	
 累觉不爱	累覺不愛	lei4 jue2 bu4 ai4	(lit.) so exhausted (by difficulties in a relationship) that one feels one could never fall in love again (Internet slang); disenchanted with sth	так устал, что не могу любить; влюбиться нету больше сил		b	
 累计	累計	lei3 ji4	to accumulate; cumulative	подводить итог; подсчитывать, суммировать общий итог; итого, в…		b	
@@ -81652,7 +81652,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 缬氨酸	纈氨酸	xie2 an1 suan1	valine (Val), an essential amino acid				
 缬草	纈草	xie2 cao3	valerian (Valeriana officinalis)	валериана лекарственная, валериана аптечная, валериана болотная…		b	
 纩	纊	kuang4	fine floss-silk or cotton	шёлковая вата; шёлк-сырец		b	
-续	續	xu4	to continue; to replenish	А; продолжаться, тянуться непрерывно; непрерывный; подряд		b	
+续	續	xu4	to continue; to replenish	продолжаться, тянуться непрерывно; непрерывный; подряд		b	
 续作	續作	xu4 zuo4	sequel	продолжение		b	
 续保	續保	xu4 bao3	renewal of insurance	возобновление страхования		b	
 续借	續借	xu4 jie4	extended borrowing (e.g. library renewal)	продлевать		b	
@@ -81802,7 +81802,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 罐车	罐車	guan4 che1	tanker truck; tanker wagon	вагон-цистерна; автомобиль для перевозки жидких грузов…		b	
 罐头	罐頭	guan4 tou5	tin; can	консервы в банках; консервированный; консервный		b	個
 罐头起子	罐頭起子	guan4 tou5 qi3 zi5	can opener	открывалка для консервов		b	
-罒		wang3	net (Kangxi radical 122)	вм		b	
+罒		wang3	net (Kangxi radical 122)				
 罓		wang3	net (Kangxi radical 122)				
 罔		wang3	to deceive; there is none; old variant of 網|网[wang3]	сеть; тенёта; силки; западня		b	
 罕		han3	rare	редкий; незаурядный; необычный; редкостный, ценный; редко, мало		b	
@@ -82373,7 +82373,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 羜		zhu4	five-month-old lamb	ягнёнок		b	
 羝		di1	billy goat; ram	баран		b	
 羝羊触藩	羝羊觸藩	di1 yang2 chu4 fan1	lit. billy goat's horns caught in the fence (idiom from Book of Changes 易經|易经); impossible to advance or to retreat; without any way out of a dilemma; trapped; 	баран упёрся в изгородь; ни вперёд ни назад; ни туда ни сюда		b	
-羞		xiu1	shy; ashamed; shame; bashful; variant of 饈|馐[xiu1]; delicacies	А; стыдиться; пристыжённый; стыдно		b	
+羞		xiu1	shy; ashamed; shame; bashful; variant of 饈|馐[xiu1]; delicacies	стыдиться; пристыжённый; стыдно		b	
 羞口难开	羞口難開	xiu1 kou3 nan2 kai1	to be too embarrassed for words (idiom)	стесняться заговорить		b	
 羞怯		xiu1 qie4	shy; timid	застенчивый, робкий, стыдливый; боязливый; стыдно, неловко…		b	
 羞耻	羞恥	xiu1 chi3	(a feeling of) shame	стыдиться; пристыженный	6	b	
@@ -82457,7 +82457,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 义和团运动	義和團運動	Yi4 he2 tuan2 Yun4 dong4	Boxer Rebellion	Ихэтуаньское восстание, Боксёрское восстание, движение ихэтуаней		b	
 义和拳	義和拳	Yi4 he2 quan2	the Righteous and Harmonious Fists; the Boxers (history)	Ихэцюань см; ихэцюани		b	
 义士	義士	yi4 shi4	high-minded and righteous person; patriot; loyalist	защитник справедливости, благородный человек; борец за правое дело…		b	
-义大利	義大利	yi4 da4 li4	(Tw) Italy; Italian	вм		b	
+义大利	義大利	yi4 da4 li4	(Tw) Italy; Italian				
 义女	義女	yi4 nv3	adopted daughter	приёмная дочь; названая дочь		b	
 义子	義子	yi4 zi3	adopted son	приёмный сын, пасынок		b	
 义学	義學	yi4 xue2	free school (old)	бесплатная школа		b	
@@ -82484,7 +82484,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 义肢	義肢	yi4 zhi1	artificial limb; prosthesis	протез [конечности]		b	
 义薄云天	義薄雲天	yi4 bo2 yun2 tian1	supremely honorable and righteous	справедливость простирается до небес; бесстрашный и мужественный…		b	
 义行	義行	yi4 xing2	righteous deed	справедливый, правильный поступок; правильное действие		b	
-义警	義警	yi4 jing3	vigilante; volunteer (police)	см; вигиланты		b	
+义警	義警	yi4 jing3	vigilante; volunteer (police)				
 义译	義譯	yi4 yi4	formation of a loanword using a combination of characters or words that suggests its meaning (as opposed to transliteration 音譯|音译[yin1 yi4]) (e.g. 超文本[chao1 wen				
 义卖	義賣	yi4 mai4	jumble sale (for good cause); charity bazaar	распродажа в благотворительных целях, благотворительный базар		b	
 义卖会	義賣會	yi4 mai4 hui4	bazaar				
@@ -84030,7 +84030,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 肚腹		du4 fu4	belly (old)	живот, брюхо; желудок; внутренности, кишки		b	
 肚脐	肚臍	du4 qi2	navel	пуп, пупок		b	
 肚脐眼	肚臍眼	du4 qi2 yan3	navel; belly button	пуп, пупок		b	
-肛交		gang1 jiao1	anal intercourse	вм		b	
+肛交		gang1 jiao1	anal intercourse				
 肛欲期		gang1 yu4 qi1	anal stage (psychology)				
 肛门	肛門	gang1 men2	anus	заднепроходное отверстие, анус		b	
 肛门直肠	肛門直腸	gang1 men2 zhi2 chang2	rectum (anatomy)	аноректальный		b	
@@ -84999,7 +84999,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 腱炎		jian4 yan2	tendonitis	тендинит, воспаление сухожилий, тенонтит		b	
 腱鞘		jian4 qiao4	tendon sheath (anatomy); epitendon	сухожильное влагалище, синовиальное влагалище		b	
 腱鞘炎		jian4 qiao4 yan2	tenosynovitis (medicine)	воспаление сухожильного влагалища, перитендинит, тендовагинит		b	
-脚	腳	jue2	variant of 角[jue2]; role	вм	2	b	
+脚	腳	jue2	variant of 角[jue2]; role				
 脚下	腳下	jiao3 xia4	under the foot	ныне, теперь; ступня; нога		b	
 脚不沾地	腳不沾地	jiao3 bu4 zhan1 di4	feet not touching the ground (idiom); to run like the wind	ноги не касаются земли, не чуять под собой ног		b	
 脚不点地	腳不點地	jiao3 bu4 dian3 di4	see 腳不沾地|脚不沾地[jiao3 bu4 zhan1 di4]	ноги не касаются земли, не чуять под собой ног		b	
@@ -87246,7 +87246,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 苗头	苗頭	miao2 tou5	first signs; development (of a situation)	первые ростки, проявление тенденции		b	
 苘		qing3	Indian mallow (Abutilon theophrasti); Indian hemp (cannabis)				
 苘麻		qing3 ma2	Indian mallow (Abutilon theophrasti); Indian hemp (cannabis)	абутилон, канатник Авиценны, канатник Теофраста		b	
-苙		li4	(herb); pigsty	см; хлев, свинарник		b	
+苙		li4	(herb); pigsty				
 苛		ke1	severe; exacting	жестокий; бесчеловечный, зверский; лихой, лютый; жёсткий		b	
 苛刻		ke1 ke4	harsh; severe; demanding	жестокий, суровый, требовательный; жестокость, излишняя строгость		b	
 苛性		ke1 xing4	caustic (chemistry)	каустичность, едкость; каустические свойства; каустический, едкий…		b	
@@ -87276,7 +87276,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 苟安		gou3 an1	see 苟且偷安[gou3 qie3 tou1 an1]	любой ценою добиваться временного спокойствия; отсиживаться; лишь…		b	
 苟富贵，勿相忘	苟富貴，勿相忘	gou3 fu4 gui4 , wu4 xiang1 wang4	don't forget your friends when you become rich				
 苟延残喘	苟延殘喘	gou3 yan2 can2 chuan3	to struggle on whilst at death's door (idiom)	отсрочить свою гибель; при последнем издыхании, бороться за…		b	
-苠		min2	multitude; skin of bamboo	см; длительный период роста посевов; позднее созревание		b	
+苠		min2	multitude; skin of bamboo				
 苡		yi3	common plantain (Plantago major)				
 苡米		yi3 mi3	grains of Job's tears plant 薏苡[yi4 yi3]	коикс слеза Иова		b	
 苣		ju4	lettuce, see 萵苣|莴苣	факел		b	
@@ -87494,7 +87494,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 苴		ju1	surname Ju; (hemp); sack cloth	соломенная стелька		b	
 苴麻		ju1 ma2	female hemp plant (Cannabis sativa)	женское растение конопли, матерка		b	
 苶		nie2	weary; tired	утомлённый, усталый, изнурённый; устало, в изнеможении		b	
-苷		gan1	licorice; glycoside	вм		b	
+苷		gan1	licorice; glycoside				
 苹		ping2	(artemisia); duckweed; apple	яблоко, яблоня; píng см		b	
 苺		mei2	variant of 莓, berry; strawberry				
 苻		fu2	Angelica anomala	внутренняя плёнка		b	
@@ -88246,7 +88246,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 华而不实	華而不實	hua2 er2 bu4 shi2	flower but no fruit (idiom); handsome exterior but hollow inside; flashy	цвести, но не давать плодов; пустоцвет		b	
 华胄	華胄	hua2 zhou4	(literary) Han people; descendants of nobles	блестящие потомки, отпрыски знати		b	
 华兴会	華興會	Hua2 xing1 hui4	anti-Qing revolutionary party set up in Changsha by 黃興|黄兴[Huang2 Xing1] in 1904, a precursor of Sun Yat-sen's Alliance for Democracy 同盟會|同盟会[Tong2 meng2 hui4] a				
-华航	華航	hua2 hang2	China Airlines (Taiwan); abbr. for 中華航空公司|中华航空公司[Zhong1 hua2 Hang2 kong1 Gong1 si1]	вм		b	
+华航	華航	hua2 hang2	China Airlines (Taiwan); abbr. for 中華航空公司|中华航空公司[Zhong1 hua2 Hang2 kong1 Gong1 si1]				
 华盖	華蓋	hua2 gai4	imperial canopy (e.g. domed umbrella-like roof over carriage); aureole; halo	шёлковый зонт; брови		b	
 华表	華表	hua2 biao3	marble pillar (ornamental column in front of places, tombs)	колонна, столб, резной каменный столб		b	
 华裔	華裔	hua2 yi4	ethnic Chinese; non-Chinese citizen of Chinese ancestry	этнический китаец; китайского происхождения	5	b	
@@ -89080,7 +89080,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 荪	蓀	sun1	fragrant grass	ирис, касатик		b	
 蓁		zhen1	abundant, luxuriant vegetation	заросли, чаща; густой, частый		b	
 蓂		ming2	lucky place				
-蓄		xu4	to store up; to grow (e.g. a beard); to entertain (ideas)	А; запасать, копить; откладывать, приберегать		b	
+蓄		xu4	to store up; to grow (e.g. a beard); to entertain (ideas)	запасать, копить; откладывать, приберегать		b	
 蓄势待发	蓄勢待發	xu4 shi4 dai4 fa1	to wait for action after having accumulated power, energy etc	находиться в полной готовности, быть готовым к действию в любой…		b	
 蓄意		xu4 yi4	deliberate; premeditated; malice	вынашивать мысль; питать [злой] умысел		b	
 蓄水		xu4 shui3	water storage	водосбор		b	
@@ -90466,7 +90466,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 蛀牙		zhu4 ya2	tooth decay; dental cavities	кариесный зуб, зуб с дыркой		b	顆,個
 蛀蚀	蛀蝕	zhu4 shi2	to corrupt; to erode	точить, изъедать изъеденный		b	
 蛀虫	蛀蟲	zhu4 chong2	insect that eats into wood, books, clothes etc; fig. vermin	книжный червь; жучок; моль		b	
-蛁		diao1	Pomponia maculatiocollis	см; цикада; певчая цикада		b	
+蛁		diao1	Pomponia maculatiocollis				
 蛄		gu1	see 螻蛄|蝼蛄[lou2 gu1]				
 蛅		ran2	a caterpillar				
 蛆		qu1	maggot	личинка мухи, опарыш		b	
@@ -90484,7 +90484,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 蛇皮果		she2 pi2 guo3	salak (Salacca zalacca) (fruit)	салак, салакка, "змеиный фрукт"		b	
 蛇矛		she2 mao2	ancient spear-like weapon with a wavy spearhead like a snake's body	боевая секира, копьё со змеевидным лезвием		b	
 蛇管		she2 guan3	flexible hose	змеевик; шланг		b	
-蛇精病		she2 jing1 bing4	(slang) (pun on 神經病|神经病[shen2 jing1 bing4]) crazy person; nutjob	вм		b	
+蛇精病		she2 jing1 bing4	(slang) (pun on 神經病|神经病[shen2 jing1 bing4]) crazy person; nutjob				
 蛇纹岩	蛇紋岩	she2 wen2 yan2	serpentine (geology)	серпентинит, змеевик, офиолит; серпентинитовый, офиолитовый…		b	
 蛇纹石	蛇紋石	she2 wen2 shi2	serpentine (geology)	серпентин		b	
 蛇绿岩	蛇綠岩	she2 lv4 yan2	ophiolite (geology)	офиолиты, офиолитовый; серпентиниты, серпентинитовый; змеевик		b	
@@ -91487,7 +91487,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 行驶	行駛	xing2 shi3	to travel along a route (of vehicles etc)	курсировать, следовать, ехать	5	b	
 行骗	行騙	xing2 pian4	to cheat; to deceive	обманывать, совершать обман		b	
 行体	行體	xing2 ti3	see 行書|行书[xing2 shu1]				
-衍		yan3	to spread out; to develop; to overflow; to amplify; superfluous	А; растекаться, разливаться; переливаться [через край]; изливаться		b	
+衍		yan3	to spread out; to develop; to overflow; to amplify; superfluous	растекаться, разливаться; переливаться [через край]; изливаться		b	
 衍伸		yan3 shen1	to give rise (to); to spawn; to spread (to)				
 衍化		yan3 hua4	to evolve (of ideas, designs, constructions etc); to develop and change	развиваться; эволюционировать		b	
 衍射		yan3 she4	diffraction	дифракция; дифракционный		b	
@@ -92354,8 +92354,8 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 褥疮	褥瘡	ru4 chuang1	bedsore	пролежень		b	
 褦		nai4	ignorant; sun hat				
 褧		jiong3	monotone garment with no lining	одинарное платье, летний халат; одинарный, без подкладки		b	
-褪		tui4	to take off (clothes); to shed feathers; (of color) to fade; to discolor	А; спускаться; соскальзывать		b	
-褪		tun4	to slip out of sth; to hide sth in one's sleeve	А; спускаться; соскальзывать		b	
+褪		tui4	to take off (clothes); to shed feathers; (of color) to fade; to discolor	спускаться; соскальзывать		b	
+褪		tun4	to slip out of sth; to hide sth in one's sleeve	спускаться; соскальзывать		b	
 褪下		tun4 xia4	to take off (trousers); to drop one's pants	снимать, сбрасывать		b	
 褪光		tui4 guang1	matte (of a color etc)				
 褪去		tui4 qu4	to take off (one's clothes); (fig.) to shed (one's former image etc); (of a fad or the after-effects of a disaster etc) to subside; also pr. [tun4 qu4]	снять, сбросить		b	
@@ -92463,7 +92463,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 衬裙	襯裙	chen4 qun2	petticoat	подъюбник, нижняя юбка; комбинация		b	
 衬里	襯裡	chen4 li3	lining	подкладка; футеровка		b	
 衬裤	襯褲	chen4 ku4	underpants	подштанники, кальсоны, трико		b	
-袭	襲	xi2	to attack; to inherit; classifier for suits (esp. of funeral robes)	А; нападать из-за угла; совершать набег; наносить внезапный удар…		b	
+袭	襲	xi2	to attack; to inherit; classifier for suits (esp. of funeral robes)	нападать из-за угла; совершать набег; наносить внезапный удар…		b	
 袭击	襲擊	xi2 ji1	attack (esp. surprise attack); raid; to attack	внезапный удар; неожиданное нападение; нападать, атаковать…	6	b	
 袭击者	襲擊者	xi2 ji1 zhe3	attacker	нападающий, нападающая сторона		b	
 襕	襴	lan2	full length gown (old)	двойной халат		b	
@@ -94310,7 +94310,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 诬蔑	誣蔑	wu1 mie4	variant of 誣衊|诬蔑[wu1 mie4]; to slander; to smear; to vilify	оклеветать, оболгать; запятнать честь, очернить, опорочить…		b	
 诬赖	誣賴	wu1 lai4	to accuse falsely	оговаривать, ложно обвинять		b	
 诬陷	誣陷	wu1 xian4	to entrap; to frame; to plant false evidence against sb	клеветать, возводить ложное обвинение на, фальсифицировать…	6	b	
-误	誤	wu4	mistake; error; to miss; to harm; to delay; to neglect; mistakenly	А; опаздывать, задерживаться	6	b	
+误	誤	wu4	mistake; error; to miss; to harm; to delay; to neglect; mistakenly	опаздывать, задерживаться	6	b	
 误上贼船	誤上賊船	wu4 shang4 zei2 chuan2	lit. to mistakenly board a pirate ship; to embark on a hopeless adventure				
 误事	誤事	wu4 shi4	to hold things up; to make a botch of things	провалить дело, вредить делу; сделать ошибку в работе; задержка		b	
 误人子弟	誤人子弟	wu4 ren2 zi3 di4	(of a lazy or incompetent teacher) to hamper students' progress; (of media) to propagate errors; to lead people astray	запутывать учеников, давать ложные знания		b	
@@ -96643,7 +96643,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 账号	賬號	zhang4 hao4	account; username	учётная запись, аккаунт, логин		b	
 账载	賬載	zhang4 zai3	per book; as recorded in the accounts				
 账面	賬面	zhang4 mian4	an item in accounts; an entry	балансовый, баланс чего-то		b	
-赌	賭	du3	to bet; to gamble	А; играть в азартные игры	6	b	
+赌	賭	du3	to bet; to gamble	играть в азартные игры	6	b	
 赌上一局	賭上一局	du3 shang4 yi1 ju2	to engage in a game of chance; to gamble; to make a bet				
 赌博	賭博	du3 bo2	to gamble	играть в азартные игры; азартная игра	6	b	
 赌咒	賭咒	du3 zhou4	to swear to God; to cross one's heart	принести клятву, поклясться		b	
@@ -97883,7 +97883,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 踢踏舞		ti1 ta4 wu3	tap dance	чечётка		b	
 踢蹋舞		ti1 ta4 wu3	tap dance; step dance				
 踢马刺	踢馬刺	ti1 ma3 ci4	horse spur				
-踣		bo2	corpse; prostrate	А; упасть [ничком], растянуться		b	
+踣		bo2	corpse; prostrate	упасть [ничком], растянуться		b	
 踤		cu4	to butt against				
 踥		qie4	to walk with small steps				
 踥踥		qie4 qie4	moving back and forth	двигаться, идти вперёд		b	
@@ -102912,7 +102912,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 重复性	重覆性	chong2 fu4 xing4	repetitive	возможность повторения, воспроизводимость, повторяемость…		b	
 重见天日	重見天日	chong2 jian4 tian1 ri4	to see the light again (idiom); delivered from oppression	снова увидеть солнце на небе, обр. вновь увидеть свет, снова…		b	
 重视教育	重視教育	zhong4 shi4 jiao4 yu4	to stress education				
-重训	重訓	zhong4 xun4	(Tw) weight training (abbr. for 重量訓練|重量训练[zhong4 liang4 xun4 lian4])	вм		b	
+重训	重訓	zhong4 xun4	(Tw) weight training (abbr. for 重量訓練|重量训练[zhong4 liang4 xun4 lian4])				
 重访	重訪	chong2 fang3	to revisit	заново посетить		b	
 重设	重設	chong2 she4	to reset	переустановка, повторная установка; комп. заново настроить		b	
 重评	重評	chong2 ping2	to reevaluate; to reassess				
@@ -104407,7 +104407,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 链锯	鏈鋸	lian4 ju4	chain saw	цепная пила, бензопила		b	
 鏊		ao4	griddle; tava	железный противень на треножнике; сковорода на ножках; жаровня		b	
 鏊子		ao4 zi5	griddle	сковорода; противень		b	
-镆	鏌	mo4	sword; moscovium (chemistry)	см; московий		b	
+镆	鏌	mo4	sword; moscovium (chemistry)				
 镠	鏐	liu2	fine gold	червонное золото		b	
 镝	鏑	di1	dysprosium (chemistry)	диспрозий		b	
 镝	鏑	di2	arrow or arrowhead (old)	наконечник стрелы; стрела		b	
@@ -104473,7 +104473,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 锈额斑翅鹛	鏽額斑翅鶥	xiu4 e2 ban1 chi4 mei2	(bird species of China) rusty-fronted barwing (Actinodura egertoni)				
 鏾		san3	the trigger of a crossbow; crossbow	самарий; холостить петуха		b	
 铙	鐃	nao2	big cymbals	колокольчик без языка		b	
-𨱑	鐄	heng2	bell	вм		b	
+𨱑	鐄	heng2	bell				
 𫔍	鐇	fan2	vanadium				
 𨱔	鐏	zun1	butt end of spear				
 镣	鐐	liao4	fetters; leg-irons; shackles	оковы, цепи; ножные кандалы		b	
@@ -105178,7 +105178,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 闪点	閃點	shan3 dian3	flash point (chemistry)				
 闫	閆	yan2	variant of 閻|阎[Yan2]; surname Yan	деревенские ворота; околица; деревня		b	
 闬	閈	han4	gate of a village	деревенские ворота; деревня		b	
-闭	閉	bi4	to close; to stop up; to shut; to obstruct	А; закрывать, затворять; замыкать, запирать	6	b	
+闭	閉	bi4	to close; to stop up; to shut; to obstruct	закрывать, затворять; замыкать, запирать	6	b	
 闭上	閉上	bi4 shang5	to close; to shut up	закрыть		b	
 闭上嘴巴	閉上嘴巴	bi4 shang5 zui3 ba1	Shut up!				
 闭元音	閉元音	bi4 yuan2 yin1	close vowel	закрытый гласный		b	
@@ -105603,7 +105603,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 闸道	閘道	zha2 dao4	(computing) gateway (Tw)				
 闸门	閘門	zha2 men2	sluice gate	задвижка; шибер; щит; затвор; ограничитель		b	
 閛		peng1	the sound of opening or closing the door	бум!; хлоп!		b	
-閟		bi4	hidden; hide	А; запереть двери; запереться, затвориться, закрыться		b	
+閟		bi4	hidden; hide	запереть двери; запереться, затвориться, закрыться		b	
 阂	閡	he2	obstruct	запереть двери снаружи, закрыться		b	
 阁	閣	ge2	pavilion (usu. two-storied); cabinet (politics); boudoir; woman's chamber; rack; shelf	дворец; терем, палата, зал		b	
 阁下	閣下	ge2 xia4	your distinguished self; your majesty; sire	Ваше превосходительство; Его Превосходительство, Е. П.; его…		b	
@@ -106495,7 +106495,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 降噪		jiang4 zao4	noise reduction	шумоподавление, подавление шумов		b	
 降尘	降塵	jiang4 chen2	dust fall; fallout (volcanic, nuclear etc); particulate matter	выпадение пыли, осаждение пыли		b	
 降压	降壓	jiang4 ya1	to reduce the pressure (of a fluid); to lower one's blood pressure; to lower (or step down) the voltage	понижение напряжение, понижать напряжение		b	
-降妖		xiang2 yao1	to subdue monsters	вм		b	
+降妖		xiang2 yao1	to subdue monsters				
 降将	降將	xiang2 jiang4	surrendered enemy general	сдавшийся военачальник		b	
 降幅		jiang4 fu2	degree of reduction (in prices, numbers etc); decline; drop	степень снижения, уровень спада, темпы падения		b	
 降序		jiang4 xu4	descending order	убывающий порядок, упорядоченность по убыванию; порядок убывания		b	
@@ -108654,7 +108654,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 电离层	電離層	dian4 li2 ceng2	ionosphere	ионосфера; ионизированный слой		b	
 电离辐射	電離輻射	dian4 li2 fu2 she4	ionization radiation; nuclear radiation	ионизирующее излучение		b	
 电震	電震	dian4 zhen4	electric shock; electroshock	электрошок		b	
-电音	電音	dian4 yin1	electronic music (genre)	вм		b	
+电音	電音	dian4 yin1	electronic music (genre)				
 电颤琴	電顫琴	dian4 chan4 qin2	vibraphone (music)				
 电风扇	電風扇	dian4 feng1 shan4	electric fan	электрический вентилятор		b	架,臺
 电饭煲	電飯煲	dian4 fan4 bao1	rice cooker	рисоварка, электроварка		b	
@@ -111963,7 +111963,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 驮重	馱重	tuo2 zhong4	pack (animal)				
 驮马	馱馬	tuo2 ma3	pack horse	вьючная лошадь		b	
 馲		tuo1	camel; Taiwan pr. [luo4]				
-驰	馳	chi2	to run fast; to speed; to gallop; to disseminate; to spread	А; мчаться, нестись карьером, быстро бежать		b	
+驰	馳	chi2	to run fast; to speed; to gallop; to disseminate; to spread	мчаться, нестись карьером, быстро бежать		b	
 驰名	馳名	chi2 ming2	famous	быть широко известным, пользоваться славой; знаменитый, хорошо…		b	
 驰援	馳援	chi2 yuan2	to rush to the rescue	спешить на помощь		b	
 驰道	馳道	chi2 dao4	(old) highway for the emperor; highway	императорский тракт; путь императора		b	
@@ -114108,7 +114108,7 @@ word姐		w o r d jie3	my big sister (Internet slang version of 我的姐[wo3 de5
 鹫鸟	鷲鳥	jiu4 niao3	vulture				
 鹇	鷴	xian2	silver pheasant (Phasianus nycthemerus); silver pheasant badge worn by civil officials of the 5th grade	лофура, серебристый фазан		b	
 鹬	鷸	yu4	common snipe; sandpiper	кулик; зимородок		b	
-鹬蚌相争	鷸蚌相爭	yu4 bang4 xiang1 zheng1	lit. sandpiper and clam war together (and the fisherman catches both) (idiom); fig. neighbors who can't agree lose out to a third party	вм		b	
+鹬蚌相争	鷸蚌相爭	yu4 bang4 xiang1 zheng1	lit. sandpiper and clam war together (and the fisherman catches both) (idiom); fig. neighbors who can't agree lose out to a third party				
 鹬蚌相争，渔翁得利	鷸蚌相爭，漁翁得利	yu4 bang4 xiang1 zheng1 , yu2 weng1 de2 li4	lit. sandpiper and clam war together and the fisherman catches both (idiom); fig. neighbors who can't agree lose out to a third party				
 鹬鸵	鷸鴕	yu4 tuo2	kiwi (bird)	киви		b	
 鹰	鷹	ying1	eagle; falcon; hawk	ястреб; орёл; сокол; коршун		b	
