@@ -161,7 +161,6 @@ button:active{filter:brightness(.92)}
         <div style="display:flex;flex-direction:column;gap:8px;padding:14px 16px"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Где писать иероглифы</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">{{ writeD }}</span></div><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ writeOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="flex:1;height:36px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font-weight:{{ o.fw }};box-shadow:{{ o.sh }};font-size:13.5px;cursor:pointer">{{ o.l }}</button></sc-for></div></div>
         <button onClick="{{ tglOutline }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Обводить новые слова</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Бледный контур знака, когда пишете слово впервые</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ outlineT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ outlineT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
         <sc-if value="{{ hasNative }}" hint-placeholder-val="{{ false }}"><button onClick="{{ tglNative }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Системная линия</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Линию под пальцем рисует сам Android — без задержки страницы. Если линия не совпадает с пальцем или не стирается — выключите</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ nativeT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ nativeT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button></sc-if>
-        <button onClick="{{ tglFast }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Быстрая линия</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Линия идёт за пальцем с меньшим отставанием. Если линия мерцает или рвётся — выключите</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ fastT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ fastT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
         <button onClick="{{ tglDiag }}" style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:0;border-top:1px solid var(--ln);background:none;color:var(--ink);text-align:left;cursor:pointer"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Показывать скорость рисования</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">После каждой черты под клеткой: кадров в секунду и сколько касаний получает приложение</span></span><span style="position:relative;width:46px;height:28px;border-radius:14px;background:{{ diagT.bg }};flex:none;transition:background .15s"><span style="position:absolute;top:2px;left:{{ diagT.x }};width:24px;height:24px;border-radius:12px;background:#FFF;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .15s"></span></span></button>
         <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-top:1px solid var(--ln)"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:500">Сетка клетки</span><span style="font-size:12.5px;color:var(--mu);line-height:1.4">Пунктир помогает держать пропорции</span></span><div style="display:flex;padding:4px;border-radius:12px;background:var(--sf2);gap:4px"><sc-for list="{{ gridOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.pick }}" style="width:48px;height:40px;border:0;border-radius:9px;background:{{ o.bg }};color:{{ o.fg }};font:600 17px 'Noto Serif SC',serif;box-shadow:{{ o.sh }};cursor:pointer">{{ o.l }}</button></sc-for></div></div>
       </div>
@@ -559,11 +558,42 @@ const WF=['слово','слова','слов'];
 const pl=(n,f)=>{const a=Math.abs(n)%100,b=a%10;return f[a>10&&a<20?2:b===1?0:b>=2&&b<=4?1:2];};
 const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 const uniq=a=>[...new Set(a)];
+/*INK*/
+// The finger's line: one way to turn touch points into a curve — for the live line and for every later redraw of it.
+const Ink={
+  // points (pixels) -> points to draw. k = pixels per CSS pixel.
+  // Slow movement: the touch sensor jitters by a fraction of a pixel and the line trembles; neighbouring points are averaged.
+  // The faster the finger, the weaker the averaging: from about 2.5 CSS px per sample on nothing is changed.
+  // Points closer than 2.2 CSS px to the previous kept one are dropped — a curve through points that close would follow
+  // the jitter. The first and the last point never move, so the line starts and ends exactly where the finger did.
+  // Numbers chosen on 9 kinds of movement x 60/120/240 touch points per second (tests/ink/tune2.py).
+  smooth(P,k){k=k||1;const n=P.length;if(n<3)return P.slice();const o=[P[0]];let fx=P[0][0],fy=P[0][1];
+    for(let i=1;i<n;i++){const x=P[i][0],y=P[i][1],d=Math.hypot(x-fx,y-fy)/k,a=i===n-1?1:Math.min(1,.15+d/3);
+      fx+=a*(x-fx);fy+=a*(y-fy);const q=o[o.length-1];
+      if(i===n-1||Math.hypot(fx-q[0],fy-q[1])>=2.2*k)o.push(P[i].length>2?[fx,fy,P[i][2]]:[fx,fy]);}
+    return o;},
+  // control points of the curve through Q[i] -> Q[i+1] (Catmull-Rom as a cubic Bézier). The curve passes through every
+  // point, so bends are not flattened; at a sharp turn (over 60°) the tangent is dropped and the corner stays a corner.
+  seg(Q,i){const p1=Q[i],p2=Q[i+1],p0=Q[i-1]||p1,p3=Q[i+2]||p2;const d=Math.hypot(p2[0]-p1[0],p2[1]-p1[1]);
+    const tan=(a,b,c)=>{const ux=b[0]-a[0],uy=b[1]-a[1],vx=c[0]-b[0],vy=c[1]-b[1],lu=Math.hypot(ux,uy),lv=Math.hypot(vx,vy);
+      if(lu<1e-6||lv<1e-6)return [(c[0]-a[0])/6,(c[1]-a[1])/6];if((ux*vx+uy*vy)/(lu*lv)<.5)return [0,0];
+      let tx=(c[0]-a[0])/6,ty=(c[1]-a[1])/6;const m=Math.hypot(tx,ty),lim=.4*Math.min(lu,lv);if(m>lim){tx*=lim/m;ty*=lim/m;}return [tx,ty];};
+    const t1=tan(p0,p1,p2),t2=tan(p1,p2,p3);const c=(t,l)=>{const m=Math.hypot(t[0],t[1]),lim=.4*d;return m>lim&&m>0?[t[0]*lim/m,t[1]*lim/m]:t;};const a=c(t1),b=c(t2);
+    return [p1[0]+a[0],p1[1]+a[1],p2[0]-b[0],p2[1]-b[1],p2[0],p2[1]];},
+  // add the line through the points to the current path of g
+  trace(g,P,k){const Q=Ink.smooth(P,k);g.moveTo(Q[0][0],Q[0][1]);if(Q.length===1){g.lineTo(Q[0][0]+.1,Q[0][1]+.1);return Q;}
+    for(let i=0;i<Q.length-1;i++){const b=Ink.seg(Q,i);g.bezierCurveTo(b[0],b[1],b[2],b[3],b[4],b[5]);}return Q;},
+  // the same line with a width that changes along it (the «bold» pen): one short stroke per segment
+  varied(g,P,k,base){const Q=Ink.smooth(P,k);if(Q.length===1){g.lineWidth=base;g.beginPath();g.moveTo(Q[0][0],Q[0][1]);g.lineTo(Q[0][0]+.1,Q[0][1]+.1);g.stroke();return;}
+    for(let i=0;i<Q.length-1;i++){const b=Ink.seg(Q,i);g.lineWidth=base*(Q[i+1][2]||1);g.beginPath();g.moveTo(Q[i][0],Q[i][1]);g.bezierCurveTo(b[0],b[1],b[2],b[3],b[4],b[5]);g.stroke();}}
+};
+window.Ink=Ink;
+/*INK-END*/
 const RCAP=30;   // words in one review session
 const dk=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 const ago=n=>new Date(Date.now()-n*864e5);
 // ---- Mao 3.0 (design v8) ----
-const APPV='3.6';
+const APPV='3.7';
 const MNAME=['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
 // Material Symbols Rounded, bundled offline as fonts/icons.woff (only these glyphs)
 const ICONS={check:'',today:'',book:'',forum:'',settings:'',more:'',less:'',cat:'',list:'',tr:'',help:''};
@@ -638,18 +668,17 @@ class Component extends DCLogic {
   wcEl(){return this.wcCanvas||this.phoneRef.current?.querySelector('canvas')||null;}
   wPt(e){const c=this.wcEl();if(!this.wRect||this.wRectC!==c||performance.now()-this.wRectT>500){this.wRect=c.getBoundingClientRect();this.wRectC=c;this.wRectT=performance.now();}const r=this.wRect,k=c.width/r.width;return [(e.clientX-r.left)*k,(e.clientY-r.top)*k];}
   // canvas size follows the screen's pixel density (sharp lines on 2.75–3× screens); points are kept in 0..1
-  wFit(c){c=c||this.wcEl();if(!c)return 1;const r=Math.min(2,window.devicePixelRatio||1),w=Math.round((c.clientWidth||288)*r);if(w>0&&c.width!==w){c.width=w;c.height=w;}return c.width/576;}
+  wFit(c){c=c||this.wcEl();if(!c)return 1;const r=Math.min(3,window.devicePixelRatio||1),w=Math.round((c.clientWidth||288)*r);if(w>0&&c.width!==w){c.width=w;c.height=w;}return c.width/576;}
   wDown(e){const c=e.currentTarget||this.wcEl();if(!c)return;e.preventDefault();
     if(this.state.wDone||(this.state.quiz&&this.state.quiz.rev))return;
     // a second finger while drawing is ignored; a very wide touch (palm) too, but with a hint
     if(this.drw&&this.pid!=null&&e.pointerId!==this.pid)return;
     if(e.pointerType==='touch'&&((e.width||0)>90||(e.height||0)>90)){if(!this.wPalmT||Date.now()-this.wPalmT>4000){this.wPalmT=Date.now();this.wSay('Касание слишком широкое — ведите кончиком пальца');}this.inkCall('inkCancel');return;}
-    this.wcCanvas=c;const k=this.wFit(c);this.inkSync();this.inkOn=!!this.inkKey;this.wPred=null;this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;window.__maoInk=true;const [x,y]=this.wPt(e),ov=this.wOv(),g=this.wG(ov||c);if(ov)g.clearRect(0,0,ov.width,ov.height);this.wRawOn=false;this.wDg={t0:performance.now(),ev:0,pt:0,fr:0,raw:0};const dg=this.wDg;const tick=()=>{if(this.wDg===dg&&this.drw){dg.fr++;requestAnimationFrame(tick);}};requestAnimationFrame(tick);
+    this.wcCanvas=c;const k=this.wFit(c);this.inkSync();this.inkOn=!!this.inkKey;this.wPred=null;this.pid=e.pointerId;clearTimeout(this.wAutoT);try{c.setPointerCapture(e.pointerId);}catch(_){}this.drw=true;window.__maoInk=true;const [x,y]=this.wPt(e),ov=this.wOv(),g=this.wG(ov||c);if(ov)g.clearRect(0,0,ov.width,ov.height);this.wRawOn=false;this.wDg={t0:performance.now(),ev:0,pt:0,fr:0,raw:0,gap:0};const dg=this.wDg;const tick=()=>{if(this.wDg===dg&&this.drw){dg.fr++;requestAnimationFrame(tick);}};requestAnimationFrame(tick);
     this.wK=k;this.wBase={thin:6,mid:9,bold:14}[this.state.wWidth||'mid']*k;this.wf=1;this.lt=performance.now();g.strokeStyle=this.wInkC||(this.wInkC=getComputedStyle(c).color);g.lineWidth=this.wBase;g.lineCap='round';g.lineJoin='round';if(!this.inkOn){g.beginPath();g.moveTo(x,y);g.lineTo(x+.1,y+.1);g.stroke();}this.lp0=[x,y];this.lm=[x,y];this.wS=this.wS||[];this.wS.push([[x/c.width,y/c.height,1]]);}
   // the finger's line is drawn on a transparent layer above the cell: redraws of the cell (hints, animations) never touch it
   wOv(){const c=this.wcEl();const o=c&&c.parentNode?c.parentNode.querySelector('canvas[data-ov]'):null;if(o&&(o.width!==c.width||o.height!==c.height)){o.width=c.width;o.height=c.height;}return o;}
-  // desynchronized = the line is put on the screen without waiting for the page compositor (less lag behind the finger on Android)
-  wG(el){if(!el)return null;if(!el.__g){let g=null;if(this.state.wFast!=='off'&&el.hasAttribute&&el.hasAttribute('data-ov')){try{g=el.getContext('2d',{desynchronized:true});}catch(e){}}el.__g=g||el.getContext('2d');}return el.__g;}
+  wG(el){if(!el)return null;if(!el.__g)el.__g=el.getContext('2d');return el.__g;}   // a plain canvas: the live layer is cleared and redrawn every frame, which a «desynchronized» canvas is not meant for
   wOvClear(){const o=this.wOv();if(o)this.wG(o).clearRect(0,0,o.width,o.height);}
   // raw=true: «pointerrawupdate» — the browser hands the point over at once, not once per frame; then «pointermove» is skipped
   wMove(e,raw){if(!this.drw||(this.pid!=null&&e.pointerId!==this.pid))return;if(raw)this.wRawOn=true;else if(this.wRawOn)return;const c=this.wcEl();if(!c)return;const ov=this.wOv(),g=this.wG(ov||c);
@@ -657,22 +686,18 @@ class Component extends DCLogic {
     const evs=(e.getCoalescedEvents&&e.getCoalescedEvents())||[];const list=evs.length?evs:[e];const S=this.wS&&this.wS[this.wS.length-1];if(this.wDg){this.wDg.ev++;this.wDg.pt+=list.length;if(raw)this.wDg.raw++;}
     for(const ev of list){const [x,y]=this.wPt(ev),[px,py]=this.lp0;
       const now=ev.timeStamp||performance.now(),dt=Math.max(1,now-this.lt),v=Math.hypot(x-px,y-py)/dt/(this.wK||1);this.lt=now;
-      if((this.state.wWidth||'mid')==='bold'){const f=Math.max(.5,Math.min(1.4,1.4-v/2.2));this.wf=this.wf*.7+f*.3;}else this.wf=1;
-      this.lp0=[x,y];
+      this.wf=1;   // one width along the whole line: a width that follows the speed made the «bold» pen look built of pieces
+      if(this.wDg)this.wDg.gap=Math.max(this.wDg.gap,Math.hypot(x-px,y-py)/this.wPx(c));this.lp0=[x,y];
       if(S)S.push([x/c.width,y/c.height,this.wf]);}
     if(this.inkOn)return;   // Android draws the live line itself (InkView); the page only collects the points
-    // the browser's guess where the finger will be in the next frame: drawn as the tip, never stored
-    try{const pr=e.getPredictedEvents&&e.getPredictedEvents();this.wPred=pr&&pr.length?pr.slice(0,2).map(ev=>this.wPt(ev)):null;}catch(_){this.wPred=null;}
+    // no «predicted» points: a guessed tip that is taken back a frame later makes the end of the line twitch
     if(!this.wFr)this.wFr=requestAnimationFrame(()=>{this.wFr=0;this.wInkFrame();});}
   // one drawing per frame: the whole current stroke, smooth through the midpoints, the tip reaching the finger itself
-  wInkFrame(){if(!this.drw)return;const c=this.wcEl(),ov=this.wOv(),S=this.wS&&this.wS[this.wS.length-1];if(!c||!S||!S.length)return;const g=this.wG(ov||c),W=c.width,H=c.height;
+  wInkFrame(){if(!this.drw)return;const c=this.wcEl(),ov=this.wOv(),S=this.wS&&this.wS[this.wS.length-1];if(!c||!S||!S.length)return;const g=this.wG(ov||c),W=c.width,H=c.height,k=this.wK*576/(c.clientWidth||288)||1;
     if(ov)g.clearRect(0,0,W,H);g.strokeStyle=this.wInkC||getComputedStyle(c).color;g.lineCap='round';g.lineJoin='round';
-    const bold=(this.state.wWidth||'mid')==='bold';let px=S[0][0]*W,py=S[0][1]*H,mx=px,my=py;
-    if(!bold){g.lineWidth=this.wBase;g.beginPath();g.moveTo(px,py);
-      for(let i=1;i<S.length;i++){const x=S[i][0]*W,y=S[i][1]*H;mx=(px+x)/2;my=(py+y)/2;g.quadraticCurveTo(px,py,mx,my);px=x;py=y;}
-      g.lineTo(px+.1,py+.1);if(this.wPred)for(const p of this.wPred)g.lineTo(p[0],p[1]);g.stroke();}
-    else{for(let i=1;i<S.length;i++){const x=S[i][0]*W,y=S[i][1]*H,nx=(px+x)/2,ny=(py+y)/2;g.lineWidth=this.wBase*(S[i][2]||1);g.beginPath();g.moveTo(mx,my);g.quadraticCurveTo(px,py,nx,ny);g.stroke();mx=nx;my=ny;px=x;py=y;}
-      g.beginPath();g.moveTo(mx,my);g.lineTo(px+.1,py+.1);g.stroke();}}
+    const P=S.map(p=>[p[0]*W,p[1]*H,p[2]]);
+    g.lineWidth=this.wBase;g.beginPath();Ink.trace(g,P,this.wPx(c));g.stroke();}
+  wPx(c){return c.width/(c.clientWidth||288);}   // canvas pixels per CSS pixel
   // ---- native ink (APK 16+): tell Android where the cell is; it draws the line under the finger at the screen's own rate
   inkCall(m){const n=window.EvineNative;try{if(n&&n[m])n[m]();}catch(e){}}
   inkSync(){const n=window.EvineNative;if(!n||!n.inkOn)return;const s=this.state,c=this.wcCanvas;
@@ -684,7 +709,7 @@ class Component extends DCLogic {
       const key=[r.left,r.top,r.width,r.height,width].map(x=>Math.round(x*10)).join(',')+m;
       if(key!==this.inkKey){this.inkKey=key;n.inkOn(r.left*k,r.top*k,r.width*k,r.height*k,width,'#'+m);}}catch(e){this.inkKey='';}}
 
-  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;if(this.wDg){const d=this.wDg,sec=Math.max(.05,(performance.now()-d.t0)/1000);this.wDgText=sec<.15?'':'экран '+Math.round(d.fr/sec)+' к/с · касаний '+Math.round(d.ev/sec)+'/с · точек '+Math.round(d.pt/sec)+'/с'+(d.raw?' · raw':'')+(this.inkOn?' · системная линия':'')+(this.wOv()&&this.wG(this.wOv()).getContextAttributes&&(this.wG(this.wOv()).getContextAttributes()||{}).desynchronized?' · быстрая линия':'');}this.drw=false;this.pid=null;window.__maoInk=false;if(this.state.wMsg)this.setState({wMsg:null});if(this.wFr){cancelAnimationFrame(this.wFr);this.wFr=0;}this.wPred=null;this.wSnapLast();this.wOvClear();if(this.inkOn)setTimeout(()=>this.inkCall('inkClear'),50);}
+  wUp(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;if(this.wDg){const d=this.wDg,sec=Math.max(.05,(performance.now()-d.t0)/1000);this.wDgText=sec<.15?'':'экран '+Math.round(d.fr/sec)+' к/с · касаний '+Math.round(d.ev/sec)+'/с · точек '+Math.round(d.pt/sec)+'/с'+(d.raw?' · raw':'')+(this.inkOn?' · системная линия':'')+(d.gap?' · шаг до '+Math.round(d.gap)+' px':'');}this.drw=false;this.pid=null;window.__maoInk=false;if(this.state.wMsg)this.setState({wMsg:null});if(this.wFr){cancelAnimationFrame(this.wFr);this.wFr=0;}this.wPred=null;this.wSnapLast();this.wOvClear();if(this.inkOn)setTimeout(()=>this.inkCall('inkClear'),50);}
   // the system took the touch away (a gesture, a call, the notification shade): the unfinished line is dropped, it is not a mistake
   wCancel(e){if(!this.drw||(e&&this.pid!=null&&e.pointerId!==this.pid))return;this.drw=false;this.pid=null;window.__maoInk=false;if(this.wS&&this.wS.length>(this.wMeta||[]).length)this.wS.pop();if(this.wFr){cancelAnimationFrame(this.wFr);this.wFr=0;}this.wOvClear();this.inkCall('inkCancel');this.inkCall('inkClear');this.wRender();}
   // compound word, one cell per character: when the character has all its strokes and the finger rests 1 s, go to the next one
@@ -751,15 +776,16 @@ class Component extends DCLogic {
   // a stroke drawn along its centre line, but only inside its calligraphic outline — this is how the real shape «flows» in
   wInk(g,path,med,W,H,upto){g.save();g.clip(path);g.lineCap='round';g.lineJoin='round';g.lineWidth=W*.13;g.beginPath();const n=Math.max(2,Math.ceil(med.length*upto));med.slice(0,n).forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();}
   wRender(){clearTimeout(this.inkT);this.inkT=setTimeout(()=>this.inkSync(),0);const c=this.wcEl();if(!c)return;const s=this.state,qz=s.quiz;if(!qz)return;const KZ=this.wFit(c);this.wInkC=getComputedStyle(c).color;const g=c.getContext('2d'),W=c.width,H=c.height;const css=getComputedStyle(this.phoneRef.current||document.body);const ink=getComputedStyle(c).color,mu=css.getPropertyValue('--mu').trim()||'#888',grid=css.getPropertyValue('--grid').trim()||'rgba(0,0,0,.15)',ac=css.getPropertyValue('--ac').trim()||'#b5502f';
-    const lw={thin:7,mid:12,bold:20}[s.wWidth||'mid']*KZ;g.clearRect(0,0,W,H);g.setLineDash([]);const R=this.wCurRef();const P=p=>[p[0]*W,p[1]*H,p[2]];
+    const lw={thin:7,mid:12,bold:20}[s.wWidth||'mid']*KZ,lwI={thin:6,mid:9,bold:14}[s.wWidth||'mid']*KZ;   // lwI — the width of the finger's own line: the same while drawing and after the finger lifts
+    g.clearRect(0,0,W,H);g.setLineDash([]);const R=this.wCurRef();const P=p=>[p[0]*W,p[1]*H,p[2]];
     const OP=R&&window.WCheck&&WCheck.paths?WCheck.paths(this.wCurChar(),W,H):null;
     const ol=css.getPropertyValue('--ol').trim()||'#D2D2DC';const gm=s.wGhost||'first';if(R&&!qz.rev&&(this.wPeek||gm==='on'||(gm==='first'&&qz.kind==='trace'))){if(OP){g.fillStyle=ol;g.globalAlpha=1;OP.forEach(p=>g.fill(p));g.globalAlpha=1;}else{g.strokeStyle=mu;g.globalAlpha=.22;R.forEach(st=>this.wBrush(g,st.map(P),lw*1.7));g.globalAlpha=1;}}
     const red=css.getPropertyValue('--seal').trim()||'#c8372d',prc=css.getPropertyValue('--pr').trim()||'#5b5bd6';
     const an=this.wSnapAn,now=performance.now();let anim=false;
     (this.wS||[]).forEach((st,j)=>{if(this.drw&&j===this.wS.length-1)return;const m=(this.wMeta||[])[j];const snapped=m&&m.k>=0;
-      if(snapped&&OP&&OP[m.k]){g.fillStyle=ink;g.strokeStyle=ink;const pr=an&&an.j===j?Math.min(1,(now-an.t0)/240):1;if(pr<1){anim=true;const raw=(this.wRaw||[])[j];if(raw&&raw.length>1){g.save();g.globalAlpha=.55*(1-pr);g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();raw.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();g.strokeStyle=ink;}this.wInk(g,OP[m.k],R[m.k],W,H,pr);}else g.fill(OP[m.k]);return;}
-      g.globalAlpha=snapped?1:.6;g.strokeStyle=snapped?ink:(j===this.wFlash?red:mu);if(snapped)this.wBrush(g,st.map(P),lw*1.25);else{g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();st.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();}g.globalAlpha=1;});
-    const bd=this.wBad;if(bd){const pr=(now-bd.t0)/450;if(pr<1){anim=true;g.save();g.globalAlpha=.85*(1-pr);g.strokeStyle=red;g.lineCap='round';g.lineJoin='round';g.lineWidth=lw*.75;g.beginPath();bd.pts.forEach((p,i)=>{if(i)g.lineTo(p[0]*W,p[1]*H);else g.moveTo(p[0]*W,p[1]*H);});g.stroke();g.restore();}else this.wBad=null;}
+      if(snapped&&OP&&OP[m.k]){g.fillStyle=ink;g.strokeStyle=ink;const pr=an&&an.j===j?Math.min(1,(now-an.t0)/240):1;if(pr<1){anim=true;const raw=(this.wRaw||[])[j];if(raw&&raw.length>1){g.save();g.globalAlpha=1-pr;g.lineCap='round';g.lineJoin='round';g.lineWidth=lwI;g.beginPath();Ink.trace(g,raw.map(p=>[p[0]*W,p[1]*H]),W/(c.clientWidth||288));g.stroke();g.restore();g.strokeStyle=ink;}this.wInk(g,OP[m.k],R[m.k],W,H,pr);}else g.fill(OP[m.k]);return;}
+      g.globalAlpha=snapped?1:.6;g.strokeStyle=snapped?ink:(j===this.wFlash?red:mu);if(snapped)this.wBrush(g,st.map(P),lw*1.25);else{g.lineCap='round';g.lineJoin='round';g.lineWidth=lwI;g.beginPath();Ink.trace(g,st.map(p=>[p[0]*W,p[1]*H]),W/(c.clientWidth||288));g.stroke();}g.globalAlpha=1;});
+    const bd=this.wBad;if(bd){const pr=(now-bd.t0)/450;if(pr<1){anim=true;g.save();g.globalAlpha=.85*(1-pr);g.strokeStyle=red;g.lineCap='round';g.lineJoin='round';g.lineWidth=lwI;g.beginPath();Ink.trace(g,bd.pts.map(p=>[p[0]*W,p[1]*H]),W/(c.clientWidth||288));g.stroke();g.restore();}else this.wBad=null;}
     if(anim){cancelAnimationFrame(this.wRaf);this.wRaf=requestAnimationFrame(()=>this.wRender());}
     if(R){const used=new Set((this.wMeta||[]).filter(m=>m&&m.k>=0).map(m=>m.k));const exp=[...Array(R.length).keys()].find(i=>!used.has(i));const oh=s.wOrderHint||'err';
       if(exp!=null&&!qz.rev&&(this.wHint||oh==='always'||qz.kind==='trace'||(oh!=='off'&&(this.wMiss||{})[exp]>=1))){const st=R[exp];if(OP&&OP[exp]){g.fillStyle=prc;g.globalAlpha=.25;g.fill(OP[exp]);}g.strokeStyle=prc;g.globalAlpha=.85;g.lineWidth=(OP?3:5)*KZ;g.setLineDash([12*KZ,10*KZ]);g.beginPath();st.forEach((p,i)=>{const q=P(p);if(i)g.lineTo(q[0],q[1]);else g.moveTo(q[0],q[1]);});g.stroke();g.setLineDash([]);
