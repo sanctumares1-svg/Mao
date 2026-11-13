@@ -1,9 +1,9 @@
 {
  "web": {
-  "ver": 13,
-  "tag": "cc11874bc33b07ee42e9d9aa060c051416768756",
+  "ver": 14,
+  "tag": "7ea99ca08048e3886132946edad400bd19ece18d",
   "minApp": 14,
-  "notes": "Mao 3.7: линия при письме ровнее — не дрожит на медленном движении, не срезает изгибы на быстром, одна толщина и никакого скачка, когда палец отпущен",
+  "notes": "Mao 3.7.1: замеры письма — под клеткой видно время до отрисовки и скорость пальца, замеры можно сохранить в файл (Настройки → «Показывать скорость рисования»). Сама линия не менялась",
   "files": {
    "ATTRIBUTION.txt": "f0c7ff1ddcd0e0d0c9928d4b3c31cd6c073a9153d1c15fe7e71d29f377565e34",
    "decomp.txt": "80ead836fdb985a6af620bfa841acd319f6271dd0518d26889163ce8f6da70c4",
@@ -24,7 +24,7 @@
    "fonts/serif-500.woff": "bba3d333bffdc58ca5a8e61fa8920b02539bf649903fde788fc8782b76f1d1a3",
    "fonts/serif-600.woff": "f7a3cb750088d8287cec8dbd40ed124164593aa772479c59b1a8e4a0ddda949a",
    "fonts/serif-700.woff": "b6c9aad215b0eb89568671a034b67af93f3d76df0a6462cff355af467b45071f",
-   "index.html": "a03d9d32bc3f9e129b204e32a20abbed43aaa2afde6ac9837f8edbd90c0ddac8",
+   "index.html": "60d611802eeac3c54194b185bd8fefea6ece74aabaa8cb5cefb00f13c3f5eba0",
    "loadtext-worker.js": "23e31f08051225da20e8cbdec0312716a3ff79abb0f54b90aff9ecc8171e7ab8",
    "loadtext.js": "864f152f31651633d7186656bde6c1caef21ec66dfe284dd79b48bb323840fd6",
    "native.js": "0acb2d26fad924e4339f7c09f58a520472ca3d3c59816450e067d7c070e2fea8",
